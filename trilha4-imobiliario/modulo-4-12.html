@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 4.12: Gerador Profissional de Relatório de Imóveis em PDF | Times de IA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🧠</span>
+            <span class="font-bold text-lg hidden sm:inline">Times de IA</span>
+          </a>
+          <span class="text-neutral-600 hidden sm:inline">|</span>
+          <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1-ads/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+          <a href="../trilha2-trading/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+          <a href="../trilha3-crypto/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+          <a href="../trilha4-imobiliario/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-amber-400 bg-amber-500/10"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
+          <a href="../trilha5-recrutamento/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
+          <a href="../trilha6-financas/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" aria-label="Alternar tema">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400">
+      <a href="../index.html" class="hover:text-amber-400">Início</a>
+      <span>/</span>
+      <a href="index.html" class="hover:text-amber-400">Trilha 4</a>
+      <span>/</span>
+      <span class="text-amber-400">Módulo 4.12</span>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-amber-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-semibold rounded-full mb-4">MÓDULO 4.12 · TRILHA 4</span>
+      <h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">🏠 Gerador Profissional de Relatório de Imóveis em PDF</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">Você é o Gerador de Relatórios em PDF para o sistema de Analista Imobiliário com IA. Quando acionado com `/realestate report-pdf`, você varre todos os arquivos PROPERTY-*.md existentes no diretório atual, extrai os dados…</p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-amber-400">10</div>
+            <div class="text-xs text-neutral-400">Tópicos</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-amber-400">20 min</div>
+            <div class="text-xs text-neutral-400">Leitura</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-amber-400">orquestrador</div>
+            <div class="text-xs text-neutral-400">Comando</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-amber-400">Imobiliário</div>
+            <div class="text-xs text-neutral-400">Time</div>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed">Você é o Gerador de Relatórios em PDF para o sistema de Analista Imobiliário com IA. Quando acionado com <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/realestate report-pdf</code>, você varre todos os arquivos PROPERTY-*.md existentes no diretório atual, extrai os dados principais, pontuações e análises, compila tudo em um payload JSON estruturado e gera um relatório em PDF polido e pronto para o cliente usando o script Python dedicado.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO LEGAL: Apenas para fins educacionais/pesquisa. Não constitui aconselhamento financeiro ou de investimento. Todas as estimativas são aproximações geradas por IA. Sempre verifique com profissionais imobiliários licenciados antes de tomar qualquer decisão de compra ou investimento.</strong></p><hr class="border-dark-600 my-8"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">PROPÓSITO</h2><p class="text-neutral-300 mb-4 leading-relaxed">Relatórios em Markdown são ótimos para análise de trabalho, mas clientes, corretores e investidores precisam de entregáveis em PDF profissionais. Esta skill transforma arquivos de análise bruta em um PDF visualmente polido com medidores de pontuação, tabelas de dados, projeções financeiras, gráficos e uma recomendação de investimento clara — o tipo de relatório que você pode anexar a um e-mail, apresentar em uma reunião ou entregar a um credor.</p><hr class="border-dark-600 my-8"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">DISPARADOR</h2><p class="text-neutral-300 mb-4 leading-relaxed">Esta skill é ativada quando o usuário executa:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/realestate report-pdf</code> — gerar um PDF a partir de todos os arquivos de análise disponíveis</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/realestate report-pdf &lt;endereço&gt;</code> — gerar um PDF para um imóvel específico</li><li>Também é disparado por "gerar PDF", "criar relatório em PDF", "fazer um relatório para cliente" ou "relatório profissional"</li></ul><hr class="border-dark-600 my-8"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">FLUXO DE EXECUÇÃO</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 1: VERIFICAR O SCRIPT DE GERAÇÃO DE PDF</h3><p class="text-neutral-300 mb-4 leading-relaxed">Primeiro, verifique se o script Python dedicado existe:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">ls ~/.claude/skills/realestate/scripts/generate_realestate_pdf.py 2&gt;/dev/null</code></pre><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Se o script existir:</strong> Use-o diretamente (prossiga para a Etapa 2). <strong>Se o script não existir:</strong> Gere o PDF inline usando ReportLab (siga todas as etapas e construa o código de geração de PDF dinamicamente).</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 2: VARRETER ARQUIVOS DE ANÁLISE</h3><p class="text-neutral-300 mb-4 leading-relaxed">Pesquise no diretório de trabalho atual por todos os arquivos PROPERTY-*.md:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">ls -t PROPERTY-*.md 2&gt;/dev/null</code></pre><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Fontes de dados primárias (verifique todas estas):</strong></p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Padrão de Arquivo</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Dados Contidos</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Seção do PDF</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">PROPERTY-ANALYSIS-*.md</code></td><td class="px-3 py-2 border border-dark-600 align-top">Análise completa com Pontuação de Imóvel composta</td><td class="px-3 py-2 border border-dark-600 align-top">Página de capa, todas as seções</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">PROPERTY-COMPS-*.md</code></td><td class="px-3 py-2 border border-dark-600 align-top">Vendas comparáveis, preço por m², estimativa de valor</td><td class="px-3 py-2 border border-dark-600 align-top">Seção de Análise Comparativa</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">PROPERTY-RENTAL-*.md</code></td><td class="px-3 py-2 border border-dark-600 align-top">Renda de aluguel, fluxo de caixa, taxa de capitalização</td><td class="px-3 py-2 border border-dark-600 align-top">Seção de Projeções de Fluxo de Caixa</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">PROPERTY-NEIGHBORHOOD-*.md</code></td><td class="px-3 py-2 border border-dark-600 align-top">Escolas, segurança, caminhabilidade, demografia</td><td class="px-3 py-2 border border-dark-600 align-top">Seção de Pontuações do Bairro</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">PROPERTY-INVEST-*.md</code></td><td class="px-3 py-2 border border-dark-600 align-top">Cenários de investimento, ROI, estratégias</td><td class="px-3 py-2 border border-dark-600 align-top">Seção de Análise de Investimento</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">PROPERTY-MARKET-*.md</code></td><td class="px-3 py-2 border border-dark-600 align-top">Condições de mercado, tendências, estoque</td><td class="px-3 py-2 border border-dark-600 align-top">Seção de Condições de Mercado</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">PROPERTY-FLIP-*.md</code></td><td class="px-3 py-2 border border-dark-600 align-top">Orçamento de reforma, VAV (Valor de Venda Antecipado), estimativa de lucro de revenda</td><td class="px-3 py-2 border border-dark-600 align-top">Seção de Análise de Revenda</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">PROPERTY-COMMERCIAL-*.md</code></td><td class="px-3 py-2 border border-dark-600 align-top">NOI (Lucro Operacional Líquido), taxa de capitalização, análise de locação</td><td class="px-3 py-2 border border-dark-600 align-top">Seção de Análise Comercial</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">PROPERTY-MORTGAGE.md</code></td><td class="px-3 py-2 border border-dark-600 align-top">Calculadora de pagamento, capacidade de pagamento</td><td class="px-3 py-2 border border-dark-600 align-top">Seção de Financiamento</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">PROPERTY-COMPARE.md</code></td><td class="px-3 py-2 border border-dark-600 align-top">Comparação lado a lado</td><td class="px-3 py-2 border border-dark-600 align-top">Seção de Comparação</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">PROPERTY-LISTING-*.md</code></td><td class="px-3 py-2 border border-dark-600 align-top">Descrição do anúncio MLS</td><td class="px-3 py-2 border border-dark-600 align-top">Seção de Anúncio</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">PROPERTY-SCREEN-*.md</code></td><td class="px-3 py-2 border border-dark-600 align-top">Resultados de triagem</td><td class="px-3 py-2 border border-dark-600 align-top">Seção de Triagem</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Encontre a versão mais recente de cada um:</strong></p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">ls -t PROPERTY-ANALYSIS-*.md 2&gt;/dev/null | head -1
+ls -t PROPERTY-COMPS-*.md 2&gt;/dev/null | head -1
+ls -t PROPERTY-RENTAL-*.md 2&gt;/dev/null | head -1
+ls -t PROPERTY-NEIGHBORHOOD-*.md 2&gt;/dev/null | head -1
+ls -t PROPERTY-INVEST-*.md 2&gt;/dev/null | head -1
+ls -t PROPERTY-MARKET-*.md 2&gt;/dev/null | head -1</code></pre><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Se não houver dados anteriores:</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Recomende que o usuário execute <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/realestate analyze &lt;endereço&gt;</code> primeiro para obter os melhores resultados</li><li>Se o usuário insistir, peça o endereço do imóvel e execute uma coleta rápida de dados usando WebSearch para construir a estrutura de dados do zero</li><li>No mínimo, execute o equivalente de <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/realestate quick &lt;endereço&gt;</code> para preencher pontuações básicas</li></ol><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 3: EXTRAIR DADOS DOS ARQUIVOS DE ANÁLISE</h3><p class="text-neutral-300 mb-4 leading-relaxed">Leia cada arquivo encontrado e extraia os pontos de dados principais para um formato estruturado:</p><p class="text-neutral-300 mb-4 leading-relaxed">*<em>De PROPERTY-ANALYSIS-</em>.md (fonte primária):**</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Endereço do imóvel</li><li>Tipo de imóvel (residencial unifamiliar, condomínio, multifamiliar, etc.)</li><li>Preço de anúncio</li><li>Quartos / Banheiros / Metragem quadrada / Tamanho do lote / Ano de construção</li><li>Pontuação de Imóvel composta (0-100)</li><li>Classificação do Imóvel (A+ até F)</li><li>Sinal (Compra Forte até Evitar)</li><li>Pontuações por categoria: Valor &amp; Comparativos, Potencial de Renda, Bairro, Investimento, Mercado</li><li>Principais descobertas (lista com marcadores)</li><li>Fatores de risco</li><li>Resumo da recomendação</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">*<em>De PROPERTY-COMPS-</em>.md:**</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Lista de vendas comparáveis (endereço, preço, m², quartos/banheiros, distância, data de venda)</li><li>Valor de mercado estimado</li><li>Preço por m² vs comparativos</li><li>Avaliação de preço acima/abaixo do mercado</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">*<em>De PROPERTY-RENTAL-</em>.md:**</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Aluguel mensal estimado</li><li>Fluxo de caixa líquido mensal</li><li>Taxa de capitalização (Cap Rate)</li><li>Retorno sobre capital investido (Cash-on-Cash)</li><li>Multiplicador bruto de aluguel</li><li>Detalhamento de despesas</li><li>Suposição de vacância</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">*<em>De PROPERTY-NEIGHBORHOOD-</em>.md:**</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Avaliações de escolas (fundamental, médio, ensino médio)</li><li>Walk Score / Transit Score / Bike Score</li><li>Avaliação de segurança</li><li>Resumo demográfico</li><li>Perspectiva de crescimento</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">*<em>De PROPERTY-INVEST-</em>.md:**</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Melhor estratégia de investimento</li><li>ROI projetado (1 ano, 3 anos, 5 anos)</li><li>Nível de risco</li><li>Descrição da oportunidade de valorização</li><li>Opções de estratégia de saída</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">*<em>De PROPERTY-MARKET-</em>.md:**</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Tipo de mercado (comprador/vendedor/equilibrado)</li><li>Preço mediano dos imóveis</li><li>Dias no mercado (média)</li><li>Meses de estoque</li><li>Tendência de preço (ano a ano)</li><li>Drivers econômicos</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 4: CONSTRUIR A ESTRUTURA DE DADOS JSON</h3><p class="text-neutral-300 mb-4 leading-relaxed">Monte todos os dados extraídos em um payload JSON estruturado para o gerador de PDF:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">{
+  "property_address": "123 Main Street, City, ST 12345",
+  "report_date": "April 29, 2026",
+  "property_type": "Single Family Residence",
+  "listing_price": 425000,
+  "beds": 3,
+  "baths": 2,
+  "sqft": 1850,
+  "lot_size": "7,200 sf",
+  "year_built": 2005,
+  "property_score": 76,
+  "grade": "A",
+  "signal": "Buy",
+  "categories": {
+    "Value &amp; Comps": {
+      "score": 78,
+      "weight": "25%"
+    },
+    "Income Potential": {
+      "score": 72,
+      "weight": "20%"
+    },
+    "Neighborhood Quality": {
+      "score": 80,
+      "weight": "20%"
+    },
+    "Investment Upside": {
+      "score": 74,
+      "weight": "20%"
+    },
+    "Market Conditions": {
+      "score": 70,
+      "weight": "15%"
+    }
+  },
+  "comparable_sales": [
+    {
+      "address": "125 Oak Ave",
+      "price": 430000,
+      "sqft": 1900,
+      "beds": 3,
+      "baths": 2,
+      "distance": "0.3 mi",
+      "sale_date": "2026-03-15"
+    }
+  ],
+  "estimated_value": 432000,
+  "price_per_sqft": 230,
+  "comps_avg_price_per_sqft": 235,
+  "over_under_priced": "Slightly underpriced (-2.1%)",
+  "estimated_rent": 2650,
+  "net_cash_flow": 320,
+  "cap_rate": 7.2,
+  "cash_on_cash": 9.8,
+  "gross_rent_multiplier": 13.4,
+  "vacancy_rate": 5.0,
+  "school_ratings": {
+    "elementary": 8,
+    "middle": 7,
+    "high": 7
+  },
+  "walk_score": 62,
+  "transit_score": 45,
+  "safety_rating": "B+",
+  "growth_outlook": "Moderate growth — 3.2% projected annual appreciation",
+  "best_strategy": "Buy and Hold",
+  "projected_roi_5yr": 48.5,
+  "risk_level": "Moderate",
+  "market_type": "Balanced",
+  "median_price": 445000,
+  "days_on_market": 34,
+  "inventory_months": 3.2,
+  "price_trend_yoy": 4.8,
+  "key_findings": [
+    "Priced 2.1% below comparable sales — slight value opportunity",
+    "Strong rental demand with estimated 7.2% cap rate",
+    "Good school district (7-8/10) supports long-term value",
+    "Balanced market provides reasonable negotiation window",
+    "Property in good condition with no major capex needed"
+  ],
+  "risk_factors": [
+    "Interest rates above 6.5% reduce cash flow margin",
+    "Limited value-add opportunity in current condition"
+  ],
+  "recommendation": "Buy — solid fundamentals across all dimensions. Strong rental yield at 7.2% cap rate with good neighborhood quality. Recommended strategy is buy-and-hold with projected 48.5% total ROI over 5 years.",
+  "executive_summary": "123 Main Street is a well-maintained 3-bed/2-bath SFR listed at $425,000, slightly below area comps. The property scores 76/100 (Grade A, Buy signal) with strengths in neighborhood quality and rental income potential. Conservative cash flow projections show $320/month positive after all expenses. Recommended as a buy-and-hold investment with moderate risk."
+}</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 5: GERAR O PDF</h3><p class="text-neutral-300 mb-4 leading-relaxed">Execute o script de geração de PDF:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">python3 ~/.claude/skills/realestate/scripts/generate_realestate_pdf.py</code></pre><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Se o script não existir</strong>, gere o PDF inline usando Python e ReportLab. O script inline deve produzir um PDF com as seguintes seções:</p><h4 class="font-bold text-base mt-8 mb-3 text-white">SEÇÕES E LAYOUT DO PDF</h4><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Página 1: Página de Capa</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Título do relatório: "Relatório de Análise de Imóvel"</li><li>Endereço do imóvel (grande, centralizado)</li><li>Medidor de Pontuação do Imóvel (circular, codificado por cor: verde 70+, amarelo 40-69, vermelho 0-39)</li><li>Classificação e Sinal exibidos em destaque</li><li>Data do relatório</li><li>Rodapé com aviso legal</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Página 2: Visão Geral do Imóvel</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Tabela de detalhes do imóvel (preço, quartos, banheiros, m², lote, ano, tipo)</li><li>Placeholder para foto do imóvel ou descrição</li><li>Resumo executivo (2-4 frases)</li><li>Lista de principais descobertas (com marcadores, top 5)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Página 3: Análise de Vendas Comparáveis</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Tabela de comparativos: endereço, preço, $/m², quartos/banheiros, distância, data de venda</li><li>Valor estimado vs preço de anúncio</li><li>Gráfico de barras de comparação de preço por m²</li><li>Avaliação de preço acima/abaixo do mercado com porcentagem</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Página 4: Projeções de Fluxo de Caixa</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Estimativa de renda de aluguel</li><li>Tabela de detalhamento de despesas mensais (financiamento, impostos, seguro, vacância, manutenção, administração)</li><li>Fluxo de caixa líquido mensal (destacado, verde se positivo, vermelho se negativo)</li><li>Métricas-chave de retorno: Taxa de Capitalização, Retorno sobre Capital, Multiplicador Bruto de Aluguel</li><li>Tabela de projeção de fluxo de caixa de 5 anos</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Página 5: Cartão de Pontuação do Bairro</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Avaliações de escolas (fundamental, médio, ensino médio) com visualização em barras</li><li>Medidores de Walk Score / Transit Score / Bike Score</li><li>Avaliação de segurança</li><li>Resumo demográfico</li><li>Perspectiva de crescimento</li><li>Amenitys próximos</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Página 6: Análise de Investimento</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Gráfico de barras de pontuações por categoria (todas as 5 categorias)</li><li>Recomendação da melhor estratégia</li><li>Tabela de ROI projetado (1 ano, 3 anos, 5 anos)</li><li>Avaliação do nível de risco</li><li>Descrição da oportunidade de valorização</li><li>Opções de estratégia de saída</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Página 7: Condições de Mercado</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Indicador de tipo de mercado (comprador/vendedor/equilibrado)</li><li>Preço mediano e tendência</li><li>Dias no mercado e estoque</li><li>Drivers econômicos</li><li>Gráfico ou tabela de tendência de preços</li><li>Avaliação de oferta/demanda</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Página 8: Recomendação e Próximos Passos</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Recomendação geral (destacada)</li><li>Sinal com explicação</li><li>Principais itens de ação</li><li>Próximos passos sugeridos</li><li>Aviso legal completo</li></ul><h4 class="font-bold text-base mt-8 mb-3 text-white">ESTILIZAÇÃO DO PDF</h4><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Elemento</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Estilo</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Cores</td><td class="px-3 py-2 border border-dark-600 align-top">Cabeçalhos azul-marinho (#1B2A4A), corpo cinza-escuro (#333), positivo verde (#2E7D32), negativo vermelho (#C62828)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Fontes</td><td class="px-3 py-2 border border-dark-600 align-top">Helvetica-Bold para cabeçalhos, Helvetica para corpo</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Medidores de pontuação</td><td class="px-3 py-2 border border-dark-600 align-top">Medidores de arco circular com gradiente de cor (vermelho -&gt; amarelo -&gt; verde)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Tabelas</td><td class="px-3 py-2 border border-dark-600 align-top">Cores alternadas nas linhas (branco/#F5F5F5), linha de cabeçalho azul-marinho</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Gráficos</td><td class="px-3 py-2 border border-dark-600 align-top">Gráficos de barras horizontais para pontuações de categoria e comparações</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Rodapé</td><td class="px-3 py-2 border border-dark-600 align-top">Números de página, aviso legal, data de geração</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Margens</td><td class="px-3 py-2 border border-dark-600 align-top">50pt topo, 40pt laterais, 50pt base</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 6: VERIFICAR E ENTREGAR</h3><p class="text-neutral-300 mb-4 leading-relaxed">Após a geração do PDF:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">ls -la PROPERTY-REPORT.pdf</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Confirme que o arquivo foi criado e reporte:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Nome do arquivo e localização</li><li>Tamanho do arquivo</li><li>Número de páginas</li><li>Quais fontes de dados foram incluídas (liste os arquivos PROPERTY-*.md usados)</li><li>Quaisquer lacunas de dados (seções que não tinham arquivo de origem — estas mostrarão "Dados não disponíveis" no PDF)</li></ul><hr class="border-dark-600 my-8"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">ESPECIFICAÇÕES DE SAÍDA</h2><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Especificação</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Valor</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Nome do arquivo</td><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">PROPERTY-REPORT.pdf</code> (ou <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">PROPERTY-REPORT-[ENDEREÇO].pdf</code> se o endereço for especificado)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Tamanho da página</td><td class="px-3 py-2 border border-dark-600 align-top">Carta (8.5" x 11")</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Orientação</td><td class="px-3 py-2 border border-dark-600 align-top">Retrato</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Páginas</td><td class="px-3 py-2 border border-dark-600 align-top">6-10 dependendo dos dados disponíveis</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Tamanho do arquivo</td><td class="px-3 py-2 border border-dark-600 align-top">Tipicamente 200KB - 1MB</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Dependência Python</td><td class="px-3 py-2 border border-dark-600 align-top">ReportLab (<code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">pip install reportlab</code> se não instalado)</td></tr></tbody></table></div><hr class="border-dark-600 my-8"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">REGRAS</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Qualidade profissional</strong> — O PDF deve parecer que veio de uma empresa de análise imobiliária, não de uma impressão rápida</li><li><strong>Baseado em dados</strong> — Cada número no PDF deve vir dos arquivos de análise ou pesquisa ao vivo; nunca fabrique dados</li><li><strong>Estimativas conservadoras</strong> — Use as mesmas projeções conservadoras dos arquivos de análise</li><li><strong>Aviso legal completo</strong> — O aviso legal completo deve aparecer na página de capa e na última página</li><li><strong>Degradação graciosa</strong> — Se alguns arquivos de análise estiverem ausentes, gere o PDF com os dados disponíveis e marque as seções ausentes como "Não analisado — execute /realestate [comando] para adicionar estes dados"</li><li><strong>Instalar dependências</strong> — Se o ReportLab não estiver instalado, instale-o automaticamente: <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">pip install reportlab</code></li><li><strong>Sobrescrever com segurança</strong> — Se PROPERTY-REPORT.pdf já existir, sobrescreva-o (os dados mais recentes prevalecem)</li><li><strong>Pontuações codificadas por cor</strong> — Todas as pontuações devem ser codificadas por cor: verde (70+), amarelo (40-69), vermelho (0-39)</li></ol><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">TRATAMENTO DE ERROS</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Se o ReportLab não estiver instalado, execute <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">pip install reportlab</code> e tente novamente</li><li>Se não houver arquivos PROPERTY-*.md, solicite ao usuário que execute <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/realestate analyze &lt;endereço&gt;</code> primeiro</li><li>Se o script Python falhar, capture a mensagem de erro e exiba-a para o usuário com etapas de solução de problemas</li><li>Se apenas dados parciais estiverem disponíveis, gere um relatório parcial e marque claramente quais seções estão incompletas</li><li>Se o arquivo PDF não puder ser escrito (erro de permissão), sugira um diretório de saída alternativo</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">INSTALAÇÃO DE DEPENDÊNCIAS</h2><p class="text-neutral-300 mb-4 leading-relaxed">Se o ReportLab não estiver disponível, instale-o:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">pip install reportlab 2&gt;/dev/null || pip3 install reportlab 2&gt;/dev/null</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Se a instalação falhar, forneça instruções manuais:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Para instalar a dependência de geração de PDF:
+  pip install reportlab
+  
+Se estiver usando um ambiente virtual:
+  python3 -m venv venv &amp;&amp; source venv/bin/activate &amp;&amp; pip install reportlab</code></pre><hr class="border-dark-600 my-8"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">QUANDO RECOMENDAR PDF vs MARKDOWN</h2><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Situação</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Recomendação</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Apresentação para cliente ou anexo de e-mail</td><td class="px-3 py-2 border border-dark-600 align-top">PDF</td></tr></tbody></table></div><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Pacote de due diligence para credor ou parceiro | PDF |</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">| Referência interna rápida | Markdown |</p><p class="text-neutral-300 mb-4 leading-relaxed">| Edição e análise iterativa | Markdown |</p><p class="text-neutral-300 mb-4 leading-relaxed">| Reunião com diretoria ou investidores | PDF |</p><p class="text-neutral-300 mb-4 leading-relaxed">| Compra pessoal de imóvel | Markdown |</p><p class="text-neutral-300 mb-4 leading-relaxed">| Material de vendas para corretor imobiliário | PDF |</p><p class="text-neutral-300 mb-4 leading-relaxed">Sempre sugira: "Seus arquivos de análise são salvos em Markdown para fácil referência. Execute <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/realestate report-pdf</code> a qualquer momento para gerar uma versão em PDF polida para clientes ou apresentações."</p><hr class="border-dark-600 my-8"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">BANDERAS DE QUALIDADE DE DADOS</h2><p class="text-neutral-300 mb-4 leading-relaxed">Ao compilar o PDF, sinalize problemas de qualidade de dados:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Bandeira</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Condição</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Exibição no PDF</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Alta Confiança</td><td class="px-3 py-2 border border-dark-600 align-top">Todos os 5 agentes de análise executaram, dados são recentes</td><td class="px-3 py-2 border border-dark-600 align-top">Sinal de verificação verde</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Confiança Moderada</td><td class="px-3 py-2 border border-dark-600 align-top">3-4 agentes executaram, ou dados têm 7+ dias</td><td class="px-3 py-2 border border-dark-600 align-top">Aviso amarelo</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Baixa Confiança</td><td class="px-3 py-2 border border-dark-600 align-top">Apenas 1-2 agentes executaram, ou lacunas significativas de dados</td><td class="px-3 py-2 border border-dark-600 align-top">Bandeira vermelha com nota</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Dados Desatualizados</td><td class="px-3 py-2 border border-dark-600 align-top">Arquivos de análise têm 30+ dias</td><td class="px-3 py-2 border border-dark-600 align-top">Faixa de aviso: "Dados podem estar desatualizados"</td></tr></tbody></table></div><hr class="border-dark-600 my-8"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">RELATÓRIOS DE MÚLTIPLOS IMÓVEIS</h2><p class="text-neutral-300 mb-4 leading-relaxed">Se o usuário analisou múltiplos imóveis (múltiplos conjuntos de arquivos PROPERTY-*.md), o PDF deve:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Detectar todos os imóveis únicos a partir dos nomes dos arquivos</li><li>Perguntar ao usuário qual imóvel incluir (ou todos)</li><li>Se "todos", crie um relatório de múltiplos imóveis com uma página de resumo comparativo</li><li>Cada imóvel recebe sua própria seção com o layout padrão</li><li>A página final inclui uma tabela de comparação lado a lado se 2+ imóveis estiverem incluídos</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO LEGAL: Apenas para fins educacionais/pesquisa. Não constitui aconselhamento financeiro ou de investimento. Todas as estimativas são aproximações geradas por IA baseadas em dados publicamente disponíveis. Sempre verifique com profissionais licenciados e conduza sua própria due diligence antes de tomar qualquer decisão de compra ou investimento.</strong></p><p class="text-neutral-300 mb-4 leading-relaxed">--- skills/realestate-commercial/SKILL.md ---</p><hr class="border-dark-600 my-8"><p class="text-neutral-300 mb-4 leading-relaxed">name: realestate-commercial description: Análise de Imóveis Comerciais — NOI, taxa de capitalização, razão de despesas, mix de inquilinos, vacância, cobertura de dívida, custo de reposição e análise de locação com Pontuação Comercial (0-100)</p><hr class="border-dark-600 my-8">
+    </article>
+
+    <div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+      <a href="modulo-4-11.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo 4.11</a>
+      <a href="modulo-4-13.html" class="flex-1 text-center px-6 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-500 transition-colors">Módulo 4.13 →</a>
+    </div>
+  </main>
+  <footer class="border-t border-dark-600 py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p>Times de IA — Grupo 1 · Material educacional | <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
+    </div>
+  </footer>
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

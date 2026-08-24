@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1.2: Gerador de Copy de Anúncios Específico por Plataforma | Times de IA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🧠</span>
+            <span class="font-bold text-lg hidden sm:inline">Times de IA</span>
+          </a>
+          <span class="text-neutral-600 hidden sm:inline">|</span>
+          <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1-ads/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+          <a href="../trilha2-trading/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+          <a href="../trilha3-crypto/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+          <a href="../trilha4-imobiliario/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
+          <a href="../trilha5-recrutamento/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
+          <a href="../trilha6-financas/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" aria-label="Alternar tema">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400">
+      <a href="../index.html" class="hover:text-emerald-400">Início</a>
+      <span>/</span>
+      <a href="index.html" class="hover:text-emerald-400">Trilha 1</a>
+      <span>/</span>
+      <span class="text-emerald-400">Módulo 1.2</span>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.2 · TRILHA 1</span>
+      <h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">📣 Gerador de Copy de Anúncios Específico por Plataforma</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">Gerar 10+ variações de copy de anúncios prontas para produção para uma plataforma de anúncios especificada. Cada anúncio é escrito conforme as especificações exatas da plataforma (limites de caracteres, requisitos de for…</p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-emerald-400">15</div>
+            <div class="text-xs text-neutral-400">Tópicos</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-emerald-400">19 min</div>
+            <div class="text-xs text-neutral-400">Leitura</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-emerald-400">orquestrador</div>
+            <div class="text-xs text-neutral-400">Comando</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-emerald-400">Ads</div>
+            <div class="text-xs text-neutral-400">Time</div>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <article class="leading-relaxed">
+<h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Propósito da Skill</h2><p class="text-neutral-300 mb-4 leading-relaxed">Gerar 10+ variações de copy de anúncios prontas para produção para uma plataforma de anúncios especificada. Cada anúncio é escrito conforme as especificações exatas da plataforma (limites de caracteres, requisitos de formato, melhores práticas), inclui variações A/B e utiliza frameworks de copywriting de resposta direta comprovados. A saída está pronta para copiar e colar — um comprador de mídia pode inserir esses textos diretamente na plataforma de anúncios sem necessidade de edição.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Quando Usar</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>O usuário executa <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads copy &lt;plataforma&gt;</code></li><li>O usuário solicita a geração de copy de anúncios para uma plataforma específica</li><li>Chamado como subagente a partir de <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads strategy</code> (o orquestrador principal)</li><li>O usuário precisa de texto de anúncio pronto para uso em qualquer plataforma de anúncios principal</li><li>O usuário deseja múltiplas variações de copy para testes A/B</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Requisitos de Entrada</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Obrigatório:</strong> Plataforma de destino (google, meta, linkedin, tiktok, youtube, pinterest)</li><li><strong>Obrigatório:</strong> Contexto do negócio — seja uma URL para análise ou dados anteriores de público/estratégia</li><li><strong>Opcional:</strong> Produto/serviço específico a ser anunciado, persona de público-alvo, detalhes de oferta/promoção, preferências de tom</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Plataformas e Formatos de Anúncio Suportados</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Google Ads</h3><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Formato</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Títulos</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Descrições</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Outros</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Anúncio de Pesquisa Responsivo (RSA)</td><td class="px-3 py-2 border border-dark-600 align-top">Até 15 títulos (30 caracteres cada)</td><td class="px-3 py-2 border border-dark-600 align-top">Até 4 descrições (90 caracteres cada)</td><td class="px-3 py-2 border border-dark-600 align-top">Caminhos de URL de exibição (15 caracteres cada)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Anúncio de Display</td><td class="px-3 py-2 border border-dark-600 align-top">1-5 títulos (30 caracteres), 1 título longo (90 caracteres)</td><td class="px-3 py-2 border border-dark-600 align-top">1-5 descrições (90 caracteres)</td><td class="px-3 py-2 border border-dark-600 align-top">Nome da empresa (25 caracteres)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Performance Max</td><td class="px-3 py-2 border border-dark-600 align-top">5 títulos (30 caracteres), 5 títulos longos (90 caracteres)</td><td class="px-3 py-2 border border-dark-600 align-top">5 descrições (90 caracteres)</td><td class="px-3 py-2 border border-dark-600 align-top">Texto de chamada para ação</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">Meta (Facebook/Instagram)</h3><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Formato</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Texto Principal</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Título</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Descrição</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Outros</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Feed do Facebook</td><td class="px-3 py-2 border border-dark-600 align-top">125 caracteres (visíveis), 500+ permitidos</td><td class="px-3 py-2 border border-dark-600 align-top">40 caracteres</td><td class="px-3 py-2 border border-dark-600 align-top">30 caracteres</td><td class="px-3 py-2 border border-dark-600 align-top">Botão de CTA</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Feed do Instagram</td><td class="px-3 py-2 border border-dark-600 align-top">125 caracteres (visíveis), máx. 2200</td><td class="px-3 py-2 border border-dark-600 align-top">40 caracteres</td><td class="px-3 py-2 border border-dark-600 align-top">N/A</td><td class="px-3 py-2 border border-dark-600 align-top">Botão de CTA</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Stories/Reels</td><td class="px-3 py-2 border border-dark-600 align-top">Texto sobreposto mínimo</td><td class="px-3 py-2 border border-dark-600 align-top">Texto sobreposto curto</td><td class="px-3 py-2 border border-dark-600 align-top">N/A</td><td class="px-3 py-2 border border-dark-600 align-top">CTA de deslizar para cima</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">LinkedIn</h3><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Formato</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Texto de Introdução</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Título</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Descrição</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Outros</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Conteúdo Patrocinado</td><td class="px-3 py-2 border border-dark-600 align-top">150 caracteres (truncados), máx. 600</td><td class="px-3 py-2 border border-dark-600 align-top">70 caracteres</td><td class="px-3 py-2 border border-dark-600 align-top">100 caracteres (opcional)</td><td class="px-3 py-2 border border-dark-600 align-top">Botão de CTA</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Anúncios de Mensagem</td><td class="px-3 py-2 border border-dark-600 align-top">Assunto de 500 caracteres, corpo de 1500</td><td class="px-3 py-2 border border-dark-600 align-top">N/A</td><td class="px-3 py-2 border border-dark-600 align-top">N/A</td><td class="px-3 py-2 border border-dark-600 align-top">Botão de CTA + banner</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Anúncios de Texto</td><td class="px-3 py-2 border border-dark-600 align-top">N/A</td><td class="px-3 py-2 border border-dark-600 align-top">25 caracteres</td><td class="px-3 py-2 border border-dark-600 align-top">75 caracteres</td><td class="px-3 py-2 border border-dark-600 align-top">Imagem 50x50</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">TikTok</h3><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Formato</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Texto do Anúncio</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Nome de Exibição</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Outros</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">In-Feed</td><td class="px-3 py-2 border border-dark-600 align-top">100 caracteres</td><td class="px-3 py-2 border border-dark-600 align-top">40 caracteres</td><td class="px-3 py-2 border border-dark-600 align-top">Botão de CTA, hashtags</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">TopView</td><td class="px-3 py-2 border border-dark-600 align-top">100 caracteres</td><td class="px-3 py-2 border border-dark-600 align-top">40 caracteres</td><td class="px-3 py-2 border border-dark-600 align-top">Primeiro anúncio visto pelos usuários</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Spark Ads</td><td class="px-3 py-2 border border-dark-600 align-top">Usar legenda original da publicação</td><td class="px-3 py-2 border border-dark-600 align-top">Criador original</td><td class="px-3 py-2 border border-dark-600 align-top">Impulsionar conteúdo existente</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">YouTube</h3><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Formato</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Duração do Roteiro</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Texto na Tela</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Outros</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Bumper Ad (6s)</td><td class="px-3 py-2 border border-dark-600 align-top">~15-20 palavras</td><td class="px-3 py-2 border border-dark-600 align-top">1-2 textos sobrepostos</td><td class="px-3 py-2 border border-dark-600 align-top">Não pulável</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Pre-roll (15s)</td><td class="px-3 py-2 border border-dark-600 align-top">~35-45 palavras</td><td class="px-3 py-2 border border-dark-600 align-top">2-3 textos sobrepostos</td><td class="px-3 py-2 border border-dark-600 align-top">Pulável após 5s</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Não pulável (30s)</td><td class="px-3 py-2 border border-dark-600 align-top">~70-90 palavras</td><td class="px-3 py-2 border border-dark-600 align-top">3-5 textos sobrepostos</td><td class="px-3 py-2 border border-dark-600 align-top">Não pulável</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">Pinterest</h3><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Formato</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Título</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Descrição</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Outros</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Pin Padrão</td><td class="px-3 py-2 border border-dark-600 align-top">100 caracteres</td><td class="px-3 py-2 border border-dark-600 align-top">500 caracteres</td><td class="px-3 py-2 border border-dark-600 align-top">URL do link</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Pin de Vídeo</td><td class="px-3 py-2 border border-dark-600 align-top">100 caracteres</td><td class="px-3 py-2 border border-dark-600 align-top">500 caracteres</td><td class="px-3 py-2 border border-dark-600 align-top">URL do link</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Carrossel</td><td class="px-3 py-2 border border-dark-600 align-top">100 caracteres por cartão</td><td class="px-3 py-2 border border-dark-600 align-top">500 caracteres</td><td class="px-3 py-2 border border-dark-600 align-top">2-5 cartões</td></tr></tbody></table></div><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Como Executar</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 1: Coletar Contexto do Negócio</h3><p class="text-neutral-300 mb-4 leading-relaxed">Se uma URL for fornecida, recupere-a usando <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">WebFetch</code> e extraia:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Nome do negócio e setor</li><li>Proposta de valor central</li><li>Principais produtos/serviços e preços</li><li>Indicadores de público-alvo</li><li>Tom de voz e personalidade da marca</li><li>Pontos de venda únicos (USPs)</li><li>Elementos de prova social (avaliações, número de clientes, anos de mercado)</li><li>Ofertas ou promoções atuais</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Se houver dados de público de uma execução anterior de <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads audience</code>, refira-se às personas principais.</p><p class="text-neutral-300 mb-4 leading-relaxed">Execute pesquisa complementar:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "[Nome da Empresa]" ads OR advertising
+WebSearch: "[Setor]" best performing ad copy examples
+WebSearch: "[Setor]" [plataforma] ad examples</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 2: Definir Entradas de Copy</h3><p class="text-neutral-300 mb-4 leading-relaxed">Antes de escrever qualquer anúncio, estabeleça esses elementos fundamentais:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">## Fundação da Copy
+
+**Negócio:** [Nome]
+**Setor:** [Categoria]
+**Plataforma:** [Plataforma selecionada]
+**Oferta Principal:** [O que estão vendendo/promovendo]
+**USP:** [O que os torna diferentes — o principal diferencial]
+**Persona Alvo:** [Persona principal da pesquisa de público]
+**Ação Desejada:** [O que queremos que o espectador FAÇA]
+**Tom:** [Profissional / Casual / Ousado / Lúdico / Urgente / Autoritativo]
+**Pontos de Prova:** [Estatísticas, depoimentos, prêmios, número de clientes, resultados]
+**Preço/Oferta:** [Preços, desconto, teste grátis, consulta gratuita]</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 3: Gerar Variações de Anúncios Usando 4 Frameworks de Copy</h3><p class="text-neutral-300 mb-4 leading-relaxed">Para cada anúncio, aplique um dos quatro frameworks:</p><h4 class="font-bold text-base mt-8 mb-3 text-white">Framework 1: PAS (Problema-Agitar-Resolver)</h4><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Problema:</strong> Enuncie a dor que o público sente</li><li><strong>Agitar:</strong> Torça a faca — faça-os sentir o custo da inação</li><li><strong>Resolver:</strong> Apresente o produto/serviço como o alívio</li></ul><h4 class="font-bold text-base mt-8 mb-3 text-white">Framework 2: AIDA (Atenção-Interesse-Desejo-Ação)</h4><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Atenção:</strong> Abertura ousada que interrompe o rolagem</li><li><strong>Interesse:</strong> Fato interessante, história ou ângulo que os atrai</li><li><strong>Desejo:</strong> Pinte o resultado — como é a vida após a compra</li><li><strong>Ação:</strong> CTA claro e convincente</li></ul><h4 class="font-bold text-base mt-8 mb-3 text-white">Framework 3: BAB (Antes-Depois-Ponte)</h4><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Antes:</strong> Sua situação atual dolorosa</li><li><strong>Depois:</strong> O estado transformado que eles desejam</li><li><strong>Ponte:</strong> O produto/serviço que os leva lá</li></ul><h4 class="font-bold text-base mt-8 mb-3 text-white">Framework 4: 4Ps (Promessa-Imagem-Prova-Impulso)</h4><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Promessa:</strong> Alegação ousada ou garantia</li><li><strong>Imagem:</strong> Imagem vívida do resultado</li><li><strong>Prova:</strong> Evidência (depoimento, estatística, estudo de caso)</li><li><strong>Impulso:</strong> Urgência ou escassez para agir agora</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 4: Escrever Anúncios Específicos para a Plataforma</h3><p class="text-neutral-300 mb-4 leading-relaxed">Gere <strong>pelo menos 10 variações de anúncios</strong> com pares A/B para cada um. Use esta estrutura:</p><hr class="border-dark-600 my-8"><h4 class="font-bold text-base mt-8 mb-3 text-white">Modelo de Variação de Anúncio (Exemplo Google RSA)</h4><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">### Anúncio [Número] — [Framework Usado] | Ângulo: [Dor/Benefício/Prova Social/Urgência]
+
+**Versão A:**
+
+| Elemento | Copy | Caract. |
+|---|---|---|
+| Título 1 | [texto do título] | [contagem]/30 |
+| Título 2 | [texto do título] | [contagem]/30 |
+| Título 3 | [texto do título] | [contagem]/30 |
+| Descrição 1 | [texto da descrição] | [contagem]/90 |
+| Descrição 2 | [texto da descrição] | [contagem]/90 |
+| Caminho de Exibição 1 | [texto do caminho] | [contagem]/15 |
+| Caminho de Exibição 2 | [texto do caminho] | [contagem]/15 |
+| CTA | [chamada para ação] | — |
+
+**Versão B (Variação A/B):**
+
+| Elemento | Copy | Caract. |
+|---|---|---|
+| Título 1 | [título alternativo] | [contagem]/30 |
+| Título 2 | [título alternativo] | [contagem]/30 |
+| Título 3 | [título alternativo] | [contagem]/30 |
+| Descrição 1 | [descrição alternativa] | [contagem]/90 |
+| Descrição 2 | [descrição alternativa] | [contagem]/90 |
+| Caminho de Exibição 1 | [texto do caminho] | [contagem]/15 |
+| Caminho de Exibição 2 | [texto do caminho] | [contagem]/15 |
+| CTA | [chamada para ação] | — |
+
+**Por que funciona:** [2-3 frases explicando a psicologia e o ângulo]
+**Melhor para:** [qual persona de público / etapa do funil]
+**Nota de teste:** [o que está sendo testado entre A e B]</code></pre><h4 class="font-bold text-base mt-8 mb-3 text-white">Modelo de Variação de Anúncio (Exemplo Meta)</h4><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">### Anúncio [Número] — [Framework Usado] | Ângulo: [Dor/Benefício/Prova Social/Urgência]
+
+**Versão A:**
+
+| Elemento | Copy | Caract. |
+|---|---|---|
+| Texto Principal | [copy completa do anúncio — pode ser multi-linha, incluir emojis onde apropriado] | [contagem] |
+| Título | [texto do título] | [contagem]/40 |
+| Descrição | [texto da descrição] | [contagem]/30 |
+| Botão de CTA | [Comprar Agora / Saiba Mais / Inscreva-se / Receber Oferta / Agendar / Fale Conosco] | — |
+
+**Versão B (Variação A/B):**
+
+| Elemento | Copy | Caract. |
+|---|---|---|
+| Texto Principal | [copy alternativa] | [contagem] |
+| Título | [título alternativo] | [contagem]/40 |
+| Descrição | [descrição alternativa] | [contagem]/30 |
+| Botão de CTA | [CTA alternativo] | — |
+
+**Por que funciona:** [explicação]
+**Melhor para:** [persona / etapa do funil]
+**Nota de teste:** [o que está sendo testado]</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 5: Distribuição de Anúncios entre Frameworks e Ângulos</h3><p class="text-neutral-300 mb-4 leading-relaxed">Garanta que os 10+ anúncios sejam distribuídos entre frameworks e ângulos:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">#</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Framework</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Ângulo</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Etapa do Funil</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Anúncio 1-2</td><td class="px-3 py-2 border border-dark-600 align-top">PAS</td><td class="px-3 py-2 border border-dark-600 align-top">Dor/Problema</td><td class="px-3 py-2 border border-dark-600 align-top">TOFU (consciência)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Anúncio 3-4</td><td class="px-3 py-2 border border-dark-600 align-top">AIDA</td><td class="px-3 py-2 border border-dark-600 align-top">Benefício/Transformação</td><td class="px-3 py-2 border border-dark-600 align-top">TOFU (consciência)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Anúncio 5-6</td><td class="px-3 py-2 border border-dark-600 align-top">BAB</td><td class="px-3 py-2 border border-dark-600 align-top">Antes/Depois</td><td class="px-3 py-2 border border-dark-600 align-top">MOFU (consideração)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Anúncio 7-8</td><td class="px-3 py-2 border border-dark-600 align-top">4Ps</td><td class="px-3 py-2 border border-dark-600 align-top">Prova Social/Autoridade</td><td class="px-3 py-2 border border-dark-600 align-top">MOFU (consideração)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Anúncio 9-10</td><td class="px-3 py-2 border border-dark-600 align-top">PAS</td><td class="px-3 py-2 border border-dark-600 align-top">Urgência/Escassez</td><td class="px-3 py-2 border border-dark-600 align-top">BOFU (conversão)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Anúncio 11-12</td><td class="px-3 py-2 border border-dark-600 align-top">AIDA</td><td class="px-3 py-2 border border-dark-600 align-top">Tratamento de Objeções</td><td class="px-3 py-2 border border-dark-600 align-top">BOFU (conversão)</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 6: Melhores Práticas Específicas da Plataforma</h3><p class="text-neutral-300 mb-4 leading-relaxed">Inclua uma seção de melhores práticas no final da saída:</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Google Ads:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Fixe o Título 1 com o nome da marca ou palavra-chave principal para RSAs</li><li>Use a sintaxe de inserção de palavras-chave: {KeyWord:Texto Padrão}</li><li>Inclua números e porcentagens (eles aumentam o CTR)</li><li>Cada título deve fazer sentido isoladamente e em combinação</li><li>Use pelo menos 1 título com CTA, 1 com benefício, 1 com palavra-chave</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Meta (Facebook/Instagram):</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>A primeira linha deve prender a atenção — apenas 125 caracteres aparecem antes de "Ver Mais"</li><li>Use quebras de linha e emojis para melhorar a legibilidade</li><li>Prova social no texto principal supera recursos</li><li>Perguntas como títulos geram 30-50% mais engajamento</li><li>Anúncios de Stories: mantenha o texto mínimo, deixe os visuais carregarem a mensagem</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>LinkedIn:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Tom profissional, mas não entediante — autoridade conversacional funciona melhor</li><li>Estatísticas e dados superam apelos emocionais</li><li>Marque páginas de empresa em Conteúdo Patrocinado para prova social</li><li>Anúncios de Mensagem: personalize a linha de assunto e mantenha o corpo abaixo de 500 palavras</li><li>Perguntas no texto de introdução geram 50% mais cliques</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>TikTok:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Escreva como um criador, não como uma marca</li><li>Use linguagem em tendência e tom casual</li><li>Estratégia de hashtags: 3-5 hashtags relevantes, 1 de marca</li><li>Spark Ads (impulsionando posts orgânicos) superam anúncios tradicionais em 2:1</li><li>Os primeiros 2 segundos determinam se eles assistem ou rolam</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>YouTube:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Bumper (6s): Uma mensagem, um visual, um CTA — é isso</li><li>Pre-roll (15s): Prenda a atenção nos primeiros 5 segundos antes do botão de pular aparecer</li><li>Inclua um CTA verbal claro + CTA na tela</li><li>Cartões e telas finais estendem o engajamento</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Pinterest:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Use descrições ricas em palavras-chave (Pinterest é um mecanismo de busca)</li><li>Descrições de 500 caracteres têm o melhor desempenho</li><li>Inclua preços nos títulos de Pins quando relevante</li><li>Formato vertical (proporção 2:3) obtém 60% mais engajamento</li><li>Linguagem de chamada para ação aumenta o clique em 70%</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 7: Banco de Títulos</h3><p class="text-neutral-300 mb-4 leading-relaxed">Inclua um banco de títulos suplementar organizado por ângulo:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">## Banco de Títulos (Referência Rápida)
+
+### Títulos Orientados a Benefícios
+1. [título] ([contagem de caracteres])
+2. [título] ([contagem de caracteres])
+3. [título] ([contagem de caracteres])
+4. [título] ([contagem de caracteres])
+5. [título] ([contagem de caracteres])
+
+### Títulos de Pontos de Dor
+1. [título] ([contagem de caracteres])
+2. [título] ([contagem de caracteres])
+3. [título] ([contagem de caracteres])
+4. [título] ([contagem de caracteres])
+5. [título] ([contagem de caracteres])
+
+### Títulos de Prova Social
+1. [título] ([contagem de caracteres])
+2. [título] ([contagem de caracteres])
+3. [título] ([contagem de caracteres])
+
+### Títulos de Urgência/Escassez
+1. [título] ([contagem de caracteres])
+2. [título] ([contagem de caracteres])
+3. [título] ([contagem de caracteres])
+
+### Títulos de Pergunta
+1. [título] ([contagem de caracteres])
+2. [título] ([contagem de caracteres])
+3. [título] ([contagem de caracteres])</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Formato de Saída</h2><p class="text-neutral-300 mb-4 leading-relaxed">Salve a saída completa em <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-COPY-[PLATAFORMA].md</code> no diretório de trabalho atual.</p><p class="text-neutral-300 mb-4 leading-relaxed">Substitua <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">[PLATAFORMA]</code> pelo nome real da plataforma em maiúsculas: <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">GOOGLE</code>, <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">META</code>, <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">LINKEDIN</code>, <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">TIKTOK</code>, <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">YOUTUBE</code>, <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">PINTEREST</code>.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Estrutura do arquivo:</strong></p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+# Texto Publicitário — [Plataforma]: [Nome do Negócio]
+&gt; Gerado em [data] | Fonte: [URL]
+&gt; Plataforma: [Plataforma] | Formatos: [lista de formatos de anúncio cobertos]
+&gt; Mistura de Estruturas: PAS, AIDA, BAB, 4Ps
+
+## Base do Texto
+[seção de entradas para o texto]
+
+## Variações de Anúncios
+
+### Anúncio 1 — [Estrutura] | [Ângulo]
+[anúncio completo com variação A/B]
+
+### Anúncio 2 — [Estrutura] | [Ângulo]
+[anúncio completo com variação A/B]
+
+[...continuar para todos os 10+ anúncios]
+
+## Banco de Títulos
+[coleção organizada de títulos]
+
+## Boas Práticas da Plataforma
+[dicas específicas da plataforma]
+
+## Próximos Passos
+1. Carregar os anúncios no Gerenciador de Anúncios da [Plataforma]
+2. Configurar testes A/B: começar com Anúncio [X]a vs Anúncio [X]b
+3. Executar `/ads hooks` para gerar aberturas adicionais que prendam a atenção
+4. Executar `/ads video &lt;produto&gt;` se anúncios em vídeo forem necessários
+5. Monitorar o CTR nas primeiras 72 horas e pausar os de baixo desempenho em [limite]</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Lista de Verificação de Qualidade</h2><p class="text-neutral-300 mb-4 leading-relaxed">Antes de entregar a saída, verifique:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>[ ] Pelo menos 10 variações de anúncios geradas</li><li>[ ] Cada anúncio possui uma variação A/B</li><li>[ ] Todas as contagens de caracteres estão dentro dos limites da plataforma</li><li>[ ] As contagens de caracteres são exibidas ao lado de cada elemento de texto</li><li>[ ] Todas as 4 estruturas de texto estão representadas</li><li>[ ] Os anúncios cobrem as etapas TOFU, MOFU e BOFU do funil</li><li>[ ] Cada anúncio inclui a explicação "por que isso funciona"</li><li>[ ] A formatação específica da plataforma está correta (emojis para Meta, tom profissional para LinkedIn, etc.)</li><li>[ ] Os botões/textos de CTA correspondem às opções da plataforma</li><li>[ ] O banco de títulos está incluído</li><li>[ ] A seção de boas práticas está incluída</li><li>[ ] O arquivo de saída está nomeado corretamente: ADS-COPY-[PLATAFORMA].md</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Padrões de Qualidade do Texto</h2><p class="text-neutral-300 mb-4 leading-relaxed">Cada peça de texto publicitário deve seguir estas regras:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Específico em vez de vago</strong> — "Economize 3 horas por semana" supera "Economize tempo"</li><li><strong>Números superam palavras</strong> — "Avaliação de 4,9 estrelas" supera "Altamente avaliado"</li><li><strong>Você em vez de nós</strong> — "Você vai obter..." supera "Nós oferecemos..."</li><li><strong>Apenas voz ativa</strong> — "Reduza seus custos em 40%" supera "Custos podem ser reduzidos"</li><li><strong>Um CTA por anúncio</strong> — Nunca divida a atenção entre duas ações</li><li><strong>Prova em vez de alegações</strong> — "Confiado por mais de 10.000 empresas" supera "A melhor solução"</li><li><strong>Benefício em vez de recurso</strong> — "Durma melhor esta noite" supera "Colchão de espuma de memória"</li><li><strong>Tom nativo da plataforma</strong> — TikTok soa como um amigo, LinkedIn soa como um líder de pensamento, Google soa como uma resposta</li></ol><p class="text-neutral-300 mb-4 leading-relaxed">--- skills/ads-landing/SKILL.md ---</p><hr class="border-dark-600 my-8"><p class="text-neutral-300 mb-4 leading-relaxed">name: ads-landing description: Auditoria e Otimizador de Landing Pages. Analisa landing pages quanto ao alinhamento anúncio-página, correspondência de mensagem, clareza do CTA, sinais de confiança, otimização para mobile e atrito em formulários. Gera sugestões específicas de reescrita com texto antes/depois, ou constrói um esboço completo de landing page do zero.</p><hr class="border-dark-600 my-8">
+    </article>
+
+    <div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+      <a href="modulo-1-1.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo 1.1</a>
+      <a href="modulo-1-3.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">Módulo 1.3 →</a>
+    </div>
+  </main>
+  <footer class="border-t border-dark-600 py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p>Times de IA — Grupo 1 · Material educacional | <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
+    </div>
+  </footer>
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

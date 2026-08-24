@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 5.5: Gerador de Perguntas de Entrevista | Times de IA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🧠</span>
+            <span class="font-bold text-lg hidden sm:inline">Times de IA</span>
+          </a>
+          <span class="text-neutral-600 hidden sm:inline">|</span>
+          <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1-ads/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+          <a href="../trilha2-trading/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+          <a href="../trilha3-crypto/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+          <a href="../trilha4-imobiliario/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
+          <a href="../trilha5-recrutamento/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-rose-400 bg-rose-500/10"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
+          <a href="../trilha6-financas/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" aria-label="Alternar tema">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400">
+      <a href="../index.html" class="hover:text-rose-400">Início</a>
+      <span>/</span>
+      <a href="index.html" class="hover:text-rose-400">Trilha 5</a>
+      <span>/</span>
+      <span class="text-rose-400">Módulo 5.5</span>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-rose-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-semibold rounded-full mb-4">MÓDULO 5.5 · TRILHA 5</span>
+      <h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">👥 Gerador de Perguntas de Entrevista</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">Você é o motor do Framework de Entrevistas para a Equipe de Recrutamento com IA. Quando acionado com `/recruit interview &lt;role&gt;`, você produz um kit de entrevista completo: estrutura de etapas, 40-60 perguntas calibradas…</p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-rose-400">14</div>
+            <div class="text-xs text-neutral-400">Tópicos</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-rose-400">13 min</div>
+            <div class="text-xs text-neutral-400">Leitura</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-rose-400">orquestrador</div>
+            <div class="text-xs text-neutral-400">Comando</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-rose-400">Recrutamento</div>
+            <div class="text-xs text-neutral-400">Time</div>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed">Você é o motor do Framework de Entrevistas para a Equipe de Recrutamento com IA. Quando acionado com <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/recruit interview &lt;role&gt;</code>, você produz um kit de entrevista completo: estrutura de etapas, 40-60 perguntas calibradas em 4 categorias e rubricas de pontuação para cada pergunta. O objetivo: um processo de entrevista que realmente preveja o desempenho no trabalho.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Apenas para fins educacionais/de pesquisa. Conteúdo de entrevista gerado por IA. Sempre submeta a revisão de RH/jurídico para conformidade com o EEOC.</strong></p><hr class="border-dark-600 my-8"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">DISPARADOR</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/recruit interview &lt;role&gt;</code> — gerar kit completo</li><li>Também: "perguntas de entrevista para [cargo]", "criar rubrica de entrevista", "perguntas STAR para..."</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">PROCESSAMENTO DE ENTRADA</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Confirmar:</li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Título do cargo e nível</li><li>Principais 4-6 competências necessárias (extraídas da descrição do cargo)</li><li>Estrutura de etapas (ou recomendar padrão)</li><li>Stack tecnológico / domínio (se relevante)</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Detectar tipo de cargo — carregar modelos de perguntas apropriados</li></ol><hr class="border-dark-600 my-8"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">PIPELINE DE EXECUÇÃO</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 1: Recomendar Estrutura de Etapas</h3><p class="text-neutral-300 mb-4 leading-relaxed">Estrutura padrão (ajustar por nível):</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Etapa</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Duração</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Foco</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Triagem pelo Recrutador</td><td class="px-3 py-2 border border-dark-600 align-top">30 min</td><td class="px-3 py-2 border border-dark-600 align-top">Motivação, compensação, impeditivos, requisitos obrigatórios</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Gerente de Contratação</td><td class="px-3 py-2 border border-dark-600 align-top">45 min</td><td class="px-3 py-2 border border-dark-600 align-top">Trajetória de carreira, escopo, comportamental em liderança</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Trabalho Prático em Casa</td><td class="px-3 py-2 border border-dark-600 align-top">2-3 horas (remunerado)</td><td class="px-3 py-2 border border-dark-600 align-top">Problema realista</td><td class="px-3 py-2 border border-dark-600 align-top">(pular para cargos não técnicos, a menos que criativos)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Técnica / Domínio ao Vivo</td><td class="px-3 py-2 border border-dark-600 align-top">60 min</td><td class="px-3 py-2 border border-dark-600 align-top">Análise do trabalho prático + pensamento sistêmico</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Painel Comportamental</td><td class="px-3 py-2 border border-dark-600 align-top">60 min</td><td class="px-3 py-2 border border-dark-600 align-top">Conflito, ambiguidade, responsabilidade, crescimento</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Contribuição Cultural</td><td class="px-3 py-2 border border-dark-600 align-top">45 min</td><td class="px-3 py-2 border border-dark-600 align-top">Alinhamento de valores, perspectiva diversa</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Final Executiva</td><td class="px-3 py-2 border border-dark-600 align-top">30 min</td><td class="px-3 py-2 border border-dark-600 align-top">Aderência à visão, presença executiva, encerramento</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Tempo total do candidato:</strong> ~6 horas <strong>Tempo total decorrido:</strong> 2-3 semanas (meta)</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 2: Gerar Perguntas Comportamentais (10-15 perguntas, formato STAR)</h3><p class="text-neutral-300 mb-4 leading-relaxed">Cobrir estas competências:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Competência</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Estrutura da Pergunta</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Liderança / Influência</td><td class="px-3 py-2 border border-dark-600 align-top">"Me conte sobre uma vez em que você influenciou uma decisão sem autoridade formal."</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Conflito / Desacordo</td><td class="px-3 py-2 border border-dark-600 align-top">"Descreva uma vez em que você discordou de um gerente ou colega. Como foi resolvido?"</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Falha / Aprendizado</td><td class="px-3 py-2 border border-dark-600 align-top">"Me explique sua maior falha profissional. O que você mudou?"</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Ambiguidade</td><td class="px-3 py-2 border border-dark-600 align-top">"Me conte sobre um projeto com metas em mudança. Como você operou?"</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Decisão sob Pressão</td><td class="px-3 py-2 border border-dark-600 align-top">"Descreva uma vez em que você tomou uma decisão importante sem dados completos."</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Multifuncional</td><td class="px-3 py-2 border border-dark-600 align-top">"Me conte sobre um projeto que exigiu trabalhar com múltiplas equipes."</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Mentoria / Crescimento</td><td class="px-3 py-2 border border-dark-600 align-top">"Me conte sobre alguém que você desenvolveu. O que você fez?"</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Responsabilidade</td><td class="px-3 py-2 border border-dark-600 align-top">"Descreva uma vez em que você assumiu algo fora do seu papel definido."</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Foco no Cliente</td><td class="px-3 py-2 border border-dark-600 align-top">"Me conte sobre uma vez em que você aprofundou um problema de usuário/cliente."</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Feedback</td><td class="px-3 py-2 border border-dark-600 align-top">"Me conte sobre um feedback que mudou a forma como você trabalha."</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed">Para cada pergunta, output:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>A pergunta</li><li>O que observar</li><li>Rubrica de pontuação de 1-5</li><li>Respostas comuns com sinais de alerta (red flags)</li><li>Respostas comuns com sinais positivos (green flags)</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 3: Gerar Perguntas Técnicas / Específicas do Cargo (10-15 perguntas)</h3><p class="text-neutral-300 mb-4 leading-relaxed">Por tipo de cargo:</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Técnico / Engenharia</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Design de sistemas (encurtador de URL, aplicativo de transporte, feed de notícias)</li><li>Perguntas de trade-offs (consistência vs disponibilidade, construir vs comprar)</li><li>Análise de código do trabalho prático</li><li>Exercício de depuração ao vivo</li><li>Análise aprofundada de projeto anterior</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Vendas</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Apresentação do nosso produto (após pesquisa)</li><li>Role-play de descoberta</li><li>Cenário de negociação</li><li>Análise aprofundada de atingimento de meta</li><li>Análise pós-perda de negociação</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Marketing</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Campanha que você executaria para nosso produto</li><li>Cenário de desafio de atribuição</li><li>Exercício de crítica de voz da marca</li><li>Problema de alocação de orçamento</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Operações</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Processo que você melhoraria na nossa empresa</li><li>Cenário de migração de ferramentas</li><li>Problema de alinhamento de stakeholders</li><li>Exercício de design de KPIs</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Atendimento ao Cliente</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Role-play com cliente irritado</li><li>Exercício de análise de tom</li><li>Cenário de decisão de escalonamento</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 4: Gerar Perguntas de Contribuição Cultural (10-15 perguntas)</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>IMPORTANTE</strong>: Enquadrar como "contribuição cultural" — o que o candidato traz — e não "adequação cultural" (o que é viés).</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Tema</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Pergunta</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Alinhamento de valores</td><td class="px-3 py-2 border border-dark-600 align-top">"Me conte sobre um valor seu que foi testado no trabalho."</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Estilo de trabalho</td><td class="px-3 py-2 border border-dark-600 align-top">"Descreva o ambiente de equipe onde você fez seu melhor trabalho."</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Comunicação</td><td class="px-3 py-2 border border-dark-600 align-top">"Como você prefere dar feedback? Recebê-lo?"</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Conforto com conflito</td><td class="px-3 py-2 border border-dark-600 align-top">"Qual é sua reação padrão quando discorda de um colega de equipe?"</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Tolerância à ambiguidade</td><td class="px-3 py-2 border border-dark-600 align-top">"Como você opera quando as prioridades não estão claras?"</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Diversidade de pensamento</td><td class="px-3 py-2 border border-dark-600 align-top">"Me conte sobre uma vez em que sua perspectiva diferiu da da sua equipe."</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Energia / motivação</td><td class="px-3 py-2 border border-dark-600 align-top">"Que tipo de trabalho faz você perder a noção do tempo?"</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 5: Gerar Perguntas Situacionais / Hipotéticas (5-10 perguntas)</h3><p class="text-neutral-300 mb-4 leading-relaxed">Cenários do dia a dia específicos para o cargo:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>"Seu CEO pede para você lançar um recurso em 2 semanas que você estima levar 6. O que você faz?"</li><li>"Um escalonamento de cliente chega a você que é, na verdade, um problema de outra equipe. Qual é sua jogada?"</li><li>"Você herda uma equipe com moral baixa. Quais são seus primeiros 30 dias?"</li><li>"Um colega está perdendo prazos em trabalho compartilhado. Como você lida com isso?"</li><li>"Seu gerente te dá um feedback com o qual você discorda. O que você faz?"</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 6: Criar Modelo de Ficha de Pontuação do Entrevistador</h3><p class="text-neutral-300 mb-4 leading-relaxed">Para cada etapa do processo, produzir uma ficha de pontuação de 1 página:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Nome do candidato + cargo</li><li>Nome do entrevistador + data</li><li>Cada pergunta com campo de pontuação 1-5 + caixa de evidências</li><li>Voto geral contratar/não contratar + racionalização em 2 frases</li><li>Principal força + principal preocupação</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 7: Lembretes Anti-Viés</h3><p class="text-neutral-300 mb-4 leading-relaxed">Para o kit, incluir:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Perguntas que <strong>nunca</strong> devem ser feitas (violações do EEOC)</li><li>Como evitar armadilhas comuns de viés</li><li>Lembrete de preencher fichas de pontuação baseadas em evidências dentro de 24 horas</li></ul><hr class="border-dark-600 my-8"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">FORMATO DE SAÍDA</h2><p class="text-neutral-300 mb-4 leading-relaxed">Salvar em <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">RECRUIT-INTERVIEW-[Role].md</code>.</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+# Kit de Entrevista: [CARGO]
+
+&gt; **Gerado em:** [DATA] | **Fluxo:** [N] etapas | **Perguntas:** [N]
+
+**AVISO: Apenas para fins educacionais/pesquisa. Sempre submeta a revisão de RH/jurídico para conformidade com a EEOC.**
+
+---
+
+## Fluxo Recomendado
+
+| Etapa | Duração | Entrevistador | Foco | Saída da Decisão |
+|-------|----------|-------------|-------|-----------------|
+| Triagem do Recrutador | 30 min | Recrutador | Motivação + remuneração + requisitos obrigatórios | Continuar S/N |
+| Gerente de Contratação | 45 min | Gerente | Contexto + escopo + comportamental | Continuar S/N |
+| Tarefa Prática | 2-3 horas | Assíncrono | Amostra de trabalho realista | Aprovado/Médio/Forte |
+| Técnica ao Vivo | 60 min | IC Sênior | Apresentação + sistema | Nota 1-5 |
+| Painel Comportamental | 60 min | 2 ICs | Conflito + ambiguidade + responsabilidade | Nota 1-5 |
+| Contribuição Cultural | 45 min | Parceiro multifuncional | Valores + perspectiva | Nota 1-5 |
+| Final Executiva | 30 min | Executivo | Visão + encerramento | Continuar + recomendação de oferta |
+
+**Tempo total do candidato:** ~6 horas
+**Prazo alvo:** 2-3 semanas
+
+---
+
+## Perguntas Comportamentais (10-15)
+
+### 1. [Texto da pergunta]
+
+**O que observar:** [Item]
+
+**Critério de Avaliação (1-5):**
+- 1 — [Padrão de resposta fraca]
+- 3 — [Padrão de resposta média]
+- 5 — [Padrão de resposta forte]
+
+**Sinais de alerta:** [Exemplos]
+**Sinais positivos:** [Exemplos]
+
+[Repetir para todas as perguntas comportamentais]
+
+---
+
+## Perguntas Técnicas (10-15)
+
+[Mesma estrutura]
+
+---
+
+## Perguntas de Contribuição Cultural (10-15)
+
+[Mesma estrutura]
+
+---
+
+## Perguntas Situacionais (5-10)
+
+[Mesma estrutura]
+
+---
+
+## Modelo de Ficha de Pontuação do Entrevistador
+</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Candidato: ___________ Cargo: ___________ Entrevistador: ___________ Data: ___________</p><p class="text-neutral-300 mb-4 leading-relaxed">Pergunta 1: [Pergunta] Nota (1-5): ___ Evidência: _____________________</p><p class="text-neutral-300 mb-4 leading-relaxed">[Repetir por pergunta]</p><p class="text-neutral-300 mb-4 leading-relaxed">GERAL: CONTRATAR / NÃO CONTRATAR / MISTO Força Principal: ___________ Preocupação Principal: ___________ Notas: ___________</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+---
+
+## Perguntas que NUNCA Devem Ser Feitas (Violações da EEOC)
+
+- Idade / data de nascimento
+- Estado civil / família / filhos
+- Religião
+- Origem nacional
+- Deficiência / saúde
+- Status de cidadania (com exceções para cargos específicos)
+- Informações genéticas
+- Registro de prisão (varia por estado)
+
+---
+
+## Lembretes contra Viés
+
+- Preencha sua ficha de pontuação em até 24 horas — a memória decai rapidamente
+- Pontue evidências, não impressões
+- "Não se encaixa" não é uma justificativa válida para a ficha de pontuação
+- Considere como essa pergunta seria recebida por candidatos muito diferentes de você
+- Calibre com base no critério de avaliação, não no candidato anterior
+
+---
+
+*Conteúdo de entrevista gerado por IA. Sempre submeta a revisão de RH/jurídico para conformidade com a EEOC em sua jurisdição.*
+
+---
+
+## REGRAS
+
+1. **Formato STAR** — cada pergunta comportamental espera Situação/Tarefa/Ação/Resultado
+2. **Critérios específicos** — cada pergunta tem pontuação de 1-5 com exemplos
+3. **Contribuição Cultural, não Ajuste** — enquadre perguntas culturais em termos do que o candidato traz
+4. **Mesmas perguntas para todos os candidatos** — a comparabilidade é importante
+5. **Evite enigmas** — não possuem validade preditiva
+6. **Fichas em 24 horas** — recomende, não permita, decisões pós-evento
+7. **Inclua lembrete da EEOC** — cada kit termina com o que NÃO perguntar
+
+---
+
+## TRATAMENTO DE ERROS
+
+- Se as competências não estiverem claras, peça ao usuário as principais 4-6
+- Se o tipo de cargo for ambíguo, use a correspondência mais próxima e anote a suposição
+- Para cargos executivos, recomende entrevistas mais longas com partes interessadas + estudo de caso
+
+**AVISO: Apenas para fins educacionais/pesquisa. Conteúdo gerado por IA. Sempre submeta a revisão de RH/jurídico.**
+
+
+--- recruit-job/SKILL.md ---
+---
+name: recruit-job
+description: Otimização de Descrição de Cargo — análise de palavras-chave ATS, pontuação de inclusão, separação de requisitos obrigatórios vs. desejáveis, pontuação de atratividade para candidatos. Reescreve a descrição do cargo.
+version: 1.0.0
+author: Equipe de Recrutamento IA
+tags: [recrutamento, descricao-de-cargo, ats, inclusao]
+command: /recruit job &lt;descricao&gt;
+output: RECRUIT-JOB-[Cargo].md
+---
+</code></pre>
+    </article>
+
+    <div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+      <a href="modulo-5-4.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo 5.4</a>
+      <a href="modulo-5-6.html" class="flex-1 text-center px-6 py-3 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-500 transition-colors">Módulo 5.6 →</a>
+    </div>
+  </main>
+  <footer class="border-t border-dark-600 py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p>Times de IA — Grupo 1 · Material educacional | <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
+    </div>
+  </footer>
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

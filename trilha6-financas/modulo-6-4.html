@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 6.4: /finance compare — Comparação de Cenários Lado a Lado | Times de IA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🧠</span>
+            <span class="font-bold text-lg hidden sm:inline">Times de IA</span>
+          </a>
+          <span class="text-neutral-600 hidden sm:inline">|</span>
+          <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1-ads/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+          <a href="../trilha2-trading/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+          <a href="../trilha3-crypto/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+          <a href="../trilha4-imobiliario/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
+          <a href="../trilha5-recrutamento/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
+          <a href="../trilha6-financas/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-cyan-400 bg-cyan-500/10"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" aria-label="Alternar tema">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400">
+      <a href="../index.html" class="hover:text-cyan-400">Início</a>
+      <span>/</span>
+      <a href="index.html" class="hover:text-cyan-400">Trilha 6</a>
+      <span>/</span>
+      <span class="text-cyan-400">Módulo 6.4</span>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-cyan-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full mb-4">MÓDULO 6.4 · TRILHA 6</span>
+      <h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">💰 /finance compare — Comparação de Cenários Lado a Lado</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">**AVISO: Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro.**</p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-cyan-400">6</div>
+            <div class="text-xs text-neutral-400">Tópicos</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-cyan-400">4 min</div>
+            <div class="text-xs text-neutral-400">Leitura</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-cyan-400">orquestrador</div>
+            <div class="text-xs text-neutral-400">Comando</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-cyan-400">Finanças</div>
+            <div class="text-xs text-neutral-400">Time</div>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro.</strong></p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Objetivo</h2><p class="text-neutral-300 mb-4 leading-relaxed">Auxiliar o usuário a tomar melhores decisões financeiras ao modelar dois caminhos lado a lado em um horizonte de 10 anos. Apresenta o custo total, o custo de oportunidade, o risco e uma recomendação clara com justificativa.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Quando Ativar</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>O usuário digita <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance compare &lt;cenário1&gt; &lt;cenário2&gt;</code></li><li>O usuário pergunta "devo fazer X ou Y?" onde ambos são escolhas financeiras</li><li>O usuário está ponderando uma decisão importante: moradia, emprego, dívidas, investimentos, veículo de aposentadoria, compra de veículo, educação</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Pares de Cenários Suportados</h2><p class="text-neutral-300 mb-4 leading-relaxed">A skill lida com quaisquer dois caminhos financeiros. Pares comuns:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Decisão</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Cenário A</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Cenário B</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Moradia</td><td class="px-3 py-2 border border-dark-600 align-top">Comprar casa</td><td class="px-3 py-2 border border-dark-600 align-top">Continuar alugando</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Carreira</td><td class="px-3 py-2 border border-dark-600 align-top">Aceitar novo emprego (salário $X)</td><td class="px-3 py-2 border border-dark-600 align-top">Manter emprego atual</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Estratégia de dívida</td><td class="px-3 py-2 border border-dark-600 align-top">Pagar hipoteca antecipadamente</td><td class="px-3 py-2 border border-dark-600 align-top">Investir o dinheiro extra</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Veículo de aposentadoria</td><td class="px-3 py-2 border border-dark-600 align-top">Roth IRA</td><td class="px-3 py-2 border border-dark-600 align-top">Traditional IRA / 401k</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Veículo</td><td class="px-3 py-2 border border-dark-600 align-top">Comprar carro novo</td><td class="px-3 py-2 border border-dark-600 align-top">Alugar</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Veículo</td><td class="px-3 py-2 border border-dark-600 align-top">Comprar usado à vista</td><td class="px-3 py-2 border border-dark-600 align-top">Financiar novo</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Educação</td><td class="px-3 py-2 border border-dark-600 align-top">Pós-graduação</td><td class="px-3 py-2 border border-dark-600 align-top">Continuar trabalhando</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Geográfico</td><td class="px-3 py-2 border border-dark-600 align-top">Mudar para cidade de custo menor</td><td class="px-3 py-2 border border-dark-600 align-top">Permanecer na cidade atual</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Negócios</td><td class="px-3 py-2 border border-dark-600 align-top">Emprego W-2</td><td class="px-3 py-2 border border-dark-600 align-top">Autônomo / 1099</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Investimentos</td><td class="px-3 py-2 border border-dark-600 align-top">Reduzir dívidas</td><td class="px-3 py-2 border border-dark-600 align-top">Investir em fundos de índice</td></tr></tbody></table></div><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Entradas Obrigatórias</h2><p class="text-neutral-300 mb-4 leading-relaxed">Peça ao usuário que especifique:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Os dois cenários</strong> (uma frase para cada)</li><li><strong>Horizonte temporal</strong> (padrão 10 anos; algumas decisões justificam 20-30 anos)</li><li><strong>Principais premissas financeiras por cenário:</strong></li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Custo inicial / entrada</li><li>Custo mensal recorrente</li><li>Taxa de valorização/retorno esperada</li><li>Tratamento tributário</li><li>Valor final (se aplicável: patrimônio da casa, valor do veículo, saldo da conta)</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Alíquota marginal de imposto do usuário</strong> (para comparações com consciência fiscal)</li><li><strong>Taxa de desconto do usuário</strong> (padrão: 7% — retorno real de longo prazo do S&amp;P 500)</li></ol><p class="text-neutral-300 mb-4 leading-relaxed">Se o usuário não souber as premissas, use padrões razoáveis e rotule-os claramente:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Valorização da casa: 3,5%/ano</li><li>Inflação do aluguel: 3%/ano</li><li>Retorno real do mercado de ações: 7%/ano</li><li>Retorno real de títulos: 2%/ano</li><li>Inflação: 3%/ano</li><li>Taxa de hipoteca: mercado atual (pergunte ao usuário ou use 7% como padrão para 2026)</li><li>Imposto sobre propriedade: 1,1% do valor da casa/ano</li><li>Manutenção: 1% do valor da casa/ano</li><li>Seguro: 0,5% do valor da casa/ano</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Estrutura de Cálculo</h2><p class="text-neutral-300 mb-4 leading-relaxed">Para cada cenário, calcule ano a ano:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Saída de caixa</strong> — Todo dinheiro que sai (entrada, custos mensais, impostos)</li><li><strong>Entrada de caixa / acúmulo de patrimônio</strong> — Amortização do principal, valorização, retornos de investimento</li><li><strong>Impacto no patrimônio líquido</strong> — Valor final menos o caixa acumulado gasto</li><li><strong>Custo de oportunidade</strong> — Quanto as saídas de caixa teriam gerado se investidas a 7%?</li></ol><h3 class="font-bold text-lg mt-8 mb-3 text-white">Custo Total (10 anos)</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">total_cost = sum(annual_cash_outflow) - end_state_asset_value</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Custo de Oportunidade</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">opportunity_cost = FV(monthly_diff, 7%, 10yr) where monthly_diff = scenario_A_cost - scenario_B_cost</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Perfil de Risco</h3><p class="text-neutral-300 mb-4 leading-relaxed">Classifique cada cenário de 1 a 10 em:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Risco de liquidez</strong> — Você consegue sacar seu dinheiro?</li><li><strong>Risco de concentração</strong> — Demais patrimônio líquido está vinculado aqui?</li><li><strong>Risco de renda/emprego</strong> — Exige emprego estável?</li><li><strong>Risco de mercado</strong> — Sensível a taxas de juros, mercado imobiliário, mercado de ações?</li><li><strong>Reversibilidade</strong> — É possível desfazer esta decisão facilmente?</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Formato de Saída</h2><p class="text-neutral-300 mb-4 leading-relaxed">Salve em <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">FINANCE-COMPARE.md</code> no diretório de trabalho atual.</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre"></code></pre>
+    </article>
+
+    <div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+      <a href="modulo-6-3.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo 6.3</a>
+      <a href="modulo-6-5.html" class="flex-1 text-center px-6 py-3 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-500 transition-colors">Módulo 6.5 →</a>
+    </div>
+  </main>
+  <footer class="border-t border-dark-600 py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p>Times de IA — Grupo 1 · Material educacional | <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
+    </div>
+  </footer>
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

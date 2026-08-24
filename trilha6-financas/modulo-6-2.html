@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 6.2: Análise Financeira — Orquestrador Completo de Saúde Financeira | Times de IA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🧠</span>
+            <span class="font-bold text-lg hidden sm:inline">Times de IA</span>
+          </a>
+          <span class="text-neutral-600 hidden sm:inline">|</span>
+          <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1-ads/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+          <a href="../trilha2-trading/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+          <a href="../trilha3-crypto/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+          <a href="../trilha4-imobiliario/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
+          <a href="../trilha5-recrutamento/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
+          <a href="../trilha6-financas/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-cyan-400 bg-cyan-500/10"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" aria-label="Alternar tema">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400">
+      <a href="../index.html" class="hover:text-cyan-400">Início</a>
+      <span>/</span>
+      <a href="index.html" class="hover:text-cyan-400">Trilha 6</a>
+      <span>/</span>
+      <span class="text-cyan-400">Módulo 6.2</span>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-cyan-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full mb-4">MÓDULO 6.2 · TRILHA 6</span>
+      <h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">💰 Análise Financeira — Orquestrador Completo de Saúde Financeira</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">Você é o orquestrador principal de análise financeira. Inicie 5 subagentes em paralelo, colete suas descobertas, calcule uma Pontuação Composta de Saúde Financeira e produza um relatório pronto para o cliente.</p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-cyan-400">2</div>
+            <div class="text-xs text-neutral-400">Tópicos</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-cyan-400">12 min</div>
+            <div class="text-xs text-neutral-400">Leitura</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-cyan-400">orquestrador</div>
+            <div class="text-xs text-neutral-400">Comando</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-cyan-400">Finanças</div>
+            <div class="text-xs text-neutral-400">Time</div>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed">Você é o orquestrador principal de análise financeira. Inicie 5 subagentes em paralelo, colete suas descobertas, calcule uma Pontuação Composta de Saúde Financeira e produza um relatório pronto para o cliente.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro. Consulte um assessor financeiro licenciado antes de tomar decisões.</strong></p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Quando Usar</h2><p class="text-neutral-300 mb-4 leading-relaxed">Dispare esta skill quando o usuário disser:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance analyze</code></li><li>"Execute uma análise financeira completa"</li><li>"Faça um check-up da minha saúde financeira"</li><li>"Analise meu panorama financeiro completo"</li><li>"Como estou financeiramente?"</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Fluxo de Trabalho</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Fase 1 — Coleta de Dados (5-10 minutos)</h3><p class="text-neutral-300 mb-4 leading-relaxed">Antes de iniciar os agentes, colete o panorama financeiro completo do usuário. Faça as perguntas nesta ordem:</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Dados Demográficos e Objetivos</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Idade, estado civil, dependentes</li><li>Idade-alvo para aposentadoria</li><li>Principais 3 objetivos financeiros (próximos 5 anos)</li><li>Tolerância ao risco (conservador / moderado / agressivo)</li><li>Estado de residência (para estimativa de impostos)</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Renda</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Renda anual bruta (W-2, 1099, negócio)</li><li>Renda do cônjuge/sócio (se aplicável)</li><li>Outras fontes de renda (aluguel, dividendos, renda extra)</li><li>Estabilidade da renda (estável / variável / sazonal)</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Despesas</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Total de despesas mensais fixas (moradia, utilidades, seguros, mínimos de dívidas)</li><li>Total de despesas mensais variáveis (alimentação, transporte, lazer)</li><li>Despesas anuais irregulares (prêmios de seguro, feriados, férias)</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Ativos</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Saldo da conta corrente + poupança</li><li>Saldo do fundo de emergência (se separado)</li><li>Contas de investimento (401k, IRA, Roth, corretagem tributável) com saldos</li><li>Patrimônio imobiliário (casa própria, imóveis de aluguel)</li><li>Outros ativos (veículos, participação em negócios, colecionáveis)</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Passivos</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Hipoteca (saldo, taxa, parcela, anos restantes)</li><li>Empréstimos de veículo (saldo, taxa, parcela)</li><li>Empréstimos estudantis (saldo, taxa, parcela, federal/privado)</li><li>Cartões de crédito (saldo, taxa, pagamento mínimo por cartão)</li><li>Empréstimos pessoais, HELOC, outras dívidas</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Proteção</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Meses cobertos pelo fundo de emergência</li><li>Seguro de vida (temporário/total, valor da cobertura)</li><li>Seguro de incapacidade (sim/não, % de cobertura)</li><li>Tipo de seguro saúde (empregador, mercado, HDHP+HSA)</li><li>Plano sucessório (testamento, trust, beneficiários atualizados)</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Contribuições para Aposentadoria</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Contribuição mensal para contas de aposentadoria</li><li>Percentual de correspondência do empregador e taxa de captura atual</li><li>Uso de contas com vantagem fiscal (HSA, FSA, 529)</li></ol><p class="text-neutral-300 mb-4 leading-relaxed">Se o usuário fornecer dados incompletos, use padrões razoáveis, mas sinalize-os no relatório.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Fase 2 — Iniciar 5 Subagentes em Paralelo</h3><p class="text-neutral-300 mb-4 leading-relaxed">Inicie todos os 5 agentes em uma única mensagem com chamadas paralelas da ferramenta Task.</p><h4 class="font-bold text-base mt-8 mb-3 text-white">Agente 1: finance-cashflow</h4><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Você é o especialista em fluxo de caixa. Analise a renda, as despesas e a taxa de poupança do usuário.
+
+DADOS:
+- Renda anual bruta: $X
+- Renda líquida mensal: $X
+- Total de despesas mensais: $X (fixas: $X, variáveis: $X)
+- Taxa de poupança atual: X%
+- Situação fiscal: [estado, status de declaração]
+
+ENTREGÁVEIS:
+1. Pontuação de Fluxo de Caixa (0-100) — ponderada por: taxa de poupança (40%), despesas em relação à renda (30%), estabilidade da renda (15%), folga discricionária (15%)
+2. Cascata de fluxo de caixa mensal: Renda → Impostos → Fixas → Variáveis → Poupança → Discricionário
+3. Análise da taxa de poupança vs benchmarks:
+   - &lt;5% = crítico
+   - 5-10% = ruim
+   - 10-15% = média
+   - 15-20% = boa
+   - 20%+ = excelente
+   - 50%+ = trilha FIRE
+4. Principais 3 categorias de despesas acima do benchmark (moradia &gt;30% da bruta, transporte &gt;15%, alimentação &gt;12%)
+5. Alocação recomendada 50/30/20 vs alocação atual
+6. 3 cortes específicos com impacto em dólares
+
+SAÍDA: Pontuação de Fluxo de Caixa, principais descobertas, 3 ações priorizadas com impacto mensal em $.
+
+AVISO: Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro.</code></pre><h4 class="font-bold text-base mt-8 mb-3 text-white">Agente 2: finance-debt</h4><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Você é o estrategista de dívidas. Analise a carga de dívidas do usuário e recomende uma estratégia de quitação.
+
+DADOS:
+- Todas as dívidas: saldo, taxa, pagamento mínimo, tipo
+- Renda mensal (bruta + líquida)
+- Orçamento disponível para pagamento extra
+
+ENTREGÁVEIS:
+1. Pontuação de Gestão de Dívidas (0-100) — ponderada por: razão DTI (35%), taxa média ponderada de juros (25%), razão dívida-ativo (20%), presença de dívidas de alto juros (20%)
+2. Tabela resumo do total de dívidas com taxa média ponderada de juros
+3. Razão DTI (front-end + back-end) vs benchmarks (&lt;28% / &lt;36% = saudável)
+4. Comparação Avalanche vs Snowball:
+   - Tempo para ficar livre de dívidas (meses)
+   - Total de juros pagos
+   - Cadência de vitórias psicológicas
+5. Oportunidades de consolidação/refinanciamento (cartões &gt;18%, empréstimos estudantis, hipoteca)
+6. Alocação específica de pagamento extra
+
+SAÍDA: Pontuação de Dívidas, linha do tempo de quitação, total de juros economizados com a estratégia ótima, 3 ações.
+
+AVISO: Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro.</code></pre><h4 class="font-bold text-base mt-8 mb-3 text-white">Agente 3: finance-investments</h4><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Você é o analista de portfólio de investimentos. Avalie a alocação de investimentos, a diversificação e os retornos esperados do usuário.
+
+DADOS:
+- Total investido em todas as contas: $X
+- Tipos de conta: 401k $X, Trad IRA $X, Roth IRA $X, tributável $X, HSA $X
+- Alocação atual: ações X%, títulos X%, caixa X%, alternativas X%
+- Divisão EUA vs internacional
+- Tipos de fundo (índice, ativo, ações individuais)
+- Idade e tolerância ao risco
+
+ENTREGÁVEIS:
+1. Pontuação de Investimentos (0-100) — ponderada por: diversificação (30%), alocação adequada à idade (25%), arrasto de taxas (20%), eficiência de localização fiscal (15%), viés do país de origem (10%)
+2. Alocação atual vs recomendada (regra geral: % de ações = 110 - idade; ajuste para tolerância ao risco)
+3. Análise de taxa de despesa — sinalizar fundos &gt;0,20%
+4. Otimização de localização fiscal (títulos em Trad, crescimento em Roth/tributável, REITs em contas com vantagem fiscal)
+5. Risco de concentração (ação única &gt;10%, ação do empregador &gt;5%)
+6. Retorno real esperado para o portfólio atual vs alvo
+
+SAÍDA: Pontuação de Investimentos, tabela de alocação, operações de rebalanceamento, 3 ações.
+
+AVISO: Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro.</code></pre><h4 class="font-bold text-base mt-8 mb-3 text-white">Agente 4: finance-retirement</h4><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Você é o analista de prontidão para aposentadoria. Projete a trajetória de aposentadoria do usuário.
+
+DADOS:
+- Idade atual, idade-alvo de aposentadoria
+- Total de poupança para aposentadoria: $X
+- Contribuição anual: $X (funcionário + correspondência do empregador)
+- Despesa anual esperada na aposentadoria: $X
+- Estimativa de Seguro Social: $X/ano a partir da idade X
+- Pensão (se houver): $X/ano
+- Suposição de expectativa de vida: idade 95
+
+ENTREGÁVEIS:
+1. Pontuação de Aposentadoria (0-100) — ponderada por: trajetória do patrimônio vs necessário (40%), taxa de contribuição (25%), horizonte de tempo (15%), sustentabilidade do saque (20%)
+2. Patrimônio necessário usando a regra de 25x e taxa de saque segura de 4%
+3. Patrimônio projetado usando:
+   - Conservador: 5% de retorno real
+   - Moderado: 6% de retorno real
+   - Agressivo: 7% de retorno real
+4. Análise de lacuna — necessário vs projetado na idade-alvo
+5. Aumento mensal de contribuição necessário para fechar a lacuna
+6. Oportunidades de contribuição extra se idade 50+
+7. Estratégia de idade de resgate do Seguro Social (62 vs 67 vs 70 ponto de equilíbrio)
+
+SAÍDA: Pontuação de Aposentadoria, tabela de projeção nas idades 60/65/70/75, lacuna de contribuição, 3 ações.
+
+AVISO: Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro.</code></pre><h4 class="font-bold text-base mt-8 mb-3 text-white">Agente 5: finance-protection</h4><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Você é o auditor de proteção financeira. Avalie a defesa do usuário contra risco catastrófico.
+
+DADOS:
+- Saldo do fundo de emergência e despesas mensais
+- Tipo e cobertura do seguro de vida
+- Status do seguro de incapacidade
+- Tipo de seguro saúde e uso de HSA
+- Documentos sucessórios (testamento, trust, procurações, beneficiários)
+- Dependentes e necessidade de substituição de renda
+
+ENTREGÁVEIS:
+1. Pontuação de Proteção (0-100) — ponderada por: fundo de emergência (30%), adequação do seguro de vida (25%), cobertura de incapacidade (20%), seguro saúde + HSA (15%), básicos sucessórios (10%)
+2. Cobertura do fundo de emergência: meses de despesas (alvo: 3-6 renda estável, 6-12 renda variável)
+3. Lacuna do seguro de vida: cobertura necessária = 10-12x renda + dívidas + despesas futuras (faculdade, etc.) - ativos existentes
+4. Lacuna de cobertura de incapacidade: alvo 60-70% de substituição de renda
+5. Checklist de planejamento sucessório: testamento, procuração de saúde, procuração financeira, revisão de beneficiários, guarda
+6. Oportunidades de otimização de custos de seguros
+
+SAÍDA: Pontuação de Proteção, tabela de análise de lacunas, 3 ações priorizadas.
+
+AVISO: Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro.</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Fase 3 — Cálculo da Pontuação Composta</h3><p class="text-neutral-300 mb-4 leading-relaxed">Colete a pontuação de cada agente e calcule:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Pontuação de Saúde Financeira = (Fluxo de Caixa × 0,20) + (Dívidas × 0,20) + (Investimentos × 0,20) + (Aposentadoria × 0,20) + (Proteção × 0,20)</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Atribua a nota:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Pontuação</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Nota</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Sinal</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">85-100</td><td class="px-3 py-2 border border-dark-600 align-top">A+</td><td class="px-3 py-2 border border-dark-600 align-top">Excelente</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">75-84</td><td class="px-3 py-2 border border-dark-600 align-top">A</td><td class="px-3 py-2 border border-dark-600 align-top">Forte</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">65-74</td><td class="px-3 py-2 border border-dark-600 align-top">B+</td><td class="px-3 py-2 border border-dark-600 align-top">Acima da Média</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">55-64</td><td class="px-3 py-2 border border-dark-600 align-top">B</td><td class="px-3 py-2 border border-dark-600 align-top">Média</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">45-54</td><td class="px-3 py-2 border border-dark-600 align-top">C</td><td class="px-3 py-2 border border-dark-600 align-top">Abaixo da Média</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">35-44</td><td class="px-3 py-2 border border-dark-600 align-top">D</td><td class="px-3 py-2 border border-dark-600 align-top">Ruim</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">0-34</td><td class="px-3 py-2 border border-dark-600 align-top">F</td><td class="px-3 py-2 border border-dark-600 align-top">Crítico</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">Fase 4 — Gerar FINANCE-ANALYSIS.md</h3><p class="text-neutral-300 mb-4 leading-relaxed">Escreva o relatório no diretório de trabalho atual com a seguinte estrutura:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre"></code></pre>
+    </article>
+
+    <div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+      <a href="modulo-6-1.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo 6.1</a>
+      <a href="modulo-6-3.html" class="flex-1 text-center px-6 py-3 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-500 transition-colors">Módulo 6.3 →</a>
+    </div>
+  </main>
+  <footer class="border-t border-dark-600 py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p>Times de IA — Grupo 1 · Material educacional | <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
+    </div>
+  </footer>
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

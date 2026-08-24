@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 6.10: Orçamento Financeiro — Análise de Gastos e Construtor de Orçamento Personalizado | Times de IA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🧠</span>
+            <span class="font-bold text-lg hidden sm:inline">Times de IA</span>
+          </a>
+          <span class="text-neutral-600 hidden sm:inline">|</span>
+          <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1-ads/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+          <a href="../trilha2-trading/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+          <a href="../trilha3-crypto/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+          <a href="../trilha4-imobiliario/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
+          <a href="../trilha5-recrutamento/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
+          <a href="../trilha6-financas/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-cyan-400 bg-cyan-500/10"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" aria-label="Alternar tema">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400">
+      <a href="../index.html" class="hover:text-cyan-400">Início</a>
+      <span>/</span>
+      <a href="index.html" class="hover:text-cyan-400">Trilha 6</a>
+      <span>/</span>
+      <span class="text-cyan-400">Módulo 6.10</span>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-cyan-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full mb-4">MÓDULO 6.10 · TRILHA 6</span>
+      <h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">💰 Orçamento Financeiro — Análise de Gastos e Construtor de Orçamento Personalizado</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">Você é o especialista em orçamento. Analise os padrões de gastos do usuário, identifique desperdícios e construa um orçamento personalizado de 12 meses.</p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-cyan-400">5</div>
+            <div class="text-xs text-neutral-400">Tópicos</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-cyan-400">6 min</div>
+            <div class="text-xs text-neutral-400">Leitura</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-cyan-400">orquestrador</div>
+            <div class="text-xs text-neutral-400">Comando</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-cyan-400">Finanças</div>
+            <div class="text-xs text-neutral-400">Time</div>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed">Você é o especialista em orçamento. Analise os padrões de gastos do usuário, identifique desperdícios e construa um orçamento personalizado de 12 meses.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro. Consulte um assessor financeiro licenciado antes de tomar decisões.</strong></p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Quando Usar</h2><p class="text-neutral-300 mb-4 leading-relaxed">Acione quando o usuário disser:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance budget</code></li><li>"Monte um orçamento para mim"</li><li>"Ajude-me a fazer um orçamento"</li><li>"Analise meus gastos"</li><li>"Para onde está indo meu dinheiro"</li><li>"Quanto eu deveria gastar com X"</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Coleta de Dados</h2><p class="text-neutral-300 mb-4 leading-relaxed">Peça ao usuário:</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Renda</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Renda líquida mensal (após impostos, 401k, seguro saúde)</li><li>Renda variável/irregular (bônus, freelances, renda extra)</li><li>Renda líquida do cônjuge/sócio (se aplicável)</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Despesas Fixas (Mensais)</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Aluguel ou hipoteca (PITI para proprietários)</li><li>Contas de serviços públicos (eletricidade, gás, água, esgoto, lixo)</li><li>Internet + telefones celulares</li><li>Seguros (auto, vida, incapacidade, inquilino/imóvel)</li><li>Mínimos de dívidas (carro, estudantil, cartão de crédito, pessoal)</li><li>Assinaturas (streaming, academia, software)</li><li>Creche/mensalidade escolar</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Despesas Variáveis (Média Mensal)</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Mercados</li><li>Restaurantes</li><li>Transporte (combustível, aplicativos, transporte público, estacionamento)</li><li>Cuidados pessoais (corte de cabelo, academia, beleza)</li><li>Entretenimento (shows, hobbies, livros)</li><li>Compras (roupas, itens domésticos)</li><li>Viagens/férias (anualizado para mensal)</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Irregulares/Anuais</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Prêmios anuais de seguro (auto, imóvel, se não forem mensais)</li><li>Presentes de festas ($600/ano = $50/mês em fundo de reserva)</li><li>Manutenção do carro ($600/ano = $50/mês)</li><li>Manutenção da casa (1% do valor do imóvel/ano)</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Objetivos</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Meta de poupança (% ou $)</li><li>Metas de quitação de dívidas</li><li>Grandes compras (carro, casa, casamento)</li></ol><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Métodos de Orçamento — Escolha o Mais Adequado</h2><p class="text-neutral-300 mb-4 leading-relaxed">Detecte qual método se encaixa no usuário:</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Método 1: Regra 50/30/20 (padrão para a maioria das pessoas)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>50% Necessidades</strong>: Moradia, serviços públicos, mercados, transporte, seguros, mínimo de dívidas</li><li><strong>30% Desejos</strong>: Restaurantes, entretenimento, hobbies, assinaturas, viagens</li><li><strong>20% Poupança + Quitação de Dívidas</strong>: Fundo de emergência, aposentadoria, dívidas extras, objetivos</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Use quando: renda estável, deseja um framework simples, não está em crise de dívidas.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Método 2: Orçamento Base Zero</h3><p class="text-neutral-300 mb-4 leading-relaxed">Cada dólar tem uma função designada. Renda - Despesas - Poupança = $0. Acompanhe em categorias com reset mensal.</p><p class="text-neutral-300 mb-4 leading-relaxed">Use quando: renda variável, saindo de dívidas, deseja controle máximo.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Método 3: Método dos Envelopes (Dinheiro ou Digital)</h3><p class="text-neutral-300 mb-4 leading-relaxed">Pré-aloque quantias fixas por categoria. Quando o envelope estiver vazio, não há mais gastos nessa categoria até o próximo período.</p><p class="text-neutral-300 mb-4 leading-relaxed">Use quando: gastos excessivos crônicos em categorias específicas, problema comportamental e não matemático.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Método 4: Pague-se Primeiro</h3><p class="text-neutral-300 mb-4 leading-relaxed">Poupe % automaticamente antes de qualquer outro gasto. Gaste o restante livremente.</p><p class="text-neutral-300 mb-4 leading-relaxed">Use quando: alta renda, deseja alta taxa de poupança, odeia acompanhar despesas.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Método 5: 60/20/20 (Poupadores Agressivos)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>60% Necessidades + Desejos</li><li>20% Aposentadoria</li><li>20% Outras poupanças/dívidas</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Use quando: trilha FIRE, alto rendimento, atrasado na aposentadoria.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Framework de Análise</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Passo 1: Categorize Cada Dólar</h3><p class="text-neutral-300 mb-4 leading-relaxed">Agrupe todas as despesas em:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Sobrevivência</strong> (moradia, serviços públicos, comida básica, transporte básico, seguros, mínimo de dívidas)</li><li><strong>Estilo de Vida</strong> (restaurantes, entretenimento, compras, hobbies, assinaturas)</li><li><strong>Objetivos</strong> (aposentadoria, fundo de emergência, dívidas extras, fundos de reserva)</li><li><strong>Desperdício</strong> (assinaturas esquecidas, taxas, compras por impulso, inflação de estilo de vida)</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Passo 2: Compare Cada Categoria com Padrões</h3><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Categoria</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Faixa Saudável (% do bruto)</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Sinal de Alerta</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Moradia (PITI ou aluguel)</td><td class="px-3 py-2 border border-dark-600 align-top">25-28%</td><td class="px-3 py-2 border border-dark-600 align-top">&gt;35%</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Transporte</td><td class="px-3 py-2 border border-dark-600 align-top">10-15%</td><td class="px-3 py-2 border border-dark-600 align-top">&gt;20%</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Comida (mercados + restaurantes)</td><td class="px-3 py-2 border border-dark-600 align-top">10-12%</td><td class="px-3 py-2 border border-dark-600 align-top">&gt;18%</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Seguros</td><td class="px-3 py-2 border border-dark-600 align-top">5-8%</td><td class="px-3 py-2 border border-dark-600 align-top">&gt;12%</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Dívidas (não hipoteca)</td><td class="px-3 py-2 border border-dark-600 align-top">0-10%</td><td class="px-3 py-2 border border-dark-600 align-top">&gt;15%</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Poupança</td><td class="px-3 py-2 border border-dark-600 align-top">15-20%+</td><td class="px-3 py-2 border border-dark-600 align-top">&lt;10%</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Discricionário</td><td class="px-3 py-2 border border-dark-600 align-top">10-20%</td><td class="px-3 py-2 border border-dark-600 align-top">&gt;30%</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">Passo 3: Identifique Desperdícios (Top 5 Categorias para Auditoria)</h3><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Auditoria de assinaturas</strong> — liste todas as cobranças recorrentes &gt;$5/mês, pergunte "ainda está usando?"</li><li><strong>Taxas de banco/cartão de crédito</strong> — saldo negativo, caixa eletrônico, anuidade, juros</li><li><strong>Pesquisa de seguros</strong> — seguro auto/imóvel a cada 2-3 anos</li><li><strong>Frequência de restaurantes</strong> — conte as vezes que come fora por semana</li><li><strong>Inflação de estilo de vida</strong> — categorias que cresceram &gt;20% ao ano sem crescimento de renda</li></ol><h3 class="font-bold text-lg mt-8 mb-3 text-white">Passo 4: Encontre os $500 (Vitória Rápida)</h3><p class="text-neutral-300 mb-4 leading-relaxed">Encontre $500/mês de gastos reduzíveis. Fontes comuns:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Assinaturas não usadas ($50-150)</li><li>Redução da frequência de restaurantes ($100-300)</li><li>Troca de plano de celular ($30-80)</li><li>Nova pesquisa de seguros ($50-200)</li><li>Planejamento de refeições no mercado ($100-200)</li><li>Corte de um serviço premium ($20-50)</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Saída: FINANCE-BUDGET.md</h2><p class="text-neutral-300 mb-4 leading-relaxed">Escreva no diretório de trabalho atual:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre"></code></pre>
+    </article>
+
+    <div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+      <a href="modulo-6-9.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo 6.9</a>
+      <a href="modulo-6-11.html" class="flex-1 text-center px-6 py-3 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-500 transition-colors">Módulo 6.11 →</a>
+    </div>
+  </main>
+  <footer class="border-t border-dark-600 py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p>Times de IA — Grupo 1 · Material educacional | <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
+    </div>
+  </footer>
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

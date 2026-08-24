@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1.6: Gerador de Hooks que Param o Scroll | Times de IA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🧠</span>
+            <span class="font-bold text-lg hidden sm:inline">Times de IA</span>
+          </a>
+          <span class="text-neutral-600 hidden sm:inline">|</span>
+          <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1-ads/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+          <a href="../trilha2-trading/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+          <a href="../trilha3-crypto/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+          <a href="../trilha4-imobiliario/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
+          <a href="../trilha5-recrutamento/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
+          <a href="../trilha6-financas/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" aria-label="Alternar tema">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400">
+      <a href="../index.html" class="hover:text-emerald-400">Início</a>
+      <span>/</span>
+      <a href="index.html" class="hover:text-emerald-400">Trilha 1</a>
+      <span>/</span>
+      <span class="text-emerald-400">Módulo 1.6</span>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.6 · TRILHA 1</span>
+      <h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">📣 Gerador de Hooks que Param o Scroll</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">Gerar mais de 20 hooks testados e aprovados que interrompem o scroll em todas as principais plataformas de anúncios. Hooks são o elemento mais importante em qualquer anúncio — os primeiros 1-3 segundos determinam se o se…</p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-emerald-400">22</div>
+            <div class="text-xs text-neutral-400">Tópicos</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-emerald-400">21 min</div>
+            <div class="text-xs text-neutral-400">Leitura</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-emerald-400">orquestrador</div>
+            <div class="text-xs text-neutral-400">Comando</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-emerald-400">Ads</div>
+            <div class="text-xs text-neutral-400">Time</div>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <article class="leading-relaxed">
+<h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Propósito da Skill</h2><p class="text-neutral-300 mb-4 leading-relaxed">Gerar mais de 20 hooks testados e aprovados que interrompem o scroll em todas as principais plataformas de anúncios. Hooks são o elemento mais importante em qualquer anúncio — os primeiros 1-3 segundos determinam se o seu anúncio será assistido ou ignorado. Esta skill produz hooks organizados por ângulo psicológico, cada um com formatação específica para a plataforma, uma variação A/B, uma análise psicológica explicando por que funciona e orientações sobre onde usá-lo. A saída está pronta para ser inserida diretamente em copy de anúncios, roteiros de vídeo ou linhas de assunto de e-mails.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Quando Usar</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>O usuário executa <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads hooks</code></li><li>O usuário solicita hooks que param o scroll, linhas de abertura ou ganchos de atenção</li><li>Chamado como subagente de <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads strategy</code> (o orquestrador principal)</li><li>O usuário precisa de hooks para criativos de anúncios, intros de vídeos ou campanhas de e-mail</li><li>O usuário deseja melhorar o CTR de anúncios existentes testando novos hooks</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Requisitos de Entrada</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Obrigatório:</strong> Contexto do negócio — uma URL, descrição do produto/serviço ou dados de estratégia anteriores</li><li><strong>Opcional:</strong> Persona-alvo, foco em plataforma específica, vertical de indústria, detalhes da oferta</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Como Executar</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Passo 1: Coletar Contexto do Negócio e do Público</h3><p class="text-neutral-300 mb-4 leading-relaxed">Se uma URL for fornecida, busque-a usando <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">WebFetch</code> e extraia:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Nome do negócio, indústria e nicho</li><li>Proposta de valor central e USPs (Pontos Únicos de Venda)</li><li>Indicadores do público-alvo</li><li>Pontos de dor que o produto/serviço resolve</li><li>Faixa de preço e estrutura da oferta</li><li>Ativos de prova social (número de avaliações, número de clientes, prêmios)</li><li>Cenário competitivo</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Execute pesquisa complementar:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "[Indústria]" melhores hooks de anúncios
+WebSearch: "[Indústria]" exemplos de anúncios virais
+WebSearch: "[Categoria de produto]" exemplos de copy de anúncios com alto CTR</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Estabeleça a base dos hooks:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">## Base dos Hooks
+
+**Negócio:** [Nome]
+**Produto/Serviço:** [O que vendem]
+**Público-Alvo:** [Persona principal em 1 frase]
+**Ponto de Dor Central:** [O problema nº 1 que o público tem]
+**Desejo Central:** [O resultado nº 1 que o público quer]
+**USP:** [O que torna isso diferente dos concorrentes]
+**Pontos de Prova:** [Estatísticas, resultados, depoimentos disponíveis]
+**Oferta:** [Promoção atual, preços, teste grátis]</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Passo 2: Gerar Hooks por Ângulo Psicológico</h3><p class="text-neutral-300 mb-4 leading-relaxed">Gere <strong>no mínimo 20 hooks</strong> distribuídos em 5 ângulos psicológicos:</p><hr class="border-dark-600 my-8"><h4 class="font-bold text-base mt-8 mb-3 text-white">Ângulo 1: Hooks de Dor/Problema (mínimo 5)</h4><p class="text-neutral-300 mb-4 leading-relaxed">Esses hooks funcionam ao apontar uma dor que o público já sente. Eles criam reconhecimento instantâneo — "isso sou eu!" — o que interrompe o scroll.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Psicologia:</strong> Aversão à perda. Pessoas são 2x mais motivadas a evitar dor do que a ganhar prazer. Hooks de dor ativam o sistema de detecção de ameaças da amígdala.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Padrões de modelo:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>"Pare de [fazer algo doloroso] e comece a [fazer algo desejado]"</li><li>"Se você ainda está [situação dolorosa], aqui está o porquê..."</li><li>"[Número]% do [público] estão cometendo esse erro de [tema]"</li><li>"O erro de [tema] que está custando [perda específica] para você"</li><li>"Você está perdendo [quantia específica] a cada [período de tempo] porque..."</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Para cada hook:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">### Hook P[número]: [Texto do Hook]
+
+**Texto completo:** [O hook completo — no máximo 1-2 frases]
+**Variação A/B:** [Versão alternativa testando um ângulo diferente ou escolha de palavras]
+**Contagem de caracteres:** [contagem] caracteres
+**Melhor(es) plataforma(s):** [onde este hook tem melhor desempenho]
+**Estágio do funil:** [TOFU / MOFU / BOFU]
+**Por que funciona:** [2-3 frases sobre a psicologia — qual viés cognitivo, gatilho emocional ou quebra de padrão está em jogo]
+**Como usá-lo:**
+- **Anúncio Facebook/Instagram:** [como formatar — como abertura do texto principal, título ou texto sobreposto]
+- **TikTok/Reels:** [como entregar — texto na tela, abertura de narração ou ambos]
+- **Anúncio Google:** [como adaptar — como título, abertura da descrição]
+- **Pré-roll YouTube:** [como entregar nos primeiros 5 segundos]
+- **Linha de assunto de e-mail:** [versão adaptada para e-mail]
+**Tratamento de emojis:** [quais emojis adicionar e onde, ou "nenhum — deixe as palavras falarem"]
+**Combinação de hashtags:** [2-3 hashtags relevantes se usadas em redes sociais]</code></pre><hr class="border-dark-600 my-8"><h4 class="font-bold text-base mt-8 mb-3 text-white">Ângulo 2: Hooks de Curiosidade/Pergunta (mínimo 5)</h4><p class="text-neutral-300 mb-4 leading-relaxed">Esses hooks criam uma lacuna de informação que o espectador deve preencher. O cérebro não tolera um loop aberto — a curiosidade é fisicamente desconfortável até ser resolvida.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Psicologia:</strong> O Efeito Zeigarnik. Pensamentos inacabados criam tensão cognitiva. Hooks de pergunta exploram a compulsão do cérebro em encontrar respostas.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Padrões de modelo:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>"O que acontece quando você [ação inesperada] com [tema]?"</li><li>"Testei [coisa] por [período de tempo]. Aqui está o que aconteceu..."</li><li>"O segredo de [tema] que [autoridade] não quer que você saiba"</li><li>"Por que [pessoas bem-sucedidas] sempre [comportamento inesperado]?"</li><li>"Perguntei a [número] [especialistas] uma pergunta. A resposta os chocou."</li><li>"Essa [coisa simples] mudou meu [tema] para sempre. (Não é o que você pensa.)"</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Para cada hook, use o mesmo modelo do Ângulo 1.</p><hr class="border-dark-600 my-8"><h4 class="font-bold text-base mt-8 mb-3 text-white">Ângulo 3: Hooks de Prova Social/Autoridade (mínimo 5)</h4><p class="text-neutral-300 mb-4 leading-relaxed">Esses hooks aproveitam as ações ou endossos de outras pessoas para disparar o comportamento de manada. Se outros estão fazendo, deve ser bom.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Psicologia:</strong> Prova social (Cialdini). Viés de autoridade. O efeito bandwagon. Olhamos para o comportamento dos outros para determinar o curso de ação correto, especialmente sob incerteza.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Padrões de modelo:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>"[Número] [tipo de público] já [ação]. Aqui está o porquê."</li><li>"[Figura de autoridade/empresa] usa este [produto/estratégia]. Você também deveria."</li><li>"Ajudamos [X] clientes a [alcançar resultado] em [prazo]"</li><li>"Avaliado com [X] estrelas por [número] [público]. Veja o que estão dizendo..."</li><li>"[Empresa conhecida] mudou para [produto/abordagem]. Os resultados?"</li><li>"O [produto/método] que [estatística impressionante] pessoas não param de falar"</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Para cada hook, use o mesmo modelo do Ângulo 1.</p><hr class="border-dark-600 my-8"><h4 class="font-bold text-base mt-8 mb-3 text-white">Ângulo 4: Hooks Contrários/Controversiais (mínimo 3)</h4><p class="text-neutral-300 mb-4 leading-relaxed">Esses hooks desafiam a sabedoria convencional ou dizem algo que o público não espera. Eles criam uma quebra de padrão — o cérebro marca informações inesperadas como importantes.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Psicologia:</strong> O Efeito Von Restorff (efeito de isolamento). Informações que se destacam do ambiente são lembradas melhor. Posições contrárias também disparam a resposta de erro de previsão do cérebro, liberando dopamina e aumentando a atenção.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Padrões de modelo:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>"[Conselho comum] está na verdade matando sua [métrica]. Aqui está a prova."</li><li>"Opinião impopular: [visão contrária sobre a indústria]"</li><li>"Tudo o que você foi ensinado sobre [tema] está errado."</li><li>"Parei de [prática comum] e [resultado positivo] aconteceu."</li><li>"A mentira da [indústria] que ninguém fala"</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Para cada hook, use o mesmo modelo do Ângulo 1.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Importante:</strong> Hooks contrários devem ser defensáveis. Nunca faça alegações falsas. A visão contrária deve desafiar um equívoco genuíno ou oferecer uma perspectiva alternativa legítima.</p><hr class="border-dark-600 my-8"><h4 class="font-bold text-base mt-8 mb-3 text-white">Ângulo 5: Hooks de Urgência/Escassez (mínimo 2)</h4><p class="text-neutral-300 mb-4 leading-relaxed">Esses hooks criam pressão de tempo ou exclusividade. Funcionam melhor na parte inferior do funil, quando o público já está consciente e considerando.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Psicologia:</strong> Princípio da escassez (Cialdini) e aversão à perda (Kahneman). O medo de perder (FOMO) é um motivador mais forte do que a alegria de ganhar. Ofertas com prazo disparam a resposta de urgência do cérebro, atalhando a deliberação.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Padrões de modelo:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>"Última chance: [oferta] termina [tempo específico]"</li><li>"Apenas [número] vagas restantes para [oferta/programa]"</li><li>"[Oferta] expira em [tempo]. Não diga que não avisei."</li><li>"Esta [oportunidade] não voltará. Aqui está o porquê."</li><li>"Estamos fechando [oferta] para novos [clientes/membros] em [data]"</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Para cada hook, use o mesmo modelo do Ângulo 1.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Importante:</strong> Hooks de urgência devem ser verdadeiros. Escassez falsa destrói a confiança e viola as políticas das plataformas. Use apenas quando houver escassez genuína ou um prazo real.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Passo 3: Guia de Formatação Específico por Plataforma</h3><p class="text-neutral-300 mb-4 leading-relaxed">Inclua uma referência de formatação abrangente:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">## Formatação de Hooks Específica por Plataforma
+
+### Anúncios de Feed Facebook/Instagram
+- **Orientação de caracteres:** Mantenha hooks abaixo de 125 caracteres para exibir acima da dobra (antes de "Ver Mais")
+- **Uso de emojis:** Máximo de 1-2 emojis no início ou no final — nunca no meio de uma frase
+- **Quebras de linha:** Use uma quebra de linha após o hook para criar separação visual
+- **Hashtags:** 0 na copy do anúncio (use apenas em posts orgânicos, máximo 3-5)
+- **Formato:** Texto primeiro, depois reforço visual
+
+### TikTok / Instagram Reels
+- **Entrega:** O hook deve ser falado nos primeiros 1,5 segundos E mostrado como texto na tela
+- **Texto sobreposto:** Texto grande, em negrito, centralizado — máximo de 5-8 palavras na tela
+- **Uso de emojis:** Pouco no texto na tela, mais nas legendas
+- **Hashtags:** 3-5 na legenda, inclua 1 hashtag em tendência
+- **Formato:** Vídeo primeiro, texto apoia o visual
+
+### Google Ads (Busca)
+- **Limite de título:** 30 caracteres por título — hooks devem ser comprimidos
+- **Sem emojis:** O Google Ads não permite emojis na copy do anúncio
+- **Integração de palavras-chave:** Inclua a palavra-chave alvo naturalmente no hook
+- **Pontuação:** Use pontos finais e pontos de exclamação estrategicamente (o Google os exibe)
+- **Formato:** Correspondência de intenção — o hook deve responder ao que eles pesquisaram
+
+### LinkedIn
+- **Tom:** Profissional, mas humano — evite jargões, linguagem corporativa e buzzwords
+- **Uso de emojis:** Mínimo (0-1 por post) — o excesso prejudica a credibilidade
+- **Hashtags:** 3-5 em Conteúdo Patrocinado, colocadas no final
+- **Formato:** Hooks de texto funcionam melhor, seguidos por uma estatística de apoio
+- **Quebras de linha:** Use com frequência — o feed do LinkedIn comprime parágrafos longos
+
+### Pré-roll YouTube
+- **Tempo:** O hook deve cair nos primeiros 5 segundos (antes do botão de pular)
+- **Entrega:** Tanto falado (narração) quanto mostrado (texto na tela)
+- **Sem emojis:** O texto na tela deve ser limpo e em negrito
+- **Hashtags:** Não aplicável
+- **Formato:** Abra com o hook verbalmente, reforce com texto na tela e um visual relevante
+
+### Pinterest
+- **Posicionamento:** O hook vai no título do Pin (100 caracteres) e na primeira linha da descrição
+- **Uso de emojis:** Moderado — o Pinterest é mais visual, emojis ajudam o texto a se destacar
+- **Hashtags:** 2-5 na descrição, relevantes para a intenção de busca
+- **Formato:** Rico em palavras-chave — o Pinterest é um mecanismo de busca, hooks devem incluir termos pesquisáveis
+
+### Linhas de Assunto de E-mail
+- **Orientação de caracteres:** 40-60 caracteres para desktop, abaixo de 35 para pré-visualização mobile
+- **Uso de emojis:** 1 emoji no início pode aumentar as taxas de abertura em 10-15%
+- **Personalização:** Inclua [Primeiro Nome] ou [Empresa] quando possível
+- **Texto de pré-visualização:** 40-90 caracteres que complementem (não repitam) a linha de assunto
+- **Formato:** Crie uma lacuna de curiosidade — nunca revele a resposta na linha de assunto</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Passo 4: Previsão de Desempenho dos Hooks</h3><p class="text-neutral-300 mb-4 leading-relaxed">Classifique o desempenho esperado de cada hook:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">## Previsões de Desempenho dos Hooks
+
+| # | Hook (abreviado) | Ângulo | Impacto Esperado no CTR | Confiança | Melhor Plataforma |
+|---|---|---|---|---|---|
+| P1 | [primeiros 40 chars...] | Dor | Alto (+30-50%) | Média | Meta |
+| P2 | [primeiros 40 chars...] | Dor | Médio (+15-30%) | Alta | Google |
+| C1 | [primeiros 40 chars...] | Curiosidade | Muito Alto (+50%+) | Média | TikTok |
+| [etc.] | | | | | |
+
+**Classificação de Impacto no CTR:**
+- Muito Alto: Esperado superar hooks médios em 50%+
+- Alto: Esperado superar em 30-50%
+- Médio: Esperado superar em 15-30%
+- Baseline: Esperado performar na média da indústria
+
+**Classificação de Confiança:**
+- Alta: Baseado em padrões comprovados e forte correspondência com o público
+- Média: Baseado em princípios sólidos, mas precisa de teste
+- Baixa: Ângulo experimental, alta variância esperada</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Passo 5: Estratégia de Teste de Hooks</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">## Estratégia de Teste A/B
+
+### Fase 1: Teste de Ângulos (Semana 1-2)
+Teste um hook de cada ângulo contra os outros:
+- Conjunto de Anúncios A: [Melhor hook de Dor]
+- Conjunto de Anúncios B: [Melhor hook de Curiosidade]
+- Conjunto de Anúncios C: [Melhor hook de Prova Social]
+- Conjunto de Anúncios D: [Melhor hook Contrário]
+- Orçamento: Divisão igual entre todos os 4 conjuntos
+- Métrica: CTR (taxa de cliques)
+- Critério de vencedor: Maior CTR após 1.000 impressões por conjunto de anúncios
+
+### Fase 2: Teste de Variações (Semana 3-4)
+Pegue o ângulo vencedor e teste variações A/B:
+- Anúncio A: [Hook vencedor — Versão A]
+- Anúncio B: [Hook vencedor — Versão B]
+- Orçamento: Divisão 50/50
+- Métrica: CTR + taxa de conversão
+- Critério de vencedor: Maior taxa de conversão após 500 cliques por anúncio
+
+### Fase 3: Escala (Semana 5+)
+Pegue o vencedor geral e:
+- Escale o orçamento em 20% a cada 3 dias
+- Crie 3 novos hooks no ângulo vencedor
+- Atualize o criativo a cada 2-3 semanas para evitar fadiga de anúncio
+- Monitore a frequência — se acima de 3.0, rotacione novos hooks</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Formato de Saída</h2><p class="text-neutral-300 mb-4 leading-relaxed">Salve a saída completa em <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-HOOKS.md</code> no diretório de trabalho atual.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Estrutura do arquivo:</strong></p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+# Ganchos que Param o Scroll: [Nome do Negócio]
+&gt; Gerado em [data] | Fonte: [URL]
+&gt; Total de ganchos: [quantidade] | Ângulos cobertos: 5
+&gt; Gancho principal recomendado: [Gancho #] — [texto resumido]
+
+## Fundamento dos Ganchos
+[contexto do negócio e do público-alvo]
+
+## Ganchos de Dor/Problema (5)
+[ganchos P1 a P5 com detalhes completos]
+
+## Ganchos de Curiosidade/Pergunta (5)
+[ganchos C1 a C5 com detalhes completos]
+
+## Ganchos de Prova Social/Autoridade (5)
+[ganchos S1 a S5 com detalhes completos]
+
+## Ganchos Contrários/Controversiais (3)
+[ganchos X1 a X3 com detalhes completos]
+
+## Ganchos de Urgência/Escassez (2)
+[ganchos U1 a U2 com detalhes completos]
+
+## Guia de Formatação por Plataforma
+[referência de formatação]
+
+## Previsões de Desempenho dos Ganchos
+[tabela de previsões]
+
+## Estratégia de Teste A/B
+[plano de testes]
+
+## Lista Rápida de Referência dos Ganchos
+[lista numerada de todos os ganchos — apenas o texto, sem formatação, para leitura rápida]
+
+## Próximos Passos
+1. Comece com os ganchos [X, Y, Z] — maior desempenho previsto
+2. Execute `/ads copy &lt;plataforma&gt;` para criar a copy completa do anúncio em torno dos ganchos vencedores
+3. Execute `/ads video &lt;produto&gt;` para transformar os ganchos em roteiros de anúncios em vídeo
+4. Configure os testes A/B seguindo o plano da Fase 1 acima
+5. Atualize os ganchos a cada 3-4 semanas para evitar fadiga criativa
+</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Checklist de Qualidade</h2><p class="text-neutral-300 mb-4 leading-relaxed">Antes de entregar a saída, verifique:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>[ ] Pelo menos 20 ganchos gerados no total</li><li>[ ] Dor/Problema: pelo menos 5 ganchos</li><li>[ ] Curiosidade/Pergunta: pelo menos 5 ganchos</li><li>[ ] Prova Social/Autoridade: pelo menos 5 ganchos</li><li>[ ] Contrário/Controversial: pelo menos 3 ganchos</li><li>[ ] Urgência/Escassez: pelo menos 2 ganchos</li><li>[ ] Cada gancho tem uma variação A/B</li><li>[ ] Cada gancho tem orientação de uso específica por plataforma</li><li>[ ] Cada gancho tem uma explicação psicológica do "por que funciona"</li><li>[ ] Contagem de caracteres incluída para cada gancho</li><li>[ ] Guia de formatação por plataforma completo para todos os 7 canais</li><li>[ ] Previsões de desempenho dos ganchos fornecidas</li><li>[ ] Estratégia de teste A/B acionável</li><li>[ ] Lista de referência rápida incluída no final</li><li>[ ] Ganchos específicos para o negócio (não templates genéricos)</li><li>[ ] Sem alegações falsas nos ganchos contrários</li><li>[ ] Sem escassez falsa nos ganchos de urgência</li><li>[ ] Saída salva em ADS-HOOKS.md</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Padrões de Qualidade dos Ganchos</h2><p class="text-neutral-300 mb-4 leading-relaxed">Cada gancho deve passar nestes testes:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Teste dos 3 segundos:</strong> Isso faria alguém parar de rolar a tela? Se você precisa pensar sobre isso, o gancho não é forte o suficiente.</li><li><strong>Teste de especificidade:</strong> Inclui um número, prazo ou detalhe específico? "Economize dinheiro" falha. "Economize $347/mês" passa.</li><li><strong>Teste de relevância:</strong> O público-alvo se vê imediatamente neste gancho? Ganchos genéricos geram resultados genéricos.</li><li><strong>Teste da lacuna de curiosidade:</strong> Cria um loop aberto que o leitor PRECISA fechar? Se o gancho entrega a resposta, é um título, não um gancho.</li><li><strong>Teste da verdade:</strong> Todas as alegações são defensáveis? Ganchos que prometem demais destroem a confiança e levam à rejeição de anúncios.</li><li><strong>Teste da plataforma:</strong> Este gancho se encaixa na cultura da plataforma? Ganchos do LinkedIn que parecem legendas do TikTok (e vice-versa) falharão.</li><li><strong>Teste de falar em voz alta:</strong> Para ganchos de vídeo, leia em voz alta. Se for estranho de dizer, reescreva. Os melhores ganchos de vídeo são conversacionais.</li></ol><p class="text-neutral-300 mb-4 leading-relaxed">--- skills/ads-creative/SKILL.md ---</p><hr class="border-dark-600 my-8"><p class="text-neutral-300 mb-4 leading-relaxed">name: ads-creative description: Gerador de Briefing Criativo para designers, editores de vídeo e equipes de conteúdo version: 1.0.0 author: Estrategista de Anúncios IA tags: [ads, creative, briefs, design, video, ugc] trigger: /ads creative output: ADS-CREATIVE-BRIEF.md</p><hr class="border-dark-600 my-8">
+    </article>
+
+    <div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+      <a href="modulo-1-5.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo 1.5</a>
+      <a href="modulo-1-7.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">Módulo 1.7 →</a>
+    </div>
+  </main>
+  <footer class="border-t border-dark-600 py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p>Times de IA — Grupo 1 · Material educacional | <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
+    </div>
+  </footer>
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 5.7: Carta de Proposta e Roteiro de Proposta Verbal | Times de IA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🧠</span>
+            <span class="font-bold text-lg hidden sm:inline">Times de IA</span>
+          </a>
+          <span class="text-neutral-600 hidden sm:inline">|</span>
+          <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1-ads/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+          <a href="../trilha2-trading/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+          <a href="../trilha3-crypto/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+          <a href="../trilha4-imobiliario/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
+          <a href="../trilha5-recrutamento/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-rose-400 bg-rose-500/10"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
+          <a href="../trilha6-financas/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" aria-label="Alternar tema">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400">
+      <a href="../index.html" class="hover:text-rose-400">Início</a>
+      <span>/</span>
+      <a href="index.html" class="hover:text-rose-400">Trilha 5</a>
+      <span>/</span>
+      <span class="text-rose-400">Módulo 5.7</span>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-rose-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-semibold rounded-full mb-4">MÓDULO 5.7 · TRILHA 5</span>
+      <h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">👥 Carta de Proposta e Roteiro de Proposta Verbal</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">Você é o motor de geração de propostas para a Equipe de Recrutamento de IA. Quando acionado com `/recruit offer &lt;candidate&gt;`, você produz um pacote completo de proposta: roteiro da proposta verbal (palavras exatas do rec…</p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-rose-400">13</div>
+            <div class="text-xs text-neutral-400">Tópicos</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-rose-400">17 min</div>
+            <div class="text-xs text-neutral-400">Leitura</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-rose-400">orquestrador</div>
+            <div class="text-xs text-neutral-400">Comando</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-rose-400">Recrutamento</div>
+            <div class="text-xs text-neutral-400">Time</div>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed">Você é o motor de geração de propostas para a Equipe de Recrutamento de IA. Quando acionado com <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/recruit offer &lt;candidate&gt;</code>, você produz um pacote completo de proposta: roteiro da proposta verbal (palavras exatas do recrutador), rascunho da carta de proposta formal e um plano de fechamento. O objetivo: um fechamento limpo que maximize a taxa de aceitação.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Apenas para fins educacionais/de pesquisa. Rascunhos gerados por IA. Todas as cartas de proposta devem ser revisadas por consultoria jurídica de trabalho e pelo RH antes do envio.</strong></p><hr class="border-dark-600 my-8"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">DISPARADOR</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/recruit offer &lt;candidate&gt;</code> — forneça candidato + cargo</li><li>Também: "rascunhar carta de proposta para [nome]", "roteiro de proposta verbal", "fechar [candidato]"</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">PROCESSAMENTO DE ENTRADA</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Confirmar:</li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Nome completo + e-mail do candidato</li><li>Título do cargo, nível, data de início alvo</li><li>Gerente + gerente do gerente</li><li>Salário base</li><li>Bônus alvo (se houver)</li><li>Concessão de equity (valor em USD de RSU, nº de ISO, cronograma de vesting)</li><li>Bônus de assinatura (se houver)</li><li>Pacote de benefícios</li><li>Localização / política de trabalho remoto</li><li>Estrutura de reporte</li><li>Quaisquer contingências (verificação de antecedentes, referências, autorização de trabalho)</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Detectar requisitos específicos de estado (CA tem requisitos únicos para cartas de proposta)</li></ol><hr class="border-dark-600 my-8"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">PIPELINE DE EXECUÇÃO</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 1: Roteiro de Proposta Verbal</h3><p class="text-neutral-300 mb-4 leading-relaxed">A proposta verbal acontece ANTES da proposta escrita. O roteiro deve:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Abrir com entusiasmo (a equipe está genuinamente animada)</li><li>Apresentar a proposta em termos claros (base, equity, assinatura, início)</li><li>Pausar para reação</li><li>Abordar a compensação explicitamente (posicionamento em relação à faixa salarial)</li><li>Definir linha do tempo para decisão</li><li>Mencionar a chegada da proposta escrita</li><li>Agendar a ligação de fechamento (24-48 horas depois)</li></ol><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 2: Carta de Proposta Formal</h3><p class="text-neutral-300 mb-4 leading-relaxed">Seções padrão:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Data e endereçamento ao candidato</strong></li><li><strong>Título do cargo e data de início</strong></li><li><strong>Estrutura de reporte</strong></li><li><strong>Compensação:</strong></li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Salário base (anual + quinzenal/semimensal)</li><li>Bônus alvo (se aplicável, com termos de pagamento)</li><li>Concessão de equity (número de ações / valor em USD de RSU, cronograma de vesting, nota de aprovação do conselho)</li><li>Bônus de assinatura (com cláusula de reembolso/clawback se aplicável)</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Resumo dos benefícios</strong> (com link para o guia detalhado de benefícios)</li><li><strong>Classificação do emprego</strong> (FTE, isento/não isento para EUA)</li><li><strong>Declaração de emprego à vontade</strong> (EUA) ou período de aviso prévio (outras jurisdições)</li><li><strong>Contingências:</strong></li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Verificação de antecedentes</li><li>Verificação de referências (se ainda não concluída)</li><li>Direito de trabalhar / documentos I-9</li><li>Teste de drogas (se aplicável)</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Confidencialidade / cessão de propriedade intelectual</strong> (nota de que o acordo detalhado será enviado em seguida)</li><li><strong>Validade da proposta</strong> (tipicamente 5-7 dias úteis)</li><li><strong>Frase de encerramento + campos de assinatura</strong></li></ol><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 3: Plano de Fechamento</h3><p class="text-neutral-300 mb-4 leading-relaxed">Após a proposta ser estendida verbalmente, construa um plano de fechamento:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Dia</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Ação</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Dia 0</td><td class="px-3 py-2 border border-dark-600 align-top">Proposta verbal + acompanhamento escrito no mesmo dia</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Dia 1</td><td class="px-3 py-2 border border-dark-600 align-top">Verificação: "Como você está se sentindo? Alguma dúvida?"</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Dia 2-3</td><td class="px-3 py-2 border border-dark-600 align-top">Agendar "ligação de fechamento" com o gerente de contratação (visão/relacionamento)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Dia 3-4</td><td class="px-3 py-2 border border-dark-600 align-top">Agendar ligação com patrocinador executivo, se necessário</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Dia 4-5</td><td class="px-3 py-2 border border-dark-600 align-top">Abordar objeções finais (compensação, data de início, escopo do cargo)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Dia 5-7</td><td class="px-3 py-2 border border-dark-600 align-top">Fechamento — prazo limite para decisão</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 4: Avaliação de Risco</h3><p class="text-neutral-300 mb-4 leading-relaxed">Identificar riscos de recusa:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Risco</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Probabilidade</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Mitigação</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Proposta concorrente</td><td class="px-3 py-2 border border-dark-600 align-top">[%]</td><td class="px-3 py-2 border border-dark-600 align-top">[Plano]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Diferença salarial</td><td class="px-3 py-2 border border-dark-600 align-top">[%]</td><td class="px-3 py-2 border border-dark-600 align-top">[Plano — bônus de assinatura, flexibilidade de equity]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Contra-proposta do empregador atual</td><td class="px-3 py-2 border border-dark-600 align-top">[%]</td><td class="px-3 py-2 border border-dark-600 align-top">[Plano — enfatizar crescimento]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Preocupações familiares / de localização</td><td class="px-3 py-2 border border-dark-600 align-top">[%]</td><td class="px-3 py-2 border border-dark-600 align-top">[Plano — suporte para mudança]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Conflito de data de início</td><td class="px-3 py-2 border border-dark-600 align-top">[%]</td><td class="px-3 py-2 border border-dark-600 align-top">[Plano — flexibilidade]</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 5: Plano de Contingência</h3><p class="text-neutral-300 mb-4 leading-relaxed">Se o candidato recusar:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Top 2 candidatos de reserva e seu status</li><li>Se deve reestender a proposta mais tarde</li><li>Timing — qual é nosso prazo absoluto de expiração?</li></ul><hr class="border-dark-600 my-8"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">FORMATO DE SAÍDA</h2><p class="text-neutral-300 mb-4 leading-relaxed">Salvar em <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">RECRUIT-OFFER-[Candidate].md</code>.</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+# Pacote de Oferta: [NOME DO CANDIDATO] — [CARGO] na [EMPRESA]
+
+&gt; **Gerado em:** [DATA] | **Início Alvo:** [Data] | **Validade da Oferta:** [Data]
+
+**AVISO LEGAL: Apenas para fins educacionais/de pesquisa. Todas as cartas de oferta devem ser revisadas por assessoria jurídica de trabalho e pelo departamento de RH antes do envio.**
+
+---
+
+## Resumo da Oferta
+
+| Campo | Valor |
+|-------|-------|
+| Candidato | [Nome] |
+| E-mail | [E-mail] |
+| Cargo | [Título] |
+| Nível | [Nível] |
+| Gestor | [Nome] |
+| Data de Início | [Data] |
+| Salário Base | $[X] |
+| Bônus Alvo | [X]% / $[X] |
+| Concessão de Ações | $[X] RSU (vesting de 4 anos, cliff de 1 ano) |
+| Bônus de Assinatura | $[X] |
+| Localização | [Cidade / Remoto-EUA] |
+| Validade da Oferta | [Data] |
+
+---
+
+## Roteiro da Oferta Verbal
+
+&gt; **O recrutador faz esta apresentação por telefone antes do envio da oferta escrita.**
+</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">[Primeiro nome do candidato], estou muito feliz em ligar para você hoje. A equipe decidiu por unanimidade que gostaríamos muito de ter você conosco como nosso próximo [Título].</p><p class="text-neutral-300 mb-4 leading-relaxed">Aqui está a oferta:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Salário base de $[X], pago [quinzenalmente/semimensalmente]</li><li>Um bônus de desempenho alvo de [X]% do salário base, pago anualmente</li><li>Uma concessão de ações avaliada em aproximadamente $[X] ao longo de 4 anos, com um período de carência (cliff) de 1 ano</li><li>Um bônus de assinatura de $[X], pago no seu primeiro pagamento</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">[Pausa para reação]</p><p class="text-neutral-300 mb-4 leading-relaxed">Quero ser transparente sobre como posicionamos isso. A faixa salarial para este cargo é de $[mínimo]-$[máximo], e estamos oferecendo $[X] — isso está no [percentil] da nossa faixa, o que reflete seus [pontos fortes específicos].</p><p class="text-neutral-300 mb-4 leading-relaxed">Gostaríamos que você começasse em [data]. Sua carta de oferta formal chegará à sua caixa de entrada dentro de uma hora. Gostaríamos de agendar uma ligação de acompanhamento dentro de 48 horas para responder a quaisquer perguntas, mas sabemos que decisões dessa magnitude levam tempo. A oferta escrita é válida até [Data — tipicamente 5-7 dias úteis].</p><p class="text-neutral-300 mb-4 leading-relaxed">Quais perguntas você tem agora?</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+---
+
+## Rascunho da Carta de Oferta Formal
+</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">[Cabeçalho da Empresa] [Data]</p><p class="text-neutral-300 mb-4 leading-relaxed">[Nome do Candidato] [Endereço do Candidato]</p><p class="text-neutral-300 mb-4 leading-relaxed">Prezado(a) [Primeiro Nome],</p><p class="text-neutral-300 mb-4 leading-relaxed">Temos o prazer de oferecer a você a posição de [Título] na [Empresa] ("a Empresa"), reportando a [Nome do Gestor], [Título do Gestor].</p><p class="text-neutral-300 mb-4 leading-relaxed">Os termos desta oferta são os seguintes:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>POSIÇÃO E DATA DE INÍCIO</li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Posição: [Título]</li><li>Data de início: [Data], ou outra data acordada mutuamente</li><li>Localização: [Cidade / Remoto] com arranjo [híbrido/remoto]</li><li>Classificação: Tempo integral, [isento/não isento sob a FLSA — apenas EUA]</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>REMUNERAÇÃO BASE Você receberá um salário base de $[X] por ano, pago [quinzenalmente/semimensalmente] de acordo com o cronograma padrão de folha de pagamento da Empresa, menos os descontos e retenções aplicáveis.</li><li>BÔNUS ANUAL Você será elegível a um bônus anual de desempenho com um alvo de [X]% do seu salário base ($[X] no alvo). O bônus é baseado no desempenho individual e da empresa e está sujeito aos termos do plano de bônus da Empresa vigentes no momento do pagamento.</li><li>AÇÕES (EQUITY) Sujeito à aprovação pelo Conselho de Administração da Empresa, você receberá [X] [RSUs / opções] avaliadas em aproximadamente $[X] (com base no mais recente [409A / FMV / preço da ação]). O vesting segue o cronograma padrão de 4 anos com um cliff de 1 ano (25% do vesting após 12 meses de serviço contínuo; o restante é distribuído em 36 parcelas mensais).</li><li>BÔNUS DE ASSINATURA Você receberá um bônus de assinatura único de $[X], pago no seu primeiro pagamento regular. Se você rescindir voluntariamente o contrato dentro de [12] meses da sua data de início, será obrigado a reembolsar 100% deste valor; se dentro de [13-24] meses, 50%.</li><li>BENEFÍCIOS Você será elegível ao pacote padrão de benefícios da Empresa, incluindo:</li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Seguro saúde, odontológico e de visão (contribuição de prêmio conforme documentos do plano)</li><li>Plano 401(k) com correspondência do empregador de [X]%</li><li>Férias remuneradas ([X] dias / ilimitado conforme política)</li><li>Feriados remunerados conforme calendário da Empresa</li><li>[Outros benefícios notáveis]</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>CONDIÇÕES PREVIAS Esta oferta está condicionada a: (a) Conclusão satisfatória de verificações de antecedentes e referências (b) Verificação do seu direito de trabalhar em [país] (c) Assinatura do Acordo Padrão de Confidencialidade e Cessão de Propriedade Intelectual da Empresa (d) [Teste de drogas, se aplicável]</li><li>EMPREGO A VONTADE [EUA] Seu emprego com a Empresa é "a vontade", o que significa que tanto você quanto a Empresa podem encerrar o relacionamento de emprego a qualquer momento, por qualquer motivo, com ou sem causa ou aviso prévio. Nada nesta carta modifica essa relação de emprego a vontade.</li><li>CONFIDENCIALIDADE DA OFERTA Os termos desta oferta são confidenciais entre você e a Empresa.</li><li>VALIDADE DA OFERTA Esta oferta expira em [Data] às 23h59 [Fuso Horário]. Para aceitar, por favor, assine e devolva esta carta para [e-mail do recrutador] até essa data.</li></ol><p class="text-neutral-300 mb-4 leading-relaxed">Estamos animados com a contribuição que você fará para a [Empresa] e aguardamos trabalhar com você.</p><p class="text-neutral-300 mb-4 leading-relaxed">Atenciosamente,</p><p class="text-neutral-300 mb-4 leading-relaxed">[Nome do Gestor Contratante] [Título do Gestor Contratante]</p><p class="text-neutral-300 mb-4 leading-relaxed">──────────────────────────── ACEITO:</p><p class="text-neutral-300 mb-4 leading-relaxed">Assinatura: ______________________________   Data: __________</p><p class="text-neutral-300 mb-4 leading-relaxed">[Nome Impresso do Candidato]</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+---
+
+## Plano de Fechamento
+
+| Dia | Responsável | Ação |
+|-----|-------------|------|
+| 0 | Recrutador | Oferta verbal + acompanhamento escrito no mesmo dia |
+| 1 | Recrutador | Ligação de verificação: "Como você está se sentindo?" |
+| 1-2 | Gestor Contratante | Ligação de visão/relacionamento (sem falar de remuneração) |
+| 2-3 | Patrocinador Executivo (opcional) | Breve ligação de introdução para cargos VP+ |
+| 3-4 | Recrutador | Endereçar objeções; negociação final de termos |
+| 5-7 | Prazo de decisão | Pressão por aceitação escrita |
+
+---
+
+## Avaliação de Risco de Recusa
+
+| Risco | Probabilidade | Mitigação |
+|-------|---------------|-----------|
+| Oferta concorrente com $[X] a mais | [X]% | Contra-oferta com flexibilidade em bônus de assinatura / ações |
+| Contra-oferta do empregador atual | [X]% | Enfatizar crescimento / escopo / missão |
+| Conflito de data de início | [X]% | Flexibilidade de até 2 semanas |
+| Família / localização | [X]% | Pacote de realocação / prioridade ao remoto |
+
+---
+
+## Candidatos de Reserva
+
+Em caso de recusa:
+1. [Candidato 2] — Estado atual: [No processo / Aguardando decisão]
+2. [Candidato 3] — Estado atual: [No processo / Aguardando decisão]
+
+Janela para reenvio: [Dias] antes de buscar mais candidatos
+
+---
+
+## Checklist Jurídico Pré-Envio
+
+- [ ] Revisado por assessoria jurídica de trabalho
+- [ ] Requisitos específicos do estado atendidos (CA, NY, WA têm regras únicas)
+- [ ] Cláusula de reembolso (clawback) do bônus de assinatura aplicável na jurisdição
+- [ ] Linguagem de "emprego a vontade" presente (EUA) ou período de aviso prévio (outros)
+- [ ] Sem condições discriminatórias
+- [ ] Termos de ações revisados pela equipe de ações / jurídico
+- [ ] Linguagem de I-9 / direito de trabalho clara
+- [ ] Acordo de confidencialidade e cessão de propriedade intelectual anexado
+- [ ] Resumo de benefícios revisado quanto à precisão
+
+---
+
+*Rascunho gerado por IA. Tenha a assessoria jurídica de trabalho e o RH revisando antes do envio. Cumpra a legislação trabalhista estadual e federal da sua jurisdição.*
+
+---
+
+## REGRAS
+
+1. **Sempre exigir revisão jurídica** — toda saída sinaliza "tenha o conselho jurídico revisar"
+2. **Oferta verbal PRIMEIRO** — a oferta escrita é a confirmação, não a negociação
+3. **Janela de validade de 5-7 dias** — longa o suficiente para considerar, curta o suficiente para fechar
+4. **Reembolso (clawback) do bônus de assinatura** — proteção contra desistências abruptas
+5. **Nota de aprovação do conselho para ações** — sempre incluir "sujeito à aprovação do conselho"
+6. **Linguagem de "emprego a vontade" para EUA** — necessária para preservar a defesa de emprego a vontade
+7. **Endereçar a transparência da posição salarial** — topo da faixa? meio? diga isso
+
+---
+
+## TRATAMENTO DE ERROS
+
+- Se o candidato estiver em CA, NY, WA — recomendar revisão jurídica extra sobre termos específicos do estado
+- Se o candidato precisar de patrocínio de visto, adicionar linguagem de contingência específica para imigração
+- Se o candidato for executivo (VP+), recomendar carta de oferta separada + acordo de rescisão
+
+**AVISO LEGAL: Apenas para fins educacionais/de pesquisa. Rascunho gerado por IA. Tenha a assessoria jurídica de trabalho revisar antes do envio.**
+
+
+--- recruit-onboard/SKILL.md ---
+---
+name: recruit-onboard
+description: Plano de Onboarding de 30/60/90 Dias — Configuração do Dia 1, rampa da semana 1, marcos do mês 1, contribuições do mês 2, critérios de avaliação do mês 3
+version: 1.0.0
+author: Equipe de Recrutamento IA
+tags: [recrutamento, onboarding, rampa, 30-60-90]
+command: /recruit onboard &lt;contratado&gt;
+output: RECRUIT-ONBOARD-[Nome].md
+---
+</code></pre>
+    </article>
+
+    <div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+      <a href="modulo-5-6.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo 5.6</a>
+      <a href="modulo-5-8.html" class="flex-1 text-center px-6 py-3 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-500 transition-colors">Módulo 5.8 →</a>
+    </div>
+  </main>
+  <footer class="border-t border-dark-600 py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p>Times de IA — Grupo 1 · Material educacional | <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
+    </div>
+  </footer>
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

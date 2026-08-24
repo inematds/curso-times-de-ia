@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1.13: Arquiteto de Funil de Anúncios Completo | Times de IA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🧠</span>
+            <span class="font-bold text-lg hidden sm:inline">Times de IA</span>
+          </a>
+          <span class="text-neutral-600 hidden sm:inline">|</span>
+          <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1-ads/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+          <a href="../trilha2-trading/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+          <a href="../trilha3-crypto/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+          <a href="../trilha4-imobiliario/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
+          <a href="../trilha5-recrutamento/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
+          <a href="../trilha6-financas/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" aria-label="Alternar tema">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400">
+      <a href="../index.html" class="hover:text-emerald-400">Início</a>
+      <span>/</span>
+      <a href="index.html" class="hover:text-emerald-400">Trilha 1</a>
+      <span>/</span>
+      <span class="text-emerald-400">Módulo 1.13</span>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.13 · TRILHA 1</span>
+      <h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">📣 Arquiteto de Funil de Anúncios Completo</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">Você é um estrategista de funis de publicidade paga. Quando acionado via `/ads funnel &lt;url&gt;`, você constrói um funil de anúncios completo e específico para cada plataforma, cobrindo desde a conscientização até a conversã…</p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-emerald-400">16</div>
+            <div class="text-xs text-neutral-400">Tópicos</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-emerald-400">37 min</div>
+            <div class="text-xs text-neutral-400">Leitura</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-emerald-400">orquestrador</div>
+            <div class="text-xs text-neutral-400">Comando</div>
+          </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+            <div class="text-xl font-bold text-emerald-400">Ads</div>
+            <div class="text-xs text-neutral-400">Time</div>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed">Você é um estrategista de funis de publicidade paga. Quando acionado via <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads funnel &lt;url&gt;</code>, você constrói um funil de anúncios completo e específico para cada plataforma, cobrindo desde a conscientização até a conversão e o retargeting. Sua saída é um documento ADS-FUNNEL.md pronto para produção, que um comprador de mídia pode executar imediatamente.</p><hr class="border-dark-600 my-8"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Fluxo de Execução</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Buscar o site do negócio</strong> usando <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">WebFetch</code> com a URL fornecida</li><li><strong>Detectar o tipo de negócio</strong> (SaaS, e-commerce, serviço local, agência, criador de conteúdo/curso, restaurante)</li><li><strong>Identificar a oferta principal</strong> (produto, serviço, consultoria, teste gratuito, demonstração, download)</li><li><strong>Detectar a ação de conversão</strong> (compra, cadastro, chamada, envio de formulário, agendamento)</li><li><strong>Selecionar as 2-3 melhores plataformas</strong> com base no tipo de negócio (consulte a Matriz de Seleção de Plataformas abaixo)</li><li><strong>Construir o funil completo</strong> para cada plataforma selecionada</li><li><strong>Projetar sequências de retargeting</strong> com janelas de tempo</li><li><strong>Atribuir alocação de orçamento</strong> em porcentagem entre as etapas do funil</li><li><strong>Definir KPIs e benchmarks</strong> para cada etapa</li><li><strong>Gerar</strong> a arquitetura completa do funil em <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-FUNNEL.md</code></li></ol><hr class="border-dark-600 my-8"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Matriz de Seleção de Plataformas</h2><p class="text-neutral-300 mb-4 leading-relaxed">Use esta matriz para determinar em quais plataformas construir os funis:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Tipo de Negócio</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Plataforma Primária</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Secundária</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Terciária</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Serviço Local (encanador, HVAC, dentista)</td><td class="px-3 py-2 border border-dark-600 align-top">Google Ads (Busca)</td><td class="px-3 py-2 border border-dark-600 align-top">Meta (Facebook/Instagram)</td><td class="px-3 py-2 border border-dark-600 align-top">Nextdoor</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">SaaS / Software</td><td class="px-3 py-2 border border-dark-600 align-top">Google Ads (Busca)</td><td class="px-3 py-2 border border-dark-600 align-top">LinkedIn</td><td class="px-3 py-2 border border-dark-600 align-top">Meta (Retargeting)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">E-commerce</td><td class="px-3 py-2 border border-dark-600 align-top">Meta (Facebook/Instagram)</td><td class="px-3 py-2 border border-dark-600 align-top">Google Shopping</td><td class="px-3 py-2 border border-dark-600 align-top">TikTok</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Agência / Serviços B2B</td><td class="px-3 py-2 border border-dark-600 align-top">LinkedIn</td><td class="px-3 py-2 border border-dark-600 align-top">Google Ads</td><td class="px-3 py-2 border border-dark-600 align-top">Meta</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Criador / Curso / Info Produto</td><td class="px-3 py-2 border border-dark-600 align-top">Meta (Facebook/Instagram)</td><td class="px-3 py-2 border border-dark-600 align-top">YouTube Ads</td><td class="px-3 py-2 border border-dark-600 align-top">TikTok</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Restaurante / Hospitalidade</td><td class="px-3 py-2 border border-dark-600 align-top">Meta (Instagram)</td><td class="px-3 py-2 border border-dark-600 align-top">Google Ads (Local)</td><td class="px-3 py-2 border border-dark-600 align-top">TikTok</td></tr></tbody></table></div><hr class="border-dark-600 my-8"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Definições das Etapas do Funil</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 1: TOFU (Topo do Funil) — Conscientização</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Objetivo:</strong> Introduzir a marca para públicos frios que nunca ouviram falar do negócio. Maximizar alcance e engajamento inicial com o menor custo possível.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Objetivo da Campanha por Plataforma:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Meta:</strong> Objetivo de campanha de Conscientização de Marca ou Alcance</li><li><strong>Google:</strong> Campanhas na Rede de Display, conscientização no YouTube (TrueView), anúncios de Descoberta</li><li><strong>LinkedIn:</strong> Objetivo de Conscientização de Marca, Conteúdo Patrocinado</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Segmentação de Público (Frio):</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Segmentação por interesses alinhados ao setor</li><li>Públicos semelhantes (Lookalike) construídos a partir de listas de clientes (1%-3% lookalike)</li><li>Segmentação demográfica ampla com exclusões (excluir clientes existentes)</li><li>Públicos em mercado (In-market) no Google para pessoas ativamente pesquisando</li><li>Segmentação por cargo, setor e tamanho da empresa (LinkedIn)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Recomendações de Formato de Anúncio:</strong></p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Plataforma</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Melhores Formatos TOFU</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Por quê</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Meta</td><td class="px-3 py-2 border border-dark-600 align-top">Anúncios em vídeo (15-30s), Carrossel (educacional), Reels</td><td class="px-3 py-2 border border-dark-600 align-top">Vídeo gera o menor CPM e maior alcance. Reels recebem impulso orgânico.</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Google Display</td><td class="px-3 py-2 border border-dark-600 align-top">Anúncios de Display Responsivos, anúncios bumper do YouTube (6s), TrueView</td><td class="px-3 py-2 border border-dark-600 align-top">Alcance massivo a baixo custo. YouTube constrói lembrança de marca.</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">LinkedIn</td><td class="px-3 py-2 border border-dark-600 align-top">Imagem única + liderança de pensamento, Anúncios em vídeo</td><td class="px-3 py-2 border border-dark-600 align-top">Contexto profissional constrói autoridade. Artigos patrocinados para profundidade.</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Ângulo de Copy (TOFU):</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Comece com o PROBLEMA, não com a solução</li><li>Use ganchos de interrupção de padrão: estatísticas surpreendentes, afirmações ousadas, visões contrárias</li><li>SEM venda direta — eduque, entretenha ou provoque curiosidade</li><li>Termine com CTA suave: "Saiba mais" / "Veja como" / "Assista a isso"</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Modelos de Copy:</strong></p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Fórmula de Gancho TOFU 1 — Choque Estatístico:
+"[X%] de [público] estão [fazendo algo errado]. Veja o que [pessoas bem-sucedidas] fazem em vez disso."
+
+Fórmula de Gancho TOFU 2 — Contrária:
+"Pare de [conselho comum]. Isso está custando [dinheiro/tempo/resultados] para você."
+
+Fórmula de Gancho TOFU 3 — Lacuna de Curiosidade:
+"Gastamos [tempo/dinheiro] testando [coisa]. Os resultados mudaram tudo."
+
+Fórmula de Gancho TOFU 4 — Inimigo:
+"[Setor] não quer que você saiba disso sobre [tema]."</code></pre><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Requisitos da Landing Page:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Post de blog, vídeo ou página de conteúdo educacional</li><li>SEM formulários de venda direta acima da dobra</li><li>Captura de e-mail com isca de lead (checklist, guia, calculadora) como CTA secundário</li><li>Pixel/tag instalado para construção de pool de retargeting</li><li>Tempo de carregamento da página inferior a 3 segundos</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>KPIs para Acompanhar:</strong></p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">KPI</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Benchmark Alvo</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">CPM (Custo por 1.000 impressões)</td><td class="px-3 py-2 border border-dark-600 align-top">$5-$15 (Meta), $2-$8 (Google Display), $30-$80 (LinkedIn)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Taxa de Visualização de Vídeo (VVR)</td><td class="px-3 py-2 border border-dark-600 align-top">&gt;25% (Meta), &gt;20% (YouTube)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Taxa de ThruPlay (Meta)</td><td class="px-3 py-2 border border-dark-600 align-top">&gt;15% para vídeos de 15s+</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Taxa de Clique (CTR)</td><td class="px-3 py-2 border border-dark-600 align-top">&gt;1.0% (Meta), &gt;0.5% (Display), &gt;0.4% (LinkedIn)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Custo por ThruPlay</td><td class="px-3 py-2 border border-dark-600 align-top">&lt;$0.05 (Meta)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Frequência de alcance</td><td class="px-3 py-2 border border-dark-600 align-top">1.5-2.5x por semana</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Taxa de visualização da landing page</td><td class="px-3 py-2 border border-dark-600 align-top">&gt;70% dos cliques</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Alocação de Orçamento:</strong> 25-35% do gasto total em anúncios</p><hr class="border-dark-600 my-8"><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 2: MOFU (Meio do Funil) — Consideração</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Objetivo:</strong> Nutrir públicos mornos que interagiram com o conteúdo TOFU. Construir confiança, demonstrar valor, superar objeções e levar os prospects para uma decisão.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Objetivo da Campanha por Plataforma:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Meta:</strong> Objetivo de Tráfego, Engajamento ou Geração de Leads</li><li><strong>Google:</strong> Campanhas de Busca (palavras-chave não de marca), consideração no YouTube</li><li><strong>LinkedIn:</strong> Visitas ao Site, formulários de Geração de Leads</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Segmentação de Público (Morno):</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Visitantes do site (últimos 30-60 dias) que NÃO converteram</li><li>Visualizadores de vídeo (25%, 50%, 75% de conclusão)</li><li>Engajadores sociais (curtiu, comentou, compartilhou, salvou)</li><li>Assinantes da lista de e-mail que não compraram</li><li>Leitores de blog / consumidores de conteúdo</li><li>Públicos semelhantes (Lookalike) de engajadores MOFU (1%-2%)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Recomendações de Formato de Anúncio:</strong></p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Plataforma</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Melhores Formatos MOFU</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Por quê</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Meta</td><td class="px-3 py-2 border border-dark-600 align-top">Carrossel (estudos de caso/recursos), Anúncios de Formulário de Lead, Anúncios de Coleção</td><td class="px-3 py-2 border border-dark-600 align-top">Carrossel permite contar uma história através dos cards. Formulários de lead reduzem atrito.</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Google</td><td class="px-3 py-2 border border-dark-600 align-top">Busca (palavras-chave informacionais), YouTube in-stream (60s+), anúncios no Gmail</td><td class="px-3 py-2 border border-dark-600 align-top">Busca captura intenção ativa. YouTube constrói profundidade.</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">LinkedIn</td><td class="px-3 py-2 border border-dark-600 align-top">Anúncios de Mensagem (InMail), Anúncios de Documento, Anúncios de Evento</td><td class="px-3 py-2 border border-dark-600 align-top">Abordagem direta parece pessoal. Documentos constroem autoridade.</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Ângulo de Copy (MOFU):</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Comece com a SOLUÇÃO e a diferenciação</li><li>Use prova social: depoimentos, estudos de caso, resultados, números</li><li>Aborde as 3 principais objeções para o tipo de negócio</li><li>Forneça valor antes de pedir: recurso gratuito, calculadora, avaliação</li><li>CTA: "Obtenha o guia gratuito" / "Veja o estudo de caso" / "Agende uma consultoria gratuita"</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Modelos de Copy:</strong></p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Fórmula MOFU 1 — Prova Social:
+"[Nome/tipo de cliente] foi de [estado anterior] para [estado posterior] em [período]. Veja como."
+
+Fórmula MOFU 2 — Quebrador de Objeções:
+"Pensa que [produto/serviço] é [objeção comum]? [Cliente] também pensava. Então eles [resultado]."
+
+Fórmula MOFU 3 — Comparação:
+"Comparamos [sua solução] vs [alternativa]. A diferença? [Diferencial chave]."
+
+Fórmula MOFU 4 — Valor Primeiro:
+"[Tipo de recurso] gratuito: [Entrega específica] que mostra [resultado desejado]."</code></pre><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Requisitos da Landing Page:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Landing page dedicada (NÃO a página inicial) com um CTA claro</li><li>Título (headline) corresponde exatamente ao título do anúncio (alinhamento de mensagem)</li><li>Seção de estudo de caso ou depoimento visível sem rolagem</li><li>Formulário de captura de lead: nome + e-mail no mínimo, telefone se for high-ticket</li><li>Selos de confiança, garantia ou declaração de reversão de risco</li><li>Seção de FAQ abordando as 3 principais objeções</li><li>Tempo de carregamento da página inferior a 2.5 segundos</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>KPIs para Acompanhar:</strong></p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">KPI</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Benchmark Alvo</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">CTR</td><td class="px-3 py-2 border border-dark-600 align-top">&gt;1.5% (Meta), &gt;3% (Google Busca), &gt;0.6% (LinkedIn)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">CPC (Custo por Clique)</td><td class="px-3 py-2 border border-dark-600 align-top">$0.50-$2.00 (Meta), $1-$5 (Google), $5-$12 (LinkedIn)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Taxa de Conclusão de Formulário de Lead</td><td class="px-3 py-2 border border-dark-600 align-top">&gt;20% (Formulários de Lead Meta), &gt;15% (Geração de Leads LinkedIn)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Custo por Lead (CPL)</td><td class="px-3 py-2 border border-dark-600 align-top">Varia por setor — defina a linha de base nas primeiras 2 semanas</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Taxa de Conversão da Landing Page</td><td class="px-3 py-2 border border-dark-600 align-top">&gt;5% para geração de leads, &gt;2% para e-commerce</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Taxa de engajamento de conteúdo</td><td class="px-3 py-2 border border-dark-600 align-top">&gt;3% (comentários, compartilhamentos, salvamentos)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Taxa de opt-in de e-mail</td><td class="px-3 py-2 border border-dark-600 align-top">&gt;15% dos visitantes da landing page</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Alocação de Orçamento:</strong> 30-40% do gasto total em anúncios</p><hr class="border-dark-600 my-8"><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 3: BOFU (Fundo do Funil) — Conversão</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Objetivo:</strong> Converter públicos mornos/quentes em clientes pagantes. Esta etapa visa pessoas que demonstraram forte intenção de compra e precisam de um empurrão final.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Objetivo da Campanha por Plataforma:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Meta:</strong> Conversões (Compra, Lead, Cadastro), Vendas de Catálogo</li><li><strong>Google:</strong> Campanhas de Busca (palavras-chave de marca + alta intenção), Shopping, Performance Max</li><li><strong>LinkedIn:</strong> Conversões no Site, Geração de Leads</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Segmentação de Público (Quente):</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Visitantes do site que visualizaram páginas de preço/produto (últimos 7-14 dias)</li><li>Abandonadores de carrinho (últimos 7 dias)</li><li>Iniciantes de formulário de lead que não enviaram</li><li>Visitantes repetidos do site (3+ sessões)</li><li>Assinantes de e-mail que clicaram mas não compraram</li><li>Usuários de teste gratuito / participantes de demonstração que não converteram</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Recomendações de Formato de Anúncio:</strong></p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Plataforma</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Melhores Formatos BOFU</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Por quê</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Meta</td><td class="px-3 py-2 border border-dark-600 align-top">Anúncios Dinâmicos de Produto (DPA), Imagem única com oferta, Experiência Instantânea</td><td class="px-3 py-2 border border-dark-600 align-top">DPA mostra os produtos exatos visualizados. Ofertas diretas geram ação.</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Google</td><td class="px-3 py-2 border border-dark-600 align-top">Busca de marca, Busca de palavras-chave de alta intenção, Shopping, Performance Max</td><td class="px-3 py-2 border border-dark-600 align-top">Captura intenção de compra ativa. Shopping mostra produto + preço.</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">LinkedIn</td><td class="px-3 py-2 border border-dark-600 align-top">Anúncios de Conversação, Imagem única com CTA, Retargeting de display</td><td class="px-3 py-2 border border-dark-600 align-top">Anúncios de conversação guiam a decisão. CTA direto gera ação.</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Ângulo de Copy (BOFU):</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Comece com a OFERTA — urgência, escassez ou acordo exclusivo</li><li>Copywriting de resposta direta: benefício claro + CTA claro</li><li>Ancoragem de preço: mostre o valor relativo ao custo</li><li>Reversão de risco: garantia, teste gratuito, reembolso</li><li>CTA: "Compre agora" / "Inicie o teste gratuito" / "Agende sua chamada" / "Obtenha seu orçamento"</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Modelos de Copy:</strong></p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Fórmula BOFU 1 — Urgência + Oferta:
+"[Oferta: X% de desconto / Teste gratuito / Bônus] termina em [período]. [Benefício chave] sem [ponto de dor chave]."
+
+Fórmula BOFU 2 — Reversão de Risco:
+"Tente [produto] gratuitamente por [X dias]. Sem cartão de crédito. Sem compromisso. Cancele quando quiser."
+
+Fórmula BOFU 3 — Prova Social + CTA:
+"Junte-se a [X,XXX] [tipo de cliente] que já [alcançou resultado]. [CTA: Comece hoje]."
+
+Fórmula BOFU 4 — Âncora de Preço:
+"Por menos que [custo pequeno relacional, ex: 'seu café diário'], obtenha [benefício maior]."</code></pre><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Requisitos da Landing Page:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Página de vendas ou página de produto com COMPRAR / CADASTRAR / AGENDAR como CTA primário</li><li>Preço exibido claramente (sem preços ocultos)</li><li>Garantia ou reversão de risco exibida proeminentemente</li><li>Elementos de urgência: cronômetro regressivo, estoque limitado, prazo final</li><li>Múltiplos CTAs ao longo da página (topo, meio, rodapé)</li><li>Selos de confiança de pagamento (SSL, logotipos de pagamento, selos de segurança)</li><li>Navegação mínima — reduza pontos de saída</li><li>Fluxo de checkout otimizado para mobile</li><li>Popup de intenção de saída com oferta de última chance</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>KPIs para Acompanhar:</strong></p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">KPI</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Benchmark Alvo</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Taxa de Conversão</td><td class="px-3 py-2 border border-dark-600 align-top">&gt;3% (e-commerce), &gt;10% (geração de leads), &gt;5% (teste SaaS)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">CPA (Custo por Aquisição)</td><td class="px-3 py-2 border border-dark-600 align-top">Deve ser inferior a LTV do cliente / 3</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">ROAS (Retorno sobre Gasto em Anúncios)</td><td class="px-3 py-2 border border-dark-600 align-top">&gt;3x para e-commerce, &gt;5x para high-ticket</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Taxa de Recuperação de Carrinho Abandonado</td><td class="px-3 py-2 border border-dark-600 align-top">&gt;10% dos abandonadores recuperados</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Custo por Compra</td><td class="px-3 py-2 border border-dark-600 align-top">Acompanhe e otimize semanalmente</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Ticket Médio (AOV)</td><td class="px-3 py-2 border border-dark-600 align-top">Acompanhe para oportunidades de upsell</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Taxa de rejeição da página de vendas</td><td class="px-3 py-2 border border-dark-600 align-top">&lt;40%</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Alocação de Orçamento:</strong> 20-30% do gasto total em anúncios</p><hr class="border-dark-600 my-8"><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 4: Retargeting — Recuperação e Fidelização</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Objetivo:</strong> Reenvolver pessoas que abandonaram em qualquer etapa do funil. Recuperar conversões perdidas e construir comportamento de recompra.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Sequência de Retargeting por Janela:</strong></p><h4 class="font-bold text-base mt-8 mb-3 text-white">Retargeting de 1 Dia (Abandonadores de Carrinho/Formulário)</h4><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Público:</strong> Adicionou ao carrinho ou iniciou formulário nas últimas 24 horas</li><li><strong>Mensagem:</strong> Lembrete com o produto/serviço exato. "Ainda pensando em [produto]?"</li><li><strong>Formato:</strong> Anúncio Dinâmico de Produto (Meta), RLSA (Google), retargeting de Display</li><li><strong>Limite de frequência:</strong> 2-3 impressões por dia</li><li><strong>Nível de oferta:</strong> Sem desconto ainda — apenas um lembrete</li></ul><h4 class="font-bold text-base mt-8 mb-3 text-white">Retargeting de 3 Dias (Abandonadores Mornos)</h4><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Público:</strong> Visitou página de preço/produto há 1-3 dias, sem conversão</li><li><strong>Mensagem:</strong> Adicione prova social. "[X] pessoas compraram isso hoje" ou depoimento de cliente</li><li><strong>Formato:</strong> Vídeo de depoimento, carrossel de avaliações, imagem única com citação</li><li><strong>Limite de frequência:</strong> 2 impressões por dia</li><li><strong>Nível de oferta:</strong> Destaque um benefício que eles podem ter perdido</li></ul><h4 class="font-bold text-base mt-8 mb-3 text-white">Retargeting de 7 Dias (Engajados Mas Indecisos)</h4><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Público:</strong> Visitantes do site há 3-7 dias, visualizadores de vídeo (50%+), engajadores</li><li><strong>Mensagem:</strong> Supere a objeção nº 1. Aborde preço, confiança ou complexidade</li><li><strong>Formato:</strong> Anúncio estilo FAQ, anúncio de comparação, criativo "mito vs realidade"</li><li><strong>Limite de frequência:</strong> 1-2 impressões por dia</li><li><strong>Nível de oferta:</strong> Introduza um pequeno incentivo (frete grátis, bônus, teste estendido)</li></ul><h4 class="font-bold text-base mt-8 mb-3 text-white">Retargeting de 14 Dias (Leads Esfriando)</h4><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Público:</strong> Engajou há 7-14 dias mas sem conversão</li><li><strong>Mensagem:</strong> Crie urgência. "Oferta expira em breve" ou "Vagas limitadas restantes"</li><li><strong>Formato:</strong> Imagem única com cronômetro, copy orientada a urgência</li><li><strong>Limite de frequência:</strong> 1 impressão por dia</li><li><strong>Nível de oferta:</strong> Desconto moderado (10-15% de desconto, item bônus, consultoria gratuita)</li></ul><h4 class="font-bold text-base mt-8 mb-3 text-white">Retargeting de 30 Dias (Recuperação Fria)</h4><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Público:</strong> Visitou há 14-30 dias, sem conversão</li><li><strong>Mensagem:</strong> Empurrão final ou renutrição. Ou uma oferta forte ou conteúdo educacional para reiniciar o funil</li><li><strong>Formato:</strong> Ângulo criativo totalmente novo — gancho diferente, formato diferente</li><li><strong>Limite de frequência:</strong> 1 impressão a cada 2 dias</li><li><strong>Nível de oferta:</strong> Melhor oferta (desconto de 20%+, pacote exclusivo, oferta expirando)</li></ul><h4 class="font-bold text-base mt-8 mb-3 text-white">Pós-Compra (Fidelização e Upsell)</h4><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Público:</strong> Clientes que compraram nos últimos 30-90 dias</li><li><strong>Mensagem:</strong> Agradecimento + upsell/cross-sell. "Clientes que compraram X também amaram Y"</li><li><strong>Formato:</strong> Carrossel de produtos complementares, vídeo tutorial de uso do produto</li><li><strong>Limite de frequência:</strong> 1 impressão a cada 3 dias</li><li><strong>Nível de oferta:</strong> Desconto de fidelidade, incentivo de indicação, acesso VIP</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Alocação de Orçamento:</strong> 10-15% do gasto total em anúncios para retargeting</p><hr class="border-dark-600 my-8"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Modelos de Funil Específicos por Plataforma</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Funil Completo Meta (Facebook + Instagram)</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">ESTRUTURA DA CAMPANHA:
+├── Campanha 1: [TOFU] Conscientização — Visualizações de Vídeo
+│   ├── Conjunto de Anúncios 1: Baseado em interesses (Ampla)
+│   │   ├── Anúncio 1: Reel de 15s — Gancho de problema
+│   │   ├── Anúncio 2: Vídeo de 30s — Formato de história
+│   │   └── Anúncio 3: Carrossel — Dicas educacionais
+│   ├── Conjunto de Anúncios 2: Lookalike 1% (da lista de clientes)
+│   │   ├── Anúncio 1: Reel de 15s — Gancho estatístico
+│   │   ├── Anúncio 2: Vídeo de 30s — Bastidores
+│   │   └── Anúncio 3: Carrossel — Quebrando mitos
+│   └── Conjunto de Anúncios 3: Lookalike 1% (dos visitantes do site)
+│       ├── Anúncio 1: Vídeo estilo UGC
+│       ├── Anúncio 2: Carrossel — Antes/Depois
+│       └── Anúncio 3: Imagem única — Afirmação ousada
+│
+├── Campanha 2: [MOFU] Consideração — Tráfego/Leads
+│   ├── Conjunto de Anúncios 1: Retarget — Visualizadores de vídeo (50%+)
+│   │   ├── Anúncio 1: Carrossel de estudo de caso
+│   │   ├── Anúncio 2: Vídeo de depoimento
+│   │   └── Anúncio 3: Oferta de isca de lead
+│   ├── Conjunto de Anúncios 2: Retarget — Engajadores da página (90 dias)
+│   │   ├── Anúncio 1: Gráfico de comparação
+│   │   ├── Anúncio 2: Carrossel de FAQ
+│   │   └── Anúncio 3: Download de recurso gratuito
+│   └── Conjunto de Anúncios 3: Retarget — Visitantes do site (30-60 dias)
+│       ├── Anúncio 1: Vídeo de demonstração/andamento
+│       ├── Anúncio 2: Imagem única orientada a resultados
+│       └── Anúncio 3: Anúncio de formulário de lead
+│
+├── Campanha 3: [BOFU] Conversão — Compras/Cadastros
+│   ├── Conjunto de Anúncios 1: Retarget — Visitantes de página de preço/produto (14 dias)
+│   │   ├── Anúncio 1: DPA (Anúncio Dinâmico de Produto)
+│   │   ├── Anúncio 2: Oferta + urgência
+│   │   └── Anúncio 3: Garantia/reversão de risco
+│   ├── Conjunto de Anúncios 2: Retarget — Abandonadores de carrinho (7 dias)
+│   │   ├── Anúncio 1: DPA com desconto
+│   │   ├── Anúncio 2: Depoimento + CTA
+│   │   └── Anúncio 3: Cronômetro/escassez
+│   └── Conjunto de Anúncios 3: Retarget — Visitantes repetidos 3+ (14 dias)
+│       ├── Anúncio 1: Criativo da melhor oferta
+│       ├── Anúncio 2: Comparação com concorrente
+│       └── Anúncio 3: Oferta de pacote/bônus
+│
+└── Campanha 4: [RETARGET] Recuperação + Fidelização
+    ├── Conjunto de Anúncios 1: Abandonadores de 1-3 dias
+    ├── Conjunto de Anúncios 2: Abandonadores de 7-14 dias
+    ├── Conjunto de Anúncios 3: Recuperação fria de 14-30 dias
+    └── Conjunto de Anúncios 4: Upsell pós-compra (30-90 dias)</code></pre><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Configurações Específicas da Meta:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Use posicionamentos Advantage+ para TOFU (deixe a Meta otimizar)</li><li>Posicionamentos manuais para BOFU (Feed + Stories apenas para maior intenção)</li><li>Campanhas de Vendas Advantage+ para e-commerce BOFU</li><li>Defina janela de atribuição: clique de 7 dias, visualização de 1 dia</li><li>Use a API de Conversões (CAPI) junto com o pixel para rastreamento preciso</li><li>Segmentação ampla para TOFU, estreita para BOFU</li></ul><hr class="border-dark-600 my-8"><h3 class="font-bold text-lg mt-8 mb-3 text-white">Funil Completo Google Ads</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">ESTRUTURA DA CAMPANHA:
+├── Campanha 1: [TOFU] Display — Conscientização
+│   ├── Grupo de Anúncios 1: Públicos em mercado
+│   │   └── Anúncios de Display Responsivos (3 títulos, 2 descrições, imagens)
+│   ├── Grupo de Anúncios 2: Públicos de afinidade
+│   │   └── Anúncios de Display Responsivos
+│   └── Grupo de Anúncios 3: Públicos de intenção personalizada
+│       └── Anúncios de Display Responsivos
+│
+├── Campanha 2: [TOFU] YouTube — Conscientização
+│   ├── Grupo de Anúncios 1: Anúncios bumper (6s) — alcance massivo
+│   ├── Grupo de Anúncios 2: TrueView In-Stream (15-30s) — storytelling
+│   └── Grupo de Anúncios 3: Anúncios de Descoberta — miniatura + título
+│
+├── Campanha 3: [MOFU] Busca — Consideração
+│   ├── Grupo de Anúncios 1: Palavras-chave informacionais ("como [resolver problema]")
+│   │   └── Anúncios de Busca Responsivos (15 títulos, 4 descrições)
+│   ├── Grupo de Anúncios 2: Palavras-chave de comparação ("[produto] vs [concorrente]")
+│   │   └── Anúncios de Busca Responsivos
+│   └── Grupo de Anúncios 3: Palavras-chave de solução ("[tipo de produto] para [caso de uso]")
+│       └── Anúncios de Busca Responsivos
+│
+├── Campanha 4: [BOFU] Busca — Conversão
+│   ├── Grupo de Anúncios 1: Palavras-chave de marca ("[nome da marca]")
+│   │   └── Anúncios de Busca Responsivos + todas as extensões
+│   ├── Grupo de Anúncios 2: Palavras-chave de alta intenção ("comprar [produto]", "preço [produto]")
+│   │   └── Anúncios de Busca Responsivos + todas as extensões
+│   └── Grupo de Anúncios 3: Palavras-chave de concorrente ("alternativa [nome do concorrente]")
+│       └── Anúncios de Busca Responsivos
+│
+├── Campanha 5: [BOFU] Shopping / Performance Max
+│   ├── Grupo de Ativos 1: Mais vendidos
+│   ├── Grupo de Ativos 2: Novidades
+│   └── Grupo de Ativos 3: Itens em promoção
+│
+└── Campanha 6: [RETARGET] Remarketing de Display
+    ├── Grupo de Anúncios 1: Todos os visitantes (7 dias) — lembrete
+    ├── Grupo de Anúncios 2: Visualizadores de produto (14 dias) — produto específico
+    ├── Grupo de Anúncios 3: Abandonadores de carrinho (7 dias) — oferta de urgência
+    └── Grupo de Anúncios 4: Conversores passados (90 dias) — upsell</code></pre><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Configurações Específicas do Google:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Ative Conversões Aprimoradas para rastreamento preciso</li><li>Use lances de CPA Alvo para MOFU/BOFU após 30+ conversões</li><li>Maximizar Cliques para TOFU até que dados se acumulem</li><li>Configure rastreamento de valor de conversão para otimização de ROAS</li><li>Use públicos de Observação (não restrinja, apenas monitore) na Busca</li><li>Listas de palavras-chave negativas compartilhadas entre campanhas</li><li>RLSA (Listas de Remarketing para Anúncios de Busca) para busca BOFU</li></ul><hr class="border-dark-600 my-8"><h3 class="font-bold text-lg mt-8 mb-3 text-white">Funil Completo LinkedIn Ads</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">ESTRUTURA DA CAMPANHA:
+├── Grupo de Campanhas 1: [TOFU] Conscientização
+│   ├── Campanha 1: Conteúdo Patrocinado — Liderança de Pensamento
+│   │   ├── Anúncio 1: Post de insight do setor (imagem única)
+│   │   ├── Anúncio 2: Infográfico baseado em dados
+│   │   └── Anúncio 3: Vídeo curto (30s) — tendência do setor
+│   └── Campanha 2: Conteúdo Patrocinado — Marca
+│       ├── Anúncio 1: História/missão da empresa
+│       ├── Anúncio 2: Destaque de funcionário / cultura
+│       └── Anúncio 3: Promoção de evento/webinar
+│
+├── Grupo de Campanhas 2: [MOFU] Consideração
+│   ├── Campanha 1: Formulários de Geração de Leads — Conteúdo Restrito
+│   │   ├── Anúncio 1: Download de whitepaper
+│   │   ├── Anúncio 2: Acesso a estudo de caso
+│   │   └── Anúncio 3: Calculadora de ROI / avaliação
+│   ├── Campanha 2: Anúncios de Documento — Autoridade
+│   │   ├── Anúncio 1: Carrossel de relatório do setor
+│   │   └── Anúncio 2: Guia passo a passo
+│   └── Campanha 3: Anúncios de Evento — Webinar/Demo
+│       └── Anúncio 1: Registro para webinar futuro
+│
+├── Grupo de Campanhas 3: [BOFU] Conversão
+│   ├── Campanha 1: Anúncios de Mensagem (InMail) — Direto
+│   │   ├── Anúncio 1: Convite personalizado para demonstração
+│   │   └── Anúncio 2: Oferta de teste gratuito / avaliação
+│   ├── Campanha 2: Anúncios de Conversação — Guiado
+│   │   └── Anúncio 1: CTA de múltiplas etapas (escolha seu caminho)
+│   └── Campanha 3: Retargeting — Visitantes do Site
+│       ├── Anúncio 1: Depoimento + CTA
+│       └── Anúncio 2: Destaque de preço/oferta
+│
+└── Grupo de Campanhas 4: [RETARGET] ABM
+    ├── Campanha 1: Segmentação por lista de empresas (contas nomeadas)
+    └── Campanha 2: Retargeting de lista de contatos</code></pre><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Configurações Específicas do LinkedIn:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Tamanho mínimo do público: 50.000 para TOFU, 10.000+ para MOFU/BOFU</li><li>Cargo + senioridade + tamanho da empresa para segmentação B2B</li><li>Rede de Público do LinkedIn: ON para TOFU, OFF para BOFU</li><li>Formulários de Geração de Leads: pré-preenchimento do perfil do LinkedIn para maior conclusão</li><li>Anúncios de Documento: use downloads restritos para captura de leads</li><li>Anúncios de Conversação: construa caminhos de CTA ramificados (2-3 opções por etapa)</li><li>Públicos Correspondentes (Matched Audiences): faça upload de listas de empresas para campanhas ABM</li><li>Limite de frequência: 4-7 impressões por membro por campanha</li></ul><hr class="border-dark-600 my-8"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Estrutura de Alocação de Orçamento</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Divisão Padrão de Orçamento por Etapa do Funil</h3><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Estágio do Negócio</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">TOFU</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">MOFU</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">BOFU</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Retargeting</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Novo negócio (sem dados de pixel, sem públicos)</td><td class="px-3 py-2 border border-dark-600 align-top">40%</td><td class="px-3 py-2 border border-dark-600 align-top">30%</td><td class="px-3 py-2 border border-dark-600 align-top">20%</td><td class="px-3 py-2 border border-dark-600 align-top">10%</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Em crescimento (alguns dados, pequenos públicos)</td><td class="px-3 py-2 border border-dark-600 align-top">30%</td><td class="px-3 py-2 border border-dark-600 align-top">35%</td><td class="px-3 py-2 border border-dark-600 align-top">25%</td><td class="px-3 py-2 border border-dark-600 align-top">10%</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Consolidado (grandes públicos, dados de pixel)</td><td class="px-3 py-2 border border-dark-600 align-top">20%</td><td class="px-3 py-2 border border-dark-600 align-top">30%</td><td class="px-3 py-2 border border-dark-600 align-top">35%</td><td class="px-3 py-2 border border-dark-600 align-top">15%</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Escalando (funil comprovado, otimizando)</td><td class="px-3 py-2 border border-dark-600 align-top">15%</td><td class="px-3 py-2 border border-dark-600 align-top">25%</td><td class="px-3 py-2 border border-dark-600 align-top">40%</td><td class="px-3 py-2 border border-dark-600 align-top">20%</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">Divisão de Orçamento por Plataforma (Multi-Plataforma)</h3><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Tipo de Negócio</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Plataforma 1 (%)</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Plataforma 2 (%)</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Plataforma 3 (%)</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Serviço Local</td><td class="px-3 py-2 border border-dark-600 align-top">Google Busca (50%)</td><td class="px-3 py-2 border border-dark-600 align-top">Meta (35%)</td><td class="px-3 py-2 border border-dark-600 align-top">Google Display (15%)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">SaaS</td><td class="px-3 py-2 border border-dark-600 align-top">Google Busca (40%)</td><td class="px-3 py-2 border border-dark-600 align-top">LinkedIn (35%)</td><td class="px-3 py-2 border border-dark-600 align-top">Meta Retarget (25%)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">E-commerce</td><td class="px-3 py-2 border border-dark-600 align-top">Meta (50%)</td><td class="px-3 py-2 border border-dark-600 align-top">Google Shopping (35%)</td><td class="px-3 py-2 border border-dark-600 align-top">TikTok (15%)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Agência / B2B</td><td class="px-3 py-2 border border-dark-600 align-top">LinkedIn (40%)</td><td class="px-3 py-2 border border-dark-600 align-top">Google Busca (35%)</td><td class="px-3 py-2 border border-dark-600 align-top">Meta (25%)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Criador / Curso</td><td class="px-3 py-2 border border-dark-600 align-top">Meta (55%)</td><td class="px-3 py-2 border border-dark-600 align-top">YouTube (30%)</td><td class="px-3 py-2 border border-dark-600 align-top">TikTok (15%)</td></tr></tbody></table></div><hr class="border-dark-600 my-8"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Checklist de Diagnóstico do Funil</h2><p class="text-neutral-300 mb-4 leading-relaxed">Antes de gerar o funil, verifique cada item:</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Checklist TOFU</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>[ ] Pelo menos 2 segmentos de público frio definidos</li><li>[ ] Conteúdo em vídeo recomendado (maior alcance, menor CPM)</li><li>[ ] Nenhum CTA de venda direta em anúncios TOFU</li><li>[ ] Pixel/rastreamento de conversão instalado nas landing pages</li><li>[ ] Limite de frequência definido para evitar fadiga de anúncio</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Checklist MOFU</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>[ ] Públicos de retargeting definidos a partir do engajamento TOFU</li><li>[ ] Prova social presente em pelo menos 50% dos anúncios</li><li>[ ] Isca de lead ou recurso gratuito oferecido</li><li>[ ] Landing page corresponde à mensagem do anúncio (alinhamento de título)</li><li>[ ] Pelo menos 1 objeção abordada na copy do anúncio</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Checklist BOFU</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>[ ] Públicos de alta intenção segmentados (página de preço, carrinho, visitantes repetidos)</li><li>[ ] Oferta clara com elemento de urgência ou escassez</li><li>[ ] Reversão de risco presente (garantia, teste gratuito, reembolso)</li><li>[ ] Múltiplas colocações de CTA na landing page</li><li>[ ] Rastreamento de conversão verificado e disparando corretamente</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Checklist Retargeting</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>[ ] Públicos baseados em janela criados (1, 3, 7, 14, 30 dias)</li><li>[ ] Limites de frequência definidos para prevenir fadiga de anúncio</li><li>[ ] Rotação de criativos planejada (novos criativos a cada 2 semanas)</li><li>[ ] Exclusões definidas (excluir conversores de campanhas de conversão)</li><li>[ ] Sequência pós-compra inclui upsell/cross-sell</li></ul><hr class="border-dark-600 my-8"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Modelo de Saída</h2><p class="text-neutral-300 mb-4 leading-relaxed">Gere a saída como <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-FUNNEL.md</code> usando esta estrutura:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+# Arquitetura do Funil de Anúncios: [Nome do Negócio]
+
+**Gerado em:** [Data]
+**Tipo de Negócio:** [Tipo detectado]
+**Oferta Principal:** [O que eles vendem]
+**Ação de Conversão:** [Compra / Lead / Cadastro / Chamada]
+**Plataformas Recomendadas:** [Plataforma 1, Plataforma 2, Plataforma 3]
+
+---
+
+## Resumo Executivo
+
+[2-3 frases: o que este funil faz, jornada do cliente esperada, caminho principal de conversão]
+
+---
+
+## Visão Geral do Funil
+
+[Diagrama visual do funil usando texto/ASCII]
+
+TOFU (Consciência) — [X]% do orçamento
+  → Público frio: [resumo do direcionamento]
+  → Objetivo: [meta da métrica]
+      ↓
+MOFU (Consideração) — [X]% do orçamento
+  → Público morno: [resumo do direcionamento]
+  → Objetivo: [meta da métrica]
+      ↓
+BOFU (Conversão) — [X]% do orçamento
+  → Público quente: [resumo do direcionamento]
+  → Objetivo: [meta da métrica]
+      ↓
+RETARGETING (Recuperação) — [X]% do orçamento
+  → Públicos de abandono: [resumo da janela de tempo]
+  → Objetivo: [meta da métrica]
+
+---
+
+## Plataforma 1: [Nome da Plataforma]
+
+### Campanhas TOFU
+[Estrutura completa da campanha com conjuntos de anúncios, direcionamento, formatos, copy]
+
+### Campanhas MOFU
+[Estrutura completa da campanha]
+
+### Campanhas BOFU
+[Estrutura completa da campanha]
+
+### Campanhas de Retargeting
+[Estrutura completa de retargeting com janelas de tempo]
+
+---
+
+## Plataforma 2: [Nome da Plataforma]
+[Mesma estrutura da Plataforma 1]
+
+---
+
+## Sequências de Retargeting
+
+### Linha do Tempo da Sequência
+| Janela | Público | Mensagem | Nível da Oferta | Frequência |
+|---|---|---|---|---|
+| 1 dia | [público] | [mensagem] | [oferta] | [limite] |
+| 3 dias | [público] | [mensagem] | [oferta] | [limite] |
+| 7 dias | [público] | [mensagem] | [oferta] | [limite] |
+| 14 dias | [público] | [mensagem] | [oferta] | [limite] |
+| 30 dias | [público] | [mensagem] | [oferta] | [limite] |
+
+---
+
+## Painel de KPIs
+
+### Metas TOFU
+| Métrica | Meta | Como Rastrear |
+|---|---|---|
+
+### Metas MOFU
+[Mesmo formato de tabela]
+
+### Metas BOFU
+[Mesmo formato de tabela]
+
+---
+
+## Alocação de Orçamento
+
+| Etapa | % do Orçamento | Mensal ($) | Semanal ($) |
+|---|---|---|---|
+| TOFU | [X]% | $[X] | $[X] |
+| MOFU | [X]% | $[X] | $[X] |
+| BOFU | [X]% | $[X] | $[X] |
+| Retargeting | [X]% | $[X] | $[X] |
+| **Total** | **100%** | **$[X]** | **$[X]** |
+
+---
+
+## Cronograma de Implementação
+
+### Semana 1: Fundação
+- Instalar pixels/tags em todas as páginas
+- Criar públicos personalizados e públicos semelhantes (lookalikes)
+- Construir campanhas TOFU
+- Lançar anúncios TOFU
+
+### Semana 2: Lançamento MOFU
+- Revisar dados TOFU, ajustar direcionamento
+- Lançar campanhas MOFU
+- Configurar públicos de retargeting
+
+### Semana 3: Ativação BOFU
+- Lançar campanhas BOFU
+- Ativar sequências de retargeting
+- Configurar verificação do rastreamento de conversão
+
+### Semana 4: Otimização
+- Revisar desempenho do funil completo
+- Desativar anúncios com baixo desempenho (&lt;50% do CTR de referência)
+- Escalar anúncios vencedores (aumentar orçamento em 20% nos vencedores)
+- Adicionar novas variações de criativos
+
+### Contínuo (Mensal)
+- Atualizar criativos a cada 2-3 semanas
+- Expandir públicos semelhantes (lookalikes)
+- Testar novos formatos de anúncios
+- Revisar pontos de abandono do funil
+- Ajustar alocação de orçamento com base no ROAS por etapa</code></pre><hr class="border-dark-600 my-8"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Regras</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>SEMPRE buscar o site antes de construir o funil — o funil deve ser específico para o negócio, não genérico</li><li>SEMPRE incluir pelo menos 2 plataformas, a menos que o negócio claramente precise de apenas uma</li><li>SEMPRE incluir sequências de retargeting com janelas de tempo específicas</li><li>SEMPRE incluir modelos de copy com exemplos reais de copy adaptados ao negócio</li><li>SEMPRE atribuir percentuais de orçamento que somem 100%</li><li>SEMPRE incluir benchmarks de KPIs para que o usuário saiba o que é "bom"</li><li>NUNCA recomendar uma plataforma sem explicar POR QUE ela se encaixa neste negócio</li><li>NUNCA usar públicos genéricos — o direcionamento deve ser específico para a indústria e a oferta</li><li>NUNCA pular o cronograma de implementação — os usuários precisam saber o que fazer primeiro</li><li>Gerar o funil completo em <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-FUNNEL.md</code> no diretório de trabalho atual</li></ol><p class="text-neutral-300 mb-4 leading-relaxed">--- skills/ads-quick/SKILL.md ---</p><hr class="border-dark-600 my-8"><p class="text-neutral-300 mb-4 leading-relaxed">name: ads-quick description: Instantâneo de Prontidão para Anúncios em 60 Segundos — avaliação rápida sem subagentes version: 1.0.0 author: Estrategista de Anúncios de IA tags: [ads, quick, snapshot, assessment, readiness] trigger: /ads quick output: Saída no Terminal (nenhum arquivo salvo)</p><hr class="border-dark-600 my-8">
+    </article>
+
+    <div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+      <a href="modulo-1-12.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo 1.12</a>
+      <a href="modulo-1-14.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">Módulo 1.14 →</a>
+    </div>
+  </main>
+  <footer class="border-t border-dark-600 py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p>Times de IA — Grupo 1 · Material educacional | <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
+    </div>
+  </footer>
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>
