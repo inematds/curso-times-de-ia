@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 3.5: Cryptocurrency Watchlist | AI Teams</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha3-crypto/modulo-3-5.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha3-crypto/modulo-3-5.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha3-crypto/modulo-3-5.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha3-crypto/modulo-3-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-3-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../es/trilha3-crypto/modulo-3-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">AI Teams</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Real estate</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recruiting</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finance</span></a>
+<button aria-label="Toggle theme" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-purple-400" href="../index.html">Start</a>
+<span>/</span>
+<a class="hover:text-purple-400" href="index.html">Track 3</a>
+<span>/</span>
+<span class="text-purple-400">Module 3.5</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MODULE 3.5 · TRACK 3</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">🪙 Cryptocurrency Watchlist</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">[List any tokens with active warning flags, grouped by priority]</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-purple-400">6</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-purple-400">5 min</div>
+<div class="text-xs text-neutral-400">Reading</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-purple-400">orchestrator</div>
+<div class="text-xs text-neutral-400">Command</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-purple-400">Crypto</div>
+<div class="text-xs text-neutral-400">Team</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<blockquote class="border-l-4 border-primary/60 bg-dark-800/50 pl-4 pr-4 py-3 my-4 rounded-r-lg text-neutral-300"><p class="">Last Updated: [Date and Time] | Scored by AI Crypto Analyst</p><p class="">For educational and research purposes only. Not financial advice.</p></blockquote><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Watchlist Summary</h2><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">#</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Token</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Price</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Quick Score</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Grade</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Signal</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Trend</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Mom.</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Sent.</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Fund.</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">R/R</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Alerts</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">1</td><td class="px-3 py-2 border border-dark-600 align-top">TOKEN</td><td class="px-3 py-2 border border-dark-600 align-top">$X.XX</td><td class="px-3 py-2 border border-dark-600 align-top">XX/100</td><td class="px-3 py-2 border border-dark-600 align-top">X</td><td class="px-3 py-2 border border-dark-600 align-top">XXXXX</td><td class="px-3 py-2 border border-dark-600 align-top">XX</td><td class="px-3 py-2 border border-dark-600 align-top">XX</td><td class="px-3 py-2 border border-dark-600 align-top">XX</td><td class="px-3 py-2 border border-dark-600 align-top">XX</td><td class="px-3 py-2 border border-dark-600 align-top">XX</td><td class="px-3 py-2 border border-dark-600 align-top">flags</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">2</td><td class="px-3 py-2 border border-dark-600 align-top">TOKEN</td><td class="px-3 py-2 border border-dark-600 align-top">$X.XX</td><td class="px-3 py-2 border border-dark-600 align-top">XX/100</td><td class="px-3 py-2 border border-dark-600 align-top">X</td><td class="px-3 py-2 border border-dark-600 align-top">XXXXX</td><td class="px-3 py-2 border border-dark-600 align-top">XX</td><td class="px-3 py-2 border border-dark-600 align-top">XX</td><td class="px-3 py-2 border border-dark-600 align-top">XX</td><td class="px-3 py-2 border border-dark-600 align-top">XX</td><td class="px-3 py-2 border border-dark-600 align-top">XX</td><td class="px-3 py-2 border border-dark-600 align-top">flags</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">...</td></tr></tbody></table></div><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Active Alerts</h2><p class="text-neutral-300 mb-4 leading-relaxed">[List any tokens with active warning flags, grouped by priority]</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">High Priority</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>[TOKEN]</strong> — [Alert description]</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Average Priority</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>[TOKEN]</strong> — [Alert description]</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Token Details</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">[TOKEN] -- Quick Score: XX/100 (Grade: X)</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Price:</strong> $X.XX | <strong>Market Cap:</strong> $X.XX | <strong>24h Vol:</strong> $X.XX <strong>Narrative:</strong> [Alignment with the narrative] <strong>Last Score:</strong> [Date]</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Score Breakdown:</strong></p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Dimension</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Score</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Rationale</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Trend</td><td class="px-3 py-2 border border-dark-600 align-top">XX/20</td><td class="px-3 py-2 border border-dark-600 align-top">[Brief explanation]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Momentum</td><td class="px-3 py-2 border border-dark-600 align-top">XX/20</td><td class="px-3 py-2 border border-dark-600 align-top">[Brief explanation]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Sentiment</td><td class="px-3 py-2 border border-dark-600 align-top">XX/20</td><td class="px-3 py-2 border border-dark-600 align-top">[Brief explanation]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Fundamentals</td><td class="px-3 py-2 border border-dark-600 align-top">XX/20</td><td class="px-3 py-2 border border-dark-600 align-top">[Brief explanation]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Risk/Reward</td><td class="px-3 py-2 border border-dark-600 align-top">XX/20</td><td class="px-3 py-2 border border-dark-600 align-top">[Brief explanation]</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Key Levels:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Support: $X.XX, $X.XX</li><li>Resistance: $X.XX, $X.XX</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Upcoming Events:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>[Date]: [Event description]</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Notes:</strong> [Any additional context]</p><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed">[Repeat for each token]</p><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed"><strong>DISCLAIMER:</strong> This watchlist is AI-generated research for educational purposes only. It is not financial advice. Quick Scores are subjective assessments based on available data and may not reflect actual market conditions. Cryptocurrency investments are highly speculative and volatile. Always do your own research (DYOR) and consult a licensed financial advisor before making investment decisions. Past performance does not indicate future results.</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+## Regras de Gerenciamento da Lista de Observação
+
+1. **Máximo de 25 tokens** — Mantenha a lista de observação focada e gerenciável
+2. **Reordenar em cada atualização** — A Pontuação Rápida mais alta sempre no topo
+3. **Aviso de dados desatualizados** — Se um token não tiver sido repontuado em 7+ dias, sinalize-o
+4. **Histórico de pontuação** — Anote a pontuação anterior ao repontuar (ex.: "72 -&gt; 65")
+5. **Sugestão de remoção** — Se um token pontuar abaixo de 20 em duas repontuações consecutivas, sugira a remoção
+6. **Sem duplicatas** — Verifique entradas existentes antes de adicionar
+7. **Indiferente a maiúsculas/minúsculas** — BTC, btc e Bitcoin mapeiam todos para o mesmo token
+
+## Fontes de Dados
+</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">WebSearch("[token] price market cap today") WebSearch("[token] crypto sentiment news") WebSearch("[token] upcoming events unlock schedule") WebSearch("[token] TVL revenue fundamentals") WebSearch("[token] technical analysis support resistance levels")</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+## Casos Extremos
+
+- **Token não encontrado:** Se a WebSearch não retornar resultados, informe ao usuário que o token pode ser muito novo ou pouco conhecido
+- **Stablecoin adicionada:** Pontue de forma diferente — foque na estabilidade do par, reservas e participação de mercado
+- **Token meme:** Ajuste a pontuação para pesar mais o sentimento e o momentum do que os fundamentos
+- **Token delisted:** Sinalize imediatamente e sugira a remoção
+
+**AVISO LEGAL:** Esta ferramenta fornece pesquisa e análise geradas por IA apenas para fins educacionais. Não é aconselhamento financeiro. Investimentos em criptomoedas são altamente especulativos e voláteis. O desempenho passado não indica resultados futuros. Sempre faça sua própria pesquisa (DYOR) e consulte um assessor financeiro licenciado.
+
+
+--- skills/crypto-defi/SKILL.md ---
+---
+name: crypto-defi
+description: Análise de Protocolos DeFi — analisa TVL, receita, rendimentos, liquidez, segurança, governança e posicionamento competitivo com uma Pontuação DeFi Composta (0-100)
+version: 1.0.0
+author: Analista de Cripto por IA
+tags: [crypto, defi, tvl, yield, protocol, analysis]
+command: /crypto defi &lt;protocol&gt;
+output: CRYPTO-DEFI-[PROTOCOL].md
+---
+</code></pre>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-3-4.html">← Module 3.4</a>
+<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="modulo-3-6.html">Module 3.6 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>AI Teams — Group 1 · Educational material | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

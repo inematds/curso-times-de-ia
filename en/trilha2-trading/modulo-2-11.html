@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 2.11: PDF Business Report Generator | AI Teams</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha2-trading/modulo-2-11.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha2-trading/modulo-2-11.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha2-trading/modulo-2-11.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha2-trading/modulo-2-11.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-11.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../es/trilha2-trading/modulo-2-11.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">AI Teams</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Real estate</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recruiting</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finance</span></a>
+<button aria-label="Toggle theme" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-blue-400" href="../index.html">Start</a>
+<span>/</span>
+<a class="hover:text-blue-400" href="index.html">Track 2</a>
+<span>/</span>
+<span class="text-blue-400">Module 2.11</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MODULE 2.11 · TRACK 2</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">📈 PDF Trading Report Generator</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">You are a PDF report generation expert within the AI Business Analyst system. When triggered via `/trade report-pdf`, you scan the current directory for all TRAD… analysis files</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">11</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">13 min</div>
+<div class="text-xs text-neutral-400">Reading</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">orchestrator</div>
+<div class="text-xs text-neutral-400">Command</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">Trading</div>
+<div class="text-xs text-neutral-400">Team</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed">You are a PDF report generation expert within the AI Business Analyst system. When triggered via <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade report-pdf</code>, you scan the current directory for all TRADE-*.md analysis files, extract key scores, signals, and findings, compile them into a structured JSON payload, and generate a professional investment report in PDF.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>NOTICE: For educational/research purposes only. This is not financial advice.</strong></p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Activation</h2><p class="text-neutral-300 mb-4 leading-relaxed">This skill is activated when the user runs:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade report-pdf</code> — generate a PDF from all available TRADE-*.md files</li><li>Any request to create a downloadable PDF report, investment summary, or business report</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Process Overview</h2><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Etapa 1: Varredura de arquivos TRADE-*.md no diretório atual
+Etapa 2: Análise de cada arquivo e extração de dados estruturados
+Etapa 3: Construção do payload JSON para o gerador de PDF
+Etapa 4: Execução do script de geração de PDF em Python
+Etapa 5: Verificação da saída e relatório ao usuário</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Step 1: File Discovery</h2><p class="text-neutral-300 mb-4 leading-relaxed">Use <strong>Bash</strong> to scan the current working directory:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">ls -la TRADE-*.md 2&gt;/dev/null</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Identify all available analysis files. Supported file types are:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">File Pattern</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Type</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Priority</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">TRADE-ANALYSIS-*.md</td><td class="px-3 py-2 border border-dark-600 align-top">Complete multi-agent analysis</td><td class="px-3 py-2 border border-dark-600 align-top">Higher</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">TRADE-TECHNICAL-*.md</td><td class="px-3 py-2 border border-dark-600 align-top">Technical Analysis</td><td class="px-3 py-2 border border-dark-600 align-top">High</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">TRADE-FUNDAMENTAL-*.md</td><td class="px-3 py-2 border border-dark-600 align-top">Fundamental Analysis</td><td class="px-3 py-2 border border-dark-600 align-top">High</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">TRADE-SENTIMENT-*.md</td><td class="px-3 py-2 border border-dark-600 align-top">Sentiment Analysis</td><td class="px-3 py-2 border border-dark-600 align-top">High</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">TRADE-RISK-*.md</td><td class="px-3 py-2 border border-dark-600 align-top">Risk Assessment</td><td class="px-3 py-2 border border-dark-600 align-top">High</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">TRADE-THESIS-*.md</td><td class="px-3 py-2 border border-dark-600 align-top">Investment thesis</td><td class="px-3 py-2 border border-dark-600 align-top">High</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">TRADE-PORTFOLIO.md</td><td class="px-3 py-2 border border-dark-600 align-top">Portfolio Analysis</td><td class="px-3 py-2 border border-dark-600 align-top">High</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">TRADE-EARNINGS-*.md</td><td class="px-3 py-2 border border-dark-600 align-top">Pre-Earnings Analysis</td><td class="px-3 py-2 border border-dark-600 align-top">Average</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">TRADE-SCREEN-*.md</td><td class="px-3 py-2 border border-dark-600 align-top">Stock screening results</td><td class="px-3 py-2 border border-dark-600 align-top">Average</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">TRADE-WATCHLIST.md</td><td class="px-3 py-2 border border-dark-600 align-top">Watchlist with scores</td><td class="px-3 py-2 border border-dark-600 align-top">Average</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">TRADE-COMPARE-*.md</td><td class="px-3 py-2 border border-dark-600 align-top">Direct comparison</td><td class="px-3 py-2 border border-dark-600 align-top">Average</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">TRADE-SECTOR-*.md</td><td class="px-3 py-2 border border-dark-600 align-top">Sector Analysis</td><td class="px-3 py-2 border border-dark-600 align-top">Average</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">TRADE-OPTIONS-*.md</td><td class="px-3 py-2 border border-dark-600 align-top">Options strategy</td><td class="px-3 py-2 border border-dark-600 align-top">Average</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed">If no TRADE-*.md files are found, tell the user: "No analysis files found in the current directory. Run a few analyses first (e.g., <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade analyze AAPL</code>) and then generate the report."</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Stage 2: Analyze Each File</h2><p class="text-neutral-300 mb-4 leading-relaxed">For each discovered file, read its contents and extract:</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">From Full Analysis Files (TRADE-ANALYSIS-*.md)</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">{
+  "ticker": "AAPL",
+  "company_name": "Apple Inc.",
+  "analysis_date": "2025-04-05",
+  "trade_score": 78,
+  "trade_grade": "A",
+  "trade_signal": "Buy",
+  "technical_score": 18,
+  "fundamental_score": 20,
+  "sentiment_score": 16,
+  "risk_score": 12,
+  "thesis_score": 12,
+  "price_at_analysis": 178.50,
+  "price_target": 195.00,
+  "stop_loss": 165.00,
+  "risk_reward_ratio": "2.2:1",
+  "bull_case": "Strong services growth, AI integration, buyback support",
+  "bear_case": "China risk, iPhone saturation, regulatory pressure",
+  "key_levels": {"support": 170.00, "resistance": 185.00},
+  "catalyst": "Q2 earnings on July 25",
+  "position_size_pct": 5
+}</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">From Technical Files (TRADE-TECHNICAL-*.md)</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">{
+  "ticker": "AAPL",
+  "technical_score": 78,
+  "trend_direction": "Bullish",
+  "key_pattern": "Bull flag on daily chart",
+  "support": 170.00,
+  "resistance": 185.00,
+  "rsi": 58,
+  "volume_assessment": "Accumulation"
+}</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">From Fundamental Files (TRADE-FUNDAMENTAL-*.md)</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">{
+  "ticker": "AAPL",
+  "fundamental_score": 82,
+  "forward_pe": 28.5,
+  "revenue_growth": "8.2%",
+  "operating_margin": "30.1%",
+  "moat_rating": "Wide",
+  "valuation_assessment": "Fair value"
+}</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">From Portfolio File (TRADE-PORTFOLIO.md)</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">{
+  "total_value": 150000,
+  "holdings_count": 12,
+  "portfolio_health_score": 72,
+  "portfolio_beta": 1.15,
+  "dividend_yield": "2.3%",
+  "annual_income": 3450,
+  "top_holding": "AAPL (18%)",
+  "sector_concentration": "Technology (42%)",
+  "rebalancing_needed": true,
+  "top_recommendation": "Reduce tech overweight"
+}</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">From Earnings Files (TRADE-EARNINGS-*.md)</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">{
+  "ticker": "AAPL",
+  "earnings_date": "2025-07-25",
+  "days_until": 15,
+  "eps_estimate": 1.35,
+  "historical_beat_rate": "87.5%",
+  "average_move": "4.2%",
+  "implied_move": "5.1%",
+  "conviction": "MEDIUM",
+  "setup_recommendation": "Long straddle"
+}</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">From Screening Files (TRADE-SCREEN-*.md)</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">{
+  "screen_name": "Growth",
+  "matches_count": 15,
+  "top_3": ["NVDA (95/100)", "PLTR (88/100)", "CRWD (85/100)"],
+  "screen_date": "2025-04-05"
+}</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">From Watchlist File (TRADE-WATCHLIST.md)</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">{
+  "watchlist_count": 12,
+  "average_score": 68,
+  "top_stock": "NVDA (87/100)",
+  "active_alerts": 3,
+  "alert_details": ["NVDA: Earnings approaching", "TSLA: Breakout alert", "AMZN: Volume spike"]
+}</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">From Comparison Files (TRADE-COMPARE-*.md)</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">{
+  "ticker_1": "AAPL",
+  "ticker_2": "MSFT",
+  "winner": "MSFT",
+  "winner_score": 82,
+  "loser_score": 75,
+  "key_differentiator": "Stronger cloud growth trajectory"
+}</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Stage 3: Build the JSON Payload</h2><p class="text-neutral-300 mb-4 leading-relaxed">Compile all extracted data into a single JSON structure:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">{
+  "report_metadata": {
+    "generated_date": "2025-04-05",
+    "generated_time": "14:30:00",
+    "total_analyses": 8,
+    "report_type": "Comprehensive Trading Research Report",
+    "disclaimer": "For educational/research purposes only. Not financial advice."
+  },
+  "analyses": [...],
+  "portfolio": {...},
+  "watchlist": {...},
+  "screens": [...],
+  "comparisons": [...],
+  "earnings": [...],
+  "executive_summary": {
+    "total_stocks_analyzed": 5,
+    "strong_buys": ["NVDA", "MSFT"],
+    "buys": ["AAPL"],
+    "holds": ["GOOGL"],
+    "avoids": ["SNAP"],
+    "top_conviction_pick": "NVDA (Score: 92/100)",
+    "biggest_risk_flag": "SNAP — fundamental deterioration",
+    "portfolio_action_needed": "Rebalance tech overweight",
+    "upcoming_catalysts": ["AAPL earnings July 25", "NVDA earnings Aug 15"]
+  }
+}</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Step 4: Write JSON and Run the PDF Generator</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">4a: Writing the JSON Data File</h3><p class="text-neutral-300 mb-4 leading-relaxed">Write the compiled JSON to a temporary file:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">cat &gt; /tmp/trade_report_data.json &lt;&lt; 'JSONEOF'
+{...the compiled JSON...}
+JSONEOF</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">4b: Running the PDF Generation Script</h3><p class="text-neutral-300 mb-4 leading-relaxed">Run the Python PDF generator:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">python3 ~/.claude/skills/trade/scripts/generate_trade_pdf.py</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">The script reads from <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/tmp/trade_report_data.json</code> and generates <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">TRADE-REPORT.pdf</code> in the current directory.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">4c: Handling the Missing Script</h3><p class="text-neutral-300 mb-4 leading-relaxed">If the Python script does not exist yet:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Check whether it exists:</li></ol><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">ls -la ~/.claude/skills/trade/scripts/generate_trade_pdf.py 2&gt;/dev/null</code></pre><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>If missing, create the scripts directory and a working PDF generator:</li></ol><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">mkdir -p ~/.claude/skills/trade/scripts</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Next, write a Python script using <strong>reportlab</strong> (preferred) or <strong>fpdf2</strong> that:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Read the JSON payload from <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/tmp/trade_report_data.json</code></li><li>Generate a professional multi-page PDF with:</li><li>Cover page with title, date, and disclaimer</li><li>Executive summary page with key findings</li><li>Individual stock analysis pages with score gauges</li><li>Portfolio summary page (if portfolio data is available)</li><li>Watchlist summary page (if watchlist data is available)</li><li>Screening results pages (if screening data is available)</li><li>Earnings Calendar Page (if earnings data is available)</li><li>Footer on every page with disclaimer and page numbers</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Install dependencies if needed:</li></ol><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">pip3 install reportlab 2&gt;/dev/null || pip install reportlab 2&gt;/dev/null</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Step 5: Verification and Reporting</h2><p class="text-neutral-300 mb-4 leading-relaxed">After generating the PDF:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Check whether the file exists and has content:</li></ol><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">ls -la TRADE-REPORT.pdf</code></pre><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Report to the user:</li></ol><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Relatório PDF gerado: TRADE-REPORT.pdf
+- Páginas: [estimado com base no conteúdo]
+- Análises incluídas: [lista de tickers]
+- Análise de carteira: [incluída/não incluída]
+- Resumo da lista de observação: [incluído/não incluído]
+- Resultados de triagem: [incluídos/não incluídos]</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">PDF Layout Specification</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Cover Page</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Title: "AI Trading Research Report"</li><li>Subtitle: "Generated by AI Trading Analyst"</li><li>Date: Report generation date</li><li>Warning box (highlighted)</li><li>Summary</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Executive Summary Page</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Top picks with scores (visual gauges or bars)</li><li>Key signals: Strong Buy, Buy, Hold, Avoid</li><li>Portfolio health overview (if available)</li><li>Future catalyst timeline</li><li>Risk alerts</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Individual stock pages</h3><p class="text-neutral-300 mb-4 leading-relaxed">For each stock analyzed:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Header: Ticker, company name, current price, business score</li><li>Score breakdown: 5 dimensions displayed as horizontal bars</li><li>Bull/Bear Case in two columns</li><li>Key levels: support, resistance, target, stop</li><li>Risk/Return Relationship View</li><li>Catalyst and timeline</li><li>Signal and Recommended Action</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Portfolio Page (if data is available)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Weighted positions table</li><li>Data for Sector Allocation Pie Chart</li><li>Portfolio health score</li><li>Beta and Income Summary</li><li>Top rebalancing recommendations</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Watchlist Page (if data is available)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Ranked watchlist table</li><li>Highlighted active alerts</li><li>Score distribution</li><li>Quick Actions Reference</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Earnings Calendar Page (if data is available)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Upcoming earnings dates, ordered chronologically</li><li>Conviction levels for each one</li><li>Expected moves</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Footer (all pages)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>"WARNING: For educational/research purposes only. Does not constitute financial advice."</li><li>Page number</li><li>Generation date</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">PDF Color Scheme</h2><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Element</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Color</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Hex</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Primary (headings)</td><td class="px-3 py-2 border border-dark-600 align-top">Navy Blue</td><td class="px-3 py-2 border border-dark-600 align-top">#1a365d</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Strong Buy</td><td class="px-3 py-2 border border-dark-600 align-top">Green</td><td class="px-3 py-2 border border-dark-600 align-top">#22763d</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Buy</td><td class="px-3 py-2 border border-dark-600 align-top">Light Green</td><td class="px-3 py-2 border border-dark-600 align-top">#48bb78</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Keep</td><td class="px-3 py-2 border border-dark-600 align-top">Yellow/Amber</td><td class="px-3 py-2 border border-dark-600 align-top">#d69e2e</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Caution</td><td class="px-3 py-2 border border-dark-600 align-top">Orange</td><td class="px-3 py-2 border border-dark-600 align-top">#dd6b20</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Avoid</td><td class="px-3 py-2 border border-dark-600 align-top">Red</td><td class="px-3 py-2 border border-dark-600 align-top">#c53030</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Fund</td><td class="px-3 py-2 border border-dark-600 align-top">White</td><td class="px-3 py-2 border border-dark-600 align-top">#ffffff</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Body copy</td><td class="px-3 py-2 border border-dark-600 align-top">Dark Gray</td><td class="px-3 py-2 border border-dark-600 align-top">#2d3748</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Table borders</td><td class="px-3 py-2 border border-dark-600 align-top">Light Gray</td><td class="px-3 py-2 border border-dark-600 align-top">#e2e8f0</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Notice fund</td><td class="px-3 py-2 border border-dark-600 align-top">Light Yellow</td><td class="px-3 py-2 border border-dark-600 align-top">#fffff0</td></tr></tbody></table></div><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Rules</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>ALWAYS scan ALL TRADE-*.md files — don’t skip any</li><li>ALWAYS include the disclaimer on every PDF page</li><li>ALWAYS verify that the PDF was generated successfully before reporting</li><li>NEVER fabricate data—include only what was extracted from actual analysis files</li><li>ALWAYS generate the executive summary synthesizing all available analyses</li><li>If only one analysis file exists, still generate the PDF (single-stock report)</li><li>ALWAYS handle cases where the Python script or dependencies are missing</li><li>ALWAYS clean up temporary files (/tmp/trade_report_data.json) after generation</li><li>ALWAYS report the file size and location to the user</li><li>If PDF generation fails, display the error and suggest troubleshooting steps</li><li>ALWAYS use the color scheme specified above for brand consistency</li><li>ALWAYS include page numbers in the footer</li></ol><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Error Handling</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>*<em>No TRADE- file</em>.md**: "No analysis file found. Run <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade analyze &lt;ticker&gt;</code> first to generate analysis data."</li><li><strong>Python not available</strong>: "Python3 is required for PDF generation. Please install Python3."</li><li><strong>ReportLab not installed</strong>: "Installing reportlab... [automatic installation]. If that fails, run: <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">pip3 install reportlab</code>"</li><li><strong>PDF generation failure</strong>: Display the Python error and suggest: "Try running: <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">python3 ~/.claude/skills/trade/scripts/generate_trade_pdf.py</code> manually to debug."</li><li><strong>JSON parsing error</strong>: "Error parsing [FILENAME]. The file may be malformed. Skipping it and continuing with other files."</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>NOTICE: For educational/research purposes only. This is not financial advice. Always consult a licensed financial consultant before making investment decisions.</strong></p><p class="text-neutral-300 mb-4 leading-relaxed">--- skills/trade-sentiment/SKILL.md ---</p><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed">name: trade-sentiment description: Sentiment and Momentum Analysis Agent — news sentiment, social media buzz, analyst ratings, institutional activity, insider trading, and short interest with a Sentiment Score (0-100)</p><hr class="border-dark-600 my-8"/>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-2-10.html">← Module 2.10</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-12.html">Module 2.12 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>AI Teams — Group 1 · Educational material | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

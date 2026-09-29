@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Track 1: Ads Team | AI Teams</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha1-ads/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha1-ads/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha1-ads/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha1-ads/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../es/trilha1-ads/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">AI Teams</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Real estate</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recruiting</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finance</span></a>
+<button aria-label="Toggle theme" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../index.html">Start</a>
+<span>/</span>
+<span class="text-emerald-400">Track 1</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-14 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">TRACK 1</span>
+<h1 class="text-3xl sm:text-4xl font-extrabold mb-4">📣 Ads Team</h1>
+<p class="text-lg text-neutral-400 max-w-3xl leading-relaxed">undefined</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">14</div>
+<div class="text-xs text-neutral-400">Modules</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">185</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">15</div>
+<div class="text-xs text-neutral-400">Commands</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">5h</div>
+<div class="text-xs text-neutral-400">Content</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section class="mb-12">
+<h2 class="text-2xl font-bold mb-6">🗂️ Track Modules</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-1.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MODULE 1.1</span>
+<span class="text-xs text-neutral-500">8 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">AI Ads Strategist — Lead Orchestrator</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are a comprehensive advertising strategy and campaign generation system for the assistant. It helps entrepreneurs, agency owners, and marketers bu…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>6 topics</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-2.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MODULE 1.2</span>
+<span class="text-xs text-neutral-500">19 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Platform-Specific Ad Copy Generator</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Generate 10+ production-ready ad copy variations for a specified ad platform. Each ad is written to the platform’s exact specifications…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>15 topics</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-3.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MODULE 1.3</span>
+<span class="text-xs text-neutral-500">27 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Landing Page Auditor and Optimizer</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are a conversion rate optimization (CRO) expert focused on ad landing pages. When triggered via `/ads landing &lt;url&gt;`, you audit any…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>11 topics</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-4.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MODULE 1.4</span>
+<span class="text-xs text-neutral-500">15 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">PDF Ad Strategy Report Generator</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Generate a client-ready PDF ad strategy report using the Python ReportLab library. This skill scans the current working directory…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>7 topics</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-5.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MODULE 1.5</span>
+<span class="text-xs text-neutral-500">19 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Ad Performance Auditor</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Analyze the performance of existing ad campaigns based on user-provided data (screenshots, descriptions, or metrics). Evaluate indic…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>12 topics</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-6.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MODULE 1.6</span>
+<span class="text-xs text-neutral-500">21 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Scroll-Stopping Hook Generator</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Generate 20+ tested, proven hooks that stop the scroll across all major ad platforms. Hooks are the most important element in any…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>22 topics</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-7.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MODULE 1.7</span>
+<span class="text-xs text-neutral-500">23 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Creative Brief Generator</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Generate complete, production-ready creative briefs for designers, video editors, and content creators. Each brief includes visual concept descriptions…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>15 topics</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-8.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MODULE 1.8</span>
+<span class="text-xs text-neutral-500">21 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Budget Allocation and ROI Projector</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are a paid advertising budget strategist. When invoked via `/ads budget &lt;amount&gt;`, you receive a monthly ad spend amount and produce…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>10 topics</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-9.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MODULE 1.9</span>
+<span class="text-xs text-neutral-500">5 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Advertising Budget Allocation Plan</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**Generated on:** [Data]</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>10 topics</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-10.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MODULE 1.10</span>
+<span class="text-xs text-neutral-500">26 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Ad Competitive Intelligence</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are an advertising competitive intelligence analyst. When activated via `/ads competitors &lt;url&gt;`, you analyze the competitive landscape for a business in the ad…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>16 topics</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-11.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MODULE 1.11</span>
+<span class="text-xs text-neutral-500">27 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Google Ads Keyword Strategy</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Build a complete, implementation-ready Google Ads keyword strategy from scratch. This skill maps search intent across the buyer journey, organizes keywords into tightly themed ad groups, recommends match types, creates comprehensive negative keyword lists, estimates CPC ranges by cluster, provides Quality Score optimization tips, and generates a campaign structure with suggested headlines and descriptions for each ad group. The output is detailed enough for a media buyer to build campaigns in Google Ads Manager without additional re…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>22 topics</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-12.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MODULE 1.12</span>
+<span class="text-xs text-neutral-500">20 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Audience Persona Builder</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Build 5 to 7 highly detailed audience personas from a business URL. Each persona goes far beyond basic demographics—it maps psychographic profiles, buying tr…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>17 topics</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-13.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MODULE 1.13</span>
+<span class="text-xs text-neutral-500">37 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Complete Ad Funnel Architect</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are a paid advertising funnel strategist. When triggered via `/ads funnel &lt;url&gt;`, you build a complete, platform-specific ad funnel, covering everything…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>16 topics</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-14.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MODULE 1.14</span>
+<span class="text-xs text-neutral-500">14 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">60-Second Listing Readiness Quick View</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">name: ads-quick</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>6 topics</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+</div>
+</section>
+<section class="mb-10 bg-dark-800/50 border border-dark-600 rounded-xl p-6">
+<h2 class="text-xl font-bold mb-2">🚀 How to Use This Team</h2>
+<p class="text-sm text-neutral-400 mb-4">Orchestrator command summary — each module details the corresponding component.</p>
+<div class="prose-sm"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">How to Use</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Open the assistant and type <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads &lt;comando&gt;</code> to activate the team.</li><li>Main commands:</li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads strategy &lt;url&gt;</code> — complete ad strategy</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads quick &lt;url&gt;</code> — quick overview (60 seconds)</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads copy &lt;plataforma&gt;</code> — creatives for a platform</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads hooks</code> — high-impact hooks</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads audience &lt;plataforma&gt;</code> — audience building</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads landing &lt;url&gt;</code> — landing page audit</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads competitors &lt;url&gt;</code> — competitive intelligence</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads keywords &lt;url&gt;</code> — keyword strategy</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads funnel &lt;url&gt;</code> — funnel architecture</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads creative &lt;produto&gt;</code> — creative brief</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads budget &lt;valor&gt;</code> — budget allocation and ROI</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads audit</code> — campaign audit</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads testing &lt;campanha&gt;</code> — A/B tests</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads video &lt;produto&gt;</code> — video ad script</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads report-pdf</code> — generate a report in PDF</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>The orchestrator asks for the necessary context (business, budget, channels) and builds the plan in stages.</li></ol></div>
+<p class="text-sm text-neutral-300 mt-4"><strong>Model recommendation:</strong> a model with a large context window (64k+) to support comprehensive analyses.</p>
+</section>
+<section class="bg-dark-800/50 border border-dark-600 rounded-xl p-6">
+<p class="text-sm text-neutral-400 leading-relaxed"><strong>Notice:</strong> budget and ROI projections are educational estimates — they don't guarantee results in real campaigns.</p>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>AI Teams — Group 1 · Educational material | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

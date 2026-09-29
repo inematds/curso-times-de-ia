@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 1.4: Generador de informes de estrategia publicitaria en PDF | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha1-ads/modulo-1-4.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha1-ads/modulo-1-4.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha1-ads/modulo-1-4.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha1-ads/modulo-1-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../en/trilha1-ads/modulo-1-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Equipos de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Cripto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Bienes raíces</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Reclutamiento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanzas</span></a>
+<button aria-label="Cambiar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Ruta 1</a>
+<span>/</span>
+<span class="text-emerald-400">Módulo 1.4</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.4 · TRILHA 1</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">📣 Generador de informes de estrategia publicitaria en PDF</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Genera un informe de estrategia publicitaria en PDF, listo para el cliente, con la biblioteca Python ReportLab. Esta skill revisa el directorio de trabajo actual en busca de todos los archivos de resultados publicitarios, ext…</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">7</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">15 min</div>
+<div class="text-xs text-neutral-400">Lectura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">orquestador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">Ads</div>
+<div class="text-xs text-neutral-400">Equipo</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Propósito de la Skill</h2><p class="text-neutral-300 mb-4 leading-relaxed">Genera un informe de estrategia publicitaria en PDF, listo para el cliente, con la biblioteca Python ReportLab. Esta skill revisa el directorio de trabajo actual en busca de todos los archivos de resultados publicitarios, extrae puntuaciones, perfiles de audiencia, estructura de campañas, asignación de presupuesto e información competitiva, los compila en un JSON estructurado y produce un PDF profesional con una portada que incluye un indicador de Puntuación de Preparación para Anuncios, tarjetas de perfiles de audiencia, diagrama del embudo de campañas, gráfico de asignación de presupuesto, mapa de posicionamiento competitivo, resumen de la dirección creativa y un plan de acción priorizado de 90 días.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Cuándo usar</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>El usuario desea una versión en PDF del informe de estrategia publicitaria (no solo Markdown)</li><li>El usuario está preparando un entregable para una presentación a un cliente o a partes interesadas</li><li>El usuario solicita un «informe pulido», «informe listo para el cliente» o «informe en PDF»</li><li>El usuario desea un informe visual con gráficos, puntuaciones y formato profesional</li><li>Activado por <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads report-pdf</code> o <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads report-pdf &lt;nome do negócio&gt;</code></li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Cuándo usar PDF vs. Markdown</h2><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Formato</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Mejor para</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Ventajas</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Desventajas</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>PDF</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Presentaciones para clientes, archivos adjuntos de correo electrónico, propuestas, material de ventas</td><td class="px-3 py-2 border border-dark-600 align-top">Apariencia profesional, gráficos y medidores, imprimible, formato coherente</td><td class="px-3 py-2 border border-dark-600 align-top">Requiere un script de Python, más difícil de editar</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Markdown</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Uso interno, referencia rápida, edición iterativa, control de versiones</td><td class="px-3 py-2 border border-dark-600 align-top">Fácil de editar, generación rápida, compatible con git</td><td class="px-3 py-2 border border-dark-600 align-top">Menos acabado visual, sin gráficos</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Regla general:</strong> Si el informe se enviará a un cliente, prospecto o ejecutivo, usa PDF. Si es para uso interno o edición posterior, usa Markdown.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Cómo ejecutar</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 1: Verificar el script de generación de PDF</h3><p class="text-neutral-300 mb-4 leading-relaxed">Primero, verifica si existe el script dedicado para generar PDF:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">ls ~/.claude/skills/ads/scripts/generate_ads_pdf.py 2&gt;/dev/null</code></pre><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Si el script existe:</strong> Úsalo directamente (salta a la Etapa 4). <strong>Si el script no existe:</strong> Genera el PDF en línea con ReportLab (sigue todos los pasos).</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 2: Recopilar todos los datos disponibles</h3><p class="text-neutral-300 mb-4 leading-relaxed">Busca en el directorio de trabajo actual todas las salidas de la skill de anuncios. Busca estos archivos:</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Fuentes de datos primarias (busca todas estas):</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-STRATEGY-*.md</code> — Informe completo de estrategia (puntuaciones compuestas, todas las secciones)</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-AUDIENCE*.md</code> — Perfiles de audiencia, parámetros de segmentación</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-COPY-*.md</code> — Texto publicitario específico para cada plataforma</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-HOOKS*.md</code> — Ganchos para detener el scroll</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-CREATIVE-BRIEF*.md</code> — Briefings creativos para todos los formatos</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-VIDEO-SCRIPTS*.md</code> — Guiones para anuncios en video</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-FUNNEL*.md</code> — Arquitectura del embudo de campañas</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-BUDGET*.md</code> — Plan de asignación de presupuesto</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-COMPETITORS*.md</code> — Inteligencia competitiva</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-KEYWORDS*.md</code> — Estrategia de palabras clave (Google Ads)</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-TESTING-PLAN*.md</code> — Plan de pruebas A/B</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-LANDING*.md</code> — Auditoría de página de destino</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-AUDIT*.md</code> — Resultados de la auditoría de rendimiento</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Comando de búsqueda:</strong></p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">ls ADS-*.md 2&gt;/dev/null</code></pre><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Para cada archivo encontrado</strong>, extrae:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Puntuaciones y evaluaciones</li><li>Principales descubrimientos y recomendaciones</li><li>Personas de audiencia y segmentos</li><li>Detalles de la estructura de campañas</li><li>Asignaciones de presupuesto y proyecciones</li><li>Datos de posicionamiento competitivo</li><li>Mejores textos y ganchos</li><li>Elementos de acción y cronogramas</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 3: Estructurar los datos en JSON</h3><p class="text-neutral-300 mb-4 leading-relaxed">Compila todos los datos extraídos en un objeto JSON estructurado para el generador de PDF:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">{
+  "report_metadata": {
+    "business_name": "[Nome do Negócio]",
+    "website_url": "[URL]",
+    "industry": "[Indústria]",
+    "report_date": "[AAAA-MM-DD]",
+    "generated_by": "Estrategista de Anúncios IA"
+  },
+  "ad_readiness_score": {
+    "composite_score": 0,
+    "audience_clarity": {"score": 0, "weight": 25, "findings": []},
+    "creative_quality": {"score": 0, "weight": 20, "findings": []},
+    "funnel_architecture": {"score": 0, "weight": 20, "findings": []},
+    "competitive_position": {"score": 0, "weight": 15, "findings": []},
+    "budget_efficiency": {"score": 0, "weight": 20, "findings": []}
+  },
+  "audience_personas": [
+    {
+      "name": "[Nome da Persona]",
+      "age_range": "[Faixa Etária]",
+      "role_title": "[Cargo/Título]",
+      "pain_points": [],
+      "motivations": [],
+      "platforms": [],
+      "targeting_params": {}
+    }
+  ],
+  "campaign_structure": {
+    "funnel_stages": [],
+    "campaigns": [],
+    "retargeting_flows": []
+  },
+  "budget_allocation": {
+    "total_monthly_budget": 0,
+    "platform_split": {},
+    "funnel_stage_split": {},
+    "projected_metrics": {
+      "estimated_impressions": 0,
+      "estimated_clicks": 0,
+      "estimated_conversions": 0,
+      "projected_cpa": 0,
+      "projected_roas": 0
+    }
+  },
+  "competitive_intelligence": {
+    "competitors_analyzed": [],
+    "positioning_gaps": [],
+    "messaging_opportunities": []
+  },
+  "top_ad_copy": {
+    "best_hooks": [],
+    "top_headlines": [],
+    "best_ctas": []
+  },
+  "action_plan": {
+    "week_1": [],
+    "week_2_4": [],
+    "month_2_3": []
+  },
+  "critical_findings": [],
+  "quick_wins": []
+}</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 4: Generar el PDF</h3><p class="text-neutral-300 mb-4 leading-relaxed">Ejecuta el script de generación de PDF con los datos JSON compilados:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">python3 ~/.claude/skills/ads/scripts/generate_ads_pdf.py</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Si el script no existe, genéralo en línea. El script debe producir un PDF con estas secciones:</p><h4 class="font-bold text-base mt-8 mb-3 text-white">Estructura y páginas del PDF</h4><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Página 1: Portada</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Título del informe: "Informe de estrategia de anuncios"</li><li>Nombre del negocio y espacio reservado para el logotipo</li><li>URL del sitio web</li><li>Fecha del informe</li><li>"Preparado por un estratega de anuncios con IA"</li><li>Medidor de puntuación de preparación para anuncios (grande, centrado) — codificado por colores:</li><li>80-100: Verde (#059669)</li><li>60-79: Azul (#2563EB)</li><li>40-59: Amarillo (#D97706)</li><li>20-39: Naranja (#EA580C)</li><li>0-19: Rojo (#DC2626)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Página 2: Resumen ejecutivo</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Desglose de la puntuación de preparación para anuncios (5 categorías con puntuaciones individuales)</li><li>Gráfico de barras horizontales que muestra la puntuación de cada categoría respecto al máximo</li><li>3 hallazgos críticos (en viñetas, en negrita)</li><li>3 logros rápidos (en viñetas, con impacto estimado)</li><li>Declaración del veredicto general</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Página 3: Análisis del público</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Puntuación de claridad del público: X/100</li><li>Tarjetas de personas (2-3 personas), cada una con:</li><li>Nombre de la persona y resumen demográfico</li><li>Principales 3 puntos de dolor</li><li>Principales 3 motivaciones</li><li>Plataformas preferidas</li><li>Resumen de los parámetros de segmentación</li><li>Gráfico de presencia en plataformas (gráfico de barras por plataforma)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Página 4: Dirección creativa</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Puntuación de calidad creativa: X/100</li><li>Top 5 ganchos con recomendaciones de plataforma</li><li>Ejemplos de mejores títulos/textos (3-5)</li><li>Tabla de recomendaciones de formatos creativos</li><li>Prioridades de pruebas A/B</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Página 5: Arquitectura de campañas</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Puntuación de la arquitectura del embudo: X/100</li><li>Diagrama del embudo (flujo visual): ``<code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono"> CONSCIÊNCIA → CONSIDERAÇÃO → CONVERSÃO → RETENÇÃO [Campanha]    [Campanha]     [Campanha]    [Campanha] [% Orçamento] [% Orçamento]  [% Orçamento] [% Orçamento] </code>``</li><li>Tabla de estructura de campañas (nombre de la campaña, objetivo, público, plataforma)</li><li>Descripción del flujo de retargeting</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Página 6: Posicionamiento competitivo</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Puntuación de posicionamiento competitivo: X/100</li><li>Tabla de comparación de competidores (nombre, gasto estimado, mensaje clave, brecha)</li><li>Oportunidades de posicionamiento (en viñetas)</li><li>Recomendaciones para diferenciar los mensajes</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Página 7: Asignación de presupuesto</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Puntuación de eficiencia presupuestaria: X/100</li><li>Gráfico circular: asignación del presupuesto por plataforma</li><li>Gráfico de barras: asignación del presupuesto por etapa del embudo</li><li>Tabla de métricas proyectadas: | Métrica | Mes 1 | Mes 2 | Mes 3 | |--------|---------|---------|---------| | Gasto | $X | $X | $X | | Impresiones | X | X | X | | Clics | X | X | X | | Conversiones | X | X | X | | CPA | $X | $X | $X | | ROAS | Xx | Xx | Xx |</li><li>Mapa de escala (cuándo aumentar el presupuesto y cuánto)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Página 8: Plan de acción de 90 días</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Tabla de prioridades codificada por colores:</li><li>Semana 1 (Rojo/Urgente): Acciones de configuración inmediata</li><li>Semanas 2-4 (Naranja/Importante): Lanzamiento y optimización inicial</li><li>Mes 2-3 (Azul/Estratégico): Escala y expansión</li><li>Cada acción incluye: tarea, responsable, plataforma, impacto estimado</li><li>Hitos clave y puntos de verificación</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Página 9: Apéndice (si hay datos disponibles)</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Lista completa de palabras clave (si <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads keywords</code> se ejecutó)</li><li>Biblioteca completa de copies de anuncios (si <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads copy</code> se ejecutó)</li><li>Resumen de la auditoría de la página de destino (si <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads landing</code> se ejecutó)</li><li>Plan de pruebas A/B (si <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads testing</code> se ejecutó)</li></ul><h4 class="font-bold text-base mt-8 mb-3 text-white">Especificaciones de diseño del PDF</h4><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Diseño:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Tamaño de página: Letter (8.5" x 11")</li><li>Márgenes: 0.75" en todos los lados</li><li>Encabezado: Nombre del negocio (izquierda), número de página (derecha)</li><li>Pie de página: «Generado por Estratega de Anuncios con IA» (centro)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Colores:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Primaria: #1E3A5F (azul marino oscuro — encabezados, títulos)</li><li>Secundaria: #2563EB (azul — acentos, destacados, enlaces)</li><li>Fondo: #F8FAFC (gris claro — fondos de secciones)</li><li>Texto: #1F2937 (gris oscuro — texto del cuerpo)</li><li>Éxito: #059669 (verde — puntuaciones positivas, fortalezas)</li><li>Aviso: #D97706 (ámbar — puntuaciones medias, cautela)</li><li>Peligro: #DC2626 (rojo — puntuaciones bajas, problemas críticos)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Tipografía:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Títulos: Helvetica-Bold, 16pt (h1), 13pt (h2), 11pt (h3)</li><li>Cuerpo: Helvetica, 10pt</li><li>Tablas: Helvetica, 9pt</li><li>Subtítulos: Helvetica, 8pt, gris</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Gráficos (ReportLab Drawing):</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Medidor de puntuación: gráfico de arco/anillo con el número de puntuación centrado</li><li>Gráficos de barras: barras horizontales con etiquetas de valor</li><li>Gráficos circulares: con etiquetas de porcentaje y leyenda</li><li>Diagrama del embudo: Formas trapezoidales con etiquetas</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 5: Posgeneración</h3><p class="text-neutral-300 mb-4 leading-relaxed">Después de generar el PDF:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Verifica si se creó el archivo:</li></ol><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">ls -la ADS-STRATEGY-REPORT.pdf</code></pre><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Informar al usuario el tamaño y la ubicación del archivo</li><li>Sugiere los próximos pasos:</li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Revisa el PDF y compártelo con el cliente o el equipo</li><li>Ejecuta <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads audit</code> después de 7 días de datos de la campaña</li><li>Usa skills individuales para regenerar secciones específicas</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Tratamiento de datos faltantes</h2><p class="text-neutral-300 mb-4 leading-relaxed">Es posible que no se hayan ejecutado todas las skills antes de generar el PDF. Trátalo adecuadamente:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Datos disponibles</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Comportamiento</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Ejecución completa de la estrategia (los 5 agentes)</td><td class="px-3 py-2 border border-dark-600 align-top">Generar un informe completo con todas las páginas</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Datos parciales (algunos agentes)</td><td class="px-3 py-2 border border-dark-600 align-top">Generar un informe con las secciones disponibles y marcar las secciones faltantes como "Aún no analizado"</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Solo foto rápida</td><td class="px-3 py-2 border border-dark-600 align-top">Generar un mininforme (portada + resumen ejecutivo + plan de acción)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">No se encontró ningún archivo de datos</td><td class="px-3 py-2 border border-dark-600 align-top">Informar al usuario que ejecute <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads strategy &lt;url&gt;</code> primero</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Datos mínimos necesarios:</strong> Al menos un archivo <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-*.md</code> debe existir. Si no se encuentra ninguno, mostrar:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Nenhum dado de estratégia de anúncios encontrado no diretório atual.
+Execute '/ads strategy &lt;url&gt;' primeiro para gerar a análise,
+e então use '/ads report-pdf' para criar o relatório em PDF.</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Salida</h2><p class="text-neutral-300 mb-4 leading-relaxed">El resultado final es un único archivo PDF: <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-STRATEGY-REPORT.pdf</code></p><p class="text-neutral-300 mb-4 leading-relaxed">Guardado en el directorio de trabajo actual, junto con los archivos fuente en Markdown.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Reglas importantes</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Siempre verifica los archivos de datos existentes antes de generar: nunca crees un PDF con datos vacíos o marcadores de posición</li><li>El PDF debe estar listo para presentárselo al cliente sin ninguna edición</li><li>Los medidores de puntuación deben usar códigos de colores para que el rendimiento se vea al instante</li><li>Los gráficos deben tener etiquetas claras: ningún eje ni leyenda sin etiquetar</li><li>Si el script falla, proporciona el mensaje de error exacto y sugiere instalar ReportLab: <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">pip3 install reportlab</code></li><li>El indicador de puntuación de la portada es el elemento visual más importante: debe ser destacado y preciso</li><li>Las proyecciones de presupuesto deben etiquetarse como estimaciones, no como garantías</li><li>Siempre incluye el plan de acción de 90 días: es la sección más práctica para los clientes</li><li>Los números de página y los encabezados y pies de página deben ser consistentes en todas las páginas</li><li>Si los datos son parciales, indica claramente qué secciones tienen datos completos y cuáles contienen estimaciones</li><li>El nombre del archivo PDF siempre debe ser <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-STRATEGY-REPORT.pdf</code> para mantener la consistencia</li><li>El tamaño del archivo debe ser inferior a 5 MB; optimiza la renderización de los gráficos si es necesario</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">--- skills/ads-audit/SKILL.md ---</p><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed">name: ads-audit description: Auditor de Rendimiento de Anuncios — analiza campañas publicitarias existentes e identifica oportunidades de optimización version: 1.0.0 author: Estratega de Anuncios con IA tags: [ads, audit, performance, optimization, analytics] trigger: /ads audit output: ADS-AUDIT.md</p><hr class="border-dark-600 my-8"/>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-1-3.html">← Módulo 1.3</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-5.html">Módulo 1.5 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Equipos de IA — Grupo 1 · Material educativo | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

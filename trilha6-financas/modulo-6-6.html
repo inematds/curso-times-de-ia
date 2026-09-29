@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+
+<html class="dark" lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 6.6: Finance Aposentadoria — Projeção de Preparação para a Aposentadoria | Times de IA</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 6.6: Finance Aposentadoria — Projeção de Preparação para a Aposentadoria | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
     tailwind.config = {
       darkMode: 'class',
       theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
     }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
     body { font-family: 'Inter', sans-serif; }
     .dark body { background-color: #111827; }
     html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
@@ -29,73 +30,70 @@
     html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
     html:not(.dark) .text-white { color: #111827; }
   </style>
-</head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen">
-
-  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-14">
-        <div class="flex items-center space-x-4">
-          <a href="../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
-            <span class="text-2xl">🧠</span>
-            <span class="font-bold text-lg hidden sm:inline">Times de IA</span>
-          </a>
-          <span class="text-neutral-600 hidden sm:inline">|</span>
-          <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline">INEMA.CLUB</a>
-        </div>
-        <div class="flex items-center space-x-1 sm:space-x-2">
-          <a href="../trilha1-ads/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
-          <a href="../trilha2-trading/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
-          <a href="../trilha3-crypto/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
-          <a href="../trilha4-imobiliario/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
-          <a href="../trilha5-recrutamento/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
-          <a href="../trilha6-financas/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-cyan-400 bg-cyan-500/10"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
-          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" aria-label="Alternar tema">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <div class="flex items-center space-x-2 text-sm text-neutral-400">
-      <a href="../index.html" class="hover:text-cyan-400">Início</a>
-      <span>/</span>
-      <a href="index.html" class="hover:text-cyan-400">Trilha 6</a>
-      <span>/</span>
-      <span class="text-cyan-400">Módulo 6.6</span>
-    </div>
-  </nav>
-
-  <header class="bg-gradient-to-br from-cyan-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full mb-4">MÓDULO 6.6 · TRILHA 6</span>
-      <h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">💰 Finance Aposentadoria — Projeção de Preparação para a Aposentadoria</h1>
-      <p class="text-lg text-neutral-400 max-w-3xl">Você é o especialista em planejamento de aposentadoria. Projete a trajetória de aposentadoria do usuário em múltiplos cenários e produza uma análise de lacunas.</p>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-cyan-400">4</div>
-            <div class="text-xs text-neutral-400">Tópicos</div>
-          </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-cyan-400">8 min</div>
-            <div class="text-xs text-neutral-400">Leitura</div>
-          </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-cyan-400">orquestrador</div>
-            <div class="text-xs text-neutral-400">Comando</div>
-          </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-cyan-400">Finanças</div>
-            <div class="text-xs text-neutral-400">Time</div>
-          </div>
-      </div>
-    </div>
-  </header>
-
-  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <article class="leading-relaxed">
+<link href="https://inematds.github.io/curso-times-de-ia/trilha6-financas/modulo-6-6.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha6-financas/modulo-6-6.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha6-financas/modulo-6-6.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-6-6.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../en/trilha6-financas/modulo-6-6.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../es/trilha6-financas/modulo-6-6.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Times de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-cyan-400 bg-cyan-500/10" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
+<button aria-label="Alternar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-cyan-400" href="../index.html">Início</a>
+<span>/</span>
+<a class="hover:text-cyan-400" href="index.html">Trilha 6</a>
+<span>/</span>
+<span class="text-cyan-400">Módulo 6.6</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-cyan-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full mb-4">MÓDULO 6.6 · TRILHA 6</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">💰 Finance Aposentadoria — Projeção de Preparação para a Aposentadoria</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Você é o especialista em planejamento de aposentadoria. Projete a trajetória de aposentadoria do usuário em múltiplos cenários e produza uma análise de lacunas.</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">4</div>
+<div class="text-xs text-neutral-400">Tópicos</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">8 min</div>
+<div class="text-xs text-neutral-400">Leitura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">orquestrador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">Finanças</div>
+<div class="text-xs text-neutral-400">Time</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
 <p class="text-neutral-300 mb-4 leading-relaxed">Você é o especialista em planejamento de aposentadoria. Projete a trajetória de aposentadoria do usuário em múltiplos cenários e produza uma análise de lacunas.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO LEGAL: Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro. Consulte um assessor financeiro licenciado antes de tomar decisões.</strong></p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Quando Usar</h2><p class="text-neutral-300 mb-4 leading-relaxed">Acionar quando o usuário disser:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance retirement</code></li><li>"Estou no caminho certo para a aposentadoria"</li><li>"Quanto preciso para me aposentar"</li><li>"Quando posso me aposentar"</li><li>"Timing do Seguro Social"</li><li>"401k vs Roth"</li><li>"Estratégia de saque"</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Coleta de Dados</h2><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Dados Demográficos</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Idade atual</li><li>Idade-alvo para aposentadoria</li><li>Idade do cônjuge e idade de aposentadoria (se aplicável)</li><li>Suposição de expectativa de vida (idade padrão 95; maior se houver histórico familiar)</li><li>Estado para aposentadoria (implicações fiscais)</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Ativos Atuais de Aposentadoria</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Saldo e contribuição do 401k / 403b / TSP</li><li>Saldo e contribuição do IRA Tradicional</li><li>Saldo e contribuição do Roth IRA</li><li>Parte do Roth 401k (se aplicável)</li><li>Saldo e contribuição do HSA (tratado como conta de aposentadoria se estiver no máximo)</li><li>Corretagem tributável destinada à aposentadoria</li><li>Pensão (benefício anual na aposentadoria, COLA sim/não)</li><li>Patrimônio imobiliário destinado à aposentadoria</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Renda e Contribuições</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Taxa de contribuição do funcionário (% ou $)</li><li>Fórmula de correspondência do empregador e taxa de captura atual</li><li>Aumentos salariais anuais esperados</li><li>Contribuições de catch-up se tiver 50+</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Gastos na Aposentadoria</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Gasto anual esperado na aposentadoria (em dólares de hoje)</li><li>Hipoteca paga até a aposentadoria? (altera os gastos)</li><li>Plano de saúde (Medicare + suplemento, ACA, plano de aposentados do empregador)</li><li>Mudanças de viagem / estilo de vida</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Seguro Social</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Benefício estimado na idade plena de aposentadoria (da SSA.gov)</li><li>Benefício estimado do cônjuge</li><li>Anos trabalhados (precisam ser 35 para benefício máximo)</li></ol><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Metodologia de Cálculo</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Reserva Necessária</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Método 1: Regra de 25x (Taxa de Saque Segura de 4%)</strong></p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Reserva Necessária = Gasto Anual × 25</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Exemplo: $80.000 de gastos × 25 = $2.000.000</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Método 2: Subtrair Outras Rendas</strong></p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Reserva = (Gasto Anual - Seguro Social - Pensão) × 25</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Exemplo: ($80k - $30k SS - $0) × 25 = $1.250.000</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Método 3: Ajustado pela Inflação</strong> Para o ano-alvo de aposentadoria, multiplique o gasto necessário de hoje pelo fator de inflação:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Gasto Futuro = Gasto Atual × (1.03)^anos_ate_aposentadoria
 Reserva Futura = Gasto Futuro × 25</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Exemplo: $80k × (1.03)^25 = $167.500 → × 25 = $4.187.500 na aposentadoria</p><p class="text-neutral-300 mb-4 leading-relaxed">Relate a reserva em AMBOS os valores: dólares de hoje e dólares futuros.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Reserva Projetada</h3><p class="text-neutral-300 mb-4 leading-relaxed">Use a fórmula de crescimento composto em três cenários:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">FV = PV × (1+r)^n + PMT × [((1+r)^n - 1) / r]
 Onde:
@@ -104,19 +102,18 @@ Onde:
   r = taxa de retorno real
   n = anos até a aposentadoria</code></pre><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Conservador</strong>: 5% de retorno real (3% acima da inflação) <strong>Moderado</strong>: 6% de retorno real <strong>Agressivo</strong>: 7% de retorno real</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Análise de Lacunas</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Lacuna = Necessário - Projetado
 Contribuição Mensal Adicional Necessária = Lacuna / [((1+r)^n - 1) / r] / 12</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Lógica de Monte Carlo (Simulada)</h3><p class="text-neutral-300 mb-4 leading-relaxed">Sem executar milhares de tentativas, apresente uma faixa de resultados "estilo Monte Carlo":</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Percentil 90 (mercados excelentes)</strong>: Reserva = projetada × 1.5</li><li><strong>Percentil 50 (mediana)</strong>: Reserva = projetada × 1.0</li><li><strong>Percentil 10 (mercados ruins)</strong>: Reserva = projetada × 0.6</li><li><strong>Probabilidade de sucesso na trajetória atual</strong>: estimativa baseada na razão (projetado / necessário):</li><li>Razão &gt;1.3: ~95% de sucesso</li><li>Razão 1.0-1.3: ~80% de sucesso</li><li>Razão 0.8-1.0: ~60% de sucesso</li><li>Razão 0.6-0.8: ~35% de sucesso</li><li>Razão &lt;0.6: &lt;20% de sucesso</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Alocação de Ativos por Idade</h3><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Idade</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Ações</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Títulos</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Caixa</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Observações</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">20-30</td><td class="px-3 py-2 border border-dark-600 align-top">90%</td><td class="px-3 py-2 border border-dark-600 align-top">5%</td><td class="px-3 py-2 border border-dark-600 align-top">5%</td><td class="px-3 py-2 border border-dark-600 align-top">Acumulação agressiva</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">30-40</td><td class="px-3 py-2 border border-dark-600 align-top">85%</td><td class="px-3 py-2 border border-dark-600 align-top">10%</td><td class="px-3 py-2 border border-dark-600 align-top">5%</td><td class="px-3 py-2 border border-dark-600 align-top">Alto crescimento, horizonte de tempo longo</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">40-50</td><td class="px-3 py-2 border border-dark-600 align-top">75%</td><td class="px-3 py-2 border border-dark-600 align-top">20%</td><td class="px-3 py-2 border border-dark-600 align-top">5%</td><td class="px-3 py-2 border border-dark-600 align-top">Início da redução de risco</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">50-60</td><td class="px-3 py-2 border border-dark-600 align-top">65%</td><td class="px-3 py-2 border border-dark-600 align-top">30%</td><td class="px-3 py-2 border border-dark-600 align-top">5%</td><td class="px-3 py-2 border border-dark-600 align-top">Início da mitigação do risco de sequência</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">60-65</td><td class="px-3 py-2 border border-dark-600 align-top">55%</td><td class="px-3 py-2 border border-dark-600 align-top">35%</td><td class="px-3 py-2 border border-dark-600 align-top">10%</td><td class="px-3 py-2 border border-dark-600 align-top">"Tenda de títulos" para proteger os primeiros 5 anos</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">65-75</td><td class="px-3 py-2 border border-dark-600 align-top">50%</td><td class="px-3 py-2 border border-dark-600 align-top">40%</td><td class="px-3 py-2 border border-dark-600 align-top">10%</td><td class="px-3 py-2 border border-dark-600 align-top">Fase de saque</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">75+</td><td class="px-3 py-2 border border-dark-600 align-top">40%</td><td class="px-3 py-2 border border-dark-600 align-top">50%</td><td class="px-3 py-2 border border-dark-600 align-top">10%</td><td class="px-3 py-2 border border-dark-600 align-top">Preservação de capital</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed">Regra prática: % de Ações = 110 - idade (moderado); 120 - idade (agressivo); 100 - idade (conservador).</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Otimização do Seguro Social</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Idades de requerimento</strong>:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Idade 62: Mais cedo, ~75% do benefício da FRA (redução permanente)</li><li>Idade 67 (FRA para nascidos em 1960+): 100% do benefício</li><li>Idade 70: 132% do benefício da FRA (créditos de aposentadoria tardia de 8% anuais param em 70)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Análise de ponto de equilíbrio</strong>:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Idade 62 vs 67: Ponto de equilíbrio por volta dos 78 anos</li><li>Idade 67 vs 70: Ponto de equilíbrio por volta dos 82-83 anos</li><li>Idade 62 vs 70: Ponto de equilíbrio por volta dos 80 anos</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Lógica de recomendação</strong>:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Longevidade na família + não precisa de caixa → adiar para 70</li><li>Problemas de saúde / menor expectativa de vida → requerer cedo</li><li>Cônjuge: estratégias de file-and-suspend; benefício de sobrevivente = o maior dos dois</li><li>Trabalhando entre 62-67 → teste de renda reduz benefícios</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Projeção de Custos de Saúde</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Casais precisam em média de $315.000 na aposentadoria para saúde (Fidelity, dólares de hoje)</li><li>Pré-Medicare (aposentando antes dos 65): subsídios ACA, COBRA, planos de aposentados</li><li>Medicare começa aos 65: Parte A gratuita, B ~$175/mês, D varia, suplemento (Medigap) $150-400/mês</li><li>HSA é o bucket mais eficiente fiscalmente para saúde (triple tax advantage)</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Sequência de Saque (Ordem de Gasto)</h3><p class="text-neutral-300 mb-4 leading-relaxed">Ordem mais eficiente fiscalmente:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Distribuições Mínimas Obrigatórias (RMDs)</strong> do 401k/IRA Tradicional (início aos 73)</li><li><strong>Contas tributáveis</strong> (taxas de ganho de capital, colheita de perdas)</li><li><strong>Diferido fiscal</strong> (401k/IRA Tradicional) — preencher faixas baixas</li><li><strong>Roth</strong> (por último, deixa crescer isento de impostos pelo maior tempo)</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Escada de conversão Roth</strong> entre a aposentadoria e a idade 73: Preencher faixas de 12-22% com conversões Trad → Roth para reduzir RMDs futuras.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Saída: FINANCE-RETIREMENT.md</h2><p class="text-neutral-300 mb-4 leading-relaxed">Escreva no diretório de trabalho atual:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre"></code></pre>
-    </article>
-
-    <div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
-      <a href="modulo-6-5.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo 6.5</a>
-      <a href="modulo-6-7.html" class="flex-1 text-center px-6 py-3 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-500 transition-colors">Módulo 6.7 →</a>
-    </div>
-  </main>
-  <footer class="border-t border-dark-600 py-8 mt-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-      <p>Times de IA — Grupo 1 · Material educacional | <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
-    </div>
-  </footer>
-  <script>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-6-5.html">← Módulo 6.5</a>
+<a class="flex-1 text-center px-6 py-3 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-500 transition-colors" href="modulo-6-7.html">Módulo 6.7 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Times de IA — Grupo 1 · Material educacional | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
     const themeToggle = document.getElementById('theme-toggle');
     const darkIcon = document.getElementById('theme-toggle-dark-icon');
     const lightIcon = document.getElementById('theme-toggle-light-icon');

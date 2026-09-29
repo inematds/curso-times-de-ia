@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 1.12: Audience Persona Builder | AI Teams</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha1-ads/modulo-1-12.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha1-ads/modulo-1-12.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha1-ads/modulo-1-12.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha1-ads/modulo-1-12.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-1-12.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../es/trilha1-ads/modulo-1-12.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">AI Teams</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Real estate</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recruiting</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finance</span></a>
+<button aria-label="Toggle theme" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../index.html">Start</a>
+<span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Track 1</a>
+<span>/</span>
+<span class="text-emerald-400">Module 1.12</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MODULE 1.12 · TRACK 1</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">📣 Audience Persona Builder</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Build 5 to 7 highly detailed audience personas from a business URL. Each persona goes far beyond basic demographics—it maps psychographic profiles, buying triggers, objections, content consumption ha…</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">17</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">20 min</div>
+<div class="text-xs text-neutral-400">Reading</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">orchestrator</div>
+<div class="text-xs text-neutral-400">Command</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">Ads</div>
+<div class="text-xs text-neutral-400">Team</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Skill Purpose</h2><p class="text-neutral-300 mb-4 leading-relaxed">Build 5 to 7 highly detailed audience personas from a business URL. Each persona goes far beyond basic demographics—it maps psychographic profiles, buying triggers, objections, content consumption habits, platform presence, and targeting parameters ready to use on Meta, Google, LinkedIn, TikTok, and Pinterest. Includes a persona relevance score (1-5) and a negative audience section defining who should NOT be targeted. Produces a single copy-and-paste-ready deliverable that an ad buyer can use immediately to build campaigns.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">When to Use</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>The user runs <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads audience &lt;url&gt;</code></li><li>The user asks to build audience personas, customer profiles, or targeting research</li><li>Called as a subagent from <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads strategy</code> (the main orchestrator)</li><li>The user wants to know "who should I target?" for a business</li><li>The user needs platform-specific targeting parameters for campaign setup</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Entry Requirements</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Required:</strong> A business URL to analyze</li><li><strong>Optional:</strong> Industry context, existing customer data, geographic focus, budget range</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">How to Run</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Step 1: Gather Business Intelligence</h3><p class="text-neutral-300 mb-4 leading-relaxed">Get the deal URL using <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">WebFetch</code> and extract:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Data Point</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Where to Find</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Business name</td><td class="px-3 py-2 border border-dark-600 align-top">Page title, logo, about page</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Sector/category</td><td class="px-3 py-2 border border-dark-600 align-top">Services offered, product types</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Value proposition</td><td class="px-3 py-2 border border-dark-600 align-top">Hero section, tagline, about page</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Price positioning</td><td class="px-3 py-2 border border-dark-600 align-top">Pricing page, product prices, "starting at" language</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Geographic Focus</td><td class="px-3 py-2 border border-dark-600 align-top">Service areas, locations, shipping information</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Current customers</td><td class="px-3 py-2 border border-dark-600 align-top">Testimonials, case studies, reviews</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Product/service types</td><td class="px-3 py-2 border border-dark-600 align-top">Product pages, service descriptions</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Brand tone</td><td class="px-3 py-2 border border-dark-600 align-top">Text, image, and color palette style</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Trust signals</td><td class="px-3 py-2 border border-dark-600 align-top">Certifications, awards, years in business, client logos</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Content topics</td><td class="px-3 py-2 border border-dark-600 align-top">Blog posts, resources, FAQ sections</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed">Run supplemental searches:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "[Nome do Negócio]" reviews
+WebSearch: "[Nome do Negócio]" customers testimonials
+WebSearch: "[Setor]" target audience demographics
+WebSearch: "[Setor]" buyer persona research 2025
+WebSearch: "[Concorrente]" "who buys" OR "target market" OR "customer profile"</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Stage 2: Industry Audience Intelligence</h3><p class="text-neutral-300 mb-4 leading-relaxed">Based on the detected industry, get standard audience benchmarks:</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>SaaS/Software:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Decision-makers: CTOs, VPs of Engineering, Product Managers, IT Directors</li><li>Influencers: Individual contributors who discover tools</li><li>Budget holders: CFOs, COOs, department heads</li><li>Research behavior: G2 reviews, Product Hunt, Reddit, comparison articles</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>E-commerce:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Impulse buyers vs. researchers</li><li>Price-sensitive vs. quality-focused segments</li><li>Brand loyalists vs. deal seekers</li><li>Social commerce behavior: Instagram Shops, TikTok Shop, Pinterest</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Local Services:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Buyers with urgent/emergency needs</li><li>Buyers making planned/purpose-driven purchases</li><li>Referral-driven customers</li><li>Neighborhood/community-focused segments</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Agency/Professional Services:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Decision timeline: 30–90-day sales cycles</li><li>Committee buyers vs. individual decision-makers</li><li>Budget-constrained vs. ROI-focused</li><li>Relationship-driven vs. results-driven</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Creator/Course:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Aspiration-driven buyers</li><li>Career changers vs. skill enhancers</li><li>Preference for self-paced vs. guided learning</li><li>Community seekers vs. content consumers</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Stage 3: Build Persona Profiles</h3><p class="text-neutral-300 mb-4 leading-relaxed">Build <strong>5-7 personas</strong> following this exact structure for each one:</p><hr class="border-dark-600 my-8"/><h4 class="font-bold text-base mt-8 mb-3 text-white">Persona Template</h4><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">### Persona [Número]: [Nome da Persona] — "[Slogan Memorável]"
+
+**Pontuação de Relevância:** [1-5 estrelas] ★★★★☆
+**Potencial de Receita:** [Baixo / Médio / Alto / Muito Alto]
+**Tamanho Estimado do Público:** [Pequeno / Médio / Grande]
+**Dificuldade de Aquisição:** [Fácil / Moderada / Difícil]
+**Prioridade Recomendada:** [Primária / Secundária / Terciária]
+
+---
+
+#### Demografia
+| Atributo | Detalhe |
+|---|---|
+| Faixa etária | [faixa] |
+| Divisão de gênero | [desdobramento percentual] |
+| Nível de renda | [faixa e faixa salarial] |
+| Educação | [nível] |
+| Cargos | [3-5 cargos específicos] |
+| Tamanho da empresa | [faixa de funcionários ou N/A] |
+| Tipo de localização | [urbano/suburbano/rural + geos específicos se aplicável] |
+| Situação familiar | [solteiro/casado/pais + relevância] |
+| Uso de dispositivos | [mobile-first / pesado em desktop / multi-dispositivo] |
+
+#### Psicografia
+| Atributo | Detalhe |
+|---|---|
+| Valores centrais | [3-4 valores] |
+| Aspirações | [o que querem se tornar/conquistar] |
+| Medos | [o que os mantém acordados à noite] |
+| Identidade | [como se veem] |
+| Estilo de decisão | [analítico/emocional/prova social/impulsionado por autoridade] |
+| Afinidades com marcas | [marcas das quais já compram] |
+| Consumo de mídia | [podcasts, canais do YouTube, newsletters, blogs] |
+| Comportamento social | [observador/participante/criador + quais plataformas] |
+
+#### Pontos de Dor (ordenados por intensidade)
+1. **[Ponto de Dor 1]** — [descrição de 1-2 frases da dor e seu impacto]
+2. **[Ponto de Dor 2]** — [descrição]
+3. **[Ponto de Dor 3]** — [descrição]
+4. **[Ponto de Dor 4]** — [descrição]
+5. **[Ponto de Dor 5]** — [descrição]
+
+#### Gatilhos de Compra
+O que faz esta persona tirar o dinheiro do bolso AGORA:
+- **Gatilho 1:** [evento ou realização específica]
+- **Gatilho 2:** [evento ou realização específica]
+- **Gatilho 3:** [evento ou realização específica]
+- **Gatilho 4:** [evento ou realização específica]
+
+#### Objeções e Hesitações
+O que os impede de comprar:
+| Objeção | Severidade | Como Superar |
+|---|---|---|
+| [objeção 1] | Alta/Média/Baixa | [estratégia de contra-argumento para copy de anúncio] |
+| [objeção 2] | Alta/Média/Baixa | [estratégia de contra-argumento] |
+| [objeção 3] | Alta/Média/Baixa | [estratégia de contra-argumento] |
+| [objeção 4] | Alta/Média/Baixa | [estratégia de contra-argumento] |
+
+#### Hábitos de Consumo de Conteúdo
+| Plataforma | Comportamento | Tipos de Conteúdo com os quais Interagem |
+|---|---|---|
+| YouTube | [como usam] | [tipos específicos de conteúdo] |
+| Instagram | [como usam] | [tipos específicos de conteúdo] |
+| TikTok | [como usam] | [tipos específicos de conteúdo] |
+| LinkedIn | [como usam] | [tipos específicos de conteúdo] |
+| Podcasts | [quais] | [tópicos] |
+| Newsletters | [quais] | [tópicos] |
+| Reddit | [subreddits] | [tipos de discussão] |
+| Busca Google | [o que buscam] | [padrões de consulta] |
+
+#### Parâmetros de Segmentação por Plataforma
+
+**Meta (Facebook/Instagram):**
+- Interesses: [10-15 interesses segmentáveis específicos]
+- Comportamentos: [5-7 opções de segmentação comportamental]
+- Fonte de público semelhante: [qual público personalizado usar como semente]
+- Exclusões: [quem excluir dentro desta segmentação]
+
+**Google Ads:**
+- Palavras-chave de busca: [10-15 palavras-chave que esta persona buscaria]
+- Públicos em mercado: [segmentos em mercado do Google]
+- Públicos de afinidade: [segmentos de afinidade do Google]
+- Palavras-chave de intenção personalizada: [5-7 palavras-chave de alta intenção]
+
+**LinkedIn:**
+- Cargos: [5-7 cargos exatos]
+- Funções: [2-3 funções]
+- Setores: [3-5 setores]
+- Tamanhos de empresa: [faixas]
+- Níveis de senioridade: [níveis]
+- Habilidades: [5-7 habilidades para segmentar]
+- Grupos: [grupos relevantes do LinkedIn]
+
+**TikTok:**
+- Categorias de interesse: [segmentação por interesse do TikTok]
+- Segmentação comportamental: [tipos de interação com vídeo]
+- Categorias de criadores: [tipos de criadores que seguem]
+- Segmentação por hashtag: [hashtags relevantes]
+
+**Pinterest:**
+- Segmentação por interesse: [categorias de interesse do Pinterest]
+- Segmentação por palavra-chave: [termos de busca no Pinterest]
+- Públicos semelhantes: [descrição do público semente]
+
+#### O Anúncio Perfeito para Esta Persona
+- **Ângulo do gancho:** [qual frase de abertura faria com que parassem de rolar a tela]
+- **Gatilho emocional:** [a emoção central a ser explorada]
+- **Tipo de prova:** [qual evidência os convence — estatísticas, depoimentos, demonstrações, estudos de caso]
+- **Estilo de CTA:** [pedido suave vs. pedido direto, qual linguagem funciona]
+- **Formato criativo:** [vídeo/imagem/carrossel + estilo — UGC, polido, meme, etc.]</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Step 4: Persona Scoring Matrix</h3><p class="text-neutral-300 mb-4 leading-relaxed">After building all personas, create a comparison matrix:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">## Matriz de Pontuação de Personas
+
+| Persona | Relevância (1-5) | Potencial de Receita | Tamanho do Público | Custo de Aquisição | Prioridade |
+|---|---|---|---|---|---|
+| [Persona 1] | ★★★★★ | Muito Alto | Médio | Moderado | Primária |
+| [Persona 2] | ★★★★☆ | Alto | Grande | Fácil | Primária |
+| [Persona 3] | ★★★★☆ | Médio | Grande | Fácil | Secundária |
+| [Persona 4] | ★★★☆☆ | Alto | Pequeno | Difícil | Secundária |
+| [Persona 5] | ★★★☆☆ | Médio | Médio | Moderado | Terciária |
+| [Persona 6] | ★★☆☆☆ | Baixo | Grande | Fácil | Terciária |</code></pre><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Scoring criteria:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Relevance (1-5):</strong> How close is this persona to the business’s ideal customer</li><li>5 = Perfect match, highest conversion probability</li><li>4 = Strong match, proven buyer profile</li><li>3 = Moderate combination, requires nurturing</li><li>2 = Weak combination, low expected conversion</li><li>1 = Marginal match, target only if the budget allows</li><li><strong>Revenue Potential:</strong> Expected lifetime value of this persona</li><li><strong>Audience Size:</strong> How large is this segment on ad platforms</li><li><strong>Acquisition Cost:</strong> Estimated relative cost to acquire this persona</li><li><strong>Priority:</strong> Primary (target first), Secondary (expand to), Tertiary (test with the remaining budget)</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Step 5: Negative Audiences</h3><p class="text-neutral-300 mb-4 leading-relaxed">Define who NOT to target. This section saves ad spend and improves ROAS.</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">## Públicos Negativos — Quem NÃO Segmentar
+
+### Exclusões Rigorosas (sempre excluir)
+| Público | Por que Excluir | Método de Exclusão por Plataforma |
+|---|---|---|
+| [público 1] | [motivo — curiosos, intenção errada, etc.] | [como excluir na Meta, Google, etc.] |
+| [público 2] | [motivo] | [método de exclusão] |
+| [público 3] | [motivo] | [método de exclusão] |
+| [público 4] | [motivo] | [método de exclusão] |
+| [público 5] | [motivo] | [método de exclusão] |
+
+### Exclusões Suaves (excluir em campanhas iniciais, testar depois)
+| Público | Por que Considerar Excluir | Quando Testar |
+|---|---|---|
+| [público 1] | [motivo] | [condições para teste] |
+| [público 2] | [motivo] | [condições] |
+| [público 3] | [motivo] | [condições] |
+
+### Temas de Palavras-Chave Negativas (Google Ads)
+- [tema 1]: [lista de palavras-chave negativas]
+- [tema 2]: [lista de palavras-chave negativas]
+- [tema 3]: [lista de palavras-chave negativas]
+- [tema 4]: [lista de palavras-chave negativas] |
+
+### Listas de Supressão de Público
+- **Clientes existentes:** Suprimir de campanhas de aquisição (carregar lista de e-mails de clientes)
+- **Conversores passados:** Suprimir do topo de funil (usar dados do pixel)
+- **Candidatos a emprego:** Excluir buscas de "[nome da empresa] vagas/carreiras"
+- **Funcionários de concorrentes:** Excluir, a menos que esteja executando conquista competitiva
+- **Estudantes/pesquisadores:** Excluir, a menos que o produto seja focado em educação</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Step 6: Cross-Persona Insights</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">## Insights entre Personas
+
+### Pontos de Dor Compartilhados entre Todas as Personas
+1. [ponto de dor que aparece em 3+ personas]
+2. [ponto de dor que aparece em 3+ personas]
+3. [ponto de dor que aparece em 3+ personas]
+
+### Gatilhos de Compra Universais
+1. [gatilho que funciona na maioria das personas]
+2. [gatilho que funciona na maioria das personas]
+
+### Ranking de Prioridade de Plataformas
+Com base em onde essas personas gastam tempo:
+1. **[Plataforma]** — Alcance [X] de [Y] personas, melhor para [objetivo]
+2. **[Plataforma]** — Alcance [X] de [Y] personas, melhor para [objetivo]
+3. **[Plataforma]** — Alcance [X] de [Y] personas, melhor para [objetivo]
+4. **[Plataforma]** — Alcance [X] de [Y] personas, melhor para [objetivo]
+
+### Recomendação de Estrutura de Campanha
+- **Campanha 1 (Primária):** Segmentar Personas [X, Y] na [Plataforma] — [objetivo]
+- **Campanha 2 (Secundária):** Segmentar Personas [X, Y] na [Plataforma] — [objetivo]
+- **Campanha 3 (Teste):** Segmentar Persona [X] na [Plataforma] — [objetivo]
+
+### Matriz de Temas de Mensagem
+| Tema | Persona 1 | Persona 2 | Persona 3 | Persona 4 | Persona 5 |
+|---|---|---|---|---|---|
+| [tema 1] | Forte | Moderado | Fraco | Forte | Moderado |
+| [tema 2] | Fraco | Forte | Forte | Moderado | Fraco |
+| [tema 3] | Moderado | Moderado | Forte | Forte | Forte |</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Output Format</h2><p class="text-neutral-300 mb-4 leading-relaxed">Save the complete analysis to <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-AUDIENCE.md</code> in the current working directory.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>File structure:</strong></p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+# Relatório de Persona de Público: [Nome do Negócio]
+&gt; Gerado em [data] | Fonte: [URL]
+&gt; Prontidão para Anúncios — Pontuação de Clareza do Público: [X/100]
+
+## Resumo Executivo
+[3-4 frases: quem são os clientes ideais, quais plataformas priorizar, principal insight]
+
+## Persona 1: [Nome]
+[template completo de persona]
+
+## Persona 2: [Nome]
+[template completo de persona]
+
+[...continuar para todas as 5-7 personas]
+
+## Matriz de Pontuação de Personas
+[tabela comparativa]
+
+## Públicos Negativos
+[seção completa de públicos negativos]
+
+## Insights entre Personas
+[insights compartilhados e recomendações]
+
+## Próximos Passos
+1. Começar com a Persona [X] na [Plataforma] — maior relevância + maior público
+2. Criar públicos semelhantes a partir de [fonte semente]
+3. Executar `/ads copy &lt;plataforma&gt;` para gerar copy de anúncios adaptada às principais personas
+4. Executar `/ads hooks` para gerar ganchos que prendam a atenção para cada persona
+5. Configurar testes A/B entre a mensagem da Persona [X] e da Persona [Y]</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Quality Checklist</h2><p class="text-neutral-300 mb-4 leading-relaxed">Before delivering the output, verify:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>[ ] At least 5 personas built with complete details</li><li>[ ] Each persona has all sections completed (demographics, psychographics, pain points, triggers, objections, content habits, platform targeting)</li><li>[ ] Platform targeting parameters are specific and actionable (not generic)</li><li>[ ] Meta interests are real, targetable interests in Ads Manager</li><li>[ ] Google keywords are actual search terms people use</li><li>[ ] LinkedIn job titles are actual job titles</li><li>[ ] The relevance score is applied and justified</li><li>[ ] The negative audiences section is complete</li><li>[ ] Cross-persona insights identify patterns</li><li>[ ] The campaign structure recommendation is included</li><li>[ ] The output is saved to ADS-AUDIENCE.md</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Audience Clarity Score (0-100)</h2><p class="text-neutral-300 mb-4 leading-relaxed">Calculate and report at the top of the file:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Factor</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Weight</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Score</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Persona specificity</td><td class="px-3 py-2 border border-dark-600 align-top">25%</td><td class="px-3 py-2 border border-dark-600 align-top">Generic (0-40) / Detailed (41-70) / Hyper-specific (71-100)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Actionability of the guidance</td><td class="px-3 py-2 border border-dark-600 align-top">25%</td><td class="px-3 py-2 border border-dark-600 align-top">Blank (0-40) / Usable (41-70) / Ready to copy and paste (71-100)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Pain point depth</td><td class="px-3 py-2 border border-dark-600 align-top">20%</td><td class="px-3 py-2 border border-dark-600 align-top">Surface-level (0-40) / Researched (41-70) / Customer voice (71-100)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Platform coverage</td><td class="px-3 py-2 border border-dark-600 align-top">15%</td><td class="px-3 py-2 border border-dark-600 align-top">1–2 platforms (0–40) / 3–4 platforms (41–70) / 5+ platforms (71–100)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Negative audience quality</td><td class="px-3 py-2 border border-dark-600 align-top">15%</td><td class="px-3 py-2 border border-dark-600 align-top">Missing (0) / Basic (1-40) / Detailed with methods (41-100)</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Composite Score</strong> = Weighted average of all factors</p><p class="text-neutral-300 mb-4 leading-relaxed">--- skills/ads-funnel/SKILL.md ---</p><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed">name: ads-funnel description: Full-Funnel Ad Architect. Builds a complete advertising funnel across TOFU, MOFU, BOFU, and Retargeting, with platform-specific templates, audience targeting, ad formats, copy angles, landing page requirements, KPIs, and budget allocation for Meta, Google, and LinkedIn.</p><hr class="border-dark-600 my-8"/>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-1-11.html">← Module 1.11</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-13.html">Module 1.13 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>AI Teams — Group 1 · Educational material | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

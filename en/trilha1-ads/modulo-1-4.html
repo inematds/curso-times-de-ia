@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 1.4: Ad Strategy Report PDF Generator | AI Teams</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha1-ads/modulo-1-4.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha1-ads/modulo-1-4.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha1-ads/modulo-1-4.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha1-ads/modulo-1-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-1-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../es/trilha1-ads/modulo-1-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">AI Teams</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Real estate</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recruiting</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finance</span></a>
+<button aria-label="Toggle theme" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../index.html">Start</a>
+<span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Track 1</a>
+<span>/</span>
+<span class="text-emerald-400">Module 1.4</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MODULE 1.4 · TRACK 1</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">📣 PDF Ad Strategy Report Generator</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Generate a client-ready PDF ad strategy report using the Python ReportLab library. This skill scans the current working directory for all ad output files, extracts scores, audience personas, campaign…</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">7</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">15 min</div>
+<div class="text-xs text-neutral-400">Reading</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">orchestrator</div>
+<div class="text-xs text-neutral-400">Command</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">Ads</div>
+<div class="text-xs text-neutral-400">Team</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Skill Purpose</h2><p class="text-neutral-300 mb-4 leading-relaxed">Generate a client-ready PDF ad strategy report using the Python ReportLab library. This skill scans the current working directory for all ad output files, extracts scores, audience personas, campaign structure, budget allocation, and competitive intelligence, compiles them into structured JSON, and produces a professional PDF with a cover page featuring an Ad Readiness Score gauge, audience persona cards, campaign funnel diagram, budget allocation chart, competitive positioning map, creative direction summary, and a prioritized 90-day action plan.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">When to Use</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>The user wants a PDF version of the ad strategy report (not just Markdown)</li><li>The user is preparing a deliverable for a client or stakeholder presentation</li><li>The user requests a "polished report," "client-ready report," or "PDF report"</li><li>The user wants a visual report with charts, scores, and professional formatting</li><li>Triggered by <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads report-pdf</code> or <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads report-pdf &lt;nome do negócio&gt;</code></li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">When to Use PDF vs. Markdown</h2><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Format</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Best For</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Advantages</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Disadvantages</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>PDF</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Client presentations, email attachments, proposals, sales materials</td><td class="px-3 py-2 border border-dark-600 align-top">Professional appearance, charts and gauges, printable, consistent formatting</td><td class="px-3 py-2 border border-dark-600 align-top">Requires a Python script; harder to edit</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Markdown</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Internal use, quick reference, iterative editing, version control</td><td class="px-3 py-2 border border-dark-600 align-top">Easy to edit, fast generation, Git-compatible</td><td class="px-3 py-2 border border-dark-600 align-top">Less visual polish, no charts</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>General rule:</strong> If the report will be sent to a client, prospect, or executive, use PDF. If it is for internal use or later editing, use Markdown.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">How to Run</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Step 1: Check the PDF Generation Script</h3><p class="text-neutral-300 mb-4 leading-relaxed">First, check whether the dedicated PDF generation script exists:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">ls ~/.claude/skills/ads/scripts/generate_ads_pdf.py 2&gt;/dev/null</code></pre><p class="text-neutral-300 mb-4 leading-relaxed"><strong>If the script exists:</strong> Use it directly (skip to Step 4). <strong>If the script doesn't exist:</strong> Generate the PDF inline using ReportLab (follow all steps).</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Stage 2: Collect All Available Data</h3><p class="text-neutral-300 mb-4 leading-relaxed">Scan the current working directory for all outputs from the ads skill. Look for these files:</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Primary data sources (search all of these):</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-STRATEGY-*.md</code> — Complete strategy report (composite scores, all sections)</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-AUDIENCE*.md</code> — Audience personas, targeting parameters</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-COPY-*.md</code> — Platform-specific ad copy</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-HOOKS*.md</code> — Scroll-stopping hooks</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-CREATIVE-BRIEF*.md</code> — Creative briefs for all formats</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-VIDEO-SCRIPTS*.md</code> — Video ad scripts</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-FUNNEL*.md</code> — Campaign funnel architecture</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-BUDGET*.md</code> — Budget allocation plan</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-COMPETITORS*.md</code> — Competitive intelligence</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-KEYWORDS*.md</code> — Keyword strategy (Google Ads)</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-TESTING-PLAN*.md</code> — A/B testing plan</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-LANDING*.md</code> — Landing page audit</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-AUDIT*.md</code> — Performance audit results</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Search command:</strong></p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">ls ADS-*.md 2&gt;/dev/null</code></pre><p class="text-neutral-300 mb-4 leading-relaxed"><strong>For each file found</strong>, extract:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Scores and ratings</li><li>Key findings and recommendations</li><li>Audience personas and segments</li><li>Campaign structure details</li><li>Budget allocations and projections</li><li>Competitive Positioning Data</li><li>Best ad copy and hooks</li><li>Action Items and Timelines</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Stage 3: Structure the Data in JSON</h3><p class="text-neutral-300 mb-4 leading-relaxed">Compile all extracted data into a structured JSON object for the PDF generator:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">{
+  "report_metadata": {
+    "business_name": "[Nome do Negócio]",
+    "website_url": "[URL]",
+    "industry": "[Indústria]",
+    "report_date": "[AAAA-MM-DD]",
+    "generated_by": "Estrategista de Anúncios IA"
+  },
+  "ad_readiness_score": {
+    "composite_score": 0,
+    "audience_clarity": {"score": 0, "weight": 25, "findings": []},
+    "creative_quality": {"score": 0, "weight": 20, "findings": []},
+    "funnel_architecture": {"score": 0, "weight": 20, "findings": []},
+    "competitive_position": {"score": 0, "weight": 15, "findings": []},
+    "budget_efficiency": {"score": 0, "weight": 20, "findings": []}
+  },
+  "audience_personas": [
+    {
+      "name": "[Nome da Persona]",
+      "age_range": "[Faixa Etária]",
+      "role_title": "[Cargo/Título]",
+      "pain_points": [],
+      "motivations": [],
+      "platforms": [],
+      "targeting_params": {}
+    }
+  ],
+  "campaign_structure": {
+    "funnel_stages": [],
+    "campaigns": [],
+    "retargeting_flows": []
+  },
+  "budget_allocation": {
+    "total_monthly_budget": 0,
+    "platform_split": {},
+    "funnel_stage_split": {},
+    "projected_metrics": {
+      "estimated_impressions": 0,
+      "estimated_clicks": 0,
+      "estimated_conversions": 0,
+      "projected_cpa": 0,
+      "projected_roas": 0
+    }
+  },
+  "competitive_intelligence": {
+    "competitors_analyzed": [],
+    "positioning_gaps": [],
+    "messaging_opportunities": []
+  },
+  "top_ad_copy": {
+    "best_hooks": [],
+    "top_headlines": [],
+    "best_ctas": []
+  },
+  "action_plan": {
+    "week_1": [],
+    "week_2_4": [],
+    "month_2_3": []
+  },
+  "critical_findings": [],
+  "quick_wins": []
+}</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Step 4: Generate the PDF</h3><p class="text-neutral-300 mb-4 leading-relaxed">Run the PDF generation script with the compiled JSON data:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">python3 ~/.claude/skills/ads/scripts/generate_ads_pdf.py</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">If the script does not exist, generate it inline. The script should produce a PDF with these sections:</p><h4 class="font-bold text-base mt-8 mb-3 text-white">PDF Structure and Pages</h4><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Page 1: Cover</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Report title: "Ad Strategy Report"</li><li>Business name and logo placeholder</li><li>Website URL</li><li>Report date</li><li>"Prepared by AI Ad Strategist"</li><li>Ad Readiness Score Gauge (large, centered) — color-coded:</li><li>80-100: Green (#059669)</li><li>60-79: Blue (#2563EB)</li><li>40-59: Yellow (#D97706)</li><li>20-39: Orange (#EA580C)</li><li>0-19: Red (#DC2626)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Page 2: Executive Summary</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Ad Readiness Score Breakdown (5 categories with individual scores)</li><li>Horizontal bar chart showing each category's score relative to the maximum</li><li>3 critical findings (in bullet points, in bold)</li><li>3 quick wins (in bullet points, with estimated impact)</li><li>Overall verdict statement</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Page 3: Audience Analysis</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Audience Clarity Score: X/100</li><li>Persona cards (2-3 personas), each containing:</li><li>Persona name and demographic summary</li><li>Top 3 pain points</li><li>Top 3 motivations</li><li>Preferred platforms</li><li>Targeting Parameters Summary</li><li>Platform presence chart (bar chart by platform)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Page 4: Creative Direction</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Creative Quality Score: X/100</li><li>Top 5 hooks with platform recommendations</li><li>Examples of better headlines/copy (3-5)</li><li>Creative format recommendations table</li><li>A/B Testing Priorities</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Page 5: Campaign Architecture</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Funnel Architecture Score: X/100</li><li>Funnel diagram (visual flow): ``<code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono"> CONSCIÊNCIA → CONSIDERAÇÃO → CONVERSÃO → RETENÇÃO [Campanha]    [Campanha]     [Campanha]    [Campanha] [% Orçamento] [% Orçamento]  [% Orçamento] [% Orçamento] </code>``</li><li>Campaign structure table (campaign name, objective, audience, platform)</li><li>Retargeting flow description</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Page 6: Competitive Positioning</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Competitive Positioning Score: X/100</li><li>Competitor comparison table (name, estimated spend, key message, gap)</li><li>Positioning Opportunities (in Bullet Points)</li><li>Message differentiation recommendations</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Page 7: Budget Allocation</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Budget Efficiency Score: X/100</li><li>Pie chart: Budget allocation by platform</li><li>Bar chart: Budget allocation by funnel stage</li><li>Projected metrics table: | Metric | Month 1 | Month 2 | Month 3 | |--------|---------|---------|---------| | Spend | $X | $X | $X | | Impressions | X | X | X | | Clicks | X | X | X | | Conversions | X | X | X | | CPA | $X | $X | $X | | ROAS | Xx | Xx | Xx |</li><li>Scaling Map (when to increase the budget and by how much)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Page 8: 90-Day Action Plan</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Color-coded priority table:</li><li>Week 1 (Red/Urgent): Immediate setup actions</li><li>Weeks 2–4 (Orange/Important): Launch and initial optimization</li><li>Months 2–3 (Blue/Strategic): Scale and Expansion</li><li>Each action item includes: task, owner, platform, estimated impact</li><li>Key milestones and checkpoints</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Page 9: Appendix (if data is available)</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Complete keyword list (if <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads keywords</code> was executed)</li><li>Complete library of ad copy (if <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads copy</code> was executed)</li><li>Landing page audit summary (if <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads landing</code> was executed)</li><li>A/B testing plan (if <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads testing</code> was executed)</li></ul><h4 class="font-bold text-base mt-8 mb-3 text-white">PDF Design Specifications</h4><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Layout:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Page size: Letter (8.5" x 11")</li><li>Margins: 0.75" on all sides</li><li>Header: Business name (left), page number (right)</li><li>Footer: "Generated by AI Ad Strategist" (center)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Colors:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Primary: #1E3A5F (dark navy blue — headings, titles)</li><li>Secondary: #2563EB (blue — accents, highlights, links)</li><li>Background: #F8FAFC (light gray — section backgrounds)</li><li>Text: #1F2937 (dark gray — body text)</li><li>Success: #059669 (green — positive scores, strengths)</li><li>Notice: #D97706 (amber — average scores, caution)</li><li>Danger: #DC2626 (red — low scores, critical issues)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Typography:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Titles: Helvetica-Bold, 16pt (h1), 13pt (h2), 11pt (h3)</li><li>Body: Helvetica, 10pt</li><li>Tables: Helvetica, 9pt</li><li>Captions: Helvetica, 8pt, gray</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Charts (ReportLab Drawing):</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Score gauge: Arc/donut chart with the score number centered</li><li>Bar charts: Horizontal bars with value labels</li><li>Pie charts: With percentage labels and legend</li><li>Funnel diagram: Trapezoid shapes with labels</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Step 5: Post-Generation</h3><p class="text-neutral-300 mb-4 leading-relaxed">After generating the PDF:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Check whether the file was created:</li></ol><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">ls -la ADS-STRATEGY-REPORT.pdf</code></pre><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Tell the user the file size and location</li><li>Suggest next steps:</li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Review the PDF and share it with the client or team</li><li>Run <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads audit</code> after 7 days of campaign data</li><li>Use individual skills to regenerate specific sections</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Missing Data Handling</h2><p class="text-neutral-300 mb-4 leading-relaxed">Not all skills may have run before generating the PDF. Handle this appropriately:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Available Data</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Behavior</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Full strategy execution (all 5 agents)</td><td class="px-3 py-2 border border-dark-600 align-top">Generate a complete report with all pages</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Partial Data (some agents)</td><td class="px-3 py-2 border border-dark-600 align-top">Generate a report with the available sections, marking missing sections as "Not Yet Analyzed"</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Quick snapshot only</td><td class="px-3 py-2 border border-dark-600 align-top">Generate a mini-report (cover + executive summary + action plan)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">No data files found</td><td class="px-3 py-2 border border-dark-600 align-top">Tell the user to run <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads strategy &lt;url&gt;</code> first</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Minimum Data Needed:</strong> At least one file <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-*.md</code> must exist. If none is found, display:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Nenhum dado de estratégia de anúncios encontrado no diretório atual.
+Execute '/ads strategy &lt;url&gt;' primeiro para gerar a análise,
+e então use '/ads report-pdf' para criar o relatório em PDF.</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Output</h2><p class="text-neutral-300 mb-4 leading-relaxed">The final output is a single PDF file: <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-STRATEGY-REPORT.pdf</code></p><p class="text-neutral-300 mb-4 leading-relaxed">Saved in the current working directory, alongside the source Markdown files.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Important Rules</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Always check existing data files before generating—never create a PDF with empty data/placeholders</li><li>The PDF must be client-ready without any editing</li><li>Score gauges should use color coding to make performance instantly visible</li><li>Charts should have clear labels — no unlabeled axes or legends</li><li>If the script fails, provide the exact error message and suggest installing ReportLab: <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">pip3 install reportlab</code></li><li>The score gauge on the cover page is the most important visual—it must be prominent and accurate</li><li>Budget projections should be labeled as estimates, not guarantees</li><li>Always include the 90-day action plan—it’s the most actionable section for clients</li><li>Page numbers and headers/footers should be consistent across all pages</li><li>If the data is partial, clearly mark which sections have complete data vs. estimates</li><li>The PDF file name must always be <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-STRATEGY-REPORT.pdf</code> for consistency</li><li>The file size must be under 5 MB—optimize chart rendering if needed</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">--- skills/ads-audit/SKILL.md ---</p><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed">name: ads-audit description: Ad Performance Auditor — analyze existing ad campaigns and identify optimization opportunities version: 1.0.0 author: AI Ads Strategist tags: [ads, audit, performance, optimization, analytics] trigger: /ads audit output: ADS-AUDIT.md</p><hr class="border-dark-600 my-8"/>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-1-3.html">← Module 1.3</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-5.html">Module 1.5 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>AI Teams — Group 1 · Educational material | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 2.13: Análisis previo al lanzamiento de resultados | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha2-trading/modulo-2-13.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha2-trading/modulo-2-13.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha2-trading/modulo-2-13.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha2-trading/modulo-2-13.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../en/trilha2-trading/modulo-2-13.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-2-13.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Equipos de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Cripto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Bienes raíces</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Reclutamiento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanzas</span></a>
+<button aria-label="Cambiar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-blue-400" href="../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-blue-400" href="index.html">Ruta 2</a>
+<span>/</span>
+<span class="text-blue-400">Módulo 2.13</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.13 · TRILHA 2</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">📈 Análisis previo al anuncio de resultados</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Eres especialista en análisis previo a la publicación de resultados dentro del sistema de Analista de Trading con IA. Cuando se te active mediante `/trade earnings &lt;ticker&gt;`, proporcionas un análisis exhaustivo de lo que se puede esperar antes de …</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">15</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">15 min</div>
+<div class="text-xs text-neutral-400">Lectura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">orquestador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">Trading</div>
+<div class="text-xs text-neutral-400">Equipo</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed">Eres especialista en análisis previo a la publicación de resultados dentro del sistema de Analista de Trading con IA. Cuando se te active mediante <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade earnings &lt;ticker&gt;</code>, proporcionas un análisis integral de qué esperar antes de un informe de resultados, incluidos patrones históricos, movimientos esperados, métricas clave y recomendaciones para preparar una operación.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Solo con fines educativos y de investigación. No constituye asesoramiento financiero.</strong></p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Activación</h2><p class="text-neutral-300 mb-4 leading-relaxed">Esta skill se activa cuando el usuario ejecuta:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade earnings &lt;ticker&gt;</code> — análisis completo previo al lanzamiento de resultados</li><li>Cualquier solicitud para analizar resultados futuros, historial de resultados o configuraciones de negociación de resultados</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Requisitos de entrada</h2><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Obligatorio:</strong> Símbolo del ticker (p. ej., AAPL, TSLA, NVDA)</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Contexto opcional que el usuario puede proporcionar:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Si actualmente tienes una posición</li><li>Tu sesgo direccional (alcista, bajista, neutral)</li><li>Tipo de estrategia preferida (solo acciones, opciones, evitar)</li><li>Tamaño de la cuenta para el contexto del dimensionamiento de posiciones</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Proceso de análisis</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Fase 1: Detalles del evento de resultados</h3><p class="text-neutral-300 mb-4 leading-relaxed">Usa <strong>WebSearch</strong> para encontrar:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Fecha de los resultados</strong>: Fecha y hora confirmadas (antes de la apertura del mercado / después del cierre del mercado)</li><li><strong>Días hasta los resultados</strong>: Cuenta regresiva desde hoy</li><li><strong>Trimestre de reporte</strong>: Q1/Q2/Q3/Q4 y año fiscal</li><li><strong>Horario de la conferencia</strong>: Cuando la administración analiza los resultados</li><li><strong>Número de «whisper» de resultados</strong>: Consenso no oficial (si está disponible)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Consultas de investigación:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>"[TICKER] fecha de presentación de resultados [trimestre actual] [año actual]"</li><li>"[TICKER] estimación de resultados según el whisper number"</li><li>"[TICKER] vista previa de resultados y expectativas de los analistas"</li></ol><h3 class="font-bold text-lg mt-8 mb-3 text-white">Fase 2: Estimaciones de los analistas</h3><p class="text-neutral-300 mb-4 leading-relaxed">Reúne las estimaciones de consenso:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Métrica</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Estimación de consenso</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Rango (Mín-Máx)</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Número de Whisper</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">EPS</td><td class="px-3 py-2 border border-dark-600 align-top">$X.XX</td><td class="px-3 py-2 border border-dark-600 align-top">$X.XX — $X.XX</td><td class="px-3 py-2 border border-dark-600 align-top">$X.XX</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Ingresos</td><td class="px-3 py-2 border border-dark-600 align-top">$X.XXB</td><td class="px-3 py-2 border border-dark-600 align-top">$X.XXB — $X.XXB</td><td class="px-3 py-2 border border-dark-600 align-top">$X.XXB</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Margen bruto</td><td class="px-3 py-2 border border-dark-600 align-top">XX.X%</td><td class="px-3 py-2 border border-dark-600 align-top">XX.X% — XX.X%</td><td class="px-3 py-2 border border-dark-600 align-top">—</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Ganancia operativa</td><td class="px-3 py-2 border border-dark-600 align-top">$X.XXB</td><td class="px-3 py-2 border border-dark-600 align-top">—</td><td class="px-3 py-2 border border-dark-600 align-top">—</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Orientación (próx. Q) EPS</td><td class="px-3 py-2 border border-dark-600 align-top">$X.XX</td><td class="px-3 py-2 border border-dark-600 align-top">$X.XX — $X.XX</td><td class="px-3 py-2 border border-dark-600 align-top">—</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Orientación (año fiscal) EPS</td><td class="px-3 py-2 border border-dark-600 align-top">$X.XX</td><td class="px-3 py-2 border border-dark-600 align-top">$X.XX — $X.XX</td><td class="px-3 py-2 border border-dark-600 align-top">—</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Tendencia de revisión de estimaciones:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Hace 30 días: La estimación de EPS era $X.XX → Ahora: $X.XX (dirección: alza/baja/estable)</li><li>Hace 90 días: La estimación de EPS era $X.XX → Ahora: $X.XX (dirección: alza/baja/estable)</li><li>Número de revisiones al alza frente a revisiones a la baja (últimos 30 días)</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Fase 3: Patrón histórico de sorpresas en resultados</h3><p class="text-neutral-300 mb-4 leading-relaxed">Usa <strong>WebSearch</strong> para recopilar el historial de resultados de los últimos 8 trimestres:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">| Quarter | EPS Est | EPS Actual | Surprise % | Revenue Est | Revenue Actual | Rev Surprise % | Next-Day Move |
+|---------|---------|------------|------------|-------------|----------------|----------------|---------------|
+| Q4 20XX | $X.XX  | $X.XX     | +X.X%      | $X.XXB      | $X.XXB         | +X.X%          | +X.X%         |
+| Q3 20XX | $X.XX  | $X.XX     | +X.X%      | $X.XXB      | $X.XXB         | +X.X%          | -X.X%         |
+| ...     | ...    | ...       | ...        | ...         | ...            | ...            | ...           |</code></pre><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Análisis de patrones:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Tasa de superación: X/8 trimestres superaron el EPS (XX%)</li><li>Sorpresa promedio de EPS: +X.X%</li><li>Tasa de superación de ingresos: X/8 trimestres (XX%)</li><li>Sorpresa media de ingresos: +X.X%</li><li><strong>Tendencia</strong>: ¿Las sorpresas son cada vez mayores o menores?</li><li><strong>Ingresos frente a EPS</strong>: ¿La empresa supera ambas estimaciones o solo una?</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Fase 4: Historial de movimientos de precios después de los resultados</h3><p class="text-neutral-300 mb-4 leading-relaxed">Analiza el comportamiento de la acción después de cada uno de los últimos 8 informes de resultados:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Quarter</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Next-Day Move</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Next-Week Move</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Direction (vs estimate beat)</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Q4 20XX</td><td class="px-3 py-2 border border-dark-600 align-top">+5.2%</td><td class="px-3 py-2 border border-dark-600 align-top">+3.8%</td><td class="px-3 py-2 border border-dark-600 align-top">Beat + Up (aligned)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Q3 20XX</td><td class="px-3 py-2 border border-dark-600 align-top">-3.1%</td><td class="px-3 py-2 border border-dark-600 align-top">-1.5%</td><td class="px-3 py-2 border border-dark-600 align-top">Beat + Down (sell the news)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">...</td><td class="px-3 py-2 border border-dark-600 align-top">...</td><td class="px-3 py-2 border border-dark-600 align-top">...</td><td class="px-3 py-2 border border-dark-600 align-top">...</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Patrones clave:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Movimiento absoluto medio</strong>: X.X% (este es el movimiento típico el día de los resultados)</li><li><strong>Movimiento positivo medio</strong>: +X.X% (cuando la acción sube)</li><li><strong>Movimiento negativo medio</strong>: -X.X% (cuando la acción baja)</li><li><strong>Ratio máximo/mínimo</strong>: X días al alza frente a Y días a la baja después de los resultados</li><li><strong>¿Patrón de «vender con la noticia»?</strong>: ¿La acción cae incluso cuando supera las estimaciones?</li><li><strong>¿Brecha y relleno?</strong>: ¿La acción suele cubrir las brechas de resultados en un plazo de 5 días?</li><li><strong>Tendencia después del informe</strong>: ¿La dirección inicial se mantiene o se revierte en una semana?</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Fase 5: Movimiento esperado (implícito en opciones)</h3><p class="text-neutral-300 mb-4 leading-relaxed">Usa <strong>WebSearch</strong> para encontrar datos de precios de opciones:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Busca: "[TICKER] options expected move earnings implied volatility"</li><li>Encuentra el precio del straddle at-the-money para el vencimiento de la semana de resultados</li><li>Calcula el movimiento esperado:</li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Movimiento esperado = Precio del straddle ATM / Precio actual de la acción * 100</li><li>O usa directamente el movimiento implícito del mercado de opciones, si está publicado</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Análisis del movimiento esperado:</strong></p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Métrica</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Valor</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Precio actual de la acción</td><td class="px-3 py-2 border border-dark-600 align-top">$XXX.XX</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Precio del straddle ATM (semana de resultados)</td><td class="px-3 py-2 border border-dark-600 align-top">$XX.XX</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Movimiento esperado implícito</td><td class="px-3 py-2 border border-dark-600 align-top">+/- X.X%</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Rango esperado implícito</td><td class="px-3 py-2 border border-dark-600 align-top">$XXX — $XXX</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Movimiento histórico medio</td><td class="px-3 py-2 border border-dark-600 align-top">+/- X.X%</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Implícito vs. histórico</td><td class="px-3 py-2 border border-dark-600 align-top">Opciones con precios para movimiento MAYOR/MENOR/RAZONABLE</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Interpretación:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Si implícito &gt; promedio histórico: "Las opciones están descontando un movimiento MAYOR de lo normal. Los vendedores de primas pueden tener ventaja."</li><li>Si implícito &lt; promedio histórico: "Las opciones están descontando un movimiento MENOR de lo normal. Esto puede ser una oportunidad si esperas volatilidad."</li><li>Si implícito ≈ promedio histórico: "Las opciones están descontando de manera justa el movimiento esperado."</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Fase 6: Métricas clave a observar</h3><p class="text-neutral-300 mb-4 leading-relaxed">Identifica las 5-8 métricas más importantes para los resultados de esta empresa específica:</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Estas varían según el tipo de empresa:</strong></p><p class="text-neutral-300 mb-4 leading-relaxed">Para <strong>empresas de Tecnología/SaaS</strong>: Crecimiento de ARR, retención neta de ingresos, número de clientes, tendencia del margen operativo, flujo de caja libre, orientación sobre gastos en IA/nube</p><p class="text-neutral-300 mb-4 leading-relaxed">Para <strong>empresas de Retail</strong>: Crecimiento de ventas en tiendas comparables, niveles de inventario, margen bruto, tendencias del gasto de los consumidores, proyecciones para la temporada de fiestas</p><p class="text-neutral-300 mb-4 leading-relaxed">Para <strong>Bancos/Financieras</strong>: Ingresos netos por intereses, provisión para pérdidas crediticias, ingresos por negociación, índice de eficiencia, métricas de calidad crediticia</p><p class="text-neutral-300 mb-4 leading-relaxed">Para <strong>Farmacéuticas/Biotecnología</strong>: Actualizaciones del pipeline, cronogramas de aprobación de medicamentos, ingresos por medicamento, gastos en I+D, fechas de vencimiento de patentes</p><p class="text-neutral-300 mb-4 leading-relaxed">Para <strong>Industriales/Manufactura</strong>: Backlog de pedidos, razón book-to-bill, utilización de capacidad, tendencias de costos de insumos, comentarios sobre la cadena de suministro</p><p class="text-neutral-300 mb-4 leading-relaxed">Enumera cada métrica clave con:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Qué espera el mercado</li><li>Qué sería alcista (umbral para superar las expectativas)</li><li>Qué sería bajista (umbral de incumplimiento)</li><li>Por qué es importante para el precio de la acción</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Fase 7: Catalizadores y riesgos</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Posibles catalizadores positivos:</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>[Catalizador específico con contexto]</li><li>[Catalizador específico con contexto]</li><li>[Catalizador específico con contexto]</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Riesgos negativos potenciales:</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>[Riesgo específico con contexto]</li><li>[Riesgo específico con contexto]</li><li>[Riesgo específico con contexto]</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Comentarios de la administración para tener en cuenta:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Temas clave que los analistas preguntarán en la llamada</li><li>Lenguaje de orientación que hay que observar ("optimismo cauteloso" vs. "vientos en contra")</li><li>Cualquier anuncio estratégico previsto (reestructuración, recompra de acciones, M&amp;A)</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Fase 8: Recomendaciones de configuración de operaciones antes de los resultados</h3><p class="text-neutral-300 mb-4 leading-relaxed">Con base en TODO el análisis anterior, ofrece opciones de configuración de trading:</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Configuración A: Aprovechar el movimiento (direccional)</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Dirección: Largo / Corto / Evitar</li><li>Racional: Basado en patrones históricos, revisiones de estimaciones y catalizadores</li><li>Entrada: Precio actual o nivel específico</li><li>Stop loss: $XX.XX (riesgo de X%)</li><li>Objetivo: $XX.XX (recompensa de X%)</li><li>Ratio riesgo/recompensa: X:1</li><li>Recomendación del tamaño de la posición (como % de la cartera)</li><li>Timing: entrar ahora / esperar un retroceso / esperar la confirmación posterior a los resultados</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Configuración B: Aprovechar la volatilidad (opciones)</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Estrategia: Straddle / Strangle / Iron Condor / Mariposa</li><li>Racional: Basado en la comparación entre el movimiento implícito y el histórico</li><li>Strikes específicos y vencimiento (si corresponde)</li><li>Riesgo máximo y recompensa máxima</li><li>Niveles de punto de equilibrio</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Configuración C: Evitar / Esperar</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Cuándo recomendar esto: patrón incierto, opciones sobrevaloradas, riesgo binario</li><li>Qué observar después de los resultados antes de entrar</li><li>Niveles de precio que activarían una entrada después de los resultados</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Nivel de convicción: ALTO / MEDIO / BAJO / SIN VENTAJA</strong></p><p class="text-neutral-300 mb-4 leading-relaxed">Explica la clasificación de convicción:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>ALTO: Patrón histórico sólido + revisiones favorables de las estimaciones + catalizador claro</li><li>MEDIO: Algunas señales positivas, pero panorama mixto</li><li>BAJO: Señales contradictorias; recomienda una posición menor o evitarla</li><li>SIN VENTAJA: No es posible identificar un patrón explotable; mantenerse al margen</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Formato de salida</h2><p class="text-neutral-300 mb-4 leading-relaxed">Escribe el análisis completo en <strong>TRADE-EARNINGS-[TICKER].md</strong> en el directorio de trabajo actual.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Estructura de salida</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+# Análise Pré-Resultados: [TICKER] — [Nome da Empresa]
+
+**Gerado em:** [DATA] | **Data dos Resultados:** [DATA] [BMO/AMC] | **Dias Restantes:** [X]
+
+**AVISO: Apenas para fins educacionais/pesquisa. Não constitui aconselhamento financeiro.**
+
+---
+
+## Resumo do Evento de Resultados
+[Data, hora, trimestre, detalhes da conferência por telefone]
+
+## Estimativas dos Analistas
+[Tabela de consenso com números informais (whisper numbers) e tendências de revisão]
+
+## Padrão Histórico de Superação de Estimativas (Últimos 8 Trimestres)
+[Tabela completa com histórico de superação/abaixo das expectativas e análise de padrões]
+
+## Histórico de Movimentação de Preço Pós-Resultados
+[Tabela de movimentos com identificação de padrões]
+
+## Movimentação Esperada (Implícita em Opções)
+[Análise de straddle e comparação entre implícito e histórico]
+
+## Métricas-Chave para Acompanhar
+[Métricas específicas da empresa com limiares de otimismo/pessimismo]
+
+## Catalisadores e Riscos
+[Catalisadores positivos e riscos negativos]
+
+## Recomendações de Configuração de Negociação
+[Configurações A, B, C com níveis específicos e justificativa]
+
+## Ficha de Avaliação dos Resultados
+
+| Fator | Avaliação | Observações |
+|--------|--------|-------|
+| Taxa Histórica de Superação | [avaliação] | X/8 superações |
+| Tendência de Revisão de Estimativas | [avaliação] | [direção] |
+| Precificação de Opções | [avaliação] | [justo/rico/barato] |
+| Força dos Catalisadores | [avaliação] | [avaliação] |
+| Nível de Risco | [avaliação] | [avaliação] |
+| **Convicção Geral** | **[ALTA/MÉDIA/BAIXA/NENHUMA]** | **[resumo]** |
+
+---
+
+*AVISO: Apenas para fins educacionais/pesquisa. Não constitui aconselhamento financeiro.
+Consulte sempre um assessor financeiro licenciado antes de tomar decisões de investimento.*
+
+## Regras
+
+1. SEMPRE use WebSearch para dados atuais de resultados — nunca adivinhe estimativas ou datas
+2. SEMPRE inclua os 8 trimestres de histórico quando disponíveis (mínimo 4)
+3. SEMPRE calcule e apresente a movimentação esperada com base na precificação de opções
+4. SEMPRE apresente cenários otimistas e pessimistas — sem análise unilateral
+5. SEMPRE inclua o aviso no topo e na parte inferior
+6. NUNCA diga "esta ação VAI subir/descer após os resultados" — use linguagem probabilística
+7. SEMPRE registre quando os números informais (whisper numbers) diferem significativamente do consenso
+8. SEMPRE sinalizar se a ação possui um padrão de "vender a notícia"
+9. Se a data dos resultados estiver a mais de 45 dias, registre que as estimativas provavelmente mudarão
+10. Se a empresa reportou recentemente, registre que a análise é para o PRÓXIMO relatório previsto
+11. Para ações com menos de 4 trimestres de dados públicos de resultados (IPOs recentes), registre o histórico limitado
+12. SEMPRE identifique a métrica mais importante para este relatório de resultados específico
+
+## Tratamento de Erros
+
+- **Data de resultados não encontrada**: "Não foi possível confirmar a data dos resultados para [TICKER]. A empresa pode não ter anunciado ainda. Verifique novamente mais perto da data esperada."
+- **Histórico limitado**: "[TICKER] possui apenas X trimestres de histórico de resultados. A análise de padrões pode ser menos confiável."
+- **Dados de opções indisponíveis**: "Não foi possível encontrar dados de precificação de opções para [TICKER]. O cálculo da movimentação esperada não está disponível. Use a movimentação média histórica (X.X%) como guia aproximado."
+- **Estimativas desatualizadas**: "As estimativas dos analistas foram atualizadas pela última vez em [DATA]. Dados mais recentes podem estar disponíveis mais perto da data dos resultados."
+
+**AVISO: Apenas para fins educacionais/pesquisa. Não constitui aconselhamento financeiro. Consulte sempre um assessor financeiro licenciado antes de tomar decisões de investimento.**
+
+--- skills/trade-screen/SKILL.md ---
+</code></pre>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-2-12.html">← Módulo 2.12</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-14.html">Módulo 2.14 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Equipos de IA — Grupo 1 · Material educativo | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

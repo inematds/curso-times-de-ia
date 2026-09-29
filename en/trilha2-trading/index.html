@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Track 2: Trading Team | AI Teams</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha2-trading/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha2-trading/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha2-trading/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha2-trading/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../es/trilha2-trading/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">AI Teams</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Real estate</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recruiting</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finance</span></a>
+<button aria-label="Toggle theme" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-blue-400" href="../index.html">Start</a>
+<span>/</span>
+<span class="text-blue-400">Track 2</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-14 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">TRACK 2</span>
+<h1 class="text-3xl sm:text-4xl font-extrabold mb-4">📈 Trading Team</h1>
+<p class="text-lg text-neutral-400 max-w-3xl leading-relaxed">undefined</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">19</div>
+<div class="text-xs text-neutral-400">Modules</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">209</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">15</div>
+<div class="text-xs text-neutral-400">Commands</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">5h</div>
+<div class="text-xs text-neutral-400">Content</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section class="mb-12">
+<h2 class="text-2xl font-bold mb-6">🗂️ Track Modules</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-blue-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-2-1.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/10 text-blue-400">MODULE 2.1</span>
+<span class="text-xs text-neutral-500">9 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-blue-400 transition-colors">AI Trading Analyst — Lead Orchestrator</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are a comprehensive AI trading research and analysis system for the assistant. It helps traders, investors, and market enthusiasts analyze stocks, b…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>6 topics</span>
+<span class="text-blue-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-blue-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-2-2.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/10 text-blue-400">MODULE 2.2</span>
+<span class="text-xs text-neutral-500">23 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-blue-400 transition-colors">Risk Assessment and Position Sizing</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are a quantitative risk analyst who produces detailed, numbers-based risk assessments. When activated with `/trade risk &lt;ticker&gt;`, you anal…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>15 topics</span>
+<span class="text-blue-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-blue-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-2-3.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/10 text-blue-400">MODULE 2.3</span>
+<span class="text-xs text-neutral-500">2 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-blue-400 transition-colors">Example: Position sizing calculation</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">entry_price = 150.00</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>0 topics</span>
+<span class="text-blue-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-blue-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-2-4.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/10 text-blue-400">MODULE 2.4</span>
+<span class="text-xs text-neutral-500">3 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-blue-400 transition-colors">Example: VaR calculation</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">import math</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>2 topics</span>
+<span class="text-blue-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-blue-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-2-5.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/10 text-blue-400">MODULE 2.5</span>
+<span class="text-xs text-neutral-500">25 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-blue-400 transition-colors">60-Second Stock Quick View</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are a quick stock assessment tool for the AI Trading Analyst system. When invoked with `/trade quick &lt;TICKER&gt;`, you deliver a comp…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>14 topics</span>
+<span class="text-blue-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-blue-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-2-6.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/10 text-blue-400">MODULE 2.6</span>
+<span class="text-xs text-neutral-500">24 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-blue-400 transition-colors">Options Strategy Advisor</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are a derivatives strategist who analyzes the options landscape for any stock and recommends specific, actionable strategies with defined risk/reward…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>14 topics</span>
+<span class="text-blue-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-blue-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-2-7.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/10 text-blue-400">MODULE 2.7</span>
+<span class="text-xs text-neutral-500">2 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-blue-400 transition-colors">Example: Calculating the expected move from the straddle price</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">stock_price = 150.00</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>0 topics</span>
+<span class="text-blue-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-blue-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-2-8.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/10 text-blue-400">MODULE 2.8</span>
+<span class="text-xs text-neutral-500">4 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-blue-400 transition-colors">Example: Estimating the probability of profit for a credit spread</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">credit_received = 1.50</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>2 topics</span>
+<span class="text-blue-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-blue-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-2-9.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/10 text-blue-400">MODULE 2.9</span>
+<span class="text-xs text-neutral-500">26 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-blue-400 transition-colors">Fundamental Analysis Agent</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are a Fundamental Analysis specialist for the AI Trading Analyst system. When invoked with `/trade fundamental &lt;TICKER&gt;` or called as a su…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>19 topics</span>
+<span class="text-blue-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-blue-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-2-10.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/10 text-blue-400">MODULE 2.10</span>
+<span class="text-xs text-neutral-500">23 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-blue-400 transition-colors">Sector Rotation and Analysis</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are a macro-aware sector analyst who identifies where institutional money is flowing and which sectors are positioned to outpe…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>16 topics</span>
+<span class="text-blue-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-blue-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-2-11.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/10 text-blue-400">MODULE 2.11</span>
+<span class="text-xs text-neutral-500">13 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-blue-400 transition-colors">PDF Business Report Generator</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are a PDF report generation expert within the AI Business Analyst system. When triggered via `/trade report-pdf`, you scan the d…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>11 topics</span>
+<span class="text-blue-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-blue-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-2-12.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/10 text-blue-400">MODULE 2.12</span>
+<span class="text-xs text-neutral-500">26 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-blue-400 transition-colors">Sentiment and Momentum Analysis Agent</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are a Sentiment and Momentum Analysis expert for the AI Trading Analyst system. When invoked with `/trade sentiment &lt;TICKER&gt;` or cal…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>15 topics</span>
+<span class="text-blue-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-blue-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-2-13.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/10 text-blue-400">MODULE 2.13</span>
+<span class="text-xs text-neutral-500">15 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-blue-400 transition-colors">Pre-Launch Earnings Analysis</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are a pre-earnings analysis expert within the AI Trading Analyst system. When triggered via `/trade earnings &lt;ticker&gt;`, …</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>15 topics</span>
+<span class="text-blue-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-blue-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-2-14.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/10 text-blue-400">MODULE 2.14</span>
+<span class="text-xs text-neutral-500">15 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-blue-400 transition-colors">Stock Picker</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are a stock screening expert within the AI Trading Analyst system. When triggered via `/trade screen &lt;critérios&gt;`, you screen st…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>14 topics</span>
+<span class="text-blue-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-blue-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-2-15.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/10 text-blue-400">MODULE 2.15</span>
+<span class="text-xs text-neutral-500">10 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-blue-400 transition-colors">Watchlist Manager</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are a watchlist management expert within the AI Trading Analyst system. When triggered via `/trade watchlist`, yo…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>6 topics</span>
+<span class="text-blue-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-blue-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-2-16.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/10 text-blue-400">MODULE 2.16</span>
+<span class="text-xs text-neutral-500">5 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-blue-400 transition-colors">Trading Watchlist</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**Last Updated:** [DATA HORA] | **Actions:** [QUANTIDADE] | **Active Alerts:** [QUANTIDADE]</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>7 topics</span>
+<span class="text-blue-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-blue-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-2-17.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/10 text-blue-400">MODULE 2.17</span>
+<span class="text-xs text-neutral-500">22 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-blue-400 transition-colors">Technical Analysis Agent</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are a Technical Analysis specialist for the AI Trading Analyst system. When invoked with `/trade technical &lt;TICKER&gt;` or called as a subage…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>19 topics</span>
+<span class="text-blue-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-blue-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-2-18.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/10 text-blue-400">MODULE 2.18</span>
+<span class="text-xs text-neutral-500">26 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-blue-400 transition-colors">Complete Stock Analysis Orchestrator</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are the core analysis engine for the AI Trading Analyst system. When triggered with `/trade analyze &lt;TICKER&gt;`, you perform the most comprehensive stock analy…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>18 topics</span>
+<span class="text-blue-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-blue-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-2-19.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-blue-500/10 text-blue-400">MODULE 2.19</span>
+<span class="text-xs text-neutral-500">13 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-blue-400 transition-colors">Portfolio Analyzer</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are a portfolio analysis expert within the AI Trading Analyst system. When triggered via `/trade portfolio`, you perform an analysis …</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>16 topics</span>
+<span class="text-blue-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+</div>
+</section>
+<section class="mb-10 bg-dark-800/50 border border-dark-600 rounded-xl p-6">
+<h2 class="text-xl font-bold mb-2">🚀 How to Use This Team</h2>
+<p class="text-sm text-neutral-400 mb-4">Orchestrator command summary — each module details the corresponding component.</p>
+<div class="prose-sm"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">How to Use</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Open the assistant and type <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade &lt;comando&gt;</code>.</li><li>Main commands:</li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade analyze &lt;ticker&gt;</code> — full stock analysis</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade quick &lt;ticker&gt;</code> — quick overview (60 seconds)</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade fundamental &lt;ticker&gt;</code> — fundamental analysis</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade technical &lt;ticker&gt;</code> — technical analysis</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade sentiment &lt;ticker&gt;</code> — sentiment and momentum</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade sector &lt;setor&gt;</code> — rotation and sector analysis</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade options &lt;ticker&gt;</code> — options strategies</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade risk &lt;ticker&gt;</code> — risk and sizing</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade screen &lt;critérios&gt;</code> — stock screener</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade watchlist</code> — manage watchlist</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade earnings &lt;ticker&gt;</code> — pre-earnings analysis</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade compare &lt;t1&gt; &lt;t2&gt;</code> — comparison of two assets</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade portfolio</code> — portfolio analysis</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade thesis &lt;ticker&gt;</code> — investment thesis</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade report-pdf</code> — generate a report in PDF</li></ul></div>
+<p class="text-sm text-neutral-300 mt-4"><strong>Model recommendation:</strong> a model with a large context window (64k+) to support comprehensive analyses.</p>
+</section>
+<section class="bg-dark-800/50 border border-dark-600 rounded-xl p-6">
+<p class="text-sm text-neutral-400 leading-relaxed"><strong>Notice:</strong> educational content — not investment advice. Consult a licensed professional before trading.</p>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>AI Teams — Group 1 · Educational material | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

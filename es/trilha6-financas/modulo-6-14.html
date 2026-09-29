@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 6.14: /finance report-pdf — Generador de planes financieros en PDF | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha6-financas/modulo-6-14.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha6-financas/modulo-6-14.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha6-financas/modulo-6-14.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha6-financas/modulo-6-14.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../en/trilha6-financas/modulo-6-14.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-6-14.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Equipos de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Cripto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Bienes raíces</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Reclutamiento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-cyan-400 bg-cyan-500/10" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanzas</span></a>
+<button aria-label="Cambiar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-cyan-400" href="../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-cyan-400" href="index.html">Ruta 6</a>
+<span>/</span>
+<span class="text-cyan-400">Módulo 6.14</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-cyan-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full mb-4">MÓDULO 6.14 · TRAYECTO 6</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">💰 /finance report-pdf — Generador de Plan Financiero en PDF</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">**AVISO: Solo para fines educativos/informativos. No constituye asesoramiento financiero.**</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">11</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">10 min</div>
+<div class="text-xs text-neutral-400">Lectura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">orquestador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">Finanzas</div>
+<div class="text-xs text-neutral-400">Equipo</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Solo con fines educativos e informativos. No constituye asesoramiento financiero.</strong></p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Objetivo</h2><p class="text-neutral-300 mb-4 leading-relaxed">Compila todos los análisis en markdown de los archivos FINANCE-*.md del directorio de trabajo actual en un único PDF pulido, que un asesor, familiar o socio de rendición de cuentas pueda leer de principio a fin.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Cuándo activar</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>El usuario escribe <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance report-pdf</code> o <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance pdf</code></li><li>El usuario pide «crear un informe en PDF», «dame un documento listo para el cliente», «exportar mi plan financiero»</li><li>Después de ejecutar <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance analyze</code> (sugerirlo como el siguiente paso natural)</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Requisitos previos</h2><p class="text-neutral-300 mb-4 leading-relaxed">Antes de generar, asegúrate de que el usuario tenga al menos un archivo de análisis en el directorio de trabajo actual:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">FINANCE-ANALYSIS.md</code> (de <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance analyze</code>) — entrada principal</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">FINANCE-BUDGET.md</code></li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">FINANCE-DEBT.md</code></li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">FINANCE-RETIREMENT.md</code></li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">FINANCE-PORTFOLIO.md</code></li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">FINANCE-EMERGENCY.md</code></li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">FINANCE-NETWORTH.md</code></li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">FINANCE-GOALS.md</code></li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">FINANCE-COMPARE.md</code></li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">FINANCE-SCREEN.md</code></li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">FINANCE-FIRE.md</code></li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">FINANCE-TAXES.md</code></li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Si no se encuentra ningún archivo, pídele al usuario que primero ejecute <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance analyze</code> o <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance quick</code>.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Proceso</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 1: Exploración de archivos de origen</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">ls FINANCE-*.md</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Lee todos los archivos encontrados. El script generador en Python también realiza su propio escaneo; el asistente los lee previamente para validar la calidad del contenido e identificar brechas evidentes antes de la generación.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 2: Extracción de datos</h3><p class="text-neutral-300 mb-4 leading-relaxed">Obtén de los archivos markdown:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Puntuación compuesta de salud financiera</strong> (0-100) y calificación con letra</li><li><strong>Subpuntuaciones</strong> para cada una de las 5 categorías (Flujo de caja, Deuda, Inversiones, Jubilación, Protección)</li><li><strong>Puntos clave de datos financieros:</strong></li><li>Ingresos / gastos / excedente mensual</li><li>Tasa de ahorro</li><li>Patrimonio neto</li><li>Deuda total y DTI (deuda sobre ingresos)</li><li>Meses cubiertos por el fondo de emergencia</li><li>Saldo proyectado de jubilación vs. saldo necesario</li><li>Asignación de activos</li><li><strong>Elementos de acción</strong> (ordenados por prioridad)</li><li><strong>Nombre del usuario / nombre del hogar</strong> (si se proporciona)</li><li><strong>Fecha de generación</strong></li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 3: Ejecutar el generador de PDF</h3><p class="text-neutral-300 mb-4 leading-relaxed">Ejecuta:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Bash(python3 ~/.claude/skills/finance/scripts/generate_finance_pdf.py)</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">El script lee todos los archivos FINANCE-*.md del directorio de trabajo actual, analiza las secciones estructuradas y crea un PDF con ReportLab.</p><p class="text-neutral-300 mb-4 leading-relaxed">Si falta el script o presenta errores, recurre de forma controlada a un informe consolidado solo en Markdown llamado <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">FINANCE-PLAN.md</code> e informa al usuario.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 4: Confirmar salida</h3><p class="text-neutral-300 mb-4 leading-relaxed">Después de generar:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Verifica si <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">FINANCE-PLAN.pdf</code> existe en el directorio de trabajo actual</li><li>Informa al usuario el tamaño del archivo y el número de páginas</li><li>Sugiere compartirlo con tu asesor financiero / contador público (CPA)</li></ol><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Estructura del PDF</h2><p class="text-neutral-300 mb-4 leading-relaxed">El generador produce las siguientes secciones:</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Página de portada</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Título: "Plan financiero personal"</li><li>Nombre del usuario / hogar</li><li>Fecha</li><li>Medidor de puntuación compuesta de salud financiera (visual de 0-100)</li><li>Calificación con letra (de A+ a F)</li><li>Señal de una línea ("Excelente — solo optimizaciones menores")</li><li>Pie de página con aviso legal</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Página 2: Resumen ejecutivo</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Top 3 fortalezas</li><li>Top 3 brechas prioritarias</li><li>Enfoque de este trimestre (una sola frase)</li><li>Tabla de cifras clave:</li><li>Patrimonio neto</li><li>Excedente mensual</li><li>Tasa de ahorro</li><li>DTI</li><li>Meses de emergencia</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Página 3: Detalle de la puntuación de salud financiera</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Gráfico de barras de las puntuaciones de las 5 categorías</li><li>Cada categoría: puntuación / peso / qué mide / señal</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Página 4: Flujo de caja y presupuesto</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Gráfico de ingresos vs. gastos</li><li>Top 5 categorías de gastos</li><li>Tendencia del excedente</li><li>Ajustes de presupuesto recomendados</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Página 5: Perfil de deuda</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Deuda total por tipo (tabla)</li><li>APR (Tasa Porcentual Anual) promedio</li><li>Cronograma de pago (método avalancha)</li><li>Costo de intereses en la trayectoria actual frente a la acelerada</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Página 6: Perspectiva de jubilación</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Años hasta la jubilación</li><li>Saldo actual vs. referencia por edad</li><li>Saldo proyectado al jubilarte (3 escenarios: conservador / moderado / agresivo)</li><li>Saldo necesario para el estilo de vida deseado</li><li>Análisis de brechas</li><li>Tasa de contribución recomendada</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Página 7: Cartera de inversiones</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Gráfico circular de la asignación actual</li><li>Gráfico circular de la asignación recomendada</li><li>Desviación / necesidades de rebalanceo</li><li>Análisis de la tasa de gastos</li><li>Puntuación de diversificación</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Página 8: Protección financiera</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Estado del fondo de emergencia</li><li>Matriz de cobertura de seguros (salud, vida, incapacidad, auto, hogar)</li><li>Checklist de planificación sucesoria (testamento, beneficiarios, poder notarial, directiva de atención médica)</li><li>Brechas y prioridades para cubrirlas</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Páginas 9-10: Plan de acción</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Prioridades de 30 días</li><li>Prioridades de 90 días</li><li>Prioridades de 1 año</li><li>Prioridades de 5 años</li><li>Cada acción incluye: monto específico, cuenta/vehículo específico, fecha de vencimiento</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Página final: Divulgaciones y glosario</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Aviso legal completo</li><li>Notas sobre la metodología</li><li>Glosario de términos (DTI, SWR, ER, etc.)</li><li>"Próximos pasos" — cuándo consultar a profesionales</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Patrones de diseño visual</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Paleta de colores:</strong> Azul (#1f4e79) primario, verde para métricas positivas, ámbar para avisos, rojo para aspectos críticos</li><li><strong>Tipografía:</strong> Sans serif para los títulos, serif para el cuerpo</li><li><strong>Gráficos:</strong> Limpios, con cuadrículas mínimas y etiquetas en lenguaje sencillo</li><li><strong>Medidores:</strong> Escala de 0 a 100 con zonas codificadas por color (rojo &lt;40, ámbar 40-69, verde 70+)</li><li><strong>Tablas:</strong> Sombreado alternado de filas, números alineados a la derecha, formato de moneda con separadores de miles</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Tono y lenguaje</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Inglés sencillo, sin jerga excesiva</li><li>Números específicos, nunca rangos vagos</li><li>Empático con respecto a las discapacidades, concreto en cuanto a las acciones</li><li>Confianza en los puntos fuertes</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Tratamiento de errores</h2><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Error</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Respuesta</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">No se encontró ningún archivo FINANCE-*.md</td><td class="px-3 py-2 border border-dark-600 align-top">«Ejecuta <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance analyze</code> o <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance quick</code> primero para generar los datos de entrada."</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Falta el script de Python</td><td class="px-3 py-2 border border-dark-600 align-top">Genera <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">FINANCE-PLAN.md</code> consolidado en su lugar; indica al usuario cómo instalar ReportLab</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">ReportLab no está instalado</td><td class="px-3 py-2 border border-dark-600 align-top">Indica: <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">pip3 install reportlab</code></td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Markdown vacío/malformado</td><td class="px-3 py-2 border border-dark-600 align-top">Omitir esta sección, generar el PDF sin ella y anotarlo en el resumen</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Generación del PDF exitosa, pero el archivo pesa menos de 50KB</td><td class="px-3 py-2 border border-dark-600 align-top">Probablemente no hay datos; avísale al usuario</td></tr></tbody></table></div><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Opciones de personalización</h2><p class="text-neutral-300 mb-4 leading-relaxed">Si el usuario quiere personalizar:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Nombre en la portada</strong> — Pregunta el nombre del hogar para mostrarlo</li><li><strong>Secciones selectivas</strong> — Permite <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance report-pdf --sections=debt,retirement</code> para limitar el alcance</li><li><strong>Marca</strong> — Si se usará con fines de consultoría, permite ingresar la ruta del logotipo</li><li><strong>Moneda</strong> — USD predeterminado; permite reemplazarlo</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Flujo de ejemplo de invocación</h2><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Usuário: /finance report-pdf
+
+Assistente: Varrendo o diretório atual em busca de arquivos FINANCE-*.md...
+            Encontrados: FINANCE-ANALYSIS.md, FINANCE-DEBT.md, FINANCE-RETIREMENT.md, FINANCE-BUDGET.md
+
+            Gerando PDF...
+            [executa Bash(python3 ~/.claude/skills/finance/scripts/generate_finance_pdf.py)]
+
+            Concluído. Gerado FINANCE-PLAN.pdf (12 páginas, 487 KB).
+
+            Principais conclusões:
+            - Pontuação de Saúde Financeira: 72/100 (Nota B)
+            - Área mais forte: Gestão de Dívida (88/100)
+            - Área mais fraca: Preparação para Aposentadoria (52/100)
+            - Ação principal: Aumentar a contribuição do 401k de 6% para 12% para capturar o match completo
+
+            Próximo passo recomendado: Compartilhe este PDF com seu CPA antes do planejamento fiscal de fim de ano.
+
+            AVISO: Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro.</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Lista de verificación de validación</h2><p class="text-neutral-300 mb-4 leading-relaxed">Antes de declarar el éxito, verifica:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>[ ] El archivo PDF existe en la ruta esperada</li><li>[ ] Tamaño del archivo &gt; 50KB (verificación aproximada de cordura)</li><li>[ ] El aviso legal aparece en la portada y en la página final</li><li>[ ] Todas las puntuaciones de categoría están presentes (no "N/D" en todo)</li><li>[ ] Al menos 3 acciones en el plan</li></ul><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO:</strong> Solo con fines educativos e informativos. No constituye asesoramiento financiero. El PDF generado recopila análisis producidos por IA con base en datos proporcionados por el usuario. Consulta siempre a un asesor financiero con licencia, CPA o profesional de impuestos antes de tomar decisiones financieras importantes. El rendimiento pasado no garantiza resultados futuros.</p><p class="text-neutral-300 mb-4 leading-relaxed">--- skills/finance-quick/SKILL.md ---</p><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed">name: finance-quick description: Instantánea Financiera de 60 Segundos — evaluación rápida de la salud financiera basada en seis datos principales (ingresos, gastos, ahorros, deuda, edad, meta de jubilación). Sin subagentes. Genera una tarjeta de puntuación compacta en el terminal con la tasa de ahorro, la relación DTI, la cobertura del fondo de emergencia, el estado del progreso de jubilación y las 3 acciones prioritarias principales en menos de 40 líneas.</p><hr class="border-dark-600 my-8"/>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-6-13.html">← Módulo 6.13</a>
+<a class="flex-1 text-center px-6 py-3 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-500 transition-colors" href="modulo-6-15.html">Módulo 6.15 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Equipos de IA — Grupo 1 · Material educativo | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

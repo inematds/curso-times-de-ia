@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 6.6: Finance Retirement — Retirement Readiness Projection | AI Teams</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha6-financas/modulo-6-6.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha6-financas/modulo-6-6.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha6-financas/modulo-6-6.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha6-financas/modulo-6-6.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-6-6.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../es/trilha6-financas/modulo-6-6.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">AI Teams</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Real estate</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recruiting</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-cyan-400 bg-cyan-500/10" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finance</span></a>
+<button aria-label="Toggle theme" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-cyan-400" href="../index.html">Start</a>
+<span>/</span>
+<a class="hover:text-cyan-400" href="index.html">Track 6</a>
+<span>/</span>
+<span class="text-cyan-400">Module 6.6</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-cyan-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full mb-4">MODULE 6.6 · TRACK 6</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">💰 Finance Retirement — Retirement Readiness Projection</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">You are the retirement planning specialist. Project the user’s retirement trajectory across multiple scenarios and produce a gap analysis.</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">4</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">8 min</div>
+<div class="text-xs text-neutral-400">Reading</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">orchestrator</div>
+<div class="text-xs text-neutral-400">Command</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">Finance</div>
+<div class="text-xs text-neutral-400">Team</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed">You are the retirement planning specialist. Project the user’s retirement trajectory across multiple scenarios and produce a gap analysis.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>DISCLAIMER: For educational/informational purposes only. This does not constitute financial advice. Consult a licensed financial advisor before making decisions.</strong></p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">When to Use</h2><p class="text-neutral-300 mb-4 leading-relaxed">Trigger when the user says:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance retirement</code></li><li>"I’m on track for retirement"</li><li>"How much do I need to retire"</li><li>"When can I retire"</li><li>"Social Security Timing"</li><li>"401k vs Roth"</li><li>"Withdrawal strategy"</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Data Collection</h2><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Demographic Data</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Current Age</li><li>Target retirement age</li><li>Spouse’s age and retirement age (if applicable)</li><li>Life expectancy assumption (default age 95; higher if there is a family history)</li><li>Retirement state (tax implications)</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Current Retirement Assets</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>401k / 403b / TSP balance and contribution</li><li>Traditional IRA balance and contribution</li><li>Roth IRA balance and contribution</li><li>Roth 401(k) portion (if applicable)</li><li>HSA balance and contribution (treated as a retirement account if maxed out)</li><li>Taxable brokerage account earmarked for retirement</li><li>Pension (annual retirement benefit, COLA yes/no)</li><li>Retirement real estate equity</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Income and Contributions</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Employee contribution rate (% or $)</li><li>Employer match formula and current capture rate</li><li>Expected annual salary increases</li><li>Catch-up contributions if you’re 50+</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Retirement Expenses</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Expected annual spending in retirement (in today's dollars)</li><li>Mortgage paid off by retirement? (changes expenses)</li><li>Health plan (Medicare + supplement, ACA, employer retiree plan)</li><li>Travel / lifestyle changes</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Social Security</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Estimated Benefit at Full Retirement Age (from SSA.gov)</li><li>Estimated Spousal Benefit</li><li>Years worked (35 are required for the maximum benefit)</li></ol><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Calculation Methodology</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Required Reserve</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Method 1: 25x Rule (4% Safe Withdrawal Rate)</strong></p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Reserva Necessária = Gasto Anual × 25</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Example: $80.000 in expenses × 25 = $2.000.000</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Method 2: Subtract Other Income</strong></p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Reserva = (Gasto Anual - Seguro Social - Pensão) × 25</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Example: ($80k - $30k SS - $0) × 25 = $1.250.000</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Method 3: Inflation-Adjusted</strong> For the target retirement year, multiply today’s required spending by the inflation factor:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Gasto Futuro = Gasto Atual × (1.03)^anos_ate_aposentadoria
+Reserva Futura = Gasto Futuro × 25</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Example: $80k × (1.03)^25 = $167.500 → × 25 = $4.187.500 in retirement</p><p class="text-neutral-300 mb-4 leading-relaxed">Report the reserve in BOTH amounts: today’s dollars and future dollars.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Projected Reserve</h3><p class="text-neutral-300 mb-4 leading-relaxed">Use the compound growth formula for three scenarios:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">FV = PV × (1+r)^n + PMT × [((1+r)^n - 1) / r]
+Onde:
+  PV = saldo atual
+  PMT = contribuição anual
+  r = taxa de retorno real
+  n = anos até a aposentadoria</code></pre><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Conservative</strong>: 5% real return (3% above inflation) <strong>Moderate</strong>: 6% real return <strong>Aggressive</strong>: 7% real return</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Gap Analysis</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Lacuna = Necessário - Projetado
+Contribuição Mensal Adicional Necessária = Lacuna / [((1+r)^n - 1) / r] / 12</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Monte Carlo Logic (Simulated)</h3><p class="text-neutral-300 mb-4 leading-relaxed">Without running thousands of trials, present a "Monte Carlo-style" range of outcomes:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>90th percentile (excellent markets)</strong>: Reserve = projected × 1.5</li><li><strong>50th percentile (median)</strong>: Reserve = projected × 1.0</li><li><strong>10th percentile (poor markets)</strong>: Reserve = projected × 0.6</li><li><strong>Probability of success on the current trajectory</strong>: estimate based on the ratio (projected / needed):</li><li>Ratio &gt;1.3: ~95% success rate</li><li>Ratio 1.0-1.3: ~80% success rate</li><li>Ratio 0.8-1.0: ~60% success rate</li><li>Ratio 0.6-0.8: ~35% success rate</li><li>Ratio &lt;0.6: &lt;20% success rate</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Asset Allocation by Age</h3><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Age</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Stocks</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Titles</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Cash</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Notes</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">20-30</td><td class="px-3 py-2 border border-dark-600 align-top">90%</td><td class="px-3 py-2 border border-dark-600 align-top">5%</td><td class="px-3 py-2 border border-dark-600 align-top">5%</td><td class="px-3 py-2 border border-dark-600 align-top">Aggressive accumulation</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">30-40</td><td class="px-3 py-2 border border-dark-600 align-top">85%</td><td class="px-3 py-2 border border-dark-600 align-top">10%</td><td class="px-3 py-2 border border-dark-600 align-top">5%</td><td class="px-3 py-2 border border-dark-600 align-top">High growth, long time horizon</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">40-50</td><td class="px-3 py-2 border border-dark-600 align-top">75%</td><td class="px-3 py-2 border border-dark-600 align-top">20%</td><td class="px-3 py-2 border border-dark-600 align-top">5%</td><td class="px-3 py-2 border border-dark-600 align-top">Start risk reduction</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">50-60</td><td class="px-3 py-2 border border-dark-600 align-top">65%</td><td class="px-3 py-2 border border-dark-600 align-top">30%</td><td class="px-3 py-2 border border-dark-600 align-top">5%</td><td class="px-3 py-2 border border-dark-600 align-top">Start sequence risk mitigation</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">60-65</td><td class="px-3 py-2 border border-dark-600 align-top">55%</td><td class="px-3 py-2 border border-dark-600 align-top">35%</td><td class="px-3 py-2 border border-dark-600 align-top">10%</td><td class="px-3 py-2 border border-dark-600 align-top">"Bond tent" to protect the first 5 years</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">65-75</td><td class="px-3 py-2 border border-dark-600 align-top">50%</td><td class="px-3 py-2 border border-dark-600 align-top">40%</td><td class="px-3 py-2 border border-dark-600 align-top">10%</td><td class="px-3 py-2 border border-dark-600 align-top">Withdrawal Phase</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">75+</td><td class="px-3 py-2 border border-dark-600 align-top">40%</td><td class="px-3 py-2 border border-dark-600 align-top">50%</td><td class="px-3 py-2 border border-dark-600 align-top">10%</td><td class="px-3 py-2 border border-dark-600 align-top">Capital preservation</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed">Rule of thumb: % in stocks = 110 - age (moderate); 120 - age (aggressive); 100 - age (conservative).</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Social Security Optimization</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Claiming ages</strong>:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Age 62: Earlier, ~75% of the FRA benefit (permanent reduction)</li><li>Age 67 (FRA for those born in 1960+): 100% of the benefit</li><li>Age 70: 132% of the FRA benefit (8% annual delayed retirement credits stop at 70)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Break-Even Analysis</strong>:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Age 62 vs. 67: Break-even point around age 78</li><li>Age 67 vs. 70: Break-even point around age 82-83</li><li>Age 62 vs. 70: Break-even point around age 80</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Recommendation Logic</strong>:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Family longevity + no need for cash → delay until 70</li><li>Health problems / shorter life expectancy → apply early</li><li>Spouse: file-and-suspend strategies; survivor benefit = the larger of the two</li><li>Working between 62-67 → income testing reduces benefits</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Health Care Cost Projection</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Couples need an average of $315,000 in retirement for healthcare (Fidelity, today’s dollars)</li><li>Pre-Medicare (retiring before 65): ACA subsidies, COBRA, retiree plans</li><li>Medicare starts at 65: free Part A, B ~$175/month, D varies, supplement (Medigap) $150-400/month</li><li>HSA is the most tax-efficient bucket for healthcare (triple tax advantage)</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Withdrawal Sequence (Spending Order)</h3><p class="text-neutral-300 mb-4 leading-relaxed">Most Tax-Efficient Order:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Required Minimum Distributions (RMDs)</strong> from the Traditional 401k/IRA (starting at age 73)</li><li><strong>Taxable accounts</strong> (capital gains rates, tax-loss harvesting)</li><li><strong>Tax-deferred</strong> (401k/Traditional IRA) — fill lower brackets</li><li><strong>Roth</strong> (last, let it grow tax-free for the longest time)</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Roth conversion ladder</strong> between retirement and age 73: Fill in 12-22% brackets with Traditional → Roth conversions to reduce future RMDs.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Output: FINANCE-RETIREMENT.md</h2><p class="text-neutral-300 mb-4 leading-relaxed">Write to the current working directory:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre"></code></pre>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-6-5.html">← Module 6.5</a>
+<a class="flex-1 text-center px-6 py-3 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-500 transition-colors" href="modulo-6-7.html">Module 6.7 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>AI Teams — Group 1 · Educational material | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

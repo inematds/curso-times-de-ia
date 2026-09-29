@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 6.20: Net Worth Analysis | AI Teams</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha6-financas/modulo-6-20.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha6-financas/modulo-6-20.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha6-financas/modulo-6-20.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha6-financas/modulo-6-20.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-6-20.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../es/trilha6-financas/modulo-6-20.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">AI Teams</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Real estate</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recruiting</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-cyan-400 bg-cyan-500/10" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finance</span></a>
+<button aria-label="Toggle theme" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-cyan-400" href="../index.html">Start</a>
+<span>/</span>
+<a class="hover:text-cyan-400" href="index.html">Track 6</a>
+<span>/</span>
+<span class="text-cyan-400">Module 6.20</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-cyan-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full mb-4">MODULE 6.20 · PATH 6</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">💰 Net Worth Analysis</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">**Prepared on:** [Data]</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">10</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">4 min</div>
+<div class="text-xs text-neutral-400">Reading</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">orchestrator</div>
+<div class="text-xs text-neutral-400">Command</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">Finance</div>
+<div class="text-xs text-neutral-400">Team</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed"><strong>Prepared on:</strong> [Date] <strong>Age:</strong> [X] <strong>Income:</strong> $[Y]</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Overview</h2><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Metric</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Value</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Total Net Worth</strong></td><td class="px-3 py-2 border border-dark-600 align-top"><strong>$[Z]</strong></td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Liquid Net Worth</td><td class="px-3 py-2 border border-dark-600 align-top">$[A]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Investable Net Worth</td><td class="px-3 py-2 border border-dark-600 align-top">$[B]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Total Assets</td><td class="px-3 py-2 border border-dark-600 align-top">$[C]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Total Liabilities</td><td class="px-3 py-2 border border-dark-600 align-top">($[D])</td></tr></tbody></table></div><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Full Balance</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Assets</h3><p class="text-neutral-300 mb-4 leading-relaxed">[Detailed table with each asset]</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Liabilities</h3><p class="text-neutral-300 mb-4 leading-relaxed">[Detailed table with each liability + interest rate]</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Your Current Position</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Millionaire Next Door:</strong> Expected NI $[X], actual NI $[Y] → [PAW/AAW/UAW]</li><li><strong>Age-based benchmark:</strong> [On track / Ahead by X% / Behind by Y%]</li><li><strong>Approximate U.S. percentile (your age group):</strong> ~[N]th percentile</li><li><strong>Current phase:</strong> [Phase name]</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Milestone Tracker</h2><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Milestone</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Status</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Target Year</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">$100k</td><td class="px-3 py-2 border border-dark-600 align-top">✓ Achieved [year] / In progress</td><td class="px-3 py-2 border border-dark-600 align-top">—</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">$250k</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top">[Year]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">$500k</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top">[Year]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">$1M</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top">[Year]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">$5M</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top">[Year]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">$10M</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top">[Year]</td></tr></tbody></table></div><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Net Worth Projection</h2><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Age</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Bearish (5%)</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Base (7%)</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Bullish (9%)</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">40</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">50</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">60</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Retirement</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td></tr></tbody></table></div><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">The Highest-Leverage Action</h2><p class="text-neutral-300 mb-4 leading-relaxed">[The one thing that would most accelerate net worth growth from here]</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Phase-Specific Priorities</h2><p class="text-neutral-300 mb-4 leading-relaxed">[3–5 actions tied to the user’s current accumulation phase]</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Points to Watch</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Concentration risk (single asset &gt; X% of NAV)</li><li>Illiquidity (home/business equity = X% of net worth)</li><li>Liability rate risk (variable-rate debt)</li><li>Tax bomb risk (large pre-tax balances)</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Related Skills to Run</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance portfolio</code> — optimize how investments are allocated</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance taxes</code> — reduce the drag on growth</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance retirement</code> — model retirement readiness</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance goals</code> — set milestones with deadlines</li></ul><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed"><strong>DISCLAIMER:</strong> For educational/informational purposes only. Does not constitute financial advice. Consult a licensed financial advisor before making decisions. Benchmarks and percentiles are approximations based on public data sources. Projections assume historical average returns and consistent contributions; actual results will vary.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Quality Standards</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Display both totals and category breakdowns</li><li>Always include net worth separately — it matters more than total net worth for most decisions</li><li>Use age-based benchmarks as one data point, not as a verdict</li><li>Make the milestone projection specific by year, not vague</li><li>Identify one highest-leverage action</li><li>Always end with the legal disclaimer block</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">--- skills/finance-taxes/SKILL.md ---</p><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed">name: finance-taxes description: Tax Optimization Strategy Analyzer. Identifies high-impact tax savings in tax-loss harvesting, tax-advantaged accounts (401k, IRA, HSA), Roth conversions, backdoor and mega backdoor Roth, charitable giving, business deductions, capital gains harvesting, state tax minimization, and estate tax planning. Produces FINANCE-TAXES.md with prioritized strategies and estimated annual tax savings.</p><hr class="border-dark-600 my-8"/>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-6-19.html">← Module 6.19</a>
+<a class="flex-1 text-center px-6 py-3 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-500 transition-colors" href="modulo-6-21.html">Module 6.21 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>AI Teams — Group 1 · Educational material | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

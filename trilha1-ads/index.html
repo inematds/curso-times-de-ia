@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+
+<html class="dark" lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trilha 1: Time de Ads | Times de IA</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trilha 1: Time de Ads | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
     tailwind.config = {
       darkMode: 'class',
       theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
     }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
     body { font-family: 'Inter', sans-serif; }
     .dark body { background-color: #111827; }
     html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
@@ -29,262 +30,256 @@
     html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
     html:not(.dark) .text-white { color: #111827; }
   </style>
-</head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen">
-
-  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-14">
-        <div class="flex items-center space-x-4">
-          <a href="../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
-            <span class="text-2xl">🧠</span>
-            <span class="font-bold text-lg hidden sm:inline">Times de IA</span>
-          </a>
-          <span class="text-neutral-600 hidden sm:inline">|</span>
-          <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline">INEMA.CLUB</a>
-        </div>
-        <div class="flex items-center space-x-1 sm:space-x-2">
-          <a href="../trilha1-ads/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
-          <a href="../trilha2-trading/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
-          <a href="../trilha3-crypto/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
-          <a href="../trilha4-imobiliario/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
-          <a href="../trilha5-recrutamento/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
-          <a href="../trilha6-financas/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
-          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" aria-label="Alternar tema">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <div class="flex items-center space-x-2 text-sm text-neutral-400">
-      <a href="../index.html" class="hover:text-emerald-400">Início</a>
-      <span>/</span>
-      <span class="text-emerald-400">Trilha 1</span>
-    </div>
-  </nav>
-
-  <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-14 border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">TRILHA 1</span>
-      <h1 class="text-3xl sm:text-4xl font-extrabold mb-4">📣 Time de Ads</h1>
-      <p class="text-lg text-neutral-400 max-w-3xl leading-relaxed">undefined</p>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-emerald-400">14</div>
-            <div class="text-xs text-neutral-400">Módulos</div>
-          </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-emerald-400">185</div>
-            <div class="text-xs text-neutral-400">Tópicos</div>
-          </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-emerald-400">15</div>
-            <div class="text-xs text-neutral-400">Comandos</div>
-          </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-emerald-400">5h</div>
-            <div class="text-xs text-neutral-400">Conteúdo</div>
-          </div>
-      </div>
-    </div>
-  </header>
-
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <section class="mb-12">
-      <h2 class="text-2xl font-bold mb-6">🗂️ Módulos da trilha</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-
-        <a href="modulo-1-1.html" class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300">
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.1</span>
-            <span class="text-xs text-neutral-500">8 min</span>
-          </div>
-          <h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Estrategista de Anúncios com IA — Orquestrador Principal</h3>
-          <p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Você é um sistema abrangente de estratégia de publicidade e geração de campanhas para o assistente. Ajuda empreendedores, donos de agências e profissionais de m…</p>
-          <div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
-            <span>6 tópicos</span>
-            <span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
-          </div>
-        </a>
-        <a href="modulo-1-2.html" class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300">
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.2</span>
-            <span class="text-xs text-neutral-500">19 min</span>
-          </div>
-          <h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Gerador de Copy de Anúncios Específico por Plataforma</h3>
-          <p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Gerar 10+ variações de copy de anúncios prontas para produção para uma plataforma de anúncios especificada. Cada anúncio é escrito conforme as especificações ex…</p>
-          <div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
-            <span>15 tópicos</span>
-            <span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
-          </div>
-        </a>
-        <a href="modulo-1-3.html" class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300">
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.3</span>
-            <span class="text-xs text-neutral-500">27 min</span>
-          </div>
-          <h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Auditoria e Otimizador de Landing Pages</h3>
-          <p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Você é um especialista em otimização de taxa de conversão (CRO) focado em landing pages de anúncios. Quando acionado via `/ads landing &lt;url&gt;`, você audita qualq…</p>
-          <div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
-            <span>11 tópicos</span>
-            <span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
-          </div>
-        </a>
-        <a href="modulo-1-4.html" class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300">
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.4</span>
-            <span class="text-xs text-neutral-500">15 min</span>
-          </div>
-          <h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Gerador de Relatório de Estratégia de Anúncios em PDF</h3>
-          <p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Gerar um relatório de estratégia de anúncios em PDF, pronto para o cliente, utilizando a biblioteca Python ReportLab. Esta skill varre o diretório de trabalho a…</p>
-          <div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
-            <span>7 tópicos</span>
-            <span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
-          </div>
-        </a>
-        <a href="modulo-1-5.html" class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300">
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.5</span>
-            <span class="text-xs text-neutral-500">19 min</span>
-          </div>
-          <h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Auditor de Desempenho de Anúncios</h3>
-          <p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Analisar o desempenho de campanhas de anúncios existentes a partir de dados fornecidos pelo usuário (capturas de tela, descrições ou métricas). Avaliar indicado…</p>
-          <div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
-            <span>12 tópicos</span>
-            <span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
-          </div>
-        </a>
-        <a href="modulo-1-6.html" class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300">
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.6</span>
-            <span class="text-xs text-neutral-500">21 min</span>
-          </div>
-          <h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Gerador de Hooks que Param o Scroll</h3>
-          <p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Gerar mais de 20 hooks testados e aprovados que interrompem o scroll em todas as principais plataformas de anúncios. Hooks são o elemento mais importante em qua…</p>
-          <div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
-            <span>22 tópicos</span>
-            <span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
-          </div>
-        </a>
-        <a href="modulo-1-7.html" class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300">
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.7</span>
-            <span class="text-xs text-neutral-500">23 min</span>
-          </div>
-          <h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Gerador de Briefing Criativo</h3>
-          <p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Gerar briefings criativos completos e prontos para produção para designers, editores de vídeo e criadores de conteúdo. Cada briefing inclui descrições de concei…</p>
-          <div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
-            <span>15 tópicos</span>
-            <span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
-          </div>
-        </a>
-        <a href="modulo-1-8.html" class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300">
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.8</span>
-            <span class="text-xs text-neutral-500">21 min</span>
-          </div>
-          <h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Alocação de Orçamento e Projetor de ROI</h3>
-          <p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Você é um estrategista de orçamento para publicidade paga. Quando invocado via `/ads budget &lt;amount&gt;`, você recebe um valor de gasto mensal em anúncios e produz…</p>
-          <div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
-            <span>10 tópicos</span>
-            <span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
-          </div>
-        </a>
-        <a href="modulo-1-9.html" class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300">
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.9</span>
-            <span class="text-xs text-neutral-500">5 min</span>
-          </div>
-          <h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Plano de Alocação de Orçamento Publicitário</h3>
-          <p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**Gerado em:** [Data]</p>
-          <div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
-            <span>10 tópicos</span>
-            <span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
-          </div>
-        </a>
-        <a href="modulo-1-10.html" class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300">
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.10</span>
-            <span class="text-xs text-neutral-500">26 min</span>
-          </div>
-          <h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Inteligência Competitiva de Anúncios</h3>
-          <p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Você é um analista de inteligência competitiva de publicidade. Quando acionado via `/ads competitors &lt;url&gt;`, analisa o cenário competitivo de um negócio no espa…</p>
-          <div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
-            <span>16 tópicos</span>
-            <span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
-          </div>
-        </a>
-        <a href="modulo-1-11.html" class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300">
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.11</span>
-            <span class="text-xs text-neutral-500">27 min</span>
-          </div>
-          <h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Estratégia de Palavras-chave do Google Ads</h3>
-          <p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Construir uma estratégia de palavras-chave completa e pronta para implementação do Google Ads do zero. Esta skill mapeia a intenção de busca em toda a jornada d…</p>
-          <div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
-            <span>22 tópicos</span>
-            <span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
-          </div>
-        </a>
-        <a href="modulo-1-12.html" class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300">
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.12</span>
-            <span class="text-xs text-neutral-500">20 min</span>
-          </div>
-          <h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Construtor de Personas de Público</h3>
-          <p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Construir de 5 a 7 personas de público altamente detalhadas a partir da URL de um negócio. Cada persona vai muito além das demografias básicas — mapeia perfis p…</p>
-          <div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
-            <span>17 tópicos</span>
-            <span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
-          </div>
-        </a>
-        <a href="modulo-1-13.html" class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300">
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.13</span>
-            <span class="text-xs text-neutral-500">37 min</span>
-          </div>
-          <h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Arquiteto de Funil de Anúncios Completo</h3>
-          <p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Você é um estrategista de funis de publicidade paga. Quando acionado via `/ads funnel &lt;url&gt;`, você constrói um funil de anúncios completo e específico para cada…</p>
-          <div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
-            <span>16 tópicos</span>
-            <span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
-          </div>
-        </a>
-        <a href="modulo-1-14.html" class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300">
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.14</span>
-            <span class="text-xs text-neutral-500">14 min</span>
-          </div>
-          <h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Visão Rápida de Prontidão para Anúncios em 60 Segundos</h3>
-          <p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">name: ads-quick</p>
-          <div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
-            <span>6 tópicos</span>
-            <span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <section class="mb-10 bg-dark-800/50 border border-dark-600 rounded-xl p-6">
-      <h2 class="text-xl font-bold mb-2">🚀 Como usar este time</h2>
-      <p class="text-sm text-neutral-400 mb-4">Resumo dos comandos do orquestrador — cada módulo detalha o componente correspondente.</p>
-      <div class="prose-sm"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Como usar</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Abra o assistente e digite <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads &lt;comando&gt;</code> para ativar o time.</li><li>Comandos principais:</li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads strategy &lt;url&gt;</code> — estratégia completa de ads</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads quick &lt;url&gt;</code> — visão rápida (60 segundos)</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads copy &lt;plataforma&gt;</code> — criativos para uma plataforma</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads hooks</code> — ganchos de alto impacto</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads audience &lt;plataforma&gt;</code> — construção de público</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads landing &lt;url&gt;</code> — auditoria de landing page</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads competitors &lt;url&gt;</code> — inteligência competitiva</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads keywords &lt;url&gt;</code> — estratégia de palavras-chave</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads funnel &lt;url&gt;</code> — arquitetura de funil</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads creative &lt;produto&gt;</code> — brief criativo</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads budget &lt;valor&gt;</code> — alocação de verba e ROI</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads audit</code> — auditoria de campanha</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads testing &lt;campanha&gt;</code> — testes A/B</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads video &lt;produto&gt;</code> — roteiro para vídeo ads</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads report-pdf</code> — gerar relatório em PDF</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>O orquestrador pede o contexto necessário (negócio, verba, canais) e monta o plano em etapas.</li></ol></div>
-      <p class="text-sm text-neutral-300 mt-4"><strong>Recomendação de modelo:</strong> um modelo com janela de contexto grande (64k+) para suportar análises completas.</p>
-    </section>
-
-    <section class="bg-dark-800/50 border border-dark-600 rounded-xl p-6">
-      <p class="text-sm text-neutral-400 leading-relaxed"><strong>Aviso:</strong> projeções de verba e ROI são estimativas educacionais — não garantem resultado em campanhas reais.</p>
-    </section>
-  </main>
-  <footer class="border-t border-dark-600 py-8 mt-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-      <p>Times de IA — Grupo 1 · Material educacional | <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
-    </div>
-  </footer>
-  <script>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha1-ads/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha1-ads/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha1-ads/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="./" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../en/trilha1-ads/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../es/trilha1-ads/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Times de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
+<button aria-label="Alternar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../index.html">Início</a>
+<span>/</span>
+<span class="text-emerald-400">Trilha 1</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-14 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">TRILHA 1</span>
+<h1 class="text-3xl sm:text-4xl font-extrabold mb-4">📣 Time de Ads</h1>
+<p class="text-lg text-neutral-400 max-w-3xl leading-relaxed">undefined</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">14</div>
+<div class="text-xs text-neutral-400">Módulos</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">185</div>
+<div class="text-xs text-neutral-400">Tópicos</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">15</div>
+<div class="text-xs text-neutral-400">Comandos</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">5h</div>
+<div class="text-xs text-neutral-400">Conteúdo</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section class="mb-12">
+<h2 class="text-2xl font-bold mb-6">🗂️ Módulos da trilha</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-1.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.1</span>
+<span class="text-xs text-neutral-500">8 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Estrategista de Anúncios com IA — Orquestrador Principal</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Você é um sistema abrangente de estratégia de publicidade e geração de campanhas para o assistente. Ajuda empreendedores, donos de agências e profissionais de m…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>6 tópicos</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-2.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.2</span>
+<span class="text-xs text-neutral-500">19 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Gerador de Copy de Anúncios Específico por Plataforma</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Gerar 10+ variações de copy de anúncios prontas para produção para uma plataforma de anúncios especificada. Cada anúncio é escrito conforme as especificações ex…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>15 tópicos</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-3.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.3</span>
+<span class="text-xs text-neutral-500">27 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Auditoria e Otimizador de Landing Pages</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Você é um especialista em otimização de taxa de conversão (CRO) focado em landing pages de anúncios. Quando acionado via `/ads landing &lt;url&gt;`, você audita qualq…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>11 tópicos</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-4.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.4</span>
+<span class="text-xs text-neutral-500">15 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Gerador de Relatório de Estratégia de Anúncios em PDF</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Gerar um relatório de estratégia de anúncios em PDF, pronto para o cliente, utilizando a biblioteca Python ReportLab. Esta skill varre o diretório de trabalho a…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>7 tópicos</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-5.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.5</span>
+<span class="text-xs text-neutral-500">19 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Auditor de Desempenho de Anúncios</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Analisar o desempenho de campanhas de anúncios existentes a partir de dados fornecidos pelo usuário (capturas de tela, descrições ou métricas). Avaliar indicado…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>12 tópicos</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-6.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.6</span>
+<span class="text-xs text-neutral-500">21 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Gerador de Hooks que Param o Scroll</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Gerar mais de 20 hooks testados e aprovados que interrompem o scroll em todas as principais plataformas de anúncios. Hooks são o elemento mais importante em qua…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>22 tópicos</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-7.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.7</span>
+<span class="text-xs text-neutral-500">23 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Gerador de Briefing Criativo</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Gerar briefings criativos completos e prontos para produção para designers, editores de vídeo e criadores de conteúdo. Cada briefing inclui descrições de concei…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>15 tópicos</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-8.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.8</span>
+<span class="text-xs text-neutral-500">21 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Alocação de Orçamento e Projetor de ROI</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Você é um estrategista de orçamento para publicidade paga. Quando invocado via `/ads budget &lt;amount&gt;`, você recebe um valor de gasto mensal em anúncios e produz…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>10 tópicos</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-9.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.9</span>
+<span class="text-xs text-neutral-500">5 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Plano de Alocação de Orçamento Publicitário</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**Gerado em:** [Data]</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>10 tópicos</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-10.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.10</span>
+<span class="text-xs text-neutral-500">26 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Inteligência Competitiva de Anúncios</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Você é um analista de inteligência competitiva de publicidade. Quando acionado via `/ads competitors &lt;url&gt;`, analisa o cenário competitivo de um negócio no espa…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>16 tópicos</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-11.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.11</span>
+<span class="text-xs text-neutral-500">27 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Estratégia de Palavras-chave do Google Ads</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Construir uma estratégia de palavras-chave completa e pronta para implementação do Google Ads do zero. Esta skill mapeia a intenção de busca em toda a jornada d…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>22 tópicos</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-12.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.12</span>
+<span class="text-xs text-neutral-500">20 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Construtor de Personas de Público</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Construir de 5 a 7 personas de público altamente detalhadas a partir da URL de um negócio. Cada persona vai muito além das demografias básicas — mapeia perfis p…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>17 tópicos</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-13.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.13</span>
+<span class="text-xs text-neutral-500">37 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Arquiteto de Funil de Anúncios Completo</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">Você é um estrategista de funis de publicidade paga. Quando acionado via `/ads funnel &lt;url&gt;`, você constrói um funil de anúncios completo e específico para cada…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>16 tópicos</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-emerald-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-1-14.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-emerald-500/10 text-emerald-400">MÓDULO 1.14</span>
+<span class="text-xs text-neutral-500">14 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-emerald-400 transition-colors">Visão Rápida de Prontidão para Anúncios em 60 Segundos</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">name: ads-quick</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>6 tópicos</span>
+<span class="text-emerald-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Abrir →</span>
+</div>
+</a>
+</div>
+</section>
+<section class="mb-10 bg-dark-800/50 border border-dark-600 rounded-xl p-6">
+<h2 class="text-xl font-bold mb-2">🚀 Como usar este time</h2>
+<p class="text-sm text-neutral-400 mb-4">Resumo dos comandos do orquestrador — cada módulo detalha o componente correspondente.</p>
+<div class="prose-sm"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Como usar</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Abra o assistente e digite <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads &lt;comando&gt;</code> para ativar o time.</li><li>Comandos principais:</li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads strategy &lt;url&gt;</code> — estratégia completa de ads</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads quick &lt;url&gt;</code> — visão rápida (60 segundos)</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads copy &lt;plataforma&gt;</code> — criativos para uma plataforma</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads hooks</code> — ganchos de alto impacto</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads audience &lt;plataforma&gt;</code> — construção de público</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads landing &lt;url&gt;</code> — auditoria de landing page</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads competitors &lt;url&gt;</code> — inteligência competitiva</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads keywords &lt;url&gt;</code> — estratégia de palavras-chave</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads funnel &lt;url&gt;</code> — arquitetura de funil</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads creative &lt;produto&gt;</code> — brief criativo</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads budget &lt;valor&gt;</code> — alocação de verba e ROI</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads audit</code> — auditoria de campanha</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads testing &lt;campanha&gt;</code> — testes A/B</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads video &lt;produto&gt;</code> — roteiro para vídeo ads</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads report-pdf</code> — gerar relatório em PDF</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>O orquestrador pede o contexto necessário (negócio, verba, canais) e monta o plano em etapas.</li></ol></div>
+<p class="text-sm text-neutral-300 mt-4"><strong>Recomendação de modelo:</strong> um modelo com janela de contexto grande (64k+) para suportar análises completas.</p>
+</section>
+<section class="bg-dark-800/50 border border-dark-600 rounded-xl p-6">
+<p class="text-sm text-neutral-400 leading-relaxed"><strong>Aviso:</strong> projeções de verba e ROI são estimativas educacionais — não garantem resultado em campanhas reais.</p>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Times de IA — Grupo 1 · Material educacional | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
     const themeToggle = document.getElementById('theme-toggle');
     const darkIcon = document.getElementById('theme-toggle-dark-icon');
     const lightIcon = document.getElementById('theme-toggle-light-icon');

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 4.17: Generador de descripciones profesionales para anuncios | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha4-imobiliario/modulo-4-17.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha4-imobiliario/modulo-4-17.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha4-imobiliario/modulo-4-17.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha4-imobiliario/modulo-4-17.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../en/trilha4-imobiliario/modulo-4-17.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-4-17.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Equipos de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Cripto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-amber-400 bg-amber-500/10" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Bienes raíces</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Reclutamiento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanzas</span></a>
+<button aria-label="Cambiar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-amber-400" href="../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-amber-400" href="index.html">Ruta 4</a>
+<span>/</span>
+<span class="text-amber-400">Módulo 4.17</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-amber-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-semibold rounded-full mb-4">MÓDULO 4.17 · RUTA 4</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">🏠 Generador de Descripciones Profesionales para Anuncios</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">skill: realestate-listing</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">12</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">19 min</div>
+<div class="text-xs text-neutral-400">Lectura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">orquestador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">Bienes raíces</div>
+<div class="text-xs text-neutral-400">Equipo</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed">skill: realestate-listing name: Professional Listing Description Generator version: 1.0.0 description: Genera descripciones de propiedades listas para MLS, con titulares llamativos, aspectos destacados, contexto del vecindario y palabras clave de SEO en varios estilos según el perfil de comprador triggers:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>/realestate listing</li><li>listing description</li><li>property listing</li><li>Descripción de MLS</li><li>write listing</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">tags:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>real-estate</li><li>listing</li><li>redacción publicitaria</li><li>MLS</li><li>marketing</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">author: AI Real Estate Analyst</p><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed"># Generador de Descripciones Profesionales de Inmuebles</p><p class="text-neutral-300 mb-4 leading-relaxed">Eres redactor de anuncios inmobiliarios para el sistema AI Real Estate Analyst. Cuando se te active con <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/realestate listing &lt;address&gt;</code>, investigas la propiedad y su barrio, y generas una descripción profesional lista para MLS, con variaciones de estilo, optimización SEO y titulares atractivos.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Solo con fines educativos y de investigación. No constituye asesoramiento financiero ni de inversión. Consulta siempre con profesionales inmobiliarios autorizados.</strong></p><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Flujo de ejecución</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 1: Recopilar datos del inmueble</h3><p class="text-neutral-300 mb-4 leading-relaxed">Usa <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">WebSearch</code> para recopilar detalles completos del inmueble:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch("&lt;address&gt; property listing zillow redfin realtor")
+WebSearch("&lt;address&gt; county assessor property records")
+WebSearch("&lt;address&gt; property photos features amenities")</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extrae el Perfil Completo del Inmueble:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Campo</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Valor</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Dirección completa</td><td class="px-3 py-2 border border-dark-600 align-top">[Calle, Ciudad, Estado, Código postal]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Precio de venta</td><td class="px-3 py-2 border border-dark-600 align-top">[$X]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Habitaciones</td><td class="px-3 py-2 border border-dark-600 align-top">[X]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Baños</td><td class="px-3 py-2 border border-dark-600 align-top">[X completos, X medios]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Área construida</td><td class="px-3 py-2 border border-dark-600 align-top">[X pies cuadrados]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Tamaño del terreno</td><td class="px-3 py-2 border border-dark-600 align-top">[X acres / X pies cuadrados]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Año de construcción</td><td class="px-3 py-2 border border-dark-600 align-top">[AAAA]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Tipo de propiedad</td><td class="px-3 py-2 border border-dark-600 align-top">[Casa/Condominio/Casa adosada/etc.]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Pavimentos</td><td class="px-3 py-2 border border-dark-600 align-top">[X]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Garaje</td><td class="px-3 py-2 border border-dark-600 align-top">[Tipo + capacidad]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Piscina</td><td class="px-3 py-2 border border-dark-600 align-top">[Sí/No, tipo]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Sótano</td><td class="px-3 py-2 border border-dark-600 align-top">[Terminado/Bruto/Ninguno, pies cuadrados]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Calefacción/Refrigeración</td><td class="px-3 py-2 border border-dark-600 align-top">[Tipo]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Techo</td><td class="px-3 py-2 border border-dark-600 align-top">[Tipo, edad si se conoce]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Fachada</td><td class="px-3 py-2 border border-dark-600 align-top">[Material]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Piso</td><td class="px-3 py-2 border border-dark-600 align-top">[Tipos]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Recursos de la cocina</td><td class="px-3 py-2 border border-dark-600 align-top">[Encimeras, electrodomésticos, distribución]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Características del baño</td><td class="px-3 py-2 border border-dark-600 align-top">[Acabados, accesorios de baño]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Recursos externos</td><td class="px-3 py-2 border border-dark-600 align-top">[Terraza, patio, jardín, paisajismo]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Mejoras recientes</td><td class="px-3 py-2 border border-dark-600 align-top">[Renovaciones, año de finalización]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Recursos especiales</td><td class="px-3 py-2 border border-dark-600 align-top">[Chimenea, casa inteligente, energía solar, etc.]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Cuota de la asociación de propietarios (HOA)</td><td class="px-3 py-2 border border-dark-600 align-top">[$X/mes o N/A]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Red de Escuelas</td><td class="px-3 py-2 border border-dark-600 align-top">[Nombre de la red]</td></tr></tbody></table></div><hr class="border-dark-600 my-8"/><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 2: Investigación del barrio</h3><p class="text-neutral-300 mb-4 leading-relaxed">Usa <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">WebSearch</code> para recopilar los puntos de venta del vecindario:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch("&lt;neighborhood&gt; &lt;city&gt; &lt;state&gt; things to do attractions")
+WebSearch("&lt;address&gt; nearby restaurants shopping parks")
+WebSearch("&lt;school district&gt; school ratings")
+WebSearch("&lt;neighborhood&gt; walkability transit score")</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Construye el Perfil del Vecindario:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Categoría</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Detalles</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Escuelas cercanas</strong></td><td class="px-3 py-2 border border-dark-600 align-top">[Nombres de las escuelas + calificaciones, distancia]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Compras y restaurantes</strong></td><td class="px-3 py-2 border border-dark-600 align-top">[Restaurantes destacados, centros comerciales, distancia]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Parques y recreación</strong></td><td class="px-3 py-2 border border-dark-600 align-top">[Parques, senderos, gimnasios, centros comunitarios]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Transporte</strong></td><td class="px-3 py-2 border border-dark-600 align-top">[Autopistas, transporte público, tiempos de traslado a los principales centros de empleo]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Puntuación de caminabilidad/transporte</strong></td><td class="px-3 py-2 border border-dark-600 align-top">[Puntuaciones, si están disponibles]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Carácter de la comunidad</strong></td><td class="px-3 py-2 border border-dark-600 align-top">[Familiar, urbano, suburbano, histórico, en desarrollo, etc.]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Empleadores destacados</strong></td><td class="px-3 py-2 border border-dark-600 align-top">[Grandes empleadores a una distancia razonable de traslado]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Atracciones locales</strong></td><td class="px-3 py-2 border border-dark-600 align-top">[Museos, entretenimiento, costanera, centro de la ciudad, etc.]</td></tr></tbody></table></div><hr class="border-dark-600 my-8"/><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 3: Identificar los principales argumentos de venta</h3><p class="text-neutral-300 mb-4 leading-relaxed">Con base en los datos del inmueble y del barrio, identifica y clasifica los principales puntos de venta. Prioriza las características que diferencian este inmueble de los anuncios de la competencia.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Jerarquía de recursos (de mayor a menor impacto):</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Basada en la ubicación:</strong> Reputación del barrio, distrito escolar, facilidad para caminar, vistas, frente al agua</li><li><strong>Características de estilo de vida:</strong> Planta abierta, áreas exteriores, piscina, casa inteligente, oficina en casa</li><li><strong>Actualizaciones recientes:</strong> Cocina nueva, baños nuevos, techo nuevo, sistema nuevo de calefacción, ventilación y aire acondicionado (HVAC), piso nuevo</li><li><strong>Ventajas de tamaño:</strong> Más habitaciones, más baños, lote más grande, habitaciones adicionales, almacenamiento</li><li><strong>Incentivos financieros:</strong> Por debajo del valor de mercado, impuestos bajos, sin cuota de condominio (HOA), hipoteca asumible</li><li><strong>Características únicas:</strong> Detalles arquitectónicos, historia, construcción personalizada, plano poco común</li></ol><p class="text-neutral-300 mb-4 leading-relaxed">Selecciona los <strong>5 a 7 principales puntos de venta</strong> para destacar.</p><hr class="border-dark-600 my-8"/><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 4: Generar título</h3><p class="text-neutral-300 mb-4 leading-relaxed">Crea un título llamativo de menos de 80 caracteres. El título debe:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Empezar por el argumento de venta más sólido</li><li>Crear urgencia o emoción</li><li>Ser específico (no genérico)</li><li>Evitar clichés demasiado usados</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Fórmulas de títulos:</strong></p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Fórmula</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Ejemplo</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">[Recurso] + [Ubicación]</td><td class="px-3 py-2 border border-dark-600 align-top">"Casa de estilo Craftsman renovada en el corazón de Maple Ridge"</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">[Adjetivo] + [Tipo de propiedad] + [Característica]</td><td class="px-3 py-2 border border-dark-600 align-top">"Impresionante casa colonial de 4 habitaciones con cocina de chef"</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">[Estilo de vida] + [Ubicación]</td><td class="px-3 py-2 border border-dark-600 align-top">"Vida estilo resort a pasos del centro"</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">[Valor] + [Recurso]</td><td class="px-3 py-2 border border-dark-600 align-top">"Casa llave en mano de 3 habitaciones por menos de $400K con vistas a las montañas"</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">[Urgencia] + [Recurso]</td><td class="px-3 py-2 border border-dark-600 align-top">"Rara propiedad de 5 habitaciones en medio acre — primera vez en el mercado en 20 años"</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">[Emoción] + [Recurso]</td><td class="px-3 py-2 border border-dark-600 align-top">"La cocina de tus sueños te espera en esta casa de una planta totalmente renovada"</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed">Genera <strong>3 opciones de título</strong> clasificadas por impacto. El título principal debe ser el más contundente.</p><hr class="border-dark-600 my-8"/><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 5: Escribir la descripción completa del inmueble (250-500 palabras)</h3><p class="text-neutral-300 mb-4 leading-relaxed">La descripción debe seguir las mejores prácticas de MLS y las pautas de las plataformas de publicación.</p><h4 class="font-bold text-base mt-8 mb-3 text-white">Estructura de la descripción</h4><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Gancho inicial (1-2 frases):</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Empieza con el recurso más convincente o el atractivo emocional</li><li>Crea una imagen vívida que haga que el lector quiera ver más</li><li>Nunca empieces con «Bienvenido a...» (está muy usado)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Cuerpo — Recorrido por la propiedad (3-4 párrafos):</strong></p><p class="text-neutral-300 mb-4 leading-relaxed">Párrafo 1 — Primeras impresiones:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Atractivo externo, entrada, primera impresión al entrar</li><li>Diseño general y flujo</li><li>Luz natural, altura del techo, detalles arquitectónicos</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Párrafo 2 — Áreas sociales principales:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Cocina (generalmente, el espacio más importante en la descripción)</li><li>Sala de estar/familia, comedor</li><li>Características destacadas (chimenea, armarios empotrados, vistas)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Párrafo 3 — Espacios privados:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Suite principal (tamaño, comodidades del baño, vestidor)</li><li>Habitaciones adicionales</li><li>Baños</li><li>Habitaciones adicionales (oficina, sala de medios, espacio flexible)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Párrafo 4 — Exteriores y adicionales:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Patio, patio trasero, terraza, piscina</li><li>Garaje, almacenamiento, sótano</li><li>Características del terreno, paisajismo, privacidad</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Sección del barrio (1-2 frases):</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Beneficios de la ubicación (escuelas, comercios, parques, traslado)</li><li>Carácter de la comunidad</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Cierre con CTA (1 frase):</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Crea urgencia</li><li>Invita a actuar (agendar una visita, enviar una propuesta)</li></ul><h4 class="font-bold text-base mt-8 mb-3 text-white">Reglas de escritura</h4><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Muestra, no cuentes</strong> — "Mesadas de cuarzo y electrodomésticos de acero inoxidable" en lugar de "cocina bonita"</li><li><strong>Usa lenguaje sensorial</strong> — Iluminado, bañado por el sol, espacioso, alto, brillante</li><li><strong>Sé específico</strong> — "Gabinetes de 42 pulgadas con cierre suave" en lugar de "buenos gabinetes"</li><li><strong>Evita los superlativos sin fundamento</strong> — "La mejor casa de todas" no significa nada; "El distrito escolar mejor calificado del condado" lo significa todo</li><li><strong>NO uses MAYÚSCULAS</strong> — Tono profesional en todo el texto</li><li><strong>NO uses signos de exclamación</strong> — Como máximo uno en toda la descripción (en el CTA, si lo hay)</li><li><strong>Escribe con palabras los números menores que 10</strong> — "tres habitaciones" en lugar de "3 habitaciones" (en el cuerpo del texto; las tablas usan cifras)</li><li><strong>Cumple la Ley de Vivienda Justa</strong> — Nunca describas la demografía, la religión ni la composición familiar del vecindario. Enfócate en los servicios y no en las personas</li><li><strong>No hay afirmaciones engañosas</strong> — Describe solo funciones que existen; usa "potencial" para las posibles mejoras</li><li><strong>Incluye las dimensiones de las habitaciones</strong> solo si son destacados (inusualmente grandes, etc.)</li></ol><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 6: Aspectos destacados de las funciones</h3><p class="text-neutral-300 mb-4 leading-relaxed">Crea una lista de puntos fácil de revisar con las principales características de la propiedad. Las plataformas MLS y los anuncios suelen mostrar estos elementos como aspectos destacados de consulta rápida.</p><p class="text-neutral-300 mb-4 leading-relaxed">Formatea en dos columnas, cuando sea posible:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">PROPERTY HIGHLIGHTS
+- [X] Bedrooms, [X] Bathrooms
+- [X] Sq Ft Living Space
+- Built in [YEAR]
+- [Feature: e.g., "Chef's Kitchen with Quartz Counters"]
+- [Feature: e.g., "Primary Suite with Walk-In Closet"]
+- [Feature: e.g., "Hardwood Floors Throughout"]
+- [Feature: e.g., "2-Car Attached Garage"]
+- [Feature: e.g., "Fenced Backyard with Mature Trees"]
+- [Feature: e.g., "New Roof (2023)"]
+- [Feature: e.g., "Minutes from Top-Rated Schools"]</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Enumera de 8 a 12 aspectos destacados. Empieza por los recursos más sólidos.</p><hr class="border-dark-600 my-8"/><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 7: Descripción del vecindario</h3><p class="text-neutral-300 mb-4 leading-relaxed">Escribe un párrafo independiente sobre el vecindario (75 a 150 palabras) que pueda usarse por separado o adjuntarse al anuncio. Enfócate en:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Qué hace que esta ubicación sea deseable</li><li>Proximidad de servicios esenciales (usa tiempos de conducción o distancias a pie)</li><li>Aspectos destacados del distrito escolar (calificaciones, programas)</li><li>Sensación de la comunidad y estilo de vida</li><li>Desarrollos futuros o crecimiento (si son positivos)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Cumplimiento de la Ley de Vivienda Justa:</strong> Describe el vecindario por sus servicios, infraestructura y geografía, nunca por las personas que viven allí.</p><hr class="border-dark-600 my-8"/><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 8: Variaciones de estilo múltiples</h3><p class="text-neutral-300 mb-4 leading-relaxed">Genera el anuncio en 4 estilos distintos, adaptados a diferentes perfiles de compradores:</p><h4 class="font-bold text-base mt-8 mb-3 text-white">Estilo 1: Lujo / Alta gama</h4><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Atributo</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Enfoque</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Tono</td><td class="px-3 py-2 border border-dark-600 align-top">Sofisticado, exclusivo, aspiracional</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Vocabulario</td><td class="px-3 py-2 border border-dark-600 align-top">Exclusivo, seleccionado, artesanal, residencia, propiedad</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Enfoque</td><td class="px-3 py-2 border border-dark-600 align-top">Acabados, diseño, prestigio, estilo de vida, privacidad</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Público</td><td class="px-3 py-2 border border-dark-600 align-top">Compradores con alto poder adquisitivo, compradores que buscan mejorar</td></tr></tbody></table></div><h4 class="font-bold text-base mt-8 mb-3 text-white">Estilo 2: Familiar</h4><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Atributo</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Enfoque</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Tono</td><td class="px-3 py-2 border border-dark-600 align-top">Acogedor, atractivo, práctico, seguro</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Vocabulario</td><td class="px-3 py-2 border border-dark-600 align-top">Espacioso, con lugar para crecer, jugar, reunirse y hacer la tarea</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Enfoque</td><td class="px-3 py-2 border border-dark-600 align-top">Escuelas, patio, habitaciones, almacenamiento, seguridad del vecindario</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Público</td><td class="px-3 py-2 border border-dark-600 align-top">Familias con niños, familias en crecimiento</td></tr></tbody></table></div><h4 class="font-bold text-base mt-8 mb-3 text-white">Estilo 3: Enfocado en inversionistas</h4><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Atributo</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Enfoque</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Tono</td><td class="px-3 py-2 border border-dark-600 align-top">Basado en datos, enfocado en el ROI y orientado a oportunidades</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Vocabulario</td><td class="px-3 py-2 border border-dark-600 align-top">Flujo de caja, tasa de capitalización, ingresos por alquiler, apreciación, apreciación adicional</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Enfoque</td><td class="px-3 py-2 border border-dark-600 align-top">Números, potencial de alquiler, tendencias del mercado, fundamentos de la ubicación</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Público</td><td class="px-3 py-2 border border-dark-600 align-top">Inversionistas inmobiliarios, propietarios de inmuebles en alquiler</td></tr></tbody></table></div><h4 class="font-bold text-base mt-8 mb-3 text-white">Estilo 4: Comprador primerizo</h4><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Atributo</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Enfoque</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Tono</td><td class="px-3 py-2 border border-dark-600 align-top">Motivador, accesible, emocionante</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Vocabulario</td><td class="px-3 py-2 border border-dark-600 align-top">Listo para habitar, accesible, inicial, oportunidad, orgullo de ser propietario</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Enfoque</td><td class="px-3 py-2 border border-dark-600 align-top">Condición lista para usar, bajo mantenimiento, tamaño manejable, valor</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Público</td><td class="px-3 py-2 border border-dark-600 align-top">Primeros compradores de vivienda, millennials, jóvenes profesionales</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed">Para cada estilo, genera:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Un título personalizado (menos de 80 caracteres)</li><li>Una descripción completa (250 a 500 palabras)</li><li>Un CTA de cierre</li></ul><hr class="border-dark-600 my-8"/><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 9: Palabras clave de SEO</h3><p class="text-neutral-300 mb-4 leading-relaxed">Genera una lista de palabras clave SEO optimizadas para plataformas de anuncios inmobiliarios en línea (Zillow, Redfin, Realtor.com, Trulia, Facebook Marketplace, Craigslist).</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Categorías de palabras clave:</strong></p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Categoría</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Ejemplos de palabras clave</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Tipo de propiedad</strong></td><td class="px-3 py-2 border border-dark-600 align-top">casa unifamiliar, casa en venta, casa con [X] habitaciones</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Ubicación</strong></td><td class="px-3 py-2 border border-dark-600 align-top">casas en venta en [Ciudad], propiedades en [Barrio], casas en [Código Postal]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Recursos</strong></td><td class="px-3 py-2 border border-dark-600 align-top">casa con piscina, cocina renovada, pisos de madera, planta abierta</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Estilo de vida</strong></td><td class="px-3 py-2 border border-dark-600 align-top">ideal para familias, listo para mudarse, listo para usar, el sueño de quienes disfrutan recibir invitados</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Financiero</strong></td><td class="px-3 py-2 border border-dark-600 align-top">accesible, por debajo de $[X], inmueble de inversión, ingresos por alquiler</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Escuelas</strong></td><td class="px-3 py-2 border border-dark-600 align-top">casas en [Distrito Escolar], cerca de [Nombre de la Escuela], escuelas con alta calificación</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Próximos</strong></td><td class="px-3 py-2 border border-dark-600 align-top">cerca de [Marco], junto a la [Rodovia], a pie hasta [Recurso]</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed">Genera <strong>20 a 30 palabras clave relevantes</strong> para esta propiedad específica. Prioriza palabras clave con un alto volumen de búsqueda en el mercado local.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Instrucciones para la integración de palabras clave:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Integra de forma natural las palabras clave principales en la descripción del anuncio</li><li>Usa palabras clave de ubicación en las dos primeras frases</li><li>Incluye palabras clave del tipo de propiedad en el título</li><li>Las palabras clave destacadas deben aparecer tanto en la descripción como en los puntos destacados</li><li>No abuses de las palabras clave: la legibilidad siempre debe ser lo primero</li></ul><hr class="border-dark-600 my-8"/><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 10: Subtítulos para redes sociales (bono)</h3><p class="text-neutral-300 mb-4 leading-relaxed">Genera captions listos para publicar para:</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Instagram/Facebook:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>2-3 frases + 5-10 hashtags relevantes</li><li>Gancho emocional + características principales + llamado a la acción</li><li>Menos de 200 caracteres en la primera línea (visible antes de "leer más")</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Twitter/X:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Menos de 280 caracteres</li><li>Característica principal + precio + ubicación + llamado a la acción</li></ul><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Modelo de salida</h2><p class="text-neutral-300 mb-4 leading-relaxed">Guarda el informe en <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">PROPERTY-LISTING-[ADDRESS].md</code>.</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre"># Professional Listing: [FULL ADDRESS]
+
+&gt; **Generated:** [DATE] | **List Price:** $[X] | **[BEDS]BD / [BATHS]BA | [SQFT] Sq Ft**
+
+**DISCLAIMER: For educational/research purposes only. Not financial or investment advice. Always consult licensed real estate professionals.**
+
+---
+
+## Recommended Headline
+
+**[PRIMARY HEADLINE — under 80 chars]**
+
+### Alternative Headlines
+1. [Alternative 1]
+2. [Alternative 2]
+
+---
+
+## Primary Listing Description
+
+[250-500 word listing description following the structure in Step 5]
+
+---
+
+## Property Highlights
+
+- [Highlight 1]
+- [Highlight 2]
+- [Highlight 3]
+- [Highlight 4]
+- [Highlight 5]
+- [Highlight 6]
+- [Highlight 7]
+- [Highlight 8]
+- [Highlight 9]
+- [Highlight 10]
+
+---
+
+## Neighborhood Description
+
+[75-150 word neighborhood paragraph]
+
+---
+
+## Style Variations
+
+### Luxury / High-End Version
+
+**Headline:** [Luxury headline]
+
+[Full luxury description]
+
+---
+
+### Family-Friendly Version
+
+**Headline:** [Family headline]
+
+[Full family description]
+
+---
+
+### Investor-Focused Version
+
+**Headline:** [Investor headline]
+
+[Full investor description]
+
+---
+
+### First-Time Buyer Version
+
+**Headline:** [First-time buyer headline]
+
+[Full first-time buyer description]
+
+---
+
+## SEO Keywords
+
+### Primary Keywords
+[5-8 highest-priority keywords]
+
+### Secondary Keywords
+[10-15 supporting keywords]
+
+### Long-Tail Keywords
+[5-10 specific long-tail phrases]
+
+---
+
+## Social Media Captions
+
+### Instagram / Facebook
+[Caption with hashtags]
+
+### Twitter / X
+[280-character caption]
+
+---
+
+## Property Details Quick Reference
+
+| Detail | Value |
+|--------|-------|
+| Address | [Address] |
+| Price | $[X] |
+| Beds / Baths | [X] / [X] |
+| Square Footage | [X] |
+| Lot Size | [X] |
+| Year Built | [X] |
+| Property Type | [X] |
+| Garage | [X] |
+| HOA | [X] |
+| School District | [X] |
+| Annual Taxes | $[X] |
+
+---
+
+*Listing generated by AI Real Estate Analyst. For educational and research purposes only. Not financial or investment advice. Always consult licensed real estate professionals.*</code></pre><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Checklist de Cumplimiento de la Legislación de Vivienda Justa</h2><p class="text-neutral-300 mb-4 leading-relaxed">Antes de finalizar cualquier descripción del anuncio, verifica el cumplimiento:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>[ ] Sin referencias a raza, color, religión, sexo, origen nacional, situación familiar o discapacidad</li><li>[ ] Sin referencias a la demografía del vecindario ("vecindario familiar" es aceptable; "vecindario predominantemente [grupo]" NO lo es)</li><li>[ ] Sin lenguaje que pueda desalentar a cualquier clase protegida ("perfecto para jóvenes profesionales" excluye a las familias)</li><li>[ ] «Walk-in closet» y «suite principal» son aceptables; «habitación principal» está dejando de usarse: usa «habitación principal» o «suite del propietario»</li><li>[ ] Sin referencias a iglesias, sinagogas, mezquitas u otras instituciones religiosas como puntos de venta</li><li>[ ] Características de accesibilidad descritas de forma objetiva, no como limitaciones</li></ul><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Tratamiento de errores</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Si se encuentran datos limitados de la propiedad, pídele al usuario que proporcione los detalles principales (habitaciones, baños, metros cuadrados, características).</li><li>Si no hay fotos ni detalles de características disponibles, redacta la descripción basándote en el tipo, tamaño, antigüedad y ubicación de la propiedad; indica que la descripción debe revisarse y mejorarse con los detalles reales de la propiedad.</li><li>Si la propiedad pertenece a una categoría de nicho (histórica, frente al agua, finca), adapta el estilo y el vocabulario según corresponda.</li><li>Siempre indica cuándo el anuncio se genera a partir de datos limitados y recomienda una revisión profesional antes de publicarlo.</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Solo con fines educativos y de investigación. No constituye asesoramiento financiero ni de inversión. Consulta siempre con profesionales inmobiliarios autorizados.</strong></p>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-4-16.html">← Módulo 4.16</a>
+<a class="flex-1 text-center px-6 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-500 transition-colors" href="../index.html">Siguiente ruta →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Equipos de IA — Grupo 1 · Material educativo | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

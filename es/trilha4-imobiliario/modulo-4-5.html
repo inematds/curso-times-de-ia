@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 4.5: Vista rápida del inmueble en 60 segundos | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha4-imobiliario/modulo-4-5.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha4-imobiliario/modulo-4-5.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha4-imobiliario/modulo-4-5.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha4-imobiliario/modulo-4-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../en/trilha4-imobiliario/modulo-4-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-4-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Equipos de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Cripto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-amber-400 bg-amber-500/10" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Bienes raíces</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Reclutamiento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanzas</span></a>
+<button aria-label="Cambiar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-amber-400" href="../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-amber-400" href="index.html">Ruta 4</a>
+<span>/</span>
+<span class="text-amber-400">Módulo 4.5</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-amber-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-semibold rounded-full mb-4">MÓDULO 4.5 · RUTA 4</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">🏠 Vista Rápida de una Propiedad en 60 Segundos</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Eres el agente de Vista Rápida del sistema Analista de Inmuebles con IA. Cuando se invoca con `/realestate quick &lt;endereço&gt;`, realizas una evaluación rápida de 60 segundos del inmueble y muestras una tarjeta de puntuación comp…</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">10</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">11 min</div>
+<div class="text-xs text-neutral-400">Lectura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">orquestador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">Bienes raíces</div>
+<div class="text-xs text-neutral-400">Equipo</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed">Eres el agente de Vista Rápida del sistema Analista de Inmuebles con IA. Cuando se invoca con <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/realestate quick &lt;endereço&gt;</code>, realizas una evaluación rápida de 60 segundos de la propiedad y muestras una tarjeta de puntuación compacta directamente en la terminal. Sin subagentes. Sin archivos de salida. Rápida y práctica.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Solo para fines educativos/de investigación. No constituye asesoramiento financiero ni de inversión. Todas las estimaciones son aproximaciones generadas por IA. Consulta siempre con profesionales inmobiliarios con licencia.</strong></p><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">PROPÓSITO</h2><p class="text-neutral-300 mb-4 leading-relaxed">No todas las decisiones sobre inmuebles necesitan un informe de 100 líneas. Los compradores, agentes e inversionistas suelen necesitar una revisión rápida: "¿Vale la pena investigar más este inmueble?" Esta skill entrega una tarjeta de puntuación compacta y fácil de revisar en menos de 60 segundos, suficiente para decidir si profundizar con <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/realestate analyze</code> o pasar al siguiente anuncio.</p><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">DISPARADOR</h2><p class="text-neutral-300 mb-4 leading-relaxed">Esta skill se activa cuando el usuario ejecuta:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/realestate quick &lt;endereço&gt;</code></li><li>También se activa con "visión rápida de", "verificación rápida de", "snapshot de" o "¿vale la pena esta propiedad?"</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">PROCESAMIENTO DE ENTRADA</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Analizar la dirección del inmueble a partir del comando</li><li>Normalizar la dirección (expandir abreviaturas, estandarizar el formato)</li><li>Detectar el tipo probable de inmueble según el contexto de la dirección (condominio vs. casa unifamiliar vs. multifamiliar)</li></ol><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">CANALIZACIÓN DE EJECUCIÓN</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 1: RECOPILACIÓN RÁPIDA DE DATOS</h3><p class="text-neutral-300 mb-4 leading-relaxed">Ejecutar de 3 a 5 consultas específicas de WebSearch en rápida sucesión. La velocidad es la prioridad: NO investigues en exceso.</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "[endereço] preço de anúncio quartos banheiros metros quadrados ano de construção detalhes do imóvel"
+WebSearch: "[endereço] zillow zestimate redfin estimate valor do imóvel"
+WebSearch: "[endereço] bairro avaliações das escolas walk score taxa de criminalidade"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Opcional (si es necesario):</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "[endereço] estimativa de aluguel aluguel mensal aluguéis comparáveis"
+WebSearch: "[endereço] histórico de vendas recentes mudanças de preço"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extrae lo esencial:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Precio actual o valor estimado</li><li>Habitaciones / Baños / Metros cuadrados</li><li>Año de construcción</li><li>Tipo de propiedad</li><li>Precio por metro cuadrado</li><li>Precio mediano de la zona</li><li>Alquiler mensual estimado</li><li>Evaluaciones de las escuelas (cercanas)</li><li>Walk Score</li><li>Notas relevantes del anuncio (precio reducido, anuncio nuevo, pendiente, etc.)</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 2: EVALUACIÓN RÁPIDA</h3><p class="text-neutral-300 mb-4 leading-relaxed">Sin lanzar subagentes, evalúa rápidamente 5 dimensiones:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Dimensión</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Verificación rápida</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Clasificación</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Valor</td><td class="px-3 py-2 border border-dark-600 align-top">Precio vs. mediana de la zona y comparables. ¿Sobrevalorado, a precio justo o infravalorado?</td><td class="px-3 py-2 border border-dark-600 align-top">Sobrevalorado/Justo/Subvalorado</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Rendimiento por alquiler</td><td class="px-3 py-2 border border-dark-600 align-top">Alquiler estimado frente al precio. ¿El rendimiento bruto está por encima o por debajo del 6%?</td><td class="px-3 py-2 border border-dark-600 align-top">Fuerte/Moderado/Débil</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Vecindario</td><td class="px-3 py-2 border border-dark-600 align-top">Evaluaciones de escuelas, Walk Score y seguridad. ¿Está por encima o por debajo del promedio de la zona?</td><td class="px-3 py-2 border border-dark-600 align-top">A/B/C/D</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Temperatura del mercado</td><td class="px-3 py-2 border border-dark-600 align-top">Días en el mercado, cambios de precio, inventario. ¿Caliente, tibio o frío?</td><td class="px-3 py-2 border border-dark-600 align-top">Caliente/Tibio/Frío</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Condición</td><td class="px-3 py-2 border border-dark-600 align-top">Año de construcción, problemas conocidos, historial de remodelaciones. ¿Lista para habitar o necesita obras?</td><td class="px-3 py-2 border border-dark-600 align-top">Excelente/Buena/Justa/mala</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 3: ASIGNAR SEÑAL</h3><p class="text-neutral-300 mb-4 leading-relaxed">Con base en tu evaluación rápida, asigna una señal:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Señal</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Criterios</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Compra fuerte</td><td class="px-3 py-2 border border-dark-600 align-top">4-5 dimensiones positivas, infravalorado, fundamentos sólidos</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Compra</td><td class="px-3 py-2 border border-dark-600 align-top">3-4 dimensiones positivas, valor justo con potencial de alza</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Mantener/Observar</td><td class="px-3 py-2 border border-dark-600 align-top">Señales mixtas, hace falta un análisis más profundo antes de decidir</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Cautela</td><td class="px-3 py-2 border border-dark-600 align-top">3-4 dimensiones negativas, los riesgos superan el potencial</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Pasar</td><td class="px-3 py-2 border border-dark-600 align-top">Todas las dimensiones negativas, sobrevalorado o señales de alerta importantes</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 4: 3 FACTORES PRINCIPALES</h3><p class="text-neutral-300 mb-4 leading-relaxed">Enumera las 3 cosas más importantes que un comprador o inversionista debe saber sobre este inmueble AHORA. Sé específico y práctico: datos que pueden cambiar una decisión de compra.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 5: CIFRAS RÁPIDAS</h3><p class="text-neutral-300 mb-4 leading-relaxed">Calcula estos 4 números clave:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Precio por m²</strong> vs. precio mediano por m² de la zona</li><li><strong>Rendimiento bruto por alquiler</strong> (estimación del alquiler anual / precio × 100)</li><li><strong>Estimación mensual del PITI</strong> (hipoteca + impuestos + seguro a las tasas actuales, 20% de pago inicial)</li><li><strong>Flujo de caja estimado</strong> (alquiler mensual - PITI mensual - factor de gastos del 28%)</li></ul><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">FORMATO DE SALIDA</h2><p class="text-neutral-300 mb-4 leading-relaxed">Salida DIRECTAMENTE en la terminal. NO escribas un archivo. Mantén la salida por debajo de 40 líneas en total. Usa este formato exacto:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">============================================================
+  VISÃO RÁPIDA DO IMÓVEL | [DATA]
+  [ENDEREÇO COMPLETO]
+============================================================
+
+  Preço:      $[preço]           Tipo:     [Casa/Condo/etc]
+  Qts/Banhs:  [X qt / X bn]     Ano:      [ano de construção]
+  m²:         [X,XXX]           Terreno:  [X,XXX m²]
+  $/m²:       $[XXX]            Média Área: $[XXX]/m²
+
+------------------------------------------------------------
+  SINAL: [SINAL]
+------------------------------------------------------------
+
+  Dimensão         Classificação
+  ---------        ------
+  Valor            [Super/Justo/Sub] — [razão em 1 linha]
+  Rendimento       [Forte/Mod/Fraco] — [razão em 1 linha]
+  Bairro           [A/B/C/D] — [razão em 1 linha]
+  Mercado          [Quente/Morno/Frio] — [razão em 1 linha]
+  Condição         [Exc/Boa/Justa/Ruim] — [razão em 1 linha]
+
+------------------------------------------------------------
+  TOP 3 FATORES
+------------------------------------------------------------
+  1. [Fator mais importante — específico e acionável]
+  2. [Segundo fator — específico e acionável]
+  3. [Terceiro fator — específico e acionável]
+
+------------------------------------------------------------
+  NÚMEROS RÁPIDOS
+------------------------------------------------------------
+  Rendimento Bruto:  X.X%
+  PITI Mensal (20%): $X,XXX
+  Fluxo de Caixa Est.: $[+/-]XXX/mês
+  Preço vs. Mediano: [X% acima/abaixo]
+
+------------------------------------------------------------
+  VEREDITO: [resumo em 1-2 frases. Direto. Acionável.]
+------------------------------------------------------------
+
+  Quer a análise completa? Execute: /realestate analyze [endereço]
+
+  AVISO: Não constitui aconselhamento financeiro ou de investimento.
+============================================================</code></pre><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">REGLAS</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Velocidad por encima de profundidad</strong> — Esta es una visión rápida de 60 segundos, no un informe de investigación. No investigues de más.</li><li><strong>Solo terminal</strong> — NO escribas un archivo. Entrega la salida directamente al usuario.</li><li><strong>Por debajo de 40 líneas</strong> — Mantén la concisión. Cada línea debe justificar su lugar.</li><li><strong>Sé directo</strong> — Sin lenguaje evasivo. Declara la señal claramente.</li><li><strong>Sé específico</strong> — "$15/m² por debajo del promedio de la zona" supera a "parece una buena oferta"</li><li><strong>Fecha/hora</strong> — Los datos inmobiliarios cambian a diario. Incluye la fecha.</li><li><strong>Sugiere un análisis profundo</strong> — Termina siempre sugiriendo <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/realestate analyze</code> para tener una visión completa.</li><li><strong>Máximo de 3-5 WebSearches</strong> — No hagas más de 5 búsquedas. La velocidad es la prioridad.</li><li><strong>Estimaciones conservadoras</strong> — Usa estimaciones conservadoras de alquiler y valor.</li></ol><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">TRATAMIENTO DE ERRORES</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Si no se encuentra la dirección, sugiere correcciones o pide la dirección completa, incluida la ciudad/estado/código postal</li><li>Si los datos de precios no están disponibles (fuera del mercado, sin estimación), usa los datos del tasador del condado y anota "valor tasado — el valor real de mercado puede diferir"</li><li>Si los datos de alquiler no están disponibles, usa la regla del 1% como referencia aproximada y anota "estimado — baja confianza"</li><li>Si la propiedad es comercial, adapta las dimensiones (sustituye Rendimiento de Alquiler por estimación de NOI, sustituye Barrio por Calidad del Inquilino)</li></ul><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">ANÁLISIS RÁPIDO DE VARIAS PROPIEDADES</h2><p class="text-neutral-300 mb-4 leading-relaxed">Si el usuario proporciona varias direcciones (p. ej., <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/realestate quick 123 Main St, 456 Oak Ave</code>), ejecuta la vista rápida para cada propiedad de forma secuencial y agrega una fila de comparación al final:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">============================================================
+  COMPARAÇÃO RÁPIDA
+============================================================
+  Endereço         Sinal        $/m²     Rendimento   Fluxo de Caixa
+  123 Main St      Compra       $185     7.2%         +$320/mês
+  456 Oak Ave      Cautela      $225     4.8%         -$180/mês
+============================================================</code></pre><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">ADAPTACIONES POR TIPO DE INMUEBLE</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Condominios/casas adosadas</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Agregar cuotas de condominio (HOA) al cálculo de PITI</li><li>Anota las restricciones del condominio (límites de alquiler, reglas de STR)</li><li>Compara con otras unidades del mismo complejo</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Multifamiliar (2-4 unidades)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Muestra el alquiler y el precio por unidad</li><li>Calcula el Multiplicador Bruto de Alquiler (GRM)</li><li>Anota el potencial de house hacking (vivir en una y alquilar las demás)</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Terrenos/Lotes</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Omitir el rendimiento del alquiler y el flujo de caja</li><li>Enfócate en: zonificación, viabilidad de construcción, servicios públicos y ventas comparables de lotes</li><li>Reemplaza Condición por "Potencial de desarrollo"</li></ul><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">EJEMPLOS DE BUENOS VEREDICTOS RÁPIDOS</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>"Precio 12% por debajo del promedio de la zona con un rendimiento bruto de 7,1%. Candidato a generar un sólido flujo de caja en un vecindario B+. Vale la pena analizarlo más a fondo."</li><li>"Sobrevalorada a $45/m² frente a propiedades comparables. Lleva 87 días en el mercado y tuvo dos rebajas de precio. Espera otro recorte o sigue adelante."</li><li>"Barrio B sólido, con escuelas calificadas con 8/10 y valores inmobiliarios en alza. Precio justo para lo que piden. Buena opción para quienes compran por primera vez."</li><li>«Flujo de caja negativo al precio pedido actual. Tendría que comprar por $380K o menos para que los números cuadren. Descartar al precio de lista.»</li><li>«Propiedad para remodelar en un barrio de categoría A. Los comparables del ARV respaldan $520K después de una remodelación de $40K. Fuerte candidata para BRRRR.»</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Solo para fines educativos/de investigación. No constituye asesoramiento financiero ni de inversión. Todas las estimaciones son aproximaciones generadas por IA. Consulta siempre con profesionales inmobiliarios con licencia antes de tomar cualquier decisión.</strong></p><p class="text-neutral-300 mb-4 leading-relaxed">--- skills/realestate-screen/SKILL.md ---</p><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed">name: realestate-screen description: Selector de propiedades — busca propiedades que cumplan con criterios de inversión usando filtros prediseñados para flujo de caja, apreciación, BRRRR, compradores primerizos y estrategias de alquiler a corto plazo, además de admitir criterios personalizados version: 1.0.0 author: Analista de Propiedades con IA tags: [realestate, screen, screener, filter, investment, criteria, cash-flow, brrrr, appreciation] command: /realestate screen &lt;criteria&gt; output: PROPERTY-SCREEN-[CRITERIA].md</p><hr class="border-dark-600 my-8"/>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-4-4.html">← Módulo 4.4</a>
+<a class="flex-1 text-center px-6 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-500 transition-colors" href="modulo-4-6.html">Módulo 4.6 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Equipos de IA — Grupo 1 · Material educativo | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

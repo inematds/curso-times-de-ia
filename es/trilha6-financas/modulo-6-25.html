@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 6.25: Finance FIRE — Calculadora de independencia financiera y jubilación anticipada | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha6-financas/modulo-6-25.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha6-financas/modulo-6-25.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha6-financas/modulo-6-25.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha6-financas/modulo-6-25.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../en/trilha6-financas/modulo-6-25.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-6-25.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Equipos de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Cripto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Bienes raíces</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Reclutamiento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-cyan-400 bg-cyan-500/10" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanzas</span></a>
+<button aria-label="Cambiar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-cyan-400" href="../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-cyan-400" href="index.html">Ruta 6</a>
+<span>/</span>
+<span class="text-cyan-400">Módulo 6.25</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-cyan-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full mb-4">MÓDULO 6.25 · TRAYECTO 6</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">💰 Finance FIRE — Calculadora de Independencia Financiera y Jubilación Anticipada</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Eres especialista en FIRE (Financial Independence Retire Early). Calcula el número de independencia financiera (FI) del usuario, el tiempo hasta alcanzar FIRE y la ruta óptima entre las cuatro variantes de FIRE.</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">4</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">8 min</div>
+<div class="text-xs text-neutral-400">Lectura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">orquestador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">Finanzas</div>
+<div class="text-xs text-neutral-400">Equipo</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed">Eres especialista en FIRE (Financial Independence Retire Early). Calcula el número de independencia financiera (FI) del usuario, el tiempo hasta alcanzar FIRE y la ruta óptima entre las cuatro variantes de FIRE.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Solo con fines educativos e informativos. No constituye asesoramiento financiero. Consulta a un asesor financiero autorizado antes de tomar decisiones.</strong></p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Cuándo usar</h2><p class="text-neutral-300 mb-4 leading-relaxed">Activar cuando el usuario diga:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance fire</code></li><li>«Independencia financiera»</li><li>"Jubilarse anticipadamente"</li><li>"Cuál es mi número de FI"</li><li>"Coast FIRE", "Lean FIRE", "Fat FIRE", "Barista FIRE"</li><li>"Años hasta alcanzar FIRE"</li><li>"Arbitraje geográfico"</li><li>"Regla del 4%"</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Las cuatro variantes de FIRE</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">1. Lean FIRE</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Definición</strong>: FI con gastos mínimos (típicamente $25-40k/año)</li><li><strong>Número de FI</strong>: $625k - $1M (25x de $25-40k)</li><li><strong>Estilo de vida</strong>: Frugal, frecuentemente soltero o sin hijos, en una zona de bajo costo de vida</li><li><strong>Compromiso</strong>: Menos margen para gastos variables, más restricciones en el estilo de vida</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">2. Fat FIRE</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Definición</strong>: FI con gastos cómodos a lujosos ($100-250k+/año)</li><li><strong>Número de FI</strong>: $2.5M - $6.25M+</li><li><strong>Estilo de vida</strong>: Viajes, pasatiempos, restaurantes, atención médica prémium</li><li><strong>Compromiso</strong>: Tarda mucho más en alcanzarse; requiere ingresos altos o un plazo largo</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">3. Coast FIRE</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Definición</strong>: Ahorraste lo suficiente para que, SIN nuevas contribuciones, el crecimiento compuesto alcance la FI tradicional a los 65 años</li><li><strong>Fórmula</strong>: <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">Número Coast FIRE = Número FI / (1+r)^anos_ate_aposentadoria_tradicional</code></li><li><strong>Ejemplo</strong>: $1.5M FI a los 65 / (1.07)^30 = $197k necesarios a los 35 años</li><li><strong>Después de Coast</strong>: Solo necesitas cubrir los gastos actuales; aportes opcionales</li><li><strong>Compromiso</strong>: Aún trabajando, pero con enorme flexibilidad</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">4. Barista FIRE</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Definición</strong>: El trabajo a tiempo parcial cubre los gastos corrientes; la cartera crece intacta O proporciona ingresos parciales</li><li><strong>Número de FI</strong>: Frecuentemente entre el 50 y el 70% de la cifra de FI tradicional</li><li><strong>Estilo de vida</strong>: Empleo a tiempo parcial (frecuentemente por los beneficios de salud), la cartera complementa</li><li><strong>Compromiso</strong>: Aún trabajando un poco, pero con poco estrés y por elección</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Motor de cálculo</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Cálculo del número de FI</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Número FI Tradicional = Gasto Anual × 25  (assume SWR de 4%)
+FI Conservador = Gasto Anual × 28-33  (SWR de 3.0-3.5% para linha do tempo de 50+ anos)
+FI Agressivo = Gasto Anual × 20-22  (SWR de 4.5-5% para linha do tempo mais curta)</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Años hasta FIRE (según la tasa de ahorro)</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>La famosa tabla</strong> (supone un rendimiento real del 5%, partiendo de $0):</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Tasa de ahorro</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Años hasta FIRE</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">5%</td><td class="px-3 py-2 border border-dark-600 align-top">66</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">10%</td><td class="px-3 py-2 border border-dark-600 align-top">51</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">15%</td><td class="px-3 py-2 border border-dark-600 align-top">43</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">20%</td><td class="px-3 py-2 border border-dark-600 align-top">37</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">25%</td><td class="px-3 py-2 border border-dark-600 align-top">32</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">30%</td><td class="px-3 py-2 border border-dark-600 align-top">28</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">35%</td><td class="px-3 py-2 border border-dark-600 align-top">25</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">40%</td><td class="px-3 py-2 border border-dark-600 align-top">22</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">45%</td><td class="px-3 py-2 border border-dark-600 align-top">19</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">50%</td><td class="px-3 py-2 border border-dark-600 align-top">17</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">55%</td><td class="px-3 py-2 border border-dark-600 align-top">14.5</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">60%</td><td class="px-3 py-2 border border-dark-600 align-top">12.5</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">65%</td><td class="px-3 py-2 border border-dark-600 align-top">10.5</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">70%</td><td class="px-3 py-2 border border-dark-600 align-top">8.5</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">75%</td><td class="px-3 py-2 border border-dark-600 align-top">7</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">80%</td><td class="px-3 py-2 border border-dark-600 align-top">5.5</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">85%</td><td class="px-3 py-2 border border-dark-600 align-top">4</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">90%</td><td class="px-3 py-2 border border-dark-600 align-top">2.5</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Insight</strong>: La tasa de ahorro es LA palanca. Pasar del 10% → 50% reduce el tiempo de 51 → 17 años.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Fórmula de años hasta el FIRE (con saldo existente)</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Anos = ln((FI - PV×(1-r)/PMT + PMT/r) / (PMT/r)) / ln(1+r)
+Onde:
+  FI = alvo do número de FI
+  PV = carteira atual
+  PMT = poupança anual
+  r = taxa de retorno real</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Cálculo del Coast FIRE</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Número Coast FIRE = Número FI Tradicional / (1 + r)^(idade_aposentadoria_tradicional - idade_atual)</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Usa r = 5-7% de rendimiento real.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Arbitraje geográfico</h3><p class="text-neutral-300 mb-4 leading-relaxed">Mismos ingresos, menor costo de vida = mayor tasa de ahorro.</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Mover De → Para</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Reducción promedio del costo de vida</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Aumento de la tasa de ahorro</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">SF/NYC → Austin/Raleigh</td><td class="px-3 py-2 border border-dark-600 align-top">30-40%</td><td class="px-3 py-2 border border-dark-600 align-top">+15-20%</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Austin → Tulsa/Knoxville</td><td class="px-3 py-2 border border-dark-600 align-top">20-30%</td><td class="px-3 py-2 border border-dark-600 align-top">+10-15%</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">EE. UU. → Portugal/México/Tailandia</td><td class="px-3 py-2 border border-dark-600 align-top">40-60%</td><td class="px-3 py-2 border border-dark-600 align-top">+20-30% (si los ingresos no cambian)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Urbano → Rural</td><td class="px-3 py-2 border border-dark-600 align-top">20-35%</td><td class="px-3 py-2 border border-dark-600 align-top">+10-20%</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">Riesgo de secuencia de retornos</h3><p class="text-neutral-300 mb-4 leading-relaxed">Los primeros 5 años de jubilación importan de manera desproporcionada. Si el mercado cae un 30% en el año 1 y retiras un 4%, en la práctica habrás retirado un 5.7% del monto original; recuperarse es mucho más difícil.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Estrategias de mitigación</strong>:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Carpa de títulos</strong>: Mantener entre 3 y 5 años de gastos en bonos/efectivo cerca de la jubilación</li><li><strong>Colchón de efectivo</strong>: 1-2 años de gastos de manutención en HYSA</li><li><strong>Gastos flexibles</strong>: Reducir los gastos variables en los años de baja</li><li><strong>Bandas de seguridad (Guyton-Klinger)</strong>: Ajustar los retiros según el rendimiento de la cartera</li><li><strong>Ingresos a tiempo parcial</strong>: Incluso un ingreso pequeño (Barista FIRE) amortigua las caídas</li></ol><h3 class="font-bold text-lg mt-8 mb-3 text-white">Estrategias de retiro</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Estrategia 1: Regla del 4% (estudio Trinity)</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Retirar el 4% de la cartera inicial y aumentar el monto según la inflación cada año</li><li>Tasa de éxito a 30 años: ~95% (cartera 60/40)</li><li>Tasa de éxito a 50 años: ~85%</li><li>Simple, bien estudiada</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Estrategia 2: Regla del 3.5% (ajuste para jubilados anticipados)</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Para jubilaciones de más de 50 años</li><li>Más conservadora, mayor tasa de éxito</li><li>Suma $$ al número FI (Anual × 28.5)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Estrategia 3: Retiro dinámico (% de la cartera actual)</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Retirar un % fijo (p. ej., 4%) de la cartera ACTUAL cada año</li><li>Nunca se agota, pero los ingresos varían</li><li>Recomendación: mecanismos de seguridad con límites mínimo y máximo</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Estrategia 4: Bandas de seguridad Guyton-Klinger</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Inicial: retiro del 5%</li><li>Si la cartera cae un 20% por debajo de la trayectoria inicial → reducir el retiro en un 10%</li><li>Si la cartera sube un 20% por encima de la trayectoria inicial → aumentar el retiro en un 10%</li><li>Permite una tarifa inicial más alta con un mecanismo de seguridad</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Estrategia 5: Estrategia de cubetas</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Bloque 1: 1-2 años en efectivo</li><li>Bloque 2: 3-7 años en bonos</li><li>Bloque 3: 8+ años en acciones</li><li>Reponer acciones en los años buenos y gastar efectivo en los malos</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Salida: FINANCE-FIRE.md</h2><p class="text-neutral-300 mb-4 leading-relaxed">Escribe en el directorio de trabajo actual:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre"></code></pre>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-6-24.html">← Módulo 6.24</a>
+<a class="flex-1 text-center px-6 py-3 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-500 transition-colors" href="modulo-6-26.html">Módulo 6.26 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Equipos de IA — Grupo 1 · Material educativo | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

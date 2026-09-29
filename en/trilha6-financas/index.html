@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Track 6: Personal Finance | AI Teams</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha6-financas/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha6-financas/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha6-financas/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha6-financas/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../es/trilha6-financas/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">AI Teams</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Real estate</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recruiting</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-cyan-400 bg-cyan-500/10" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finance</span></a>
+<button aria-label="Toggle theme" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-cyan-400" href="../index.html">Start</a>
+<span>/</span>
+<span class="text-cyan-400">Track 6</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-cyan-900/30 via-dark-800 to-dark-800 py-14 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full mb-4">TRACK 6</span>
+<h1 class="text-3xl sm:text-4xl font-extrabold mb-4">💰 Personal Finance</h1>
+<p class="text-lg text-neutral-400 max-w-3xl leading-relaxed">undefined</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">31</div>
+<div class="text-xs text-neutral-400">Modules</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">277</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">12</div>
+<div class="text-xs text-neutral-400">Commands</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">4h</div>
+<div class="text-xs text-neutral-400">Content</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section class="mb-12">
+<h2 class="text-2xl font-bold mb-6">🗂️ Track Modules</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-1.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.1</span>
+<span class="text-xs text-neutral-500">9 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">AI Personal Financial Advisor — Lead Orchestrator</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are a comprehensive AI personal finance and financial planning system for the assistant. It helps individuals, families, and entrepreneurs analyze the…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>6 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-2.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.2</span>
+<span class="text-xs text-neutral-500">12 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">Financial Analysis — Complete Financial Health Orchestrator</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are the primary financial analysis orchestrator. Start 5 subagents in parallel, collect their findings, calculate a Composite Financial Health…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>2 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-3.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.3</span>
+<span class="text-xs text-neutral-500">4 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">Financial Health Analysis</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**Prepared for:** [Name or "Client"]</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>13 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-4.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.4</span>
+<span class="text-xs text-neutral-500">4 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">/finance compare — Side-by-Side Scenario Comparison</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**DISCLAIMER: For educational/informational purposes only. Does not constitute financial advice.**</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>6 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-5.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.5</span>
+<span class="text-xs text-neutral-500">6 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">Financial Scenario Comparison</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**Decision:** [One-sentence classification]</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>12 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-6.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.6</span>
+<span class="text-xs text-neutral-500">8 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">Finance Retirement — Retirement Readiness Projection</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are the retirement planning specialist. Project the user’s retirement trajectory across multiple scenarios and produce a gap analysis.</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>4 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-7.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.7</span>
+<span class="text-xs text-neutral-500">9 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">Retirement Readiness Analysis</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**Prepared on:** [Data]</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>16 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-8.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.8</span>
+<span class="text-xs text-neutral-500">11 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">Financial Goals — Financial Goals Planner</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are the goal planner for the AI Personal Finance Advisor. Receive any financial goal (or set of goals) and develop a concrete savings plan…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>10 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-9.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.9</span>
+<span class="text-xs text-neutral-500">4 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">Financial Goals Plan</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**Prepared on:** [Data]</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>7 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-10.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.10</span>
+<span class="text-xs text-neutral-500">6 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">Financial Budget — Spending Analysis and Custom Budget Builder</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are the budgeting specialist. Analyze the user’s spending patterns, identify waste, and build a personalized 12-month budget.</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>5 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-11.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.11</span>
+<span class="text-xs text-neutral-500">7 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">Personal Budget Plan</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**Prepared on:** [Data]</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>12 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-12.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.12</span>
+<span class="text-xs text-neutral-500">10 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">Financial Portfolio — Investment Allocation Analyzer</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are an investment portfolio analyst for the AI Personal Finance Advisor. You receive a user's current holdings and produce a clear…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>5 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-13.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.13</span>
+<span class="text-xs text-neutral-500">3 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">Portfolio Analysis Report</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**Prepared on:** [Data]</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>10 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-14.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.14</span>
+<span class="text-xs text-neutral-500">10 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">/finance report-pdf — Financial Plan PDF Generator</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**DISCLAIMER: For educational/informational purposes only. Does not constitute financial advice.**</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>11 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-15.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.15</span>
+<span class="text-xs text-neutral-500">10 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">/finance quick — 60-Second Financial Overview</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**DISCLAIMER: For educational/informational purposes only. Does not constitute financial advice.**</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>11 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-16.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.16</span>
+<span class="text-xs text-neutral-500">12 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">/finance screen — Investment Screener</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**DISCLAIMER: For educational/informational purposes only. Does not constitute financial advice. This is not a recommendation to buy any specific security…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>17 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-17.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.17</span>
+<span class="text-xs text-neutral-500">10 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">Financial Emergency — Emergency Fund Analyzer</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are the emergency fund analyst for the AI Personal Finance Advisor. Your role: determine the right size emergency fund for…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>9 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-18.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.18</span>
+<span class="text-xs text-neutral-500">4 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">Emergency Fund Analysis</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**Prepared on:** [Data]</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>9 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-19.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.19</span>
+<span class="text-xs text-neutral-500">10 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">Net Worth — Wealth Tracker and Milestone Analyzer</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are the net worth analyst for the AI Personal Finance Advisor. You receive a user’s complete overview of assets and liabilities and produce a…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>7 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-20.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.20</span>
+<span class="text-xs text-neutral-500">4 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">Net Worth Analysis</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**Prepared on:** [Data]</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>10 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-21.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.21</span>
+<span class="text-xs text-neutral-500">11 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">Financial Taxes — Tax Optimization Strategy Analyzer</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are a tax optimization analyst for the AI Personal Finance Advisor. Your role is to analyze the user's financial situation and identify the…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>4 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-22.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.22</span>
+<span class="text-xs text-neutral-500">4 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">Tax Optimization Plan</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**Prepared on:** [Data]</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>6 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-23.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.23</span>
+<span class="text-xs text-neutral-500">6 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">Financial Debts — Payoff Strategy</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are the debt elimination strategist. Create a mathematically optimized and behaviorally sustainable debt payoff plan.</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>6 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-24.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.24</span>
+<span class="text-xs text-neutral-500">7 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">Debt Payoff Strategy</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**Prepared on:** [Data]</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>13 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-25.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.25</span>
+<span class="text-xs text-neutral-500">8 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">Finance FIRE — Financial Independence and Early Retirement Calculator</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are the FIRE (Financial Independence Retire Early) specialist. Calculate the user’s financial independence (FI) number, time to FIRE, and the…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>4 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-26.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.26</span>
+<span class="text-xs text-neutral-500">12 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">FIRE Plan — Path to Financial Independence</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**Prepared on:** [Data]</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>18 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-27.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.27</span>
+<span class="text-xs text-neutral-500">10 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">finance-investments Agent</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**DISCLAIMER: For educational/informational purposes only. Does not constitute financial advice. Not a recommendation to buy or sell any securit…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>8 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-28.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.28</span>
+<span class="text-xs text-neutral-500">9 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">finance-cashflow Agent</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**DISCLAIMER: For educational/informational purposes only. Does not constitute financial advice.**</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>10 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-29.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.29</span>
+<span class="text-xs text-neutral-500">12 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">Financial Protection Agent</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**DISCLAIMER: For educational/informational purposes only. Does not constitute financial advice. Does not constitute insurance advice. Does not constitute legal advic…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>9 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-30.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.30</span>
+<span class="text-xs text-neutral-500">11 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">finance-retirement Agent</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**DISCLAIMER: For educational/informational purposes only. Does not constitute financial advice.**</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>9 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-cyan-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-6-31.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">MODULE 6.31</span>
+<span class="text-xs text-neutral-500">9 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-cyan-400 transition-colors">finance-debt Agent</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">**DISCLAIMER: For educational/informational purposes only. Does not constitute financial advice.**</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>8 topics</span>
+<span class="text-cyan-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+</div>
+</section>
+<section class="mb-10 bg-dark-800/50 border border-dark-600 rounded-xl p-6">
+<h2 class="text-xl font-bold mb-2">🚀 How to Use This Team</h2>
+<p class="text-sm text-neutral-400 mb-4">Orchestrator command summary — each module details the corresponding component.</p>
+<div class="prose-sm"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">How to Use</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Open the assistant and type <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance &lt;comando&gt;</code>.</li><li>Main commands:</li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance analyze</code> — full financial health analysis</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance quick</code> — quick overview (60 seconds)</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance budget</code> — spending and budget analysis</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance emergency</code> — emergency fund</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance debt</code> — debt payoff strategies</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance retirement</code> — retirement outlook</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance goals</code> — financial goals plan</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance portfolio</code> — portfolio allocation</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance taxes</code> — tax optimization</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance networth</code> — net worth and milestones</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance screen &lt;critérios&gt;</code> — investment filter</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance report-pdf</code> — generate a financial plan in PDF</li></ul></div>
+<p class="text-sm text-neutral-300 mt-4"><strong>Model recommendation:</strong> a model with a large context window (64k+) to support comprehensive analyses.</p>
+</section>
+<section class="bg-dark-800/50 border border-dark-600 rounded-xl p-6">
+<p class="text-sm text-neutral-400 leading-relaxed"><strong>Notice:</strong> educational content — not professional financial advice. Consult a licensed financial planner or accountant for specific decisions.</p>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>AI Teams — Group 1 · Educational material | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

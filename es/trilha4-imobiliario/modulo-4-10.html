@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 4.10: Informe de comparación de propiedades | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha4-imobiliario/modulo-4-10.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha4-imobiliario/modulo-4-10.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha4-imobiliario/modulo-4-10.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha4-imobiliario/modulo-4-10.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../en/trilha4-imobiliario/modulo-4-10.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-4-10.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Equipos de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Cripto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-amber-400 bg-amber-500/10" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Bienes raíces</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Reclutamiento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanzas</span></a>
+<button aria-label="Cambiar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-amber-400" href="../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-amber-400" href="index.html">Ruta 4</a>
+<span>/</span>
+<span class="text-amber-400">Módulo 4.10</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-amber-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-semibold rounded-full mb-4">MÓDULO 4.10 · TRAYECTO 4</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">🏠 Informe de Comparación de Propiedades</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">**Generado el:** [DATA]</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">8</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">6 min</div>
+<div class="text-xs text-neutral-400">Lectura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">orquestador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">Bienes raíces</div>
+<div class="text-xs text-neutral-400">Equipo</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed"><strong>Generado el:</strong> [FECHA] <strong>Propiedad A:</strong> [DIRECCIÓN 1] <strong>Propiedad B:</strong> [DIRECCIÓN 2]</p><p class="text-neutral-300 mb-4 leading-relaxed">AVISO LEGAL: Solo con fines educativos y de investigación. No constituye asesoramiento financiero ni de inversión.</p><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Resumen comparativo directo</h2><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Categoría</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Propiedad A</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Propiedad B</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Ganador</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Precio y valor</td><td class="px-3 py-2 border border-dark-600 align-top">XX/100</td><td class="px-3 py-2 border border-dark-600 align-top">XX/100</td><td class="px-3 py-2 border border-dark-600 align-top">[A/B/Empate]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Especificaciones de la propiedad</td><td class="px-3 py-2 border border-dark-600 align-top">XX/100</td><td class="px-3 py-2 border border-dark-600 align-top">XX/100</td><td class="px-3 py-2 border border-dark-600 align-top">[A/B/Empate]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Ingresos por alquiler</td><td class="px-3 py-2 border border-dark-600 align-top">XX/100</td><td class="px-3 py-2 border border-dark-600 align-top">XX/100</td><td class="px-3 py-2 border border-dark-600 align-top">[A/B/Empate]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Vecindario</td><td class="px-3 py-2 border border-dark-600 align-top">XX/100</td><td class="px-3 py-2 border border-dark-600 align-top">XX/100</td><td class="px-3 py-2 border border-dark-600 align-top">[A/B/Empate]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Potencial de inversión</td><td class="px-3 py-2 border border-dark-600 align-top">XX/100</td><td class="px-3 py-2 border border-dark-600 align-top">XX/100</td><td class="px-3 py-2 border border-dark-600 align-top">[A/B/Empate]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Costo de propiedad</td><td class="px-3 py-2 border border-dark-600 align-top">XX/100</td><td class="px-3 py-2 border border-dark-600 align-top">XX/100</td><td class="px-3 py-2 border border-dark-600 align-top">[A/B/Empate]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Posición en el mercado</td><td class="px-3 py-2 border border-dark-600 align-top">XX/100</td><td class="px-3 py-2 border border-dark-600 align-top">XX/100</td><td class="px-3 py-2 border border-dark-600 align-top">[A/B/Empate]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Factores de riesgo</td><td class="px-3 py-2 border border-dark-600 align-top">XX/100</td><td class="px-3 py-2 border border-dark-600 align-top">XX/100</td><td class="px-3 py-2 border border-dark-600 align-top">[A/B/Empate]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>PUNTUACIÓN COMPUESTA</strong></td><td class="px-3 py-2 border border-dark-600 align-top"><strong>XX/100</strong></td><td class="px-3 py-2 border border-dark-600 align-top"><strong>XX/100</strong></td><td class="px-3 py-2 border border-dark-600 align-top"><strong>[A/B]</strong></td></tr></tbody></table></div><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">[Secciones detalladas de las categorías con tablas según lo definido arriba]</h2><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Puntos fuertes y débiles</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Propiedad A: [Endereço]</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Puntos fuertes:</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>[Ventaja específica con datos]</li><li>...</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Puntos débiles:</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>[Desventaja específica con datos]</li><li>...</li></ol><h3 class="font-bold text-lg mt-8 mb-3 text-white">Propiedad B: [Endereço]</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Puntos fuertes:</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>[Ventaja específica con datos]</li><li>...</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Puntos débiles:</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>[Desventaja específica con datos]</li><li>...</li></ol><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Recomendación</h2><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Ganador general: Propiedad [A/B] — [Dirección]</strong> [Explicación de 2-3 frases sobre por qué esta propiedad gana en general]</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Mejor para el flujo de caja:</strong> Propiedad [A/B] — [razón en 1 línea] <strong>Mejor para la valorización:</strong> Propiedad [A/B] — [razón en 1 línea] <strong>Mejor para compradores primerizos:</strong> Propiedad [A/B] — [razón en 1 línea] <strong>Mejor para reventa (flipping):</strong> Propiedad [A/B] — [razón en 1 línea]</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>La salvedad:</strong> [1-2 frases sobre la mayor desventaja de la opción ganadora]</p><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Próximos pasos</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Ejecuta <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/realestate analyze [endereço vencedor]</code> para un análisis exhaustivo y completo</li><li>Ejecuta <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/realestate rental [endereço]</code> para proyecciones detalladas del flujo de caja</li><li>Ejecuta <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/realestate invest [endereço]</code> para modelar escenarios de inversión</li><li>Programa visitas al inmueble e inspecciones profesionales</li><li>Obtén la preaprobación y ejecuta <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/realestate mortgage [preço]</code> para estimaciones de pagos</li></ol><p class="text-neutral-300 mb-4 leading-relaxed">AVISO LEGAL: Solo con fines educativos y de investigación. No constituye asesoramiento financiero ni de inversión. Todos los valores son estimaciones generadas por IA. Consulta con profesionales inmobiliarios autorizados antes de tomar cualquier decisión.</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+---
+
+## REGRAS
+
+1. **Comparação baseada em dados** — Toda declaração de vencedor deve ser respaldada por números específicos, não opiniões
+2. **Estimativas conservadoras** — Use estimativas conservadoras de aluguel e valorização; não inflacione projeções
+3. **Justa e equilibrada** — Apresente ambos os imóveis honestamente; não selecione métricas para favorecer um
+4. **Específica à localização** — Use dados de mercado locais, não médias nacionais
+5. **Reconheça a incerteza** — Se os dados forem limitados para qualquer um dos imóveis, diga isso explicitamente
+6. **Comparação justa (maçãs com maçãs)** — Se os imóveis forem de tipos muito diferentes (ex.: condomínio vs casa unifamiliar), note que a comparação direta tem limitações
+7. **Sempre inclua aviso legal** — Esta é pesquisa, não aconselhamento de investimento
+
+## TRATAMENTO DE ERROS
+
+- Se um endereço não puder ser encontrado, notifique o usuário e sugira correções
+- Se ambos os imóveis estiverem em mercados muito diferentes (ex.: Nova York vs Kansas rural), avise que comparações entre mercados têm utilidade limitada, mas prossiga
+- Se os dados de preço não estiverem disponíveis para qualquer um dos imóveis (fora do mercado, sem estimativa), use dados do avaliador do condado ou marque como "estimado"
+- Se os dados de aluguel não estiverem disponíveis, use a regra de 1% como um proxy aproximado e marque como baixa confiança
+
+## AJUSTES POR TIPO DE IMÓVEL
+
+| Tipo do Imóvel A | Tipo do Imóvel B | Ajuste |
+|----------------|----------------|------------|
+| Casa Unifamiliar vs Casa Unifamiliar | Comparação padrão | Use todas as 8 categorias como estão |
+| Condomínio vs Condomínio | Adicione comparação de taxa condominial (HOA) | Pese o impacto da HOA mais fortemente na categoria de Custo |
+| Casa Unifamiliar vs Condomínio | Note diferenças estruturais | Adicione nota sobre impacto da HOA, tamanho do lote não comparável |
+| Multifamiliar vs Multifamiliar | Adicione métricas por unidade | Preço por unidade, aluguel por unidade, GRM |
+| Tipos diferentes | Avise o usuário | Prossiga, mas note quais métricas não são diretamente comparáveis |
+
+**AVISO LEGAL: Apenas para fins educacionais/pesquisa. Não constitui aconselhamento financeiro ou de investimento. Todas as estimativas são aproximações geradas por IA baseadas em dados publicamente disponíveis. Sempre verifique com profissionais licenciados antes de tomar qualquer decisão de compra ou investimento.**
+
+
+--- skills/realestate-analyze/SKILL.md ---
+---
+skill: realestate-analyze
+name: Orquestrador de Análise Completa de Imóveis
+version: 1.0.0
+description: Inicia 5 agentes de IA paralelos para produzir uma análise completa de imóveis com Pontuação Composta do Imóvel (0-100), classificação de investimento e recomendações acionáveis
+triggers:
+  - /realestate analyze
+  - análise completa de imóvel
+  - analisar imóvel
+  - relatório de imóvel
+tags:
+  - real-estate
+  - property-analysis
+  - investment
+  - multi-agent
+author: Analista de Imóveis IA
+---
+</code></pre>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-4-9.html">← Módulo 4.9</a>
+<a class="flex-1 text-center px-6 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-500 transition-colors" href="modulo-4-11.html">Módulo 4.11 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Equipos de IA — Grupo 1 · Material educativo | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+
+<html class="dark" lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 2.11: Gerador de Relatório de Negócios em PDF | Times de IA</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 2.11: Gerador de Relatório de Negócios em PDF | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
     tailwind.config = {
       darkMode: 'class',
       theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
     }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
     body { font-family: 'Inter', sans-serif; }
     .dark body { background-color: #111827; }
     html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
@@ -29,73 +30,70 @@
     html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
     html:not(.dark) .text-white { color: #111827; }
   </style>
-</head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen">
-
-  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-14">
-        <div class="flex items-center space-x-4">
-          <a href="../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
-            <span class="text-2xl">🧠</span>
-            <span class="font-bold text-lg hidden sm:inline">Times de IA</span>
-          </a>
-          <span class="text-neutral-600 hidden sm:inline">|</span>
-          <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline">INEMA.CLUB</a>
-        </div>
-        <div class="flex items-center space-x-1 sm:space-x-2">
-          <a href="../trilha1-ads/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
-          <a href="../trilha2-trading/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
-          <a href="../trilha3-crypto/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
-          <a href="../trilha4-imobiliario/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
-          <a href="../trilha5-recrutamento/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
-          <a href="../trilha6-financas/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
-          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" aria-label="Alternar tema">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <div class="flex items-center space-x-2 text-sm text-neutral-400">
-      <a href="../index.html" class="hover:text-blue-400">Início</a>
-      <span>/</span>
-      <a href="index.html" class="hover:text-blue-400">Trilha 2</a>
-      <span>/</span>
-      <span class="text-blue-400">Módulo 2.11</span>
-    </div>
-  </nav>
-
-  <header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.11 · TRILHA 2</span>
-      <h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">📈 Gerador de Relatório de Negócios em PDF</h1>
-      <p class="text-lg text-neutral-400 max-w-3xl">Você é um especialista em geração de relatórios em PDF dentro do sistema de Analista de Negócios com IA. Quando acionado via `/trade report-pdf`, você varre o diretório atual em busca de todos os arquivos de análise TRAD…</p>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-blue-400">11</div>
-            <div class="text-xs text-neutral-400">Tópicos</div>
-          </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-blue-400">13 min</div>
-            <div class="text-xs text-neutral-400">Leitura</div>
-          </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-blue-400">orquestrador</div>
-            <div class="text-xs text-neutral-400">Comando</div>
-          </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-blue-400">Trading</div>
-            <div class="text-xs text-neutral-400">Time</div>
-          </div>
-      </div>
-    </div>
-  </header>
-
-  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <article class="leading-relaxed">
+<link href="https://inematds.github.io/curso-times-de-ia/trilha2-trading/modulo-2-11.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha2-trading/modulo-2-11.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha2-trading/modulo-2-11.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-2-11.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../en/trilha2-trading/modulo-2-11.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../es/trilha2-trading/modulo-2-11.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Times de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
+<button aria-label="Alternar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-blue-400" href="../index.html">Início</a>
+<span>/</span>
+<a class="hover:text-blue-400" href="index.html">Trilha 2</a>
+<span>/</span>
+<span class="text-blue-400">Módulo 2.11</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.11 · TRILHA 2</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">📈 Gerador de Relatório de Negócios em PDF</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Você é um especialista em geração de relatórios em PDF dentro do sistema de Analista de Negócios com IA. Quando acionado via `/trade report-pdf`, você varre o diretório atual em busca de todos os arquivos de análise TRAD…</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">11</div>
+<div class="text-xs text-neutral-400">Tópicos</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">13 min</div>
+<div class="text-xs text-neutral-400">Leitura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">orquestrador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">Trading</div>
+<div class="text-xs text-neutral-400">Time</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
 <p class="text-neutral-300 mb-4 leading-relaxed">Você é um especialista em geração de relatórios em PDF dentro do sistema de Analista de Negócios com IA. Quando acionado via <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade report-pdf</code>, você varre o diretório atual em busca de todos os arquivos de análise TRADE-*.md, extrai pontuações-chave, sinais e descobertas, compila-os em um payload JSON estruturado e gera um relatório de investimento profissional em PDF.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Apenas para fins educacionais/pesquisa. Não constitui aconselhamento financeiro.</strong></p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Ativação</h2><p class="text-neutral-300 mb-4 leading-relaxed">Esta skill é ativada quando o usuário executa:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade report-pdf</code> — gerar um PDF a partir de todos os arquivos TRADE-*.md disponíveis</li><li>Qualquer solicitação para criar um relatório em PDF, resumo de investimento ou relatório de negócios baixável</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Visão Geral do Processo</h2><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Etapa 1: Varredura de arquivos TRADE-*.md no diretório atual
 Etapa 2: Análise de cada arquivo e extração de dados estruturados
 Etapa 3: Construção do payload JSON para o gerador de PDF
@@ -209,20 +207,19 @@ JSONEOF</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">4b: Execu
 - Análises incluídas: [lista de tickers]
 - Análise de carteira: [incluída/não incluída]
 - Resumo da lista de observação: [incluído/não incluído]
-- Resultados de triagem: [incluídos/não incluídos]</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Especificação de Layout do PDF</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Página de Capa</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Título: "AI Trading Research Report"</li><li>Subtítulo: "Generated by AI Trading Analyst"</li><li>Data: Data de geração do relatório</li><li>Caixa de aviso (destacada)</li><li>Sumário</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Página de Resumo Executivo</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Principais seleções com pontuações (medidores visuais ou barras)</li><li>Sinais-chave: Compras Fortes, Compras, Manter, Evitar</li><li>Visão geral da saúde da carteira (se disponível)</li><li>Linha do tempo de catalisadores futuros</li><li>Alertas de risco</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Páginas de Ações Individuais</h3><p class="text-neutral-300 mb-4 leading-relaxed">Para cada ação analisada:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Cabeçalho: Ticker, nome da empresa, preço atual, pontuação de negócio</li><li>Detalhamento da pontuação: 5 dimensões exibidas como barras horizontais</li><li>Caso Bull/Bear em duas colunas</li><li>Níveis-chave: suporte, resistência, alvo, stop</li><li>Visualização da relação risco/retorno</li><li>Catalisador e linha do tempo</li><li>Sinal e ação recomendada</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Página de Carteira (se houver dados)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Tabela de posições com pesos</li><li>Dados para gráfico de pizza de alocação setorial</li><li>Pontuação de saúde da carteira</li><li>Resumo de beta e renda</li><li>Principais recomendações de rebalanceamento</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Página de Lista de Observação (se houver dados)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Tabela de lista de observação ranqueada</li><li>Alertas ativos destacados</li><li>Distribuição de pontuações</li><li>Referência de ações rápidas</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Página de Calendário de Resultados (se houver dados)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Datas de resultados futuros ordenadas cronologicamente</li><li>Níveis de convicção para cada um</li><li>Movimentos esperados</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Rodapé (todas as páginas)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>"AVISO: Apenas para fins educacionais/pesquisa. Não constitui aconselhamento financeiro."</li><li>Número da página</li><li>Data de geração</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Esquema de Cores para o PDF</h2><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Elemento</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Cor</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Hex</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Primária (cabeçalhos)</td><td class="px-3 py-2 border border-dark-600 align-top">Azul Marinho</td><td class="px-3 py-2 border border-dark-600 align-top">#1a365d</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Compra Forte</td><td class="px-3 py-2 border border-dark-600 align-top">Verde</td><td class="px-3 py-2 border border-dark-600 align-top">#22763d</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Compra</td><td class="px-3 py-2 border border-dark-600 align-top">Verde Claro</td><td class="px-3 py-2 border border-dark-600 align-top">#48bb78</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Manter</td><td class="px-3 py-2 border border-dark-600 align-top">Amarelo/Âmbar</td><td class="px-3 py-2 border border-dark-600 align-top">#d69e2e</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Cautela</td><td class="px-3 py-2 border border-dark-600 align-top">Laranja</td><td class="px-3 py-2 border border-dark-600 align-top">#dd6b20</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Evitar</td><td class="px-3 py-2 border border-dark-600 align-top">Vermelho</td><td class="px-3 py-2 border border-dark-600 align-top">#c53030</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Fundo</td><td class="px-3 py-2 border border-dark-600 align-top">Branco</td><td class="px-3 py-2 border border-dark-600 align-top">#ffffff</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Texto do corpo</td><td class="px-3 py-2 border border-dark-600 align-top">Cinza Escuro</td><td class="px-3 py-2 border border-dark-600 align-top">#2d3748</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Bordas de tabela</td><td class="px-3 py-2 border border-dark-600 align-top">Cinza Claro</td><td class="px-3 py-2 border border-dark-600 align-top">#e2e8f0</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Fundo do aviso</td><td class="px-3 py-2 border border-dark-600 align-top">Amarelo Claro</td><td class="px-3 py-2 border border-dark-600 align-top">#fffff0</td></tr></tbody></table></div><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Regras</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>SEMPRE varra TODOS os arquivos TRADE-*.md — não pule nenhum</li><li>SEMPRE inclua o aviso em cada página do PDF</li><li>SEMPRE verifique se o PDF foi gerado com sucesso antes de relatar</li><li>NUNCA fabrique dados — inclua apenas o que foi extraído de arquivos de análise reais</li><li>SEMPRE gere o resumo executivo sintetizando todas as análises disponíveis</li><li>Se apenas um arquivo de análise existir, ainda assim gere o PDF (relatório de ação única)</li><li>SEMPRE trate o caso em que o script Python ou as dependências estejam ausentes</li><li>SEMPRE limpe os arquivos temporários (/tmp/trade_report_data.json) após a geração</li><li>SEMPRE relate o tamanho e a localização do arquivo ao usuário</li><li>Se a geração do PDF falhar, exiba o erro e sugira etapas de solução de problemas</li><li>SEMPRE use o esquema de cores especificado acima para consistência de marca</li><li>SEMPRE inclua números de página no rodapé</li></ol><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Tratamento de Erros</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>*<em>Nenhum arquivo TRADE-</em>.md**: "Nenhum arquivo de análise encontrado. Execute <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade analyze &lt;ticker&gt;</code> primeiro para gerar dados de análise."</li><li><strong>Python não disponível</strong>: "Python3 é necessário para a geração de PDF. Por favor, instale o Python3."</li><li><strong>ReportLab não instalado</strong>: "Instalando reportlab... [instalação automática]. Se isso falhar, execute: <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">pip3 install reportlab</code>"</li><li><strong>Falha na geração do PDF</strong>: Exiba o erro do Python e sugira: "Tente executar: <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">python3 ~/.claude/skills/trade/scripts/generate_trade_pdf.py</code> manualmente para depurar."</li><li><strong>Erro de análise JSON</strong>: "Erro ao analisar [FILENAME]. O arquivo pode estar malformado. Pulando e continuando com outros arquivos."</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Apenas para fins educacionais/pesquisa. Não constitui aconselhamento financeiro. Consulte sempre um consultor financeiro licenciado antes de tomar decisões de investimento.</strong></p><p class="text-neutral-300 mb-4 leading-relaxed">--- skills/trade-sentiment/SKILL.md ---</p><hr class="border-dark-600 my-8"><p class="text-neutral-300 mb-4 leading-relaxed">name: trade-sentiment description: Agente de Análise de Sentimento e Momentum — sentimento de notícias, repercussão em redes sociais, avaliações de analistas, atividade institucional, trading de insiders e interesse de venda a descoberto com Pontuação de Sentimento (0-100)</p><hr class="border-dark-600 my-8">
-    </article>
-
-    <div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
-      <a href="modulo-2-10.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo 2.10</a>
-      <a href="modulo-2-12.html" class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors">Módulo 2.12 →</a>
-    </div>
-  </main>
-  <footer class="border-t border-dark-600 py-8 mt-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-      <p>Times de IA — Grupo 1 · Material educacional | <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
-    </div>
-  </footer>
-  <script>
+- Resultados de triagem: [incluídos/não incluídos]</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Especificação de Layout do PDF</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Página de Capa</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Título: "AI Trading Research Report"</li><li>Subtítulo: "Generated by AI Trading Analyst"</li><li>Data: Data de geração do relatório</li><li>Caixa de aviso (destacada)</li><li>Sumário</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Página de Resumo Executivo</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Principais seleções com pontuações (medidores visuais ou barras)</li><li>Sinais-chave: Compras Fortes, Compras, Manter, Evitar</li><li>Visão geral da saúde da carteira (se disponível)</li><li>Linha do tempo de catalisadores futuros</li><li>Alertas de risco</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Páginas de Ações Individuais</h3><p class="text-neutral-300 mb-4 leading-relaxed">Para cada ação analisada:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Cabeçalho: Ticker, nome da empresa, preço atual, pontuação de negócio</li><li>Detalhamento da pontuação: 5 dimensões exibidas como barras horizontais</li><li>Caso Bull/Bear em duas colunas</li><li>Níveis-chave: suporte, resistência, alvo, stop</li><li>Visualização da relação risco/retorno</li><li>Catalisador e linha do tempo</li><li>Sinal e ação recomendada</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Página de Carteira (se houver dados)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Tabela de posições com pesos</li><li>Dados para gráfico de pizza de alocação setorial</li><li>Pontuação de saúde da carteira</li><li>Resumo de beta e renda</li><li>Principais recomendações de rebalanceamento</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Página de Lista de Observação (se houver dados)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Tabela de lista de observação ranqueada</li><li>Alertas ativos destacados</li><li>Distribuição de pontuações</li><li>Referência de ações rápidas</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Página de Calendário de Resultados (se houver dados)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Datas de resultados futuros ordenadas cronologicamente</li><li>Níveis de convicção para cada um</li><li>Movimentos esperados</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Rodapé (todas as páginas)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>"AVISO: Apenas para fins educacionais/pesquisa. Não constitui aconselhamento financeiro."</li><li>Número da página</li><li>Data de geração</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Esquema de Cores para o PDF</h2><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Elemento</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Cor</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Hex</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Primária (cabeçalhos)</td><td class="px-3 py-2 border border-dark-600 align-top">Azul Marinho</td><td class="px-3 py-2 border border-dark-600 align-top">#1a365d</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Compra Forte</td><td class="px-3 py-2 border border-dark-600 align-top">Verde</td><td class="px-3 py-2 border border-dark-600 align-top">#22763d</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Compra</td><td class="px-3 py-2 border border-dark-600 align-top">Verde Claro</td><td class="px-3 py-2 border border-dark-600 align-top">#48bb78</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Manter</td><td class="px-3 py-2 border border-dark-600 align-top">Amarelo/Âmbar</td><td class="px-3 py-2 border border-dark-600 align-top">#d69e2e</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Cautela</td><td class="px-3 py-2 border border-dark-600 align-top">Laranja</td><td class="px-3 py-2 border border-dark-600 align-top">#dd6b20</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Evitar</td><td class="px-3 py-2 border border-dark-600 align-top">Vermelho</td><td class="px-3 py-2 border border-dark-600 align-top">#c53030</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Fundo</td><td class="px-3 py-2 border border-dark-600 align-top">Branco</td><td class="px-3 py-2 border border-dark-600 align-top">#ffffff</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Texto do corpo</td><td class="px-3 py-2 border border-dark-600 align-top">Cinza Escuro</td><td class="px-3 py-2 border border-dark-600 align-top">#2d3748</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Bordas de tabela</td><td class="px-3 py-2 border border-dark-600 align-top">Cinza Claro</td><td class="px-3 py-2 border border-dark-600 align-top">#e2e8f0</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Fundo do aviso</td><td class="px-3 py-2 border border-dark-600 align-top">Amarelo Claro</td><td class="px-3 py-2 border border-dark-600 align-top">#fffff0</td></tr></tbody></table></div><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Regras</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>SEMPRE varra TODOS os arquivos TRADE-*.md — não pule nenhum</li><li>SEMPRE inclua o aviso em cada página do PDF</li><li>SEMPRE verifique se o PDF foi gerado com sucesso antes de relatar</li><li>NUNCA fabrique dados — inclua apenas o que foi extraído de arquivos de análise reais</li><li>SEMPRE gere o resumo executivo sintetizando todas as análises disponíveis</li><li>Se apenas um arquivo de análise existir, ainda assim gere o PDF (relatório de ação única)</li><li>SEMPRE trate o caso em que o script Python ou as dependências estejam ausentes</li><li>SEMPRE limpe os arquivos temporários (/tmp/trade_report_data.json) após a geração</li><li>SEMPRE relate o tamanho e a localização do arquivo ao usuário</li><li>Se a geração do PDF falhar, exiba o erro e sugira etapas de solução de problemas</li><li>SEMPRE use o esquema de cores especificado acima para consistência de marca</li><li>SEMPRE inclua números de página no rodapé</li></ol><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Tratamento de Erros</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>*<em>Nenhum arquivo TRADE-</em>.md**: "Nenhum arquivo de análise encontrado. Execute <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade analyze &lt;ticker&gt;</code> primeiro para gerar dados de análise."</li><li><strong>Python não disponível</strong>: "Python3 é necessário para a geração de PDF. Por favor, instale o Python3."</li><li><strong>ReportLab não instalado</strong>: "Instalando reportlab... [instalação automática]. Se isso falhar, execute: <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">pip3 install reportlab</code>"</li><li><strong>Falha na geração do PDF</strong>: Exiba o erro do Python e sugira: "Tente executar: <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">python3 ~/.claude/skills/trade/scripts/generate_trade_pdf.py</code> manualmente para depurar."</li><li><strong>Erro de análise JSON</strong>: "Erro ao analisar [FILENAME]. O arquivo pode estar malformado. Pulando e continuando com outros arquivos."</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Apenas para fins educacionais/pesquisa. Não constitui aconselhamento financeiro. Consulte sempre um consultor financeiro licenciado antes de tomar decisões de investimento.</strong></p><p class="text-neutral-300 mb-4 leading-relaxed">--- skills/trade-sentiment/SKILL.md ---</p><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed">name: trade-sentiment description: Agente de Análise de Sentimento e Momentum — sentimento de notícias, repercussão em redes sociais, avaliações de analistas, atividade institucional, trading de insiders e interesse de venda a descoberto com Pontuação de Sentimento (0-100)</p><hr class="border-dark-600 my-8"/>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-2-10.html">← Módulo 2.10</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-12.html">Módulo 2.12 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Times de IA — Grupo 1 · Material educacional | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
     const themeToggle = document.getElementById('theme-toggle');
     const darkIcon = document.getElementById('theme-toggle-dark-icon');
     const lightIcon = document.getElementById('theme-toggle-light-icon');

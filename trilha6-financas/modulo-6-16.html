@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+
+<html class="dark" lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 6.16: /finance screen — Selecionador de Investimentos | Times de IA</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 6.16: /finance screen — Selecionador de Investimentos | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
     tailwind.config = {
       darkMode: 'class',
       theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
     }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
     body { font-family: 'Inter', sans-serif; }
     .dark body { background-color: #111827; }
     html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
@@ -29,73 +30,70 @@
     html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
     html:not(.dark) .text-white { color: #111827; }
   </style>
-</head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen">
-
-  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-14">
-        <div class="flex items-center space-x-4">
-          <a href="../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
-            <span class="text-2xl">🧠</span>
-            <span class="font-bold text-lg hidden sm:inline">Times de IA</span>
-          </a>
-          <span class="text-neutral-600 hidden sm:inline">|</span>
-          <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline">INEMA.CLUB</a>
-        </div>
-        <div class="flex items-center space-x-1 sm:space-x-2">
-          <a href="../trilha1-ads/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
-          <a href="../trilha2-trading/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
-          <a href="../trilha3-crypto/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
-          <a href="../trilha4-imobiliario/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
-          <a href="../trilha5-recrutamento/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
-          <a href="../trilha6-financas/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-cyan-400 bg-cyan-500/10"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
-          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" aria-label="Alternar tema">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <div class="flex items-center space-x-2 text-sm text-neutral-400">
-      <a href="../index.html" class="hover:text-cyan-400">Início</a>
-      <span>/</span>
-      <a href="index.html" class="hover:text-cyan-400">Trilha 6</a>
-      <span>/</span>
-      <span class="text-cyan-400">Módulo 6.16</span>
-    </div>
-  </nav>
-
-  <header class="bg-gradient-to-br from-cyan-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full mb-4">MÓDULO 6.16 · TRILHA 6</span>
-      <h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">💰 /finance screen — Selecionador de Investimentos</h1>
-      <p class="text-lg text-neutral-400 max-w-3xl">**AVISO: Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro. Esta não é uma recomendação para comprar qualquer valor específico.**</p>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-cyan-400">17</div>
-            <div class="text-xs text-neutral-400">Tópicos</div>
-          </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-cyan-400">12 min</div>
-            <div class="text-xs text-neutral-400">Leitura</div>
-          </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-cyan-400">orquestrador</div>
-            <div class="text-xs text-neutral-400">Comando</div>
-          </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-cyan-400">Finanças</div>
-            <div class="text-xs text-neutral-400">Time</div>
-          </div>
-      </div>
-    </div>
-  </header>
-
-  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <article class="leading-relaxed">
+<link href="https://inematds.github.io/curso-times-de-ia/trilha6-financas/modulo-6-16.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha6-financas/modulo-6-16.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha6-financas/modulo-6-16.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-6-16.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../en/trilha6-financas/modulo-6-16.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../es/trilha6-financas/modulo-6-16.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Times de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-cyan-400 bg-cyan-500/10" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
+<button aria-label="Alternar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-cyan-400" href="../index.html">Início</a>
+<span>/</span>
+<a class="hover:text-cyan-400" href="index.html">Trilha 6</a>
+<span>/</span>
+<span class="text-cyan-400">Módulo 6.16</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-cyan-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full mb-4">MÓDULO 6.16 · TRILHA 6</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">💰 /finance screen — Selecionador de Investimentos</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">**AVISO: Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro. Esta não é uma recomendação para comprar qualquer valor específico.**</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">17</div>
+<div class="text-xs text-neutral-400">Tópicos</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">12 min</div>
+<div class="text-xs text-neutral-400">Leitura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">orquestrador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">Finanças</div>
+<div class="text-xs text-neutral-400">Time</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
 <p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro. Esta não é uma recomendação para comprar qualquer valor específico.</strong></p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Objetivo</h2><p class="text-neutral-300 mb-4 leading-relaxed">Auxiliar o usuário a construir ou refinar uma carteira de investimentos utilizando critérios de seleção comprovados e baseados em evidências. A saída é uma carteira modelo com exemplos específicos de tickers, pesos de alocação e comportamento esperado — não uma recomendação de compra/venda.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Quando Acionar</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>O usuário digita <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance screen &lt;estratégia&gt;</code> ou <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance screen</code> (e então solicita a estratégia)</li><li>O usuário pergunta "em que devo investir?", "monte uma carteira para mim", "quais ETFs para X?", "carteira de fundos indexados de baixo custo"</li><li>O usuário deseja adicionar diversificação a ativos existentes</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Critérios Pré-Definidos</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">1. Critério de Crescimento de Dividendos</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Objetivo:</strong> Empresas com dividendos em crescimento, taxas de pagamento sustentáveis e vantagens competitivas duradouras.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Critérios:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>10+ anos consecutivos de aumentos de dividendos (Dividend Aristocrats / Achievers)</li><li>Taxa de pagamento (payout ratio) &lt; 60%</li><li>Crescimento do fluxo de caixa livre &gt; 5%/ano</li><li>Rendimento de dividendos (dividend yield) 2-5%</li><li>Dívida/Próprio &lt; 1.5</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Ativos Representativos:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>JNJ, PG, KO, PEP, MMM (Dividend Aristocrats)</li><li>VIG (Vanguard Dividend Appreciation ETF, taxa de administração 0,06%)</li><li>SCHD (Schwab US Dividend Equity, 0,06%)</li><li>DGRO (iShares Core Dividend Growth, 0,08%)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Esperado:</strong> Retorno total anualizado de 8-10%, rendimento de 2-3%, volatilidade menor que a do S&amp;P 500.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">2. Carteira Indexada de Três Fundos (Bogleheads)</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Objetivo:</strong> Diversificação máxima, menor custo, estratégia de "configurar e esquecer".</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Alocação (baseada na idade):</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Mercado de Ações Total dos EUA: (110 - idade)% * 0.6</li><li>Ações Totais Internacionais: (110 - idade)% * 0.4</li><li>Mercado Total de Títulos dos EUA: idade%</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Exemplo para idade 35:</strong> 45% Ações EUA / 30% Internacional / 25% Títulos</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Ativos Representativos:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>VTI (Vanguard Total Stock, 0,03%) ou FSKAX</li><li>VXUS (Vanguard Total International, 0,07%) ou FTIHX</li><li>BND (Vanguard Total Bond, 0,03%) ou FXNAX</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Esperado:</strong> Retorno real anualizado de 7-9%, exposição ampla ao mercado, risco idiossincrático próximo de zero.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">3. Critério de Alocação em Títulos</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Objetivo:</strong> Estabilidade, renda, lastro contra quedas nas ações.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Sub-alocação:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Mercado Total de Títulos dos EUA (intermediário): 50%</li><li>Títulos Protegidos contra Inflação (TIPS): 20%</li><li>Títulos do Tesouro de Curto Prazo (colchão de caixa): 15%</li><li>Corporativos de Alto Rendimento (pequena alocação, opcional): 10%</li><li>Títulos Internacionais (hedge em USD): 5%</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Ativos Representativos:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>BND, AGG (mercado total de títulos)</li><li>VTIP, SCHP (TIPS)</li><li>VGSH, SHY (Tesouro de curto prazo)</li><li>JNK, HYG (alto rendimento — sinalizar como maior risco)</li><li>BNDX (títulos internacionais, hedge em USD)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Esperado:</strong> Retorno anualizado de 3-5%, baixa correlação com ações, proteção contra quedas.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">4. Imóveis (REITs)</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Objetivo:</strong> Exposição a imóveis sem possuir propriedades; proteção contra inflação; renda.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Alocação:</strong> Limitar a exposição a REITs a 5-15% da carteira.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Ativos Representativos:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>VNQ (Vanguard Real Estate, 0,12%)</li><li>SCHH (Schwab US REIT, 0,07%)</li><li>REET (iShares Global REIT, 0,14%)</li><li>O (Realty Income — ação individual, dividendo mensal)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Sub-setores a considerar:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Residencial, Industrial (data centers, logística), Saúde, Auto-armazenamento (Self-Storage)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Esperado:</strong> Retorno de 7-9%, rendimento de 3-4%, sensível às taxas de juros.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">5. Diversificação Internacional</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Objetivo:</strong> Reduzir o viés do país de origem; capturar o crescimento global.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Alocação:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Internacional Desenvolvido (Europa, Japão, Ásia-Pacífico): 60% da fatia internacional</li><li>Mercados Emergentes: 30%</li><li>Pequenas Capitalizações Internacionais: 10%</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Ativos Representativos:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>VEA, IXUS (Internacional Desenvolvido)</li><li>VWO, IEMG (Mercados Emergentes)</li><li>VSS (Pequenas Capitalizações Internacionais)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Regra geral:</strong> 30-40% da fatia de ações em internacional.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Esperado:</strong> Retorno de 6-9%, maior volatilidade devido à exposição cambial + emergentes.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">6. ESG / Sustentável</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Objetivo:</strong> Critério ambiental, social e de governança (ESG); alinhar a carteira com valores.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Ativos Representativos:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>ESGV (Vanguard ESG US Stock, 0,09%)</li><li>VSGX (Vanguard ESG International, 0,12%)</li><li>ESGD (iShares ESG Developed Markets, 0,20%)</li><li>SUSL (iShares MSCI USA ESG Leaders, 0,15%)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Observações a sinalizar:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>As definições de ESG variam; verifique a metodologia do fundo</li><li>Alguns fundos ESG têm menor peso em energia, podendo ter desempenho inferior durante altas de energia</li><li>Taxas de administração mais altas que fundos indexados comuns</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Esperado:</strong> Retornos próximos ao índice amplo menos 0,1-0,3%/ano; erro de rastreamento.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Critério Personalizado</h2><p class="text-neutral-300 mb-4 leading-relaxed">Se o usuário especificar critérios personalizados, aceitar entradas como:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Preferência de setor (tecnologia, saúde, energia, etc.)</li><li>Foco geográfico (apenas EUA, ex-EUA, emergentes)</li><li>Inclinações de fator (valor, crescimento, momentum, qualidade, pequena capitalização)</li><li>Meta de rendimento (ex.: "rendimento de dividendos 3%+")</li><li>Limite de taxa de administração (ex.: "abaixo de 0,20%")</li><li>Tolerância ao risco (conservador / moderado / agressivo)</li><li>Requisitos de ESG</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Combinar com os critérios pré-definidos relevantes e fornecer uma alocação personalizada.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Entradas Obrigatórias</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Escolha da estratégia</strong> (uma das 6 acima, ou "personalizado")</li><li><strong>Valor investível</strong> (lump sum ou contribuição mensal)</li><li><strong>Horizonte de tempo</strong> (anos até a necessidade)</li><li><strong>Tolerância ao risco</strong> (escala 1-10 ou conservador/moderado/agressivo)</li><li><strong>Idade</strong> (para alocações baseadas na idade)</li><li><strong>Tipo de conta</strong> (tributável / IRA / Roth / 401k — afeta escolhas de eficiência fiscal)</li><li><strong>Ativos existentes</strong> (para evitar sobreposição e identificar concentração)</li></ol><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Formato de Saída</h2><p class="text-neutral-300 mb-4 leading-relaxed">Salvar em <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">FINANCE-SCREEN.md</code>.</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
 # Tela de Investimento: [Nome da Estratégia]
 
@@ -202,19 +200,18 @@ name: finance-emergency
 description: Analisador de fundo de emergência. Calcula o tamanho adequado do fundo de emergência com base na estabilidade do emprego, estrutura familiar, despesas fixas, dependentes e status de funcionário vs. proprietário de negócio. Recomenda onde mantê-lo (HYSA, mercado monetário, T-bills, I-Bonds), a velocidade de construção, o que conta como verdadeira emergência e como reabastecer após o uso. Gera FINANCE-EMERGENCY.md.
 ---
 </code></pre>
-    </article>
-
-    <div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
-      <a href="modulo-6-15.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo 6.15</a>
-      <a href="modulo-6-17.html" class="flex-1 text-center px-6 py-3 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-500 transition-colors">Módulo 6.17 →</a>
-    </div>
-  </main>
-  <footer class="border-t border-dark-600 py-8 mt-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-      <p>Times de IA — Grupo 1 · Material educacional | <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
-    </div>
-  </footer>
-  <script>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-6-15.html">← Módulo 6.15</a>
+<a class="flex-1 text-center px-6 py-3 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-500 transition-colors" href="modulo-6-17.html">Módulo 6.17 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Times de IA — Grupo 1 · Material educacional | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
     const themeToggle = document.getElementById('theme-toggle');
     const darkIcon = document.getElementById('theme-toggle-dark-icon');
     const lightIcon = document.getElementById('theme-toggle-light-icon');

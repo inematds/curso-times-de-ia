@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 6.16: /finance screen — Selector de inversiones | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha6-financas/modulo-6-16.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha6-financas/modulo-6-16.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha6-financas/modulo-6-16.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha6-financas/modulo-6-16.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../en/trilha6-financas/modulo-6-16.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-6-16.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Equipos de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Cripto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Bienes raíces</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Reclutamiento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-cyan-400 bg-cyan-500/10" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanzas</span></a>
+<button aria-label="Cambiar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-cyan-400" href="../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-cyan-400" href="index.html">Ruta 6</a>
+<span>/</span>
+<span class="text-cyan-400">Módulo 6.16</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-cyan-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full mb-4">MÓDULO 6.16 · TRAYECTO 6</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">💰 /finance screen — Selector de Inversiones</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">**AVISO: Solo para fines educativos/informativos. No constituye asesoramiento financiero. Esto no es una recomendación para comprar ningún valor específico.**</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">17</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">12 min</div>
+<div class="text-xs text-neutral-400">Lectura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">orquestador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">Finanzas</div>
+<div class="text-xs text-neutral-400">Equipo</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Solo con fines educativos e informativos. No constituye asesoramiento financiero. Esto no es una recomendación para comprar ningún valor específico.</strong></p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Objetivo</h2><p class="text-neutral-300 mb-4 leading-relaxed">Ayudar al usuario a crear o perfeccionar una cartera de inversiones utilizando criterios de selección comprobados y basados en evidencia. El resultado es una cartera modelo con ejemplos específicos de tickers, pesos de asignación y comportamiento esperado; no es una recomendación de compra o venta.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Cuándo activar</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>El usuario escribe <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance screen &lt;estratégia&gt;</code> o <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance screen</code> (y luego solicita la estrategia)</li><li>El usuario pregunta «¿en qué debería invertir?», «ármame una cartera», «¿qué ETF para X?», «cartera de fondos indexados de bajo costo»</li><li>El usuario desea agregar diversificación a activos existentes</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Criterios predefinidos</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">1. Criterio de crecimiento de dividendos</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Objetivo:</strong> Empresas con dividendos en crecimiento, tasas de pago sostenibles y ventajas competitivas duraderas.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Criterios:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>10+ años consecutivos de aumentos de dividendos (Dividend Aristocrats / Achievers)</li><li>Tasa de pago (payout ratio) &lt; 60%</li><li>Crecimiento del flujo de caja libre &gt; 5%/año</li><li>Rendimiento por dividendos (dividend yield) 2-5%</li><li>Deuda/Propio &lt; 1.5</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Activos representativos:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>JNJ, PG, KO, PEP, MMM (Dividend Aristocrats)</li><li>VIG (Vanguard Dividend Appreciation ETF, comisión de gestión 0,06%)</li><li>SCHD (Schwab US Dividend Equity, 0,06%)</li><li>DGRO (iShares Core Dividend Growth, 0,08%)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Esperado:</strong> Retorno total anualizado del 8-10%, rendimiento del 2-3%, menor volatilidad que la del S&amp;P 500.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">2. Cartera indexada de tres fondos (Bogleheads)</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Objetivo:</strong> Máxima diversificación, menor costo, estrategia de «configurar y olvidar».</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Asignación (basada en la edad):</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Mercado total de acciones de EE. UU.: (110 - idade)% * 0.6</li><li>Acciones internacionales totales: (110 - edad)% * 0.4</li><li>Mercado total de bonos de EE. UU.: edad%</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Ejemplo para 35 años:</strong> 45% Acciones de EE. UU. / 30% Internacional / 25% Bonos</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Activos representativos:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>VTI (Vanguard Total Stock, 0,03%) o FSKAX</li><li>VXUS (Vanguard Total International, 0,07%) o FTIHX</li><li>BND (Vanguard Total Bond, 0,03%) o FXNAX</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Esperado:</strong> Retorno real anualizado del 7-9%, amplia exposición al mercado, riesgo idiosincrático cercano a cero.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">3. Criterio de asignación a bonos</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Objetivo:</strong> Estabilidad, ingresos, respaldo ante caídas de las acciones.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Subasignación:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Mercado total de bonos de EE. UU. (intermedio): 50%</li><li>Bonos protegidos contra la inflación (TIPS): 20%</li><li>Bonos del Tesoro de corto plazo (reserva de efectivo): 15%</li><li>Bonos corporativos de alto rendimiento (asignación pequeña, opcional): 10%</li><li>Bonos internacionales (con cobertura en USD): 5%</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Activos representativos:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>BND, AGG (mercado total de bonos)</li><li>VTIP, SCHP (TIPS)</li><li>VGSH, SHY (bonos del Tesoro a corto plazo)</li><li>JNK, HYG (alto rendimiento — señalar como mayor riesgo)</li><li>BNDX (bonos internacionales, cobertura en USD)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Esperado:</strong> Retorno anualizado del 3-5%, baja correlación con las acciones y protección contra las caídas.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">4. Bienes raíces (REITs)</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Objetivo:</strong> Exposición a bienes raíces sin poseer propiedades; protección contra la inflación; ingresos.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Asignación:</strong> Limita la exposición a REITs al 5-15% de la cartera.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Activos representativos:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>VNQ (Vanguard Real Estate, 0,12%)</li><li>SCHH (Schwab US REIT, 0,07%)</li><li>REET (iShares Global REIT, 0,14%)</li><li>O (Realty Income — acción individual, dividendo mensual)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Subsectores a considerar:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Residencial, industrial (centros de datos, logística), salud, autoalmacenamiento (Self-Storage)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Esperado:</strong> Retorno del 7-9%, rendimiento del 3-4%, sensible a las tasas de interés.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">5. Diversificación internacional</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Objetivo:</strong> Reducir el sesgo hacia el país de origen; capturar el crecimiento global.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Asignación:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Internacional desarrollado (Europa, Japón, Asia-Pacífico): 60% de la asignación internacional</li><li>Mercados emergentes: 30%</li><li>Pequeñas capitalizaciones internacionales: 10%</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Activos representativos:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>VEA, IXUS (mercados internacionales desarrollados)</li><li>VWO, IEMG (Mercados Emergentes)</li><li>VSS (Pequeñas Capitalizaciones Internacionales)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Regla general:</strong> 30-40% de la porción de acciones en inversiones internacionales.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Esperado:</strong> Retorno del 6-9%, mayor volatilidad debido a la exposición cambiaria + mercados emergentes.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">6. ESG / Sostenible</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Objetivo:</strong> Criterio ambiental, social y de gobernanza (ESG); alinear la cartera con tus valores.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Activos representativos:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>ESGV (Vanguard ESG US Stock, 0,09%)</li><li>VSGX (Vanguard ESG International, 0,12%)</li><li>ESGD (iShares ESG Developed Markets, 0,20%)</li><li>SUSL (iShares MSCI USA ESG Leaders, 0,15%)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Observaciones que debes señalar:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Las definiciones de ESG varían; verifica la metodología del fondo</li><li>Algunos fondos ESG tienen menor exposición a la energía, por lo que pueden tener un rendimiento inferior durante las subidas de los precios de la energía</li><li>Comisiones de administración más altas que las de los fondos indexados comunes</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Esperado:</strong> Rendimientos cercanos al índice amplio menos 0,1-0,3%/año; error de seguimiento.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Criterio personalizado</h2><p class="text-neutral-300 mb-4 leading-relaxed">Si el usuario especifica criterios personalizados, acepta entradas como:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Preferencia de sector (tecnología, salud, energía, etc.)</li><li>Enfoque geográfico (solo EE. UU., fuera de EE. UU., mercados emergentes)</li><li>Inclinaciones de factor (valor, crecimiento, momentum, calidad, pequeña capitalización)</li><li>Meta de rendimiento (p. ej., "rendimiento de dividendos 3%+")</li><li>Límite de la comisión de administración (p. ej., "por debajo de 0,20%")</li><li>Tolerancia al riesgo (conservador / moderado / agresivo)</li><li>Requisitos de ESG</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Combina con los criterios predefinidos pertinentes y proporciona una asignación personalizada.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Entradas obligatorias</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Elección de estrategia</strong> (una de las 6 anteriores, o "personalizado")</li><li><strong>Valor invertible</strong> (suma global o contribución mensual)</li><li><strong>Horizonte temporal</strong> (años hasta que lo necesites)</li><li><strong>Tolerancia al riesgo</strong> (escala de 1-10 o conservador/moderado/agresivo)</li><li><strong>Edad</strong> (para asignaciones basadas en la edad)</li><li><strong>Tipo de cuenta</strong> (sujeta a impuestos / IRA / Roth / 401k — afecta las opciones de eficiencia fiscal)</li><li><strong>Activos existentes</strong> (para evitar superposiciones e identificar concentraciones)</li></ol><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Formato de salida</h2><p class="text-neutral-300 mb-4 leading-relaxed">Guardar en <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">FINANCE-SCREEN.md</code>.</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+# Tela de Investimento: [Nome da Estratégia]
+
+**Gerado em:** [Data]
+**Capital Investível:** $X (lump) + $Y/mês
+**Horizonte Temporal:** [N] anos
+**Perfil de Risco:** [Conservador / Moderado / Agressivo]
+**Tipo de Conta:** [Tributável / IRA / Roth / 401k]
+
+&gt; **AVISO LEGAL:** Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro. Não é uma recomendação para comprar qualquer título específico. Consulte sempre um assessor financeiro licenciado.
+
+---
+
+## Resumo da Estratégia
+
+[Descrição de 2-3 frases da estratégia, filosofia e base de evidências]
+
+## Alocação Recomendada
+
+| Classe de Ativos | Peso | Veículo | Taxa de Despesa | Exemplo de Ticker |
+|-------------|--------|---------|---------------|----------------|
+| Ações dos EUA   | X%     | ETF     | 0,03%         | VTI            |
+| Internacional | X%   | ETF     | 0,07%         | VXUS           |
+| Títulos       | X%     | ETF     | 0,03%         | BND            |
+| ...         |        |         |               |                |
+
+**Taxa de Despesa Total (ponderada):** X,XX%
+**Custo Anual sobre $100K:** $XX
+
+## Alocação em Dólares
+
+Se investir $X hoje:
+| Posição | Valor | Ações (aprox.) |
+|---------|--------|-----------------|
+| VTI     | $X     | Y               |
+| ...     |        |                 |
+
+## Comportamento Esperado
+
+| Métrica | Estimativa |
+|--------|----------|
+| Retorno anual esperado | X-Y% |
+| Volatilidade esperada (desvio padrão) | X% |
+| Máxima queda (histórico) | -X% |
+| Rendimento de dividendos esperado | X% |
+| Correlação com S&amp;P 500 | X,XX |
+
+## Notas de Eficiência Fiscal
+
+- [Quais posições devem estar em contas tributáveis vs. contas com vantagem fiscal]
+- [Candidatos para colheita de perdas fiscais]
+- [Considerações sobre crédito fiscal estrangeiro para ativos internacionais]
+- [Dividendos qualificados vs. renda ordinária]
+
+## Regras de Rebalanceamento
+
+- **Frequência:** Anualmente, ou quando qualquer alocação se desviar &gt;5% do alvo
+- **Método:** Rebalancear primeiro com novas contribuições (eficiente fiscalmente); vender apenas se o desvio for severo
+- **Limite para ação:** ±5 pontos percentuais em relação ao peso alvo
+
+## Riscos a Compreender
+
+1. **Risco de mercado** — Quedas amplas de 30-50% em ações ocorreram historicamente
+2. **Risco de inflação** — [Como esta estratégia se comporta]
+3. **Risco de taxa de juros** — [Considerações sobre duração de títulos]
+4. **Risco de concentração** — [Sobreposição com posições existentes, exposição a um único país]
+5. **Risco comportamental** — Você realmente permanecerá investido durante uma queda de 40%?
+
+## O Que Esta Estratégia NÃO É
+
+- Não é uma estratégia de timing de mercado
+- Não é uma abordagem de negociação de curto prazo
+- Não é seleção de ações
+- Não é garantida de superar o mercado
+
+## Passos de Ação Para Esta Semana
+
+1. Abrir ou financiar conta em [recomendações de corretoras: Vanguard, Fidelity, Schwab — todas oferecem negociação de ETFs sem comissão]
+2. Emitir ordens de compra iniciais para: [lista]
+3. Configurar contribuições mensais automáticas de $X
+4. Agendar uma verificação de rebalanceamento 12 meses a partir de hoje
+
+---
+
+**AVISO LEGAL:** Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro. Não é uma recomendação para comprar qualquer título específico. Os tickers são exemplos de veículos que atendem aos critérios da tela — existem alternativas equivalentes de outros provedores. Consulte sempre um assessor financeiro licenciado, CPA ou profissional de impostos antes de tomar decisões de investimento. O desempenho passado não garante resultados futuros. Todos os investimentos carregam risco de perda.
+
+## Avisos Importantes a Incluir
+
+- Nunca apresentar telas como "seleções de ações" ou "recomendações de compra"
+- Sempre mencionar que existem alternativas (VTI ≈ ITOT ≈ SCHB ≈ SPTM)
+- Sinalizar explicitamente quaisquer veículos de alto custo ou alto risco
+- Observar que backtests não preveem o futuro
+- Enfatizar a disciplina comportamental em vez do alfa de seleção
+
+## Tom
+
+Educativo. Quantitativo. Citar evidências acadêmicas de longo prazo (ex.: "modelo de três fatores de Fama-French", "fundos indexados de baixo custo superam ~80% dos gestores ativos em 15 anos, segundo SPIVA"). Não fazer hype sobre nenhuma estratégia.
+
+**AVISO LEGAL: Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro.**
+
+--- skills/finance-emergency/SKILL.md ---
+---
+name: finance-emergency
+description: Analisador de fundo de emergência. Calcula o tamanho adequado do fundo de emergência com base na estabilidade do emprego, estrutura familiar, despesas fixas, dependentes e status de funcionário vs. proprietário de negócio. Recomenda onde mantê-lo (HYSA, mercado monetário, T-bills, I-Bonds), a velocidade de construção, o que conta como verdadeira emergência e como reabastecer após o uso. Gera FINANCE-EMERGENCY.md.
+---
+</code></pre>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-6-15.html">← Módulo 6.15</a>
+<a class="flex-1 text-center px-6 py-3 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-500 transition-colors" href="modulo-6-17.html">Módulo 6.17 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Equipos de IA — Grupo 1 · Material educativo | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

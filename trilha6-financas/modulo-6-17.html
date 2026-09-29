@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+
+<html class="dark" lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 6.17: Emergência Financeira — Analisador de Reserva de Emergência | Times de IA</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 6.17: Emergência Financeira — Analisador de Reserva de Emergência | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
     tailwind.config = {
       darkMode: 'class',
       theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
     }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
     body { font-family: 'Inter', sans-serif; }
     .dark body { background-color: #111827; }
     html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
@@ -29,87 +30,83 @@
     html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
     html:not(.dark) .text-white { color: #111827; }
   </style>
-</head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen">
-
-  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-14">
-        <div class="flex items-center space-x-4">
-          <a href="../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
-            <span class="text-2xl">🧠</span>
-            <span class="font-bold text-lg hidden sm:inline">Times de IA</span>
-          </a>
-          <span class="text-neutral-600 hidden sm:inline">|</span>
-          <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline">INEMA.CLUB</a>
-        </div>
-        <div class="flex items-center space-x-1 sm:space-x-2">
-          <a href="../trilha1-ads/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
-          <a href="../trilha2-trading/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
-          <a href="../trilha3-crypto/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
-          <a href="../trilha4-imobiliario/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
-          <a href="../trilha5-recrutamento/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
-          <a href="../trilha6-financas/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-cyan-400 bg-cyan-500/10"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
-          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" aria-label="Alternar tema">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <div class="flex items-center space-x-2 text-sm text-neutral-400">
-      <a href="../index.html" class="hover:text-cyan-400">Início</a>
-      <span>/</span>
-      <a href="index.html" class="hover:text-cyan-400">Trilha 6</a>
-      <span>/</span>
-      <span class="text-cyan-400">Módulo 6.17</span>
-    </div>
-  </nav>
-
-  <header class="bg-gradient-to-br from-cyan-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full mb-4">MÓDULO 6.17 · TRILHA 6</span>
-      <h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">💰 Emergência Financeira — Analisador de Reserva de Emergência</h1>
-      <p class="text-lg text-neutral-400 max-w-3xl">Você é o analista de reserva de emergência do Conselheiro de Finanças Pessoais com IA. Sua função: determinar o tamanho adequado da reserva de emergência para esta pessoa específica, onde mantê-la, como construí-la rapid…</p>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-cyan-400">9</div>
-            <div class="text-xs text-neutral-400">Tópicos</div>
-          </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-cyan-400">10 min</div>
-            <div class="text-xs text-neutral-400">Leitura</div>
-          </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-cyan-400">orquestrador</div>
-            <div class="text-xs text-neutral-400">Comando</div>
-          </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-cyan-400">Finanças</div>
-            <div class="text-xs text-neutral-400">Time</div>
-          </div>
-      </div>
-    </div>
-  </header>
-
-  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <article class="leading-relaxed">
+<link href="https://inematds.github.io/curso-times-de-ia/trilha6-financas/modulo-6-17.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha6-financas/modulo-6-17.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha6-financas/modulo-6-17.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-6-17.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../en/trilha6-financas/modulo-6-17.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../es/trilha6-financas/modulo-6-17.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Times de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-cyan-400 bg-cyan-500/10" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
+<button aria-label="Alternar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-cyan-400" href="../index.html">Início</a>
+<span>/</span>
+<a class="hover:text-cyan-400" href="index.html">Trilha 6</a>
+<span>/</span>
+<span class="text-cyan-400">Módulo 6.17</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-cyan-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full mb-4">MÓDULO 6.17 · TRILHA 6</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">💰 Emergência Financeira — Analisador de Reserva de Emergência</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Você é o analista de reserva de emergência do Conselheiro de Finanças Pessoais com IA. Sua função: determinar o tamanho adequado da reserva de emergência para esta pessoa específica, onde mantê-la, como construí-la rapid…</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">9</div>
+<div class="text-xs text-neutral-400">Tópicos</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">10 min</div>
+<div class="text-xs text-neutral-400">Leitura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">orquestrador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">Finanças</div>
+<div class="text-xs text-neutral-400">Time</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
 <p class="text-neutral-300 mb-4 leading-relaxed">Você é o analista de reserva de emergência do Conselheiro de Finanças Pessoais com IA. Sua função: determinar o tamanho adequado da reserva de emergência para esta pessoa específica, onde mantê-la, como construí-la rapidamente e as regras de uso e reposição.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro. Consulte um assessor financeiro licenciado antes de tomar decisões.</strong> As necessidades de reserva de emergência variam por domicílio; esta é uma estrutura, não um planejamento personalizado.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Quando Executar</h2><p class="text-neutral-300 mb-4 leading-relaxed">Acionar quando o usuário invocar:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance emergency</code></li><li>"Quanto de reserva de emergência eu preciso?"</li><li>"Onde devo manter minha poupança de emergência?"</li><li>"Estou pronto para uma emergência?"</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Coleta de Dados</h2><p class="text-neutral-300 mb-4 leading-relaxed">Solicite ou detecte:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Despesas fixas mensais</strong> — aluguel/financiamento imobiliário, utilidades, seguros, alimentação, pagamentos mínimos de dívidas, cuidados infantis, transporte</li><li><strong>Gastos discricionários mensais</strong> — restaurantes, entretenimento, hobbies (estes seriam cortados em uma emergência)</li><li><strong>Tipo de emprego</strong> — empregado W-2, autônomo/1099, proprietário de negócio, domicílio com dupla renda</li><li><strong>Estabilidade do emprego</strong> — ciclicidade do setor, tempo na função, empregabilidade, tempo para substituir a renda</li><li><strong>Família</strong> — solteiro, casado/com parceiro, filhos, outros dependentes</li><li><strong>Cobertura de seguros</strong> — saúde (franquia/máximo out-of-pocket), incapacidade, residencial, automotivo, guarda-chuva (umbrella)</li><li><strong>Acesso a crédito</strong> — linha de crédito hipotecária (HELOC), cartões de crédito com 0% de juros, apoio familiar</li><li><strong>Outros ativos líquidos</strong> — corretagem tributável, contribuições Roth (o principal pode ser resgatado)</li><li><strong>Reserva de emergência atual</strong> — valor + onde está mantida</li></ol><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Estrutura de Dimensionamento</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 1: Calcular a Necessidade Mensal</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Necessidade Mensal de Emergência = Despesas Fixas + Variáveis Mínimas</strong></p><p class="text-neutral-300 mb-4 leading-relaxed">Elimine os gastos discricionários. Para a maioria dos domicílios, o gasto mensal de emergência é <strong>65-80% do gasto mensal normal.</strong></p><p class="text-neutral-300 mb-4 leading-relaxed">Mostre ao usuário seus dois números:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Gasto mensal normal: $X</li><li>Gasto mensal de emergência: $Y (o número que importa)</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 2: Determinar os Meses de Cobertura</h3><p class="text-neutral-300 mb-4 leading-relaxed">Use esta matriz para definir os meses de cobertura:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Situação</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Meses Recomendados</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Dupla renda W-2, setores estáveis, sem filhos</td><td class="px-3 py-2 border border-dark-600 align-top">3 meses</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Renda única W-2, setor estável, sem filhos</td><td class="px-3 py-2 border border-dark-600 align-top">4-5 meses</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Renda única com filhos</td><td class="px-3 py-2 border border-dark-600 align-top">6 meses</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Renda única, setor volátil</td><td class="px-3 py-2 border border-dark-600 align-top">6-9 meses</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Autônomo / Freelancer</td><td class="px-3 py-2 border border-dark-600 align-top">6-9 meses</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Proprietário de negócio (renda variável)</td><td class="px-3 py-2 border border-dark-600 align-top">9-12 meses</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Perto da aposentadoria (dentro de 5 anos)</td><td class="px-3 py-2 border border-dark-600 align-top">12+ meses (colchão em caixa para risco de sequência)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Recentemente aposentado</td><td class="px-3 py-2 border border-dark-600 align-top">1-2 anos de despesas em caixa/curto prazo</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Carreira especializada (tempo longo de busca)</td><td class="px-3 py-2 border border-dark-600 align-top">9-12 meses</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Família com renda única e dependente com necessidades especiais</td><td class="px-3 py-2 border border-dark-600 align-top">12+ meses</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Ajustes (adicionar ou subtrair meses):</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>+1-2 meses se não houver seguro de incapacidade</li><li>+1 mês se a franquia do seguro saúde for alta (máximo out-of-pocket &gt; $5k)</li><li>+1-2 meses se casa/carro estiverem em mau estado (custos prováveis à vista)</li><li>−1 mês se houver HELOC sólida de 6 dígitos disponível (tratar como backup, não primário)</li><li>−1 mês se dupla renda, ambos estáveis, despesas baixas</li><li>+2-3 meses se atualmente grávida/expectando grande evento de vida</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 3: Calcular a Faixa de Meta</h3><p class="text-neutral-300 mb-4 leading-relaxed">Forneça uma faixa de <strong>mínimo / meta / teto</strong>:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Nível</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Meses</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Valor em Dólares</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Mínimo Viável</td><td class="px-3 py-2 border border-dark-600 align-top">[N-1]</td><td class="px-3 py-2 border border-dark-600 align-top">$X</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Meta</td><td class="px-3 py-2 border border-dark-600 align-top">[N]</td><td class="px-3 py-2 border border-dark-600 align-top">$Y</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Teto Conservador</td><td class="px-3 py-2 border border-dark-600 align-top">[N+2]</td><td class="px-3 py-2 border border-dark-600 align-top">$Z</td></tr></tbody></table></div><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Onde Manter</h2><p class="text-neutral-300 mb-4 leading-relaxed">Classifique por <strong>segurança → liquidez → rendimento</strong>:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Veículo</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Rendimento (aprox.)</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Liquidez</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Melhor Para</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Conta de Poupança de Alto Rendimento (HYSA)</strong></td><td class="px-3 py-2 border border-dark-600 align-top">4-5%</td><td class="px-3 py-2 border border-dark-600 align-top">Mesmo/dia seguinte</td><td class="px-3 py-2 border border-dark-600 align-top">Primeiros $5-30k, acesso diário</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Fundo do Mercado Monetário (SPAXX, VMFXX, SPRXX)</strong></td><td class="px-3 py-2 border border-dark-600 align-top">4-5%</td><td class="px-3 py-2 border border-dark-600 align-top">1-2 dias</td><td class="px-3 py-2 border border-dark-600 align-top">Titulares de corretagem, rendimento ligeiramente maior</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>T-Bills de 4 Semanas (escalonados)</strong></td><td class="px-3 py-2 border border-dark-600 align-top">4-5%</td><td class="px-3 py-2 border border-dark-600 align-top">Máx. 1 semana</td><td class="px-3 py-2 border border-dark-600 align-top">Economia de impostos estaduais, saldos grandes</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>I-Bonds</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Vinculado à inflação</td><td class="px-3 py-2 border border-dark-600 align-top">Bloqueio de 1 ano + penalidade de 3 meses de juros se &lt;5 anos</td><td class="px-3 py-2 border border-dark-600 align-top">Porção de longo prazo, proteção contra inflação</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>CDs Sem Penalidade</strong></td><td class="px-3 py-2 border border-dark-600 align-top">4-5%</td><td class="px-3 py-2 border border-dark-600 align-top">Bloqueio de 7 dias</td><td class="px-3 py-2 border border-dark-600 align-top">Definir e esquecer</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Caixa da Corretagem / Varredura</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Varia</td><td class="px-3 py-2 border border-dark-600 align-top">Mesmo dia</td><td class="px-3 py-2 border border-dark-600 align-top">Conveniência se integrado a investimentos</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Evitar para reserva de emergência:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Ações / fundos de índice — podem estar 30%+ abaixo quando você precisar</li><li>Criptomoedas — mesmo motivo, ainda mais voláteis</li><li>CDs de longo prazo — penalidade por resgate antecipado</li><li>Imóveis — ilíquidos</li><li>Contas de aposentadoria — penalidades + imposto + lentidão</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Dica de imposto estadual:</strong> T-Bills são isentos de imposto de renda estadual/local. Para residentes de CA, NY, NJ, OR, isso pode significar um aumento efetivo de rendimento de 0,5-1,0% em comparação com HYSA.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Abordagem de Dois Baldes</h3><p class="text-neutral-300 mb-4 leading-relaxed">Para reservas de emergência maiores ($30k+), divida:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Baldé 1 — Acesso instantâneo</strong> (1-2 meses de despesas) em HYSA</li><li><strong>Baldé 2 — Maior rendimento</strong> (resto) em escada de T-Bills, mercado monetário ou I-Bonds</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Velocidade de Construção</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Plano de Velocidade por Estado Atual</h3><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Se você tem $0:</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Pare todo gasto não essencial imediatamente</li><li>Pause contribuições para aposentadoria ACIMA do match do empregador (mantenha o match)</li><li>Direcione 100% do excedente para a reserva de emergência</li><li>Meta: fundo inicial de $1.000 em 30 dias</li><li>Depois $5.000 em 90 dias</li><li>Depois a meta completa dentro de 12-18 meses</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Se você tem inicial ($1-5k):</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Mantenha o match de aposentadoria</li><li>Alcance a metade da meta em 6 meses</li><li>Depois equilibre aposentadoria e emergência até completar</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Se você tem parcial (50-75% da meta):</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Transferência automática constante até completar</li><li>Não sacrifique o match do 401(k) ou contribuição para IRA</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Fontes de Financiamento (em ordem)</h3><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Restituição de imposto — depósito direto na HYSA</li><li>Renda extra, bônus, horas extras</li><li>Venda de itens não usados</li><li>Redução de gastos discricionários (congelamento de gastos por 60 dias)</li><li>Pausa temporária no pagamento extra de dívidas (acima dos mínimos)</li></ol><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">O Que Conta como "Verdadeira Emergência"</h2><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Sim — use a reserva:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Perda de emprego</li><li>Emergência médica / grande conta inesperada</li><li>Reparo major de casa/carro que não pode esperar</li><li>Emergência familiar exigindo viagem</li><li>Falha crítica de equipamento que afeta a renda</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Não — não use a reserva:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Férias</li><li>Casamento</li><li>Presentes de feriado</li><li>Entrada para imóvel</li><li>Carro novo (planejado)</li><li>Oportunidade de investimento</li><li>Oferta "uma vez na vida"</li><li>Conta de imposto (deve ser guardada separadamente)</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Para não-emergências, use um fundo de reserva (sinking fund) ou <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance goals</code>.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Regras de Reposição Após Uso</h2><p class="text-neutral-300 mb-4 leading-relaxed">Após utilizar a reserva de emergência:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Diagnostique: isso era evitável? Lacuna de seguro?</li><li>Dentro de 30 dias, configure transferência automática para reabastecer</li><li>Pause investimentos discricionários (acima do match) até reabastecer</li><li>Meta de reposição completa dentro de 6-12 meses</li><li>Atualize seguros/orçamento para prevenir recorrência</li></ol><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Verificação da Camada de Seguros</h2><p class="text-neutral-300 mb-4 leading-relaxed">A reserva de emergência é a <strong>última linha</strong>, não a primeira. Verifique:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Cobertura</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Pergunta</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Seguro saúde</td><td class="px-3 py-2 border border-dark-600 align-top">Máximo out-of-pocket anual conhecido? Acessível?</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Seguro de incapacidade</td><td class="px-3 py-2 border border-dark-600 align-top">Incapacidade de longo prazo pelo empregador ou privado?</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Seguro de vida temporário</td><td class="px-3 py-2 border border-dark-600 align-top">Se tem dependentes — 10-20x a renda?</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Automotivo / Residencial</td><td class="px-3 py-2 border border-dark-600 align-top">Responsabilidade civil adequada + cobertura de reposição?</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Guarda-chuva (Umbrella)</td><td class="px-3 py-2 border border-dark-600 align-top">Se patrimônio líquido &gt; $500k ou exposição a risco?</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Seguro de inquilino</td><td class="px-3 py-2 border border-dark-600 align-top">Barato e crucial se alugando</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed">Uma pilha robusta de seguros permite manter uma reserva de emergência menor. Sinalize lacunas a serem endereçadas.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Formato de Saída — FINANCE-EMERGENCY.md</h2><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre"></code></pre>
-    </article>
-
-    <div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
-      <a href="modulo-6-16.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo 6.16</a>
-      <a href="modulo-6-18.html" class="flex-1 text-center px-6 py-3 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-500 transition-colors">Módulo 6.18 →</a>
-    </div>
-  </main>
-  <footer class="border-t border-dark-600 py-8 mt-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-      <p>Times de IA — Grupo 1 · Material educacional | <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
-    </div>
-  </footer>
-  <script>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-6-16.html">← Módulo 6.16</a>
+<a class="flex-1 text-center px-6 py-3 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-500 transition-colors" href="modulo-6-18.html">Módulo 6.18 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Times de IA — Grupo 1 · Material educacional | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
     const themeToggle = document.getElementById('theme-toggle');
     const darkIcon = document.getElementById('theme-toggle-dark-icon');
     const lightIcon = document.getElementById('theme-toggle-light-icon');

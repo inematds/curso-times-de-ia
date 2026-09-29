@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Track 3: Crypto Team | AI Teams</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha3-crypto/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha3-crypto/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha3-crypto/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha3-crypto/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../es/trilha3-crypto/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">AI Teams</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Real estate</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recruiting</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finance</span></a>
+<button aria-label="Toggle theme" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-purple-400" href="../index.html">Start</a>
+<span>/</span>
+<span class="text-purple-400">Track 3</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-14 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">TRACK 3</span>
+<h1 class="text-3xl sm:text-4xl font-extrabold mb-4">🪙 Crypto Team</h1>
+<p class="text-lg text-neutral-400 max-w-3xl leading-relaxed">undefined</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-purple-400">13</div>
+<div class="text-xs text-neutral-400">Modules</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-purple-400">198</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-purple-400">14</div>
+<div class="text-xs text-neutral-400">Commands</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-purple-400">4h</div>
+<div class="text-xs text-neutral-400">Content</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<section class="mb-12">
+<h2 class="text-2xl font-bold mb-6">🗂️ Track Modules</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-purple-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-3-1.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/10 text-purple-400">MODULE 3.1</span>
+<span class="text-xs text-neutral-500">9 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-purple-400 transition-colors">AI Crypto Analyst — Lead Orchestrator</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are a comprehensive cryptocurrency research and analysis system for the assistant. It helps traders, investors, and crypto enthusiasts analyze any to…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>6 topics</span>
+<span class="text-purple-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-purple-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-3-2.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/10 text-purple-400">MODULE 3.2</span>
+<span class="text-xs text-neutral-500">19 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-purple-400 transition-colors">60-Second Token Snapshot</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are the Quick Snapshot agent for the AI Crypto Analyst system. When invoked with `/crypto quick &lt;token&gt;`, you perform a quick 60…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>12 topics</span>
+<span class="text-purple-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-purple-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-3-3.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/10 text-purple-400">MODULE 3.3</span>
+<span class="text-xs text-neutral-500">39 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-purple-400 transition-colors">Risk Assessment and Position Sizing</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are the Risk Assessment agent for the AI Crypto Analyst system. When invoked via `/crypto risk &lt;token&gt;`, you produce a comprehensive risk analysis …</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>23 topics</span>
+<span class="text-purple-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-purple-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-3-4.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/10 text-purple-400">MODULE 3.4</span>
+<span class="text-xs text-neutral-500">9 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-purple-400 transition-colors">Cryptocurrency Watchlist Manager</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are the Watchlist Manager skill for the AI Cryptocurrency Analyst system. You build, maintain, and score a personal cryptocurrency watchlist…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>6 topics</span>
+<span class="text-purple-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-purple-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-3-5.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/10 text-purple-400">MODULE 3.5</span>
+<span class="text-xs text-neutral-500">5 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-purple-400 transition-colors">Cryptocurrency Watchlist</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">[List any tokens with active warning flags, grouped by priority]</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>6 topics</span>
+<span class="text-purple-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-purple-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-3-6.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/10 text-purple-400">MODULE 3.6</span>
+<span class="text-xs text-neutral-500">24 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-purple-400 transition-colors">DeFi Protocol Analysis</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are the DeFi Protocol Analysis agent for the AI Crypto Analyst system. When triggered via `/crypto defi &lt;protocolo&gt;`, you produce a comprehensive analysis o…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>26 topics</span>
+<span class="text-purple-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-purple-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-3-7.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/10 text-purple-400">MODULE 3.7</span>
+<span class="text-xs text-neutral-500">29 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-purple-400 transition-colors">Technical Cryptocurrency Analysis</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are the Crypto Technical Analysis agent for the AI Crypto Analyst system. When triggered via `/crypto technical &lt;token&gt;`, you produce a technical analy…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>25 topics</span>
+<span class="text-purple-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-purple-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-3-8.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/10 text-purple-400">MODULE 3.8</span>
+<span class="text-xs text-neutral-500">25 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-purple-400 transition-colors">Head-to-Head Token Comparison</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are the Token Comparison agent for the AI Crypto Analyst system. When triggered via `/crypto compare &lt;token1&gt; &lt;token2&gt;`, you produce a side-by-side compari…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>24 topics</span>
+<span class="text-purple-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-purple-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-3-9.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/10 text-purple-400">MODULE 3.9</span>
+<span class="text-xs text-neutral-500">29 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-purple-400 transition-colors">Tokenomics Analysis Agent</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are the Tokenomics Analysis agent for the AI Crypto Analyst system. When invoked with `/crypto tokenomics &lt;token&gt;`, you perform an in-depth analysi…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>15 topics</span>
+<span class="text-purple-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-purple-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-3-10.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/10 text-purple-400">MODULE 3.10</span>
+<span class="text-xs text-neutral-500">22 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-purple-400 transition-colors">Complete Crypto Analysis Orchestrator</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are the primary crypto analysis orchestrator for the AI Crypto Analyst system. When invoked with `/crypto analyze &lt;token&gt;`, you perform a …</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>19 topics</span>
+<span class="text-purple-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-purple-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-3-11.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/10 text-purple-400">MODULE 3.11</span>
+<span class="text-xs text-neutral-500">29 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-purple-400 transition-colors">Crypto Sentiment Analysis Agent</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are the Sentiment Analysis agent for the AI Crypto Analyst system. When invoked with `/crypto sentiment &lt;token&gt;`, you perform a comprehensive …</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>15 topics</span>
+<span class="text-purple-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-purple-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-3-12.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/10 text-purple-400">MODULE 3.12</span>
+<span class="text-xs text-neutral-500">12 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-purple-400 transition-colors">Crypto PDF Report Generator</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are the PDF Report Generator skill for the AI Crypto Analyst system. You compile all analyses from the CRYPTO-*.md files into a professional research rep…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>8 topics</span>
+<span class="text-purple-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+<a class="group flex flex-col bg-dark-800 rounded-xl p-5 border border-dark-600 hover:border-purple-500/50 hover:bg-dark-700 transition-all duration-300" href="modulo-3-13.html">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-bold px-2 py-1 rounded bg-purple-500/10 text-purple-400">MODULE 3.13</span>
+<span class="text-xs text-neutral-500">16 min</span>
+</div>
+<h3 class="font-semibold mb-2 leading-snug group-hover:text-purple-400 transition-colors">Crypto Token Picker</h3>
+<p class="text-sm text-neutral-400 leading-relaxed line-clamp-2 flex-1">You are the Token Screener skill for the AI Crypto Analyst system. You filter the crypto universe using predefined or custom scre…</p>
+<div class="mt-4 pt-3 border-t border-dark-700 flex items-center justify-between text-xs text-neutral-500">
+<span>13 topics</span>
+<span class="text-purple-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Open →</span>
+</div>
+</a>
+</div>
+</section>
+<section class="mb-10 bg-dark-800/50 border border-dark-600 rounded-xl p-6">
+<h2 class="text-xl font-bold mb-2">🚀 How to Use This Team</h2>
+<p class="text-sm text-neutral-400 mb-4">Orchestrator command summary — each module details the corresponding component.</p>
+<div class="prose-sm"><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">How to Use</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Open the assistant and type <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto &lt;comando&gt;</code>.</li><li>Main commands:</li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto analyze &lt;token&gt;</code> — full token analysis</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto quick &lt;token&gt;</code> — quick overview (60 seconds)</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto tokenomics &lt;token&gt;</code> — tokenomics analysis</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto defi &lt;protocolo&gt;</code> — DeFi protocol analysis</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto technical &lt;token&gt;</code> — technical analysis</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto sentiment &lt;token&gt;</code> — sentiment</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto watchlist</code> — manage watchlist</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto compare &lt;t1&gt; &lt;t2&gt;</code> — token comparison</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto risk &lt;token&gt;</code> — risk and sizing</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto screen &lt;critérios&gt;</code> — token screener</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto onchain &lt;token&gt;</code> — on-chain data</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto fundamental &lt;token&gt;</code> — fundamental analysis</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto narrative &lt;tema&gt;</code> — narrative/cycle analysis</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto report-pdf</code> — generate a report in PDF</li></ul></div>
+<p class="text-sm text-neutral-300 mt-4"><strong>Model recommendation:</strong> a model with a large context window (64k+) to support comprehensive analyses.</p>
+</section>
+<section class="bg-dark-800/50 border border-dark-600 rounded-xl p-6">
+<p class="text-sm text-neutral-400 leading-relaxed"><strong>Notice:</strong> educational content about the crypto market — high volatility; not investment advice.</p>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>AI Teams — Group 1 · Educational material | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

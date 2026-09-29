@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 1.9: Advertising Budget Allocation Plan | AI Teams</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha1-ads/modulo-1-9.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha1-ads/modulo-1-9.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha1-ads/modulo-1-9.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha1-ads/modulo-1-9.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-1-9.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../es/trilha1-ads/modulo-1-9.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">AI Teams</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Real estate</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recruiting</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finance</span></a>
+<button aria-label="Toggle theme" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../index.html">Start</a>
+<span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Track 1</a>
+<span>/</span>
+<span class="text-emerald-400">Module 1.9</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MODULE 1.9 · TRACK 1</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">📣 Ad Budget Allocation Plan</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">**Generated on:** [Data]</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">10</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">5 min</div>
+<div class="text-xs text-neutral-400">Reading</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">orchestrator</div>
+<div class="text-xs text-neutral-400">Command</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">Ads</div>
+<div class="text-xs text-neutral-400">Team</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed"><strong>Generated on:</strong> [Date] <strong>Monthly Budget:</strong> $[Value] <strong>Business Type:</strong> [Type] <strong>Average Order Value (AOV):</strong> $[Value] <strong>Customer Lifetime Value (LTV):</strong> $[Value] <strong>Break-Even CPA:</strong> $[Value]</p><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Executive Summary</h2><p class="text-neutral-300 mb-4 leading-relaxed">[2–3 sentences: recommended approach, expected ROI range, primary platform focus]</p><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Recommended Platform Mix</h2><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Platform</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Allocation</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Monthly Budget</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Daily Budget</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Why</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">[Platform 1]</td><td class="px-3 py-2 border border-dark-600 align-top">[X]%</td><td class="px-3 py-2 border border-dark-600 align-top">$[X]</td><td class="px-3 py-2 border border-dark-600 align-top">$[X]</td><td class="px-3 py-2 border border-dark-600 align-top">[Reason]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">[Platform 2]</td><td class="px-3 py-2 border border-dark-600 align-top">[X]%</td><td class="px-3 py-2 border border-dark-600 align-top">$[X]</td><td class="px-3 py-2 border border-dark-600 align-top">$[X]</td><td class="px-3 py-2 border border-dark-600 align-top">[Reason]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">[Platform 3]</td><td class="px-3 py-2 border border-dark-600 align-top">[X]%</td><td class="px-3 py-2 border border-dark-600 align-top">$[X]</td><td class="px-3 py-2 border border-dark-600 align-top">$[X]</td><td class="px-3 py-2 border border-dark-600 align-top">[Reason]</td></tr></tbody></table></div><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Scenario 1: Conservative</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Budget Allocation</h3><p class="text-neutral-300 mb-4 leading-relaxed">[Breakdown by platform, campaign, and funnel stage]</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">ROI projections</h3><p class="text-neutral-300 mb-4 leading-relaxed">[Projection table with all metrics]</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Risk Assessment</h3><p class="text-neutral-300 mb-4 leading-relaxed">[What could go wrong, mitigation strategies]</p><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Scenario 2: Balanced (Recommended)</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Budget Allocation</h3><p class="text-neutral-300 mb-4 leading-relaxed">[Breakdown]</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">ROI projections</h3><p class="text-neutral-300 mb-4 leading-relaxed">[Projection table]</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Why this is the recommendation</h3><p class="text-neutral-300 mb-4 leading-relaxed">[Explanation of why this scenario fits the situation]</p><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Scenario 3: Aggressive</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Budget Allocation</h3><p class="text-neutral-300 mb-4 leading-relaxed">[Breakdown]</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">ROI projections</h3><p class="text-neutral-300 mb-4 leading-relaxed">[Projection table]</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Requirements for this approach</h3><p class="text-neutral-300 mb-4 leading-relaxed">[What needs to be in place: proven offer, creatives, team, etc.]</p><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Break-Even Analysis</h2><p class="text-neutral-300 mb-4 leading-relaxed">[Break-even CPA calculation with explanation] [Estimated payback period] [Analysis based on LTV vs. first purchase]</p><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Scaling Roadmap</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Current Budget: $[X]/month</h3><p class="text-neutral-300 mb-4 leading-relaxed">[What to do now]</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Next Goal: $[X]/month</h3><p class="text-neutral-300 mb-4 leading-relaxed">[What needs to happen to justify scaling]</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Growth Target: $[X]/month</h3><p class="text-neutral-300 mb-4 leading-relaxed">[Long-term allocation at scale]</p><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Budget Optimization Calendar</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Week 1–2: Launch and Learn</h3><p class="text-neutral-300 mb-4 leading-relaxed">[What to monitor, minimum thresholds]</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Week 3–4: Optimization</h3><p class="text-neutral-300 mb-4 leading-relaxed">[What to cut, what to scale, budget reallocation rules]</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Month 2: Scale Winners</h3><p class="text-neutral-300 mb-4 leading-relaxed">[Scaling rules, criteria for activating new platforms]</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Month 3: Expansion</h3><p class="text-neutral-300 mb-4 leading-relaxed">[New audiences, new platforms, budget for creative testing]</p><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Assumptions and Important Notices</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>CPM/CPC/CPA estimates based on industry averages through [current year]</li><li>Actual performance depends on creative quality, landing page conversion rates, and market conditions</li><li>Projections assume conversion tracking is installed correctly</li><li>The first 2-4 weeks are a learning phase — expect above-average CPAs</li><li>The numbers improve as pixel data accumulates and algorithms optimize</li></ul><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Rules</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>ALWAYS request or estimate AOV/LTV — without it, ROI projections are meaningless</li><li>ALWAYS present all 3 scenarios — let the user choose their risk tolerance</li><li>ALWAYS calculate the break-even CPA — this is the most important number in the report</li><li>ALWAYS use industry-specific benchmarks, not generic averages</li><li>ALWAYS include the scaling roadmap — users need to know where to go next</li><li>ALWAYS include daily budget numbers, not just monthly figures — media buyers work with daily budgets</li><li>NEVER recommend LinkedIn if the monthly budget is under $1,000—CPCs make it unviable</li><li>NEVER recommend more than 2 platforms if the budget is under $2,000—too much spread</li><li>NEVER project ROAS without stating assumptions—always note that projections are estimates</li><li>NEVER ignore minimum viable budget thresholds—some platforms need minimum spend to optimize</li><li>ALWAYS flag when a budget is too low for a platform (“$300/month on LinkedIn won’t generate meaningful data”)</li><li>Full budget plan output for <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-BUDGET.md</code> in the current working directory</li></ol><p class="text-neutral-300 mb-4 leading-relaxed">--- skills/ads-competitors/SKILL.md ---</p><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed">name: ads-competitors description: Competitive Ad Intelligence. Analyzes competitors' advertising strategies, including platform identification, landing page analysis, targeting reverse engineering, positioning gaps, creative approach evaluation, and building a "outperform the competition" strategy with a competitor ad file template.</p><hr class="border-dark-600 my-8"/>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-1-8.html">← Module 1.8</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-10.html">Module 1.10 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>AI Teams — Group 1 · Educational material | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

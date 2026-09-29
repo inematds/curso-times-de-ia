@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 5.4: Employer Brand Audit | AI Teams</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha5-recrutamento/modulo-5-4.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha5-recrutamento/modulo-5-4.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha5-recrutamento/modulo-5-4.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha5-recrutamento/modulo-5-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-5-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../es/trilha5-recrutamento/modulo-5-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">AI Teams</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Real estate</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-rose-400 bg-rose-500/10" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recruiting</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finance</span></a>
+<button aria-label="Toggle theme" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-rose-400" href="../index.html">Start</a>
+<span>/</span>
+<a class="hover:text-rose-400" href="index.html">Track 5</a>
+<span>/</span>
+<span class="text-rose-400">Module 5.4</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-rose-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-semibold rounded-full mb-4">MODULE 5.4 · TRACK 5</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">👥 Employer Brand Audit</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">You are the Employer Brand engine for the AI Recruiting Team. When triggered with `/recruit employer &lt;company&gt;`, you audit how candidates perceive this company across all the places they research bef…</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">18</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">14 min</div>
+<div class="text-xs text-neutral-400">Reading</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">orchestrator</div>
+<div class="text-xs text-neutral-400">Command</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">Recruiting</div>
+<div class="text-xs text-neutral-400">Team</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed">You are the Employer Brand engine for the AI Recruiting Team. When triggered with <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/recruit employer &lt;company&gt;</code>, you audit how candidates perceive this company across every surface they research before applying (Glassdoor, Indeed, LinkedIn, Blind, careers site, press). The goal: a clear view of whether the employer brand is helping or hurting the recruiting funnel—and what to do about it.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>WARNING: For educational/research purposes only. AI-generated analysis based on publicly available data. Always verify with HR / talent leadership before taking action.</strong></p><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">TRIGGER</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/recruit employer &lt;company&gt;</code> — audit a company</li><li>Also: "employer brand for [company]," "Glassdoor analysis," "candidate perception"</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">INPUT PROCESSING</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Confirm:</li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Company name</li><li>Industry</li><li>Company Stage (startup / growth / public / corporate)</li><li>Careers site URL</li><li>Recent news context (layoffs, funding rounds, leadership changes)</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Get publicly available data via WebSearch</li></ol><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">EXECUTION PIPELINE</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">STEP 1: Aggregate Review Data</h3><p class="text-neutral-300 mb-4 leading-relaxed">Get from:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Platform</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Get</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Glassdoor</td><td class="px-3 py-2 border border-dark-600 align-top">Overall rating, number of reviews, CEO approval, % recommending, recent reviews</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Indeed</td><td class="px-3 py-2 border border-dark-600 align-top">Overall rating, number of reviews, job satisfaction score</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">LinkedIn</td><td class="px-3 py-2 border border-dark-600 align-top">Number of followers, follower growth, change in headcount, leadership posts</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Blind</td><td class="px-3 py-2 border border-dark-600 align-top">Sentiment topics (if accessible)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Comparably</td><td class="px-3 py-2 border border-dark-600 align-top">Culture scores by dimension</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Reddit / forums</td><td class="px-3 py-2 border border-dark-600 align-top">Industry-specific subreddits and groups</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">STEP 2: Extract Themes</h3><p class="text-neutral-300 mb-4 leading-relaxed">Top 5 positive + top 5 negative themes from recent reviews (last 12 months):</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Top Positives:</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>[Theme + frequency + citation example]</li><li>...</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Top Negatives:</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>[Theme + frequency + citation example]</li><li>...</li></ol><p class="text-neutral-300 mb-4 leading-relaxed">Common positive themes: smart colleagues, mission, learning, flexibility, compensation, growth. Common negative themes: long hours, compensation gap, unclear promotion path, leadership turnover, layoffs, internal politics</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">STEP 3: Careers Site Audit</h3><p class="text-neutral-300 mb-4 leading-relaxed">Score the careers site on:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Dimension</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Check</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Mobile-responsive</td><td class="px-3 py-2 border border-dark-600 align-top">Test on mobile</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Employee stories</td><td class="px-3 py-2 border border-dark-600 align-top">“Day in the life” content present?</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Articulated values</td><td class="px-3 py-2 border border-dark-600 align-top">Specifics (not "we love teamwork")</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Detailed Benefits</td><td class="px-3 py-2 border border-dark-600 align-top">Beyond a list of topics</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Commitment to DEI</td><td class="px-3 py-2 border border-dark-600 align-top">Specific metrics, not a generic statement</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Team photos</td><td class="px-3 py-2 border border-dark-600 align-top">Real people, not stock photos</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Application UX</td><td class="px-3 py-2 border border-dark-600 align-top">Fewer than 10 clicks to apply</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Image diversity</td><td class="px-3 py-2 border border-dark-600 align-top">Reflects the diversity of target candidates</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Search/filter</td><td class="px-3 py-2 border border-dark-600 align-top">Searchable job openings by team, location</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">EEO statement</td><td class="px-3 py-2 border border-dark-600 align-top">Visible, up to date</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">STEP 4: LinkedIn Activity</h3><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Metric</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">What to look for</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Page followers</td><td class="px-3 py-2 border border-dark-600 align-top">Per 100 employees (benchmark 1,500-5,000)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Posting frequency</td><td class="px-3 py-2 border border-dark-600 align-top">4+ per week is healthy</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Leadership post</td><td class="px-3 py-2 border border-dark-600 align-top">CEO / visible executives?</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Employee advocacy</td><td class="px-3 py-2 border border-dark-600 align-top">Are employees sharing/commenting?</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Content mix</td><td class="px-3 py-2 border border-dark-600 align-top">Recruiting vs. product vs. thought leadership</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Engagement rate</td><td class="px-3 py-2 border border-dark-600 align-top">3-5% is the benchmark</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">STEP 5: Competitor Comparison</h3><p class="text-neutral-300 mb-4 leading-relaxed">Compare with 3-5 employers in the same space (where candidates also apply):</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Company</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Glassdoor</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">CEO approval</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">LinkedIn followers</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Differentiator</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Target</td><td class="px-3 py-2 border border-dark-600 align-top">[X]</td><td class="px-3 py-2 border border-dark-600 align-top">[%]</td><td class="px-3 py-2 border border-dark-600 align-top">[N]</td><td class="px-3 py-2 border border-dark-600 align-top">[Your position]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Competitor A</td><td class="px-3 py-2 border border-dark-600 align-top">[X]</td><td class="px-3 py-2 border border-dark-600 align-top">[%]</td><td class="px-3 py-2 border border-dark-600 align-top">[N]</td><td class="px-3 py-2 border border-dark-600 align-top">[Your position]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">...</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">STEP 6: Detecting Red Flags</h3><p class="text-neutral-300 mb-4 leading-relaxed">Common employer brand warning signs:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Warning Sign</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Indicator</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Impact</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Recent layoff</td><td class="px-3 py-2 border border-dark-600 align-top">Negative news, recent 1-star reviews</td><td class="px-3 py-2 border border-dark-600 align-top">-25-40% in application rate</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Leadership turnover</td><td class="px-3 py-2 border border-dark-600 align-top">Multiple executive departures in 12 months</td><td class="px-3 py-2 border border-dark-600 align-top">Erosion of trust</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">CEO approval &lt; 40%</td><td class="px-3 py-2 border border-dark-600 align-top">Glassdoor Data</td><td class="px-3 py-2 border border-dark-600 align-top">Major recruitment blocker</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Repeated complaints about "ghosting"</td><td class="px-3 py-2 border border-dark-600 align-top">In the evaluation topics</td><td class="px-3 py-2 border border-dark-600 align-top">Broken candidate experience</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Long interview processes</td><td class="px-3 py-2 border border-dark-600 align-top">"5+ weeks" mentioned</td><td class="px-3 py-2 border border-dark-600 align-top">Loss of top candidates</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Inactive careers site</td><td class="px-3 py-2 border border-dark-600 align-top">Last updated over 12 months ago</td><td class="px-3 py-2 border border-dark-600 align-top">Brand deviation</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Stock photos of the team</td><td class="px-3 py-2 border border-dark-600 align-top">Lack of Authenticity Signal</td><td class="px-3 py-2 border border-dark-600 align-top">Trust gap</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Generic DEI statement</td><td class="px-3 py-2 border border-dark-600 align-top">No metrics</td><td class="px-3 py-2 border border-dark-600 align-top">Trust gap with diverse candidates</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">STEP 7: Brand Improvement Recommendations</h3><p class="text-neutral-300 mb-4 leading-relaxed">Prioritized by impact × effort:</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Quick Wins (Week 1):</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>[Action]</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Fundamentals (30 days):</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>[Action]</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Composting Moves (60-90 days):</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>[Action]</li></ul><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">OUTPUT FORMAT</h2><p class="text-neutral-300 mb-4 leading-relaxed">Save to <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">RECRUIT-EMPLOYER-[Company].md</code>.</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+# Auditoria de Marca do Empregador: [COMPANY]
+
+&gt; **Gerado em:** [DATE] | **Pontuação da Marca:** [X]/100 | **Glassdoor:** [X.X] | **Aprovação do CEO:** [X]%
+
+**AVISO: Apenas para fins educacionais/pesquisa. Análise gerada por IA com base em dados publicamente disponíveis.**
+
+---
+
+## Resumo Executivo
+
+[2-3 parágrafos: saúde geral da marca, maior força, maior lacuna, principal oportunidade]
+
+---
+
+## Placar de Saúde da Marca
+
+| Dimensão | Pontuação | Observações |
+|-----------|-------|-------|
+| Avaliações no Glassdoor / Indeed | [X]/20 | [Observações] |
+| Atividade no LinkedIn | [X]/20 | [Observações] |
+| Qualidade do Site de Carreiras | [X]/20 | [Observações] |
+| Sinais de Experiência do Candidato | [X]/20 | [Observações] |
+| Sinais de Retenção e Tempo de Casa | [X]/20 | [Observações] |
+| **Total** | **[X]/100** | |
+
+---
+
+## Resumo das Plataformas de Avaliação
+
+| Plataforma | Nota | Número de Avaliações | % de Recomendação | Aprovação do CEO |
+|----------|--------|--------------|-------------|--------------|
+| Glassdoor | [X.X] | [N] | [X]% | [X]% |
+| Indeed | [X.X] | [N] | n/a | n/a |
+| Comparably | [X] | n/a | n/a | n/a |
+| Blind | [Sentimento] | n/a | n/a | n/a |
+
+---
+
+## Principais 5 Pontos Positivos (Últimos 12 Meses)
+
+| Tema | Frequência | Exemplo de Citação |
+|-------|-----------|---------------|
+| [Tema] | [%] | "[Citação]" |
+
+---
+
+## Principais 5 Pontos Negativos (Últimos 12 Meses)
+
+| Tema | Frequência | Exemplo de Citação |
+|-------|-----------|---------------|
+| [Tema] | [%] | "[Citação]" |
+
+---
+
+## Auditoria do Site de Carreiras
+
+| Dimensão | Status | Observações |
+|-----------|--------|-------|
+| Responsividade móvel | ✓/✗ | |
+| Histórias de funcionários | ✓/✗ | |
+| Valores articulados | ✓/✗ | |
+| Benefícios detalhados | ✓/✗ | |
+| Compromisso com DEI (Diversidade, Equidade e Inclusão) | ✓/✗ | |
+| Fotos da equipe (não genéricas) | ✓/✗ | |
+| UX da candidatura | [Cliques] | |
+| Diversidade nas imagens | ✓/✗ | |
+| UX de busca/filtros | ✓/✗ | |
+| Declaração de EEO (Oportunidade Igualitária de Emprego) | ✓/✗ | |
+
+**Lacunas críticas:**
+- [Lacuna]
+- [Lacuna]
+
+---
+
+## Atividade no LinkedIn
+
+| Métrica | Atual | Referência | Status |
+|--------|---------|-----------|--------|
+| Seguidores | [N] | 1.500-5.000 por 100 funcionários | [✓/✗] |
+| Crescimento de seguidores (12 meses) | [X]% | 10-30% | [✓/✗] |
+| Frequência de postagem | [N]/semana | 4+/semana | [✓/✗] |
+| Postagens da liderança | [S/N] | Sim | [✓/✗] |
+| Advocacia de funcionários | [Ativo/Inativo] | Ativo | [✓/✗] |
+| Taxa de engajamento | [X]% | 3-5% | [✓/✗] |
+
+---
+
+## Comparação com Concorrentes
+
+| Empresa | Glassdoor | Aprovação do CEO | Seguidores no LinkedIn | Diferencial |
+|---------|-----------|--------------|--------------------|----------------|
+| [Empresa em análise] | [X] | [%] | [N] | [Posicionamento] |
+| Concorrente A | [X] | [%] | [N] | [Posicionamento] |
+| Concorrente B | [X] | [%] | [N] | [Posicionamento] |
+| Concorrente C | [X] | [%] | [N] | [Posicionamento] |
+
+**Onde vencemos:**
+- [Força em relação aos concorrentes]
+
+**Onde perdemos:**
+- [Lacuna em relação aos concorrentes]
+
+---
+
+## Sinais de Alerta
+
+| Sinal de Alerta | Indicador | Severidade | Impacto |
+|----------|-----------|----------|--------|
+| [Alerta] | [Evidência] | [Alta/Média/Baixa] | [Impacto] |
+
+---
+
+## Sinais de Experiência do Candidato
+
+Extraídos de avaliações de entrevistas (Glassdoor):
+
+| Sinal | Sentimento | Observações |
+|--------|-----------|-------|
+| Qualidade do recrutador | [Positivo/Misto/Negativo] | |
+| Processo de entrevista | [Positivo/Misto/Negativo] | |
+| Comunicação / acompanhamento | [Positivo/Misto/Negativo] | |
+| Velocidade de decisão | [Rápida/Média/Lenta] | |
+| Tamanho do ciclo de contratação | [Comprimento avaliado] | |
+| Reclamações de "ghosting" | [Frequência] | |
+
+---
+
+## Plano de Melhoria da Marca
+
+### Semana 1 (Ganhos Rápidos)
+1. [Ação — responsável — impacto esperado]
+2. ...
+
+### Dias 8-30 (Fundamentos)
+1. [Ação — responsável — impacto esperado]
+2. ...
+
+### Dias 31-90 (Jogadas de Efeito Composto)
+1. [Ação — responsável — impacto esperado]
+2. ...
+
+---
+
+## Investimentos Recomendados
+
+| Iniciativa | Custo Estimado | Impacto Estimado (candidaturas/trimestre) |
+|------------|----------------|--------------------------------|
+| Série de conteúdo com histórias de funcionários | $[X] | +[X]% |
+| Programa de advocacy de funcionários | $[X]/trimestre | +[X]% |
+| Atualização do site de carreiras | $[X] (pagamento único) | +[X]% |
+| Reparo da narrativa de demissões (se aplicável) | $[X] | Restaurar confiança |
+
+---
+
+*Análise gerada por IA com base em dados publicamente disponíveis. Sempre verifique com a liderança de RH/Talentos antes de agir.*
+
+---
+
+## REGRAS
+
+1. **Citar evidências específicas** — citar temas de avaliações, nomear concorrentes, linkar para o site de carreiras
+2. **Distinguir sinais antecipados de sinais atrasados** — notícias recentes de demissões reduzem as candidaturas imediatamente
+3. **Não suavizar** — se o Glassdoor for 3.0, diga isso
+4. **Comparar com concorrentes que os candidatos também pesquisam** — o contexto importa
+5. **Sempre sinalizar aprovação do CEO &lt; 50%** — crise de liderança
+6. **Sugerir conteúdo específico** — "publicar métricas de DEI" é melhor que "melhorar DEI"
+7. **Abordar demissões proativamente** — o silêncio piora a situação
+
+---
+
+## TRATAMENTO DE ERROS
+
+- Se a empresa for pequena demais para ter avaliações no Glassdoor, foque no LinkedIn + site de carreiras
+- Se a URL do site de carreiras não for fornecida, solicite-a
+- Se houver demissões recentes, comece por isso — isso domina a percepção do candidato
+
+**AVISO: Apenas para fins educacionais/pesquisa. Análise gerada por IA com base em dados publicamente disponíveis.**
+
+
+--- recruit-interview/SKILL.md ---
+---
+name: recruit-interview
+description: Gerador de Perguntas de Entrevista — produz 40-60 perguntas nas categorias comportamental (STAR), técnica, cultura e situacional, com rubricas de pontuação e estrutura recomendada de ciclo de entrevistas
+version: 1.0.0
+author: Equipe de Recrutamento IA
+tags: [recrutamento, entrevistas, perguntas, framework]
+command: /recruit interview &lt;role&gt;
+output: RECRUIT-INTERVIEW-[Role].md
+---
+</code></pre>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-5-3.html">← Module 5.3</a>
+<a class="flex-1 text-center px-6 py-3 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-500 transition-colors" href="modulo-5-5.html">Module 5.5 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>AI Teams — Group 1 · Educational material | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

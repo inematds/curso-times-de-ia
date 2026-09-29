@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 1.11: Estrategia de palabras clave de Google Ads | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha1-ads/modulo-1-11.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha1-ads/modulo-1-11.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha1-ads/modulo-1-11.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha1-ads/modulo-1-11.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../en/trilha1-ads/modulo-1-11.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-11.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Equipos de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Cripto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Bienes raíces</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Reclutamiento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanzas</span></a>
+<button aria-label="Cambiar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Ruta 1</a>
+<span>/</span>
+<span class="text-emerald-400">Módulo 1.11</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.11 · TRILHA 1</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">📣 Estrategia de palabras clave de Google Ads</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Construir desde cero una estrategia de palabras clave completa y lista para implementar en Google Ads. Esta skill mapea la intención de búsqueda a lo largo del recorrido del comprador, organiza las palabras clave en grupos de anuncios c…</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">22</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">27 min</div>
+<div class="text-xs text-neutral-400">Lectura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">orquestador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">Ads</div>
+<div class="text-xs text-neutral-400">Equipo</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Propósito de la Skill</h2><p class="text-neutral-300 mb-4 leading-relaxed">Construir desde cero una estrategia de palabras clave completa y lista para implementar en Google Ads. Esta skill mapea la intención de búsqueda a lo largo del recorrido del comprador, organiza las palabras clave en grupos de anuncios con temas específicos, recomienda tipos de concordancia, crea listas exhaustivas de palabras clave negativas, estima rangos de CPC por grupo, ofrece consejos para optimizar el Quality Score y genera una estructura de campaña con sugerencias de títulos y descripciones para cada grupo de anuncios. El resultado tiene el nivel de detalle necesario para que un comprador de medios cree las campañas en el Administrador de Google Ads sin necesidad de investigar más.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Cuándo usar</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>El usuario ejecuta <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads keywords &lt;url&gt;</code></li><li>El usuario solicita investigación de palabras clave, estrategia de palabras clave o planificación de campañas de búsqueda en Google Ads</li><li>Llamada como subagente desde <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads strategy</code> (el orquestador principal)</li><li>El usuario desea lanzar o mejorar campañas de búsqueda de Google</li><li>El usuario necesita agrupación de palabras clave, palabras clave negativas o arquitectura de grupos de anuncios</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Requisitos de entrada</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Obligatorio:</strong> Una URL de negocio para analizar</li><li><strong>Opcional:</strong> Ubicación/geografía objetivo, presupuesto mensual, datos existentes de Google Ads, productos/servicios específicos en los que enfocarse, URLs de competidores</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Cómo ejecutar</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 1: Inteligencia empresarial y de mercado</h3><p class="text-neutral-300 mb-4 leading-relaxed">Obtén la URL del negocio usando <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">WebFetch</code> y extrae:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Punto de datos</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Dónde encontrar</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Nombre del negocio</td><td class="px-3 py-2 border border-dark-600 align-top">Título de la página, logotipo, página "sobre nosotros"</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Industria/categoría</td><td class="px-3 py-2 border border-dark-600 align-top">Servicios, productos, posicionamiento</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Productos/servicios ofrecidos</td><td class="px-3 py-2 border border-dark-600 align-top">Páginas de productos, páginas de servicios, página de precios</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Enfoque geográfico</td><td class="px-3 py-2 border border-dark-600 align-top">Áreas de servicio, ubicaciones, alcance de envío</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Posicionamiento de precios</td><td class="px-3 py-2 border border-dark-600 align-top">Página de precios, precios de productos, texto "desde"</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Palabras clave SEO actuales</td><td class="px-3 py-2 border border-dark-600 align-top">Títulos meta, H1, URL de las páginas, temas del blog</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Propuesta de valor</td><td class="px-3 py-2 border border-dark-600 align-top">Sección hero, eslogan, página "sobre nosotros"</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Nombres de los competidores</td><td class="px-3 py-2 border border-dark-600 align-top">Secciones de "por qué elegirnos", páginas de comparación</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Lenguaje del cliente</td><td class="px-3 py-2 border border-dark-600 align-top">Testimonios, reseñas, contenido de preguntas frecuentes</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed">Ejecuta investigaciones de palabras clave:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "[Tipo de negócio]" Google Ads keywords
+WebSearch: "[Indústria]" high intent keywords
+WebSearch: "[Produto/serviço]" search terms people use
+WebSearch: "[Nome do Negócio]" competitors Google Ads
+WebSearch: "[Indústria]" average CPC Google Ads 2025
+WebSearch: site:[URL do concorrente] (para entender o posicionamento do concorrente)</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 2: Mapeo de la intención de búsqueda</h3><p class="text-neutral-300 mb-4 leading-relaxed">Mapea todas las palabras clave descubiertas en cuatro categorías de intención:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">## Mapa de Intenção de Busca
+
+### 1. Intenção Informativa (Topo de Funil — Consciência)
+Usuários pesquisando, aprendendo ou explorando. Ainda não prontos para comprar.
+
+**Palavras sinalizadoras:** como fazer, o que é, por que, guia, dicas, melhores práticas, exemplos, tutorial, aprender
+**Papel na campanha:** Consciência de marca, marketing de conteúdo, construção de listas de remarketing
+**Estratégia de lances:** Lances baixos, compartilhar impressões ou pular se o orçamento for apertado
+
+| Palavra-chave | Volume Mensal Est. | CPC Est. | Concorrência | Observações |
+|---|---|---|---|---|
+| [palavra-chave 1] | [faixa de volume] | $[faixa] | Baixa/Média/Alta | [observação] |
+| [palavra-chave 2] | [faixa de volume] | $[faixa] | Baixa/Média/Alta | [observação] |
+| [palavra-chave 3] | [faixa de volume] | $[faixa] | Baixa/Média/Alta | [observação] |
+| [palavra-chave 4] | [faixa de volume] | $[faixa] | Baixa/Média/Alta | [observação] |
+| [palavra-chave 5] | [faixa de volume] | $[faixa] | Baixa/Média/Alta | [observação] |
+[...continue para 10-15 palavras-chave]
+
+### 2. Intenção Navegacional (Meio de Funil — Consideração)
+Usuários procurando uma marca, produto ou site específico. Podem estar comparando opções.
+
+**Palavras sinalizadoras:** [nome da marca], [nome do produto], login, preços, avaliações, vs, comparar, alternativa para
+**Papel na campanha:** Defesa de marca, conquista de concorrentes, captura de comparações
+**Estratégia de lances:** Lances altos em termos de marca, moderados em termos de concorrentes
+
+| Palavra-chave | Volume Mensal Est. | CPC Est. | Concorrência | Observações |
+|---|---|---|---|---|
+| [palavra-chave 1] | [faixa de volume] | $[faixa] | Baixa/Média/Alta | [observação] |
+| [palavra-chave 2] | [faixa de volume] | $[faixa] | Baixa/Média/Alta | [observação] |
+[...continue para 5-10 palavras-chave]
+
+### 3. Intenção de Investigação Comercial (Meio a Fundo de Funil)
+Usuários comparando ativamente soluções antes da compra. Tráfego de alto valor.
+
+**Palavras sinalizadoras:** melhor, top, avaliação, comparação, vs, alternativa, qual, recomendado
+**Papel na campanha:** Captura de consideração, diferenciação competitiva
+**Estratégia de lances:** Lances moderados a altos, maximizar conversões
+
+| Palavra-chave | Volume Mensal Est. | CPC Est. | Concorrência | Observações |
+|---|---|---|---|---|
+| [palavra-chave 1] | [faixa de volume] | $[faixa] | Baixa/Média/Alta | [observação] |
+| [palavra-chave 2] | [faixa de volume] | $[faixa] | Baixa/Média/Alta | [observação] |
+[...continue para 10-15 palavras-chave]
+
+### 4. Intenção Transacional (Fundo de Funil — Conversão)
+Usuários prontos para comprar, se inscrever ou tomar ação. Palavras-chave de maior valor.
+
+**Palavras sinalizadoras:** comprar, pedir, contratar, reservar, agendar, obter cotação, preços, custo, perto de mim, teste grátis, inscrever-se, desconto, cupom
+**Papel na campanha:** Conversão direta, geração de leads, vendas
+**Estratégia de lances:** Lances mais altos, CPA alvo ou maximizar conversões
+
+| Palavra-chave | Volume Mensal Est. | CPC Est. | Concorrência | Observações |
+|---|---|---|---|---|
+| [palavra-chave 1] | [faixa de volume] | $[faixa] | Baixa/Média/Alta | [observação] |
+| [palavra-chave 2] | [faixa de volume] | $[faixa] | Baixa/Média/Alta | [observação] |
+[...continue para 15-20 palavras-chave]</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 3: Agrupación de palabras clave en grupos de anuncios</h3><p class="text-neutral-300 mb-4 leading-relaxed">Organiza las palabras clave en grupos de anuncios con temas específicos. Cada grupo de anuncios debe contener <strong>3-5 palabras clave estrechamente relacionadas</strong> que puedan compartir el mismo texto del anuncio.</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">## Arquitetura de Grupos de Anúncios
+
+### Campanha: [Nome da Campanha — ex., "Marca", "Não-Marca Core", "Concorrente", "Cauda Longa"]
+**Tipo de campanha:** Busca
+**Estratégia de lances:** [Estratégia recomendada]
+**Sugestão de orçamento diário:** $[valor]
+**Direcionamento geográfico:** [Localização]
+
+---
+
+#### Grupo de Anúncios 1: [Nome do Tema]
+**Intenção:** [Informativa / Comercial / Transacional]
+**Tema:** [O que une estas palavras-chave — ex., "consultas de preços", "compradores de comparação", "necessidade de emergência"]
+
+| # | Palavra-chave | Tipo de Correspondência | Racional | CPC Est. |
+|---|---|---|---|---|
+| 1 | [palavra-chave] | [Exata / Frase / Ampla] | [por que este tipo de correspondência] | $[est.] |
+| 2 | [palavra-chave] | [Exata / Frase / Ampla] | [racional] | $[est.] |
+| 3 | [palavra-chave] | [Exata / Frase / Ampla] | [racional] | $[est.] |
+| 4 | [palavra-chave] | [Exata / Frase / Ampla] | [racional] | $[est.] |
+| 5 | [palavra-chave] | [Exata / Frase / Ampla] | [racional] | $[est.] |
+
+**Texto de Anúncio para Este Grupo de Anúncios:**
+
+| Elemento | Versão A | Versão B |
+|---|---|---|
+| Título 1 (30 chars) | [título] ([contagem]) | [título] ([contagem]) |
+| Título 2 (30 chars) | [título] ([contagem]) | [título] ([contagem]) |
+| Título 3 (30 chars) | [título] ([contagem]) | [título] ([contagem]) |
+| Descrição 1 (90 chars) | [descrição] ([contagem]) | [descrição] ([contagem]) |
+| Descrição 2 (90 chars) | [descrição] ([contagem]) | [descrição] ([contagem]) |
+| Caminho de Exibição 1 | [caminho] | [caminho] |
+| Caminho de Exibição 2 | [caminho] | [caminho] |
+
+**Recomendação de página de destino:** [Para onde este grupo de anúncios deve enviar o tráfego e por quê]
+
+---
+
+#### Grupo de Anúncios 2: [Nome do Tema]
+[...repita a mesma estrutura]
+
+#### Grupo de Anúncios 3: [Nome do Tema]
+[...repita]
+
+[...continue para todos os grupos de anúncios — mire em 8-15 grupos de anúncios no total entre as campanhas]</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 4: Estrategia de tipos de concordancia</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">## Recomendações de Tipos de Correspondência
+
+### Quando Usar Cada Tipo de Correspondência
+
+| Tipo de Correspondência | Usar Quando | Prós | Contras | Impacto no Orçamento |
+|---|---|---|---|---|
+| **Exata** [palavra-chave] | Alta intenção, conversores comprovados | Maior relevância, melhor CTR, menor desperdício de CPC | Alcance limitado, perde variações | Baixo desperdício, alto ROAS |
+| **Frase** "palavra-chave" | Termos core onde a ordem das palavras importa | Equilibra alcance e relevância, captura cauda longa | Pode corresponder a consultas irrelevantes com palavras adicionadas | Desperdício moderado, precisa de negativas |
+| **Ampla** palavra-chave | Descoberta, novas palavras-chave, grandes orçamentos | Alcance máximo, encontra novas oportunidades | Corresponde a consultas frouxamente relacionadas, precisa de listas negativas pesadas | Maior desperdício sem otimização |
+
+### Recomendação de Distribuição de Tipos de Correspondência
+
+**Para novas campanhas (primeiros 30 dias):**
+| Tipo de Correspondência | % de Palavras-chave | Propósito |
+|---|---|---|
+| Exata | 50% | Termos core de alta intenção — proteger orçamento |
+| Frase | 35% | Capturar variações e cauda longa |
+| Ampla | 15% | Descoberta — encontrar novas consultas convertidas |
+
+**Após otimização (dia 31+):**
+| Tipo de Correspondência | % de Palavras-chave | Propósito |
+|---|---|---|
+| Exata | 40% | Vencedores comprovados dos relatórios de termos de busca |
+| Frase | 40% | Alcance expandido em temas validados |
+| Ampla | 20% | Descoberta contínua com Lances Inteligentes |
+
+### Estratégia de Progressão de Tipos de Correspondência
+1. **Semana 1-2:** Lançar apenas com exata e frase. Construir dados de base.
+2. **Semana 3-4:** Revisar relatório de termos de busca. Adicionar consultas convertidas como correspondência exata. Adicionar consultas não convertidas como negativas.
+3. **Mês 2:** Introduzir correspondência ampla nos grupos de anúncios de melhor desempenho com lances de CPA Alvo.
+4. **Mensalmente:** Coletar relatório de termos de busca. Promover consultas amplas de bom desempenho para frase/exata. Adicionar negativas para desperdício.</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 5: Lista de palabras clave negativas</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">## Listas de Palavras-chave Negativas
+
+### Negativas em Nível de Campanha (aplicar a TODAS as campanhas)
+Estas palavras-chave NUNCA devem disparar seus anúncios:
+
+#### Relacionado a Emprego/Carreira
+- empregos, carreiras, contratação, salário, entrevista, currículo, glassdoor, indeed, linkedin
+- termos de emprego específicos da indústria: [lista]
+
+#### Educacional/Pesquisa (excluir se não estiver vendendo educação)
+- como se tornar, certificação, grau, curso, treinamento, aula, universidade, escola
+- tutorial, curso grátis, pdf, download, modelo
+
+#### Buscadores de Grátis/DIY (excluir se estiver vendendo serviços premium)
+- grátis, barato, desconto, cupom, código promocional, oferta, orçamento
+- faça você mesmo, caseiro, próprio, próprio
+
+#### Indústrias Não Relacionadas
+- [lista termos irrelevantes específicos da indústria que compartilham palavras-chave com o negócio]
+
+#### Termos de Marca de Concorrentes (excluir de campanhas não-marca)
+- [nome do concorrente 1]
+- [nome do concorrente 2]
+- [nome do concorrente 3]
+
+#### Exclusões Geográficas (se direcionando para áreas específicas)
+- [cidades/estados/países fora da área de atendimento]
+
+---
+
+### Negativas em Nível de Grupo de Anúncios
+Aplique estas para impedir que grupos de anúncios se canibalizem:
+
+| Grupo de Anúncios | Palavras-chave Negativas | Motivo |
+|---|---|---|
+| [Grupo de Anúncios 1] | [palavras-chave para excluir] | [impedir sobreposição com Grupo de Anúncios X] |
+| [Grupo de Anúncios 2] | [palavras-chave para excluir] | [impedir sobreposição] |
+| [Grupo de Anúncios 3] | [palavras-chave para excluir] | [impedir sobreposição] |
+
+---
+
+### Processo de Descoberta de Palavras-chave Negativas
+Execute estas pesquisas mensalmente para encontrar novas negativas:
+
+1. **Relatório de Termos de Busca:** Revisar consultas reais que dispararam seus anúncios. Adicionar irrelevantes como negativas.
+2. **Planejador de Palavras-chave do Google:** Pesquisar suas palavras-chave e procurar termos relacionados irrelevantes.
+3. **Auditoria de Autocomplete:** Digitar cada palavra-chave no Google e anotar sugestões de autocomplete irrelevantes.
+4. **Análise de Concorrentes:** Pesquisar termos de marca de concorrentes + suas palavras-chave para encontrar necessidades de desambiguação.</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 6: Estimación de CPC y presupuesto</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">## Estimativas de CPC &amp; Orçamento
+
+### CPC Estimado por Cluster de Palavras-chave
+
+| Cluster / Grupo de Anúncios | CPC Médio Est. | Faixa de CPC | Volume Mensal (est.) | Gasto Mensal (est.) | Nível de Intenção |
+|---|---|---|---|---|---|
+| [Cluster 1] | $[média] | $[baixo]-$[alto] | [volume] | $[gasto em 100% IS] | Alta |
+| [Cluster 2] | $[média] | $[baixo]-$[alto] | [volume] | $[gasto] | Alta |
+| [Cluster 3] | $[média] | $[baixo]-$[alto] | [volume] | $[gasto] | Média |
+| [Cluster 4] | $[média] | $[baixo]-$[alto] | [volume] | $[gasto] | Média |
+| [Cluster 5] | $[média] | $[baixo]-$[alto] | [volume] | $[gasto] | Baixa |
+
+**Notas sobre estimativas:**
+- As estimativas de CPC são baseadas em benchmarks da indústria e análise competitiva
+- Os CPCs reais variarão com base no Quality Score, estratégia de lances e concorrência
+- Novas contas tipicamente pagam 10-20% a mais até que o histórico do Quality Score seja estabelecido
+
+### Alocação de Orçamento por Campanha
+
+| Campanha | Orçamento Diário Recomendado | Orçamento Mensal | Prioridade |
+|---|---|---|---|
+| [Campanha 1 — Marca] | $[diário] | $[mensal] | Alta — proteger termos de marca |
+| [Campanha 2 — Core Não-Marca] | $[diário] | $[mensal] | Alta — principal motor de conversão |
+| [Campanha 3 — Comercial] | $[diário] | $[mensal] | Média — compradores de comparação |
+| [Campanha 4 — Cauda Longa] | $[diário] | $[mensal] | Média — alto ROAS, baixo volume |
+| [Campanha 5 — Concorrente] | $[diário] | $[mensal] | Baixa — cara, testar primeiro |
+| **Total** | **$[total diário]** | **$[total mensal]** | |
+
+### Cenários de Orçamento
+
+| Cenário | Orçamento Mensal | Foco | Cliques Esperados/mês | Conversões Esperadas/mês |
+|---|---|---|---|---|
+| Inicial | $[valor] | Marca + top 2 grupos de anúncios transacionais | [cliques] | [conversões] |
+| Crescimento | $[valor] | Todos os grupos de anúncios transacionais + comerciais | [cliques] | [conversões] |
+| Agressivo | $[valor] | Cobertura completa incluindo concorrente + ampla | [cliques] | [conversões] |</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 7: Optimización del Quality Score</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">## Guia de Otimização do Quality Score
+
+### O Que Determina o Quality Score (1-10)
+
+| Fator | Peso | Como Melhorar |
+|---|---|---|
+| **CTR Esperado** | ~39% | Escrever texto de anúncio convincente com ganchos fortes. Usar inserção dinâmica de palavras-chave. Incluir números e CTAs. Testar 3+ variações de título. |
+| **Relevância do Anúncio** | ~22% | Manter grupos de anúncios estreitos (3-5 palavras-chave). Usar palavras-chave nos títulos. Alinhar texto do anúncio à intenção de busca. Nunca misturar intenções em um grupo de anúncios. |
+| **Experiência da Página de Destino** | ~39% | Tempo de carregamento rápido (&lt;3s). Amigável para mobile. Conteúdo corresponde à promessa do anúncio. CTA claro acima da dobra. Sinais de confiança visíveis. HTTPS obrigatório. |
+
+### Plano de Ação do Quality Score
+
+**Para pontuações 1-4 (Ruim):**
+1. Dividir o grupo de anúncios em temas menores e mais estreitos
+2. Reescrever o texto do anúncio para abordar diretamente a intenção da palavra-chave
+3. Criar uma página de destino dedicada para este grupo de anúncios
+4. Pausar e reconstruir — palavras-chave com QS baixo drenam orçamento
+
+**Para pontuações 5-6 (Média):**
+1. Testar novas variações de título (3+ por RSA)
+2. Melhorar a velocidade de carregamento da página de destino
+3. Adicionar mais conteúdo relevante à página de destino
+4. Verificar se o CTA do anúncio corresponde ao CTA da página de destino
+
+**Para pontuações 7-8 (Bom):**
+1. Testar novas variações de descrição para ganhos incrementais de CTR
+2. Experimentar com estratégia de lances (CPA Alvo vs. Maximizar Conversões)
+3. Expandir com correspondência frase/ampla nestes grupos de anúncios comprovados
+
+**Para pontuações 9-10 (Excelente):**
+1. Aumentar orçamento — estes são seus melhores performers
+2. Usar como modelos para novos grupos de anúncios
+3. Monitorar semanalmente para manter a qualidade
+
+### Recomendações de Página de Destino por Grupo de Anúncios
+
+| Grupo de Anúncios | Página de Destino Recomendada | Elementos-Chave Necessários |
+|---|---|---|
+| [Grupo de Anúncios 1] | [URL ou descrição da página] | [correspondência de título, CTA, sinais de confiança] |
+| [Grupo de Anúncios 2] | [URL ou descrição da página] | [elementos necessários] |
+| [Grupo de Anúncios 3] | [URL ou descrição da página] | [elementos necessários] |
+| [Grupo de Anúncios 4] | [URL ou descrição da página] | [elementos necessários] |</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 8: Lista de verificación para el lanzamiento de la campaña</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">## Checklist de Lançamento da Campanha do Google Ads
+
+### Configuração da Conta
+- [ ] Rastreamento de conversão instalado (Tag do Google ou eventos GA4)
+- [ ] Google Analytics 4 vinculado ao Google Ads
+- [ ] Tag de remarketing instalada
+- [ ] Rastreamento de chamadas telefônicas configurado (se aplicável)
+- [ ] Dados do negócio verificados (endereço, telefone, horários)
+
+### Configuração da Campanha
+- [ ] Tipo de campanha: Busca
+- [ ] Rede: Apenas Busca (desmarcar parceiros da Rede de Display)
+- [ ] Direcionamento de localização: [localizações específicas, não "pessoas interessadas em"]
+- [ ] Direcionamento de idioma: [idioma]
+- [ ] Estratégia de lances: [estratégia recomendada]
+- [ ] Orçamento diário: [valor]
+- [ ] Agendamento de anúncios: [horas/dias recomendados]
+- [ ] Ajustes de lances por dispositivo: [recomendações]
+
+### Configuração do Grupo de Anúncios
+- [ ] 3-5 palavras-chave por grupo de anúncios (tema estreito)
+- [ ] Tipos de correspondência atribuídos conforme estratégia
+- [ ] Palavras-chave negativas aplicadas em nível de campanha e grupo de anúncios
+- [ ] RSA com 15 títulos e 4 descrições por grupo de anúncios
+- [ ] Pelo menos 2 anúncios por grupo de anúncios para teste A/B
+- [ ] Extensões de anúncio adicionadas: links de site, destaques, trechos estruturados, chamada, localização
+
+### Recomendações de Extensões de Anúncio
+| Tipo de Extensão | Conteúdo |
+|---|---|
+| Links de Site (4-6) | [links de páginas específicas com descrições] |
+| Destaques (4-6) | [frases curtas de benefício, 25 chars cada] |
+| Trechos Estruturados | [cabeçalho: tipo, valores: lista] |
+| Extensão de Chamada | [número de telefone se aplicável] |
+| Extensão de Localização | [endereço se aplicável] |
+| Extensão de Preço | [ofertas de preço se aplicável] |
+
+### Plano de Monitoramento da Semana 1
+- [ ] Dia 1: Verificar se os anúncios estão sendo exibidos, verificar rejeições
+- [ ] Dia 2: Revisar relatório de termos de busca por consultas irrelevantes
+- [ ] Dia 3: Verificar participação de impressões — os orçamentos estão limitando?
+- [ ] Dia 5: Primeira avaliação de CTR — pausar anúncios abaixo de 2% CTR
+- [ ] Dia 7: Revisar dados de conversão, ajustar lances nos melhores performers</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Formato de salida</h2><p class="text-neutral-300 mb-4 leading-relaxed">Guarda la salida completa en <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">ADS-KEYWORDS.md</code> en el directorio de trabajo actual.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Estructura del archivo:</strong></p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+# Estratégia de Palavras-chave do Google Ads: [Nome do Negócio]
+&gt; Gerado em [data] | Fonte: [URL]
+&gt; Total de palavras-chave: [quantidade] | Grupos de anúncios: [quantidade] | Campanhas: [quantidade]
+&gt; Faixa estimada de orçamento mensal: $[mínimo] - $[máximo]
+
+## Contexto do Negócio
+[Resumo do negócio e parâmetros de segmentação]
+
+## Mapa de Intenção de Busca
+### Palavras-chave Informativas
+### Palavras-chave Navegacionais
+### Palavras-chave de Investigação Comercial
+### Palavras-chave Transacionais
+
+## Arquitetura dos Grupos de Anúncios
+### Campanha 1: [Nome]
+#### Grupos de Anúncios 1-N com palavras-chave, tipos de correspondência e texto dos anúncios
+
+### Campanha 2: [Nome]
+[...]
+
+## Estratégia de Tipos de Correspondência
+[Recomendações e plano de progressão]
+
+## Listas de Palavras-chave Negativas
+[Negativas em nível de campanha e em nível de grupo de anúncios]
+
+## Estimativas de CPC e Orçamento
+[Estimativas por cluster, alocação de orçamento, cenários]
+
+## Otimização da Pontuação de Qualidade
+[Guia de melhoria, recomendações de página de destino]
+
+## Checklist de Lançamento da Campanha
+[Configuração, parâmetros, plano de monitoramento]
+
+## Próximos Passos
+1. Configure o rastreamento de conversões antes de lançar qualquer campanha
+2. Construa a Campanha 1 ([nome]) primeiro — prioridade mais alta
+3. Execute `/ads copy google` para variações adicionais de texto de anúncio
+4. Execute `/ads landing &lt;url&gt;` para auditar as páginas de destino antes de direcionar tráfego
+5. Revise o relatório de termos de busca após 7 dias e adicione negativas
+6. Expanda para a Campanha 2 após a Campanha 1 atingir ROAS positivo</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Lista de verificación de calidad</h2><p class="text-neutral-300 mb-4 leading-relaxed">Antes de entregar el resultado, verifica:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>[ ] Las 4 categorías de intención de búsqueda están cubiertas con palabras clave</li><li>[ ] Se investigan y categorizan al menos 40 palabras clave en total</li><li>[ ] Las palabras clave están agrupadas en 8-15 grupos de anuncios con temas específicos</li><li>[ ] Cada grupo de anuncios tiene como máximo 3-5 palabras clave</li><li>[ ] Los tipos de concordancia se asignan con una justificación para cada palabra clave</li><li>[ ] Cada grupo de anuncios tiene sugerencias de título y descripción (A/B)</li><li>[ ] Todos los recuentos de caracteres están dentro de los límites de Google Ads (T: 30, D: 90)</li><li>[ ] La lista de palabras clave negativas cubre al menos 4 categorías</li><li>[ ] Se proporcionan estimaciones de CPC por clúster</li><li>[ ] Los escenarios de presupuesto cubren los niveles inicial, de crecimiento y agresivo</li><li>[ ] La guía de optimización del puntaje de calidad es práctica</li><li>[ ] Recomendaciones para la página de destino incluidas por grupo de anuncios</li><li>[ ] El checklist de lanzamiento de la campaña está completo</li><li>[ ] Las recomendaciones de extensiones de anuncios son específicas</li><li>[ ] La salida se guarda en ADS-KEYWORDS.md</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">--- skills/ads-audience/SKILL.md ---</p><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed">name: Constructor de Personas de Audiencia description: Construye 5-7 personas de audiencia detalladas a partir de una URL, incluyendo demografía, psicografía, puntos de dolor, detonantes de compra, parámetros de segmentación específicos de cada plataforma, puntuación de personas y audiencias negativas</p><hr class="border-dark-600 my-8"/>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-1-10.html">← Módulo 1.10</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-12.html">Módulo 1.12 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Equipos de IA — Grupo 1 · Material educativo | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

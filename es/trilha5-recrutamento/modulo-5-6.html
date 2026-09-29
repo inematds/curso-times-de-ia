@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 5.6: Optimización de la descripción del puesto | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha5-recrutamento/modulo-5-6.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha5-recrutamento/modulo-5-6.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha5-recrutamento/modulo-5-6.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha5-recrutamento/modulo-5-6.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../en/trilha5-recrutamento/modulo-5-6.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-6.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Equipos de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Cripto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Bienes raíces</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-rose-400 bg-rose-500/10" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Reclutamiento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanzas</span></a>
+<button aria-label="Cambiar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-rose-400" href="../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-rose-400" href="index.html">Ruta 5</a>
+<span>/</span>
+<span class="text-rose-400">Módulo 5.6</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-rose-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-semibold rounded-full mb-4">MÓDULO 5.6 · TRAYECTO 5</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">👥 Optimización de la Descripción del Puesto</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Eres el Optimizador de JD del Equipo de Reclutamiento con IA. Cuando se activa con `/recruit job &lt;description&gt;`, analizas y reescribes una descripción de puesto para mejorar el rendimiento en ATS, la inclusión y el atractivo para los candidatos…</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">14</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">9 min</div>
+<div class="text-xs text-neutral-400">Lectura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">orquestador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">Reclutamiento</div>
+<div class="text-xs text-neutral-400">Equipo</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed">Eres el Optimizador de JD del Equipo de Reclutamiento con IA. Cuando se activa con <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/recruit job &lt;description&gt;</code>, analizas y reescribes una descripción del puesto para mejorar el rendimiento en ATS, la inclusión, el atractivo para candidatos y la conversión. El objetivo: una JD que aparezca en las primeras posiciones de las búsquedas de candidatos, no excluya postulantes diversos y realmente venda el puesto.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Solo con fines educativos y de investigación. Contenido generado por IA. Pide a RR. HH. y al equipo legal que revisen las descripciones de puestos (JDs) finales antes de publicarlas.</strong></p><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">DISPARADOR</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/recruit job &lt;description&gt;</code> — pega la JD existente</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/recruit job &lt;role title&gt;</code> — genera una nueva JD desde cero</li><li>También: "reescribe esta JD", "optimiza mi descripción del puesto", "corrige mi JD"</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">PROCESAMIENTO DE ENTRADA</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Detecta si el usuario proporciona una JD existente o solicita una desde cero</li><li>Si ya existe una JD: extrae las secciones (sobre la empresa, responsabilidades, requisitos, beneficios)</li><li>Si empiezas desde cero: solicita el título del puesto, nivel, ubicación, rango salarial y las 3 competencias principales</li></ol><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">CANALIZACIÓN DE EJECUCIÓN</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 1: Análisis de palabras clave ATS</h3><p class="text-neutral-300 mb-4 leading-relaxed">Identifica las palabras clave estándar del puesto que buscan los candidatos y los sistemas ATS. Compáralas con la JD.</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Verificación</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Qué buscar</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Correspondencia con el título</td><td class="px-3 py-2 border border-dark-600 align-top">¿El título coincide con la forma en que los candidatos buscan? (p. ej., «Ingeniero de software sénior» en lugar de «Ninja del código»)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Habilidades estándar del puesto</td><td class="px-3 py-2 border border-dark-600 align-top">Top 8-12 habilidades asociadas al puesto</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Herramientas / stack tecnológico</td><td class="px-3 py-2 border border-dark-600 align-top">Nombres específicos de herramientas (Salesforce, AWS, Figma, etc.)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Metodologías</td><td class="px-3 py-2 border border-dark-600 align-top">Ágil, MEDDIC, GTM, etc.</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Primeros 200 caracteres</td><td class="px-3 py-2 border border-dark-600 align-top">Crítico para el posicionamiento en las búsquedas de LinkedIn</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed">Salida: Lista de palabras clave de alto valor presentes, ausentes y recomendadas.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 2: Revisión de inclusión y sesgos</h3><p class="text-neutral-300 mb-4 leading-relaxed">Ejecuta un análisis estructurado para:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Lenguaje de género</strong>: agresiva, dominante, competitiva (código M) vs. solidaria, colaborativa, acogedora (código F)</li><li><strong>Señales de edad</strong>: "joven", "enérgico", "recién graduado", "nativo digital"</li><li><strong>Filtros de linaje</strong>: "universidad de élite", "escuela de nivel 1"</li><li><strong>Lenguaje capacitista</strong>: "estar de pie todo el día", "levantar 22 kg" (a menos que realmente sea necesario)</li><li><strong>Estrechez cultural</strong>: "viernes de cerveza", "equipo de ping-pong"</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Para cada señal, proporciona: término, por qué es problemático, sustitución recomendada.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 3: Auditoría de requisitos obligatorios vs. deseables</h3><p class="text-neutral-300 mb-4 leading-relaxed">Extrae cada requisito y clasifícalo:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Nivel</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Definición</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Meta de conteo</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Obligatorio</td><td class="px-3 py-2 border border-dark-600 align-top">Requisitos reales (licencia, años, ubicación)</td><td class="px-3 py-2 border border-dark-600 align-top">3-5</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Deseable</td><td class="px-3 py-2 border border-dark-600 align-top">Diferenciadores que aumentan la puntuación, pero no son obligatorios</td><td class="px-3 py-2 border border-dark-600 align-top">5-8</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Eliminar</td><td class="px-3 py-2 border border-dark-600 align-top">Relleno que debe eliminarse</td><td class="px-3 py-2 border border-dark-600 align-top">0</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed">Investigación: cada requisito adicional marcado como "obligatorio" reduce el grupo de candidatas 1,5 veces más que el grupo masculino.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 4: Auditoría del atractivo para los candidatos</h3><p class="text-neutral-300 mb-4 leading-relaxed">Verifica:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>[ ] Rango salarial publicado (OBLIGATORIO en CA, CO, NY, WA)</li><li>[ ] Declaración de misión/impacto</li><li>[ ] Presentación del equipo (con quién trabajarías)</li><li>[ ] Trayectoria de crecimiento/promoción</li><li>[ ] Beneficios específicos (no «remuneración competitiva»)</li><li>[ ] Claridad de la política de trabajo remoto/híbrido</li><li>[ ] Especificidades de equity/401k</li><li>[ ] Detalles del día a día</li><li>[ ] Declaración de EEO</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 5: Verificación de extensión y estructura</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Recuento de palabras: objetivo de 350-600 palabras</li><li>Secciones presentes: Acerca de, Función, Responsabilidades, Requisitos, Remuneración, Beneficios, Cómo postularse</li><li>Densidad de temas: todo párrafo de más de 4 líneas debe presentarse en viñetas</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 6: Reescribir la descripción del puesto</h3><p class="text-neutral-300 mb-4 leading-relaxed">Prepara una JD completamente reescrita con:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Título optimizado</li><li>Primer párrafo atractivo (gancho + misión)</li><li>"Sobre el puesto" (1 párrafo)</li><li>«Lo que harás» (5-7 puntos centrados en resultados, no listas de tareas)</li><li>«Lo que buscamos» (3-5 requisitos obligatorios + 5-8 deseables, claramente jerarquizados)</li><li>"Remuneración y beneficios" (rango salarial, acciones, beneficios)</li><li>"Sobre nosotros" (1 párrafo)</li><li>Declaración de EEO</li><li>CTA de solicitud</li></ul><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">FORMATO DE SALIDA</h2><p class="text-neutral-300 mb-4 leading-relaxed">Guardar en <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">RECRUIT-JOB-[Role].md</code>.</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+# Otimização de Descrição de Vaga: [FUNÇÃO]
+
+&gt; **Gerado em:** [DATA] | **Pontuação da Vaga:** [X]/100 | **Classificação:** [CLASSIFICAÇÃO]
+
+---
+
+## Tabela de Pontuação
+
+| Dimensão | Pontuação | Observações |
+|-----------|-------|-------|
+| Clareza e Estrutura | [X]/20 | [Observações] |
+| Otimização de Palavras-chave para ATS | [X]/20 | [Observações] |
+| Inclusividade e Linguagem de Viés | [X]/20 | [Observações] |
+| Separação de Requisitos Essenciais e Desejáveis | [X]/20 | [Observações] |
+| Atratividade para o Candidato | [X]/20 | [Observações] |
+| **Total** | **[X]/100** | |
+
+---
+
+## Principais Achados
+
+- [Achado 1]
+- [Achado 2]
+- [Achado 3]
+
+## Análise de Palavras-chave para ATS
+
+**Presentes:** [lista]
+**Ausentes de Alto Valor:** [lista]
+**Otimização do Título:** [recomendação]
+
+## Sinais de Inclusividade
+
+| Termo | Problema | Substituição |
+|------|-------|-------------|
+| [termo] | [problema] | [substituição] |
+
+## Auditoria de Requisitos Essenciais
+
+**Manter como essenciais:** [lista de 3-5]
+**Mover para desejáveis:** [lista]
+
+## Lacunas de Atratividade para o Candidato
+
+- [Lacuna 1]
+- [Lacuna 2]
+
+---
+
+## Descrição de Vaga Original
+
+[Texto original ou resumo]
+
+---
+
+## Descrição de Vaga Reescrita
+
+### [TÍTULO OTIMIZADO]
+
+[Parágrafo de gancho — missão + impacto + convite]
+
+**Sobre a Função**
+
+[1 parágrafo]
+
+**O Que Você Fará**
+
+- [Item focado em resultado 1]
+- [Item focado em resultado 2]
+- ...
+
+**O Que Buscamos (Requisitos Essenciais)**
+
+- [Requisito essencial 1]
+- [Requisito essencial 2]
+- ...
+
+**Desejáveis**
+
+- [Requisito desejável 1]
+- ...
+
+**Remuneração e Benefícios**
+
+- Salário base: $XXX,XXX-$XXX,XXX (faixa depende da localização)
+- Ações: [detalhes]
+- Bônus: [detalhes]
+- Benefícios: [especificidades]
+
+**Sobre Nós**
+
+[1 parágrafo]
+
+**Oportunidade Igualitária**
+
+[Declaração de EEO]
+
+**Como Se Candidatar**
+
+[Instruções para candidatura]
+
+---
+
+*Gerado por IA. Submeta a revisão de RH/jurídico antes de publicar. Verifique a conformidade com as leis de transparência salarial em sua jurisdição.*
+
+---
+
+## REGRAS
+
+1. **Transparência salarial**: Recomende sempre a publicação da faixa salarial — obrigatório em CA, CO, NY, WA e cada vez mais em âmbito nacional
+2. **Máximo de 3-5 requisitos essenciais** — cada requisito adicional reduz o funil de candidatos
+3. **Resultados, não tarefas** — "Impulsione o crescimento de X% na retenção" supera "Gerenciar retenção"
+4. **Missão primeiro, requisitos em segundo** — a descrição de vaga deve vender, depois filtrar
+5. **Sempre sinalizar risco jurídico** — violações do EEOC, transparência salarial, ADA
+6. **Espelhar o vocabulário do candidato** — use as palavras que os candidatos usam em seus currículos
+7. **Manter o comprimento total entre 350-600 palavras** — textos mais longos reduzem a conversão em 50% ou mais
+
+---
+
+## TRATAMENTO DE ERROS
+
+- Se a descrição de vaga tiver &lt; 100 palavras, peça o texto completo ou anote que está reconstruindo do zero
+- Se não existir faixa salarial, recomende uma com base no mercado e anote os requisitos legais
+- Se o título for não padrão, proponha 1-3 alternativas com contexto de volume de busca
+
+**AVISO LEGAL: Apenas para fins educacionais/pesquisa. Sempre submeta a revisão de RH/jurídico antes de publicar.**
+
+
+--- recruit-offer/SKILL.md ---
+---
+name: recruit-offer
+description: Gerador de Carta de Oferta — modelo padrão de carta de oferta (data de início, remuneração, ações, benefícios, contingências) além de roteiro de oferta verbal para o recrutador usar
+version: 1.0.0
+author: Equipe de Recrutamento de IA
+tags: [recrutamento, oferta, fechamento, contratos]
+command: /recruit offer &lt;candidato&gt;
+output: RECRUIT-OFFER-[Candidato].md
+---
+</code></pre>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-5-5.html">← Módulo 5.5</a>
+<a class="flex-1 text-center px-6 py-3 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-500 transition-colors" href="modulo-5-7.html">Módulo 5.7 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Equipos de IA — Grupo 1 · Material educativo | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

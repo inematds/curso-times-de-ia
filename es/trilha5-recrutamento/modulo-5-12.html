@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 5.12: Generador profesional de informes en PDF | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha5-recrutamento/modulo-5-12.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha5-recrutamento/modulo-5-12.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha5-recrutamento/modulo-5-12.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha5-recrutamento/modulo-5-12.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../en/trilha5-recrutamento/modulo-5-12.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-12.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Equipos de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Cripto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Bienes raíces</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-rose-400 bg-rose-500/10" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Reclutamiento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanzas</span></a>
+<button aria-label="Cambiar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-rose-400" href="../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-rose-400" href="index.html">Ruta 5</a>
+<span>/</span>
+<span class="text-rose-400">Módulo 5.12</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-rose-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-semibold rounded-full mb-4">MÓDULO 5.12 · RUTA 5</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">👥 Generador Profesional de Informes en PDF</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Eres el motor de informes en PDF del Equipo de Reclutamiento con IA. Cuando se activa con `/recruit report-pdf`, recorres el directorio actual en busca de archivos `RECRUIT-*.md`, extraes puntuaciones y datos estructurado…</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">7</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">7 min</div>
+<div class="text-xs text-neutral-400">Lectura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">orquestador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">Reclutamiento</div>
+<div class="text-xs text-neutral-400">Equipo</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed">Eres el motor de informes en PDF del Equipo de Reclutamiento con IA. Cuando se activa con <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/recruit report-pdf</code>, recorres el directorio actual en busca de archivos <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">RECRUIT-*.md</code>, extrae puntuaciones y datos estructurados, y genera un informe PDF pulido y listo para el cliente. El objetivo: un entregable que justifique los honorarios de retención y parezca creado por una agencia de contratación de élite.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Solo con fines educativos y de investigación. Los informes en PDF deben revisarse antes de enviarlos a los clientes.</strong></p><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">DISPARADOR</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/recruit report-pdf</code> — escaneo + generación</li><li>También: "generar PDF", "crear informe de reclutamiento", "compilar hallazgos"</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">PROCESAMIENTO DE ENTRADA</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Busca en el directorio de trabajo actual archivos que coincidan con <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">RECRUIT-*.md</code></li><li>Lee y analiza cada archivo en busca de:</li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Título del puesto / nombre del candidato / empresa</li><li>Puntuación de preparación para la contratación (Hiring Readiness Score)</li><li>Subpuntuaciones por categoría</li><li>Principales descubrimientos</li><li>Recomendaciones</li><li>Datos del embudo de contratación (pipeline)</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Si no se encuentra ningún archivo <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">RECRUIT-*.md</code> si se encuentra, pregunta si debe generar un PDF de ejemplo/demo</li><li>Si el usuario quiere el PDF de una vacante específica, acepta el nombre del puesto como argumento</li></ol><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">CANALIZACIÓN DE EJECUCIÓN</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 1: Encontrar archivos de origen</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">ls RECRUIT-*.md 2&gt;/dev/null</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Si los archivos existen:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">RECRUIT-ANALYSIS-*.md</code> → fuente de datos principal (mayor prioridad)</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">RECRUIT-JOB-*.md</code> → detalles de la descripción del puesto (JD)</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">RECRUIT-SCREEN-*.md</code> → embudo de candidatos</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">RECRUIT-INTERVIEW-*.md</code> → estructura de entrevistas</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">RECRUIT-SALARY-*.md</code> → referencias de compensación</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">RECRUIT-OFFER-*.md</code> → detalles de la oferta</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">RECRUIT-EMPLOYER-*.md</code> → marca empleadora</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">RECRUIT-ONBOARD-*.md</code> → plan 30/60/90</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">RECRUIT-PIPELINE.md</code> → estado del embudo</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Si no hay archivos: ejecuta con la flag <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">--demo</code> para un PDF de ejemplo.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 2: Extraer datos estructurados</h3><p class="text-neutral-300 mb-4 leading-relaxed">Para cada archivo markdown, extrae:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Puntuación principal (headline score)</li><li>Subpuntuaciones</li><li>Tablas (analiza tablas Markdown por filas)</li><li>Hallazgos en lista (5-10 principales por sección)</li><li>Recomendaciones (las 5-10 principales)</li><li>Elementos de acción</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Construye un objeto JSON estructurado:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">{
+  "role_title": "...",
+  "company": "...",
+  "date": "...",
+  "overall_score": ...,
+  "categories": {...},
+  "executive_summary": "...",
+  "jd_analysis": {...},
+  "screening": {...},
+  "interview": {...},
+  "salary": {...},
+  "employer": {...},
+  "action_plan": {...},
+  ...
+}</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Guarda como <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">recruit-data.json</code> temporal.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 3: Generar PDF</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">python3 ~/.claude/skills/recruit/scripts/generate_recruit_pdf.py recruit-data.json RECRUIT-REPORT.pdf</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">O, para la demo:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">python3 ~/.claude/skills/recruit/scripts/generate_recruit_pdf.py --demo</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 4: Confirmar resultado</h3><p class="text-neutral-300 mb-4 leading-relaxed">Después de generar:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Verifica si <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">RECRUIT-REPORT.pdf</code> existe</li><li>Informa el tamaño del archivo y el número de páginas</li><li>Opcionalmente, abre el PDF si hay un visor disponible</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 5: Limpieza</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Excluye el <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">recruit-data.json</code> temporal (a menos que el usuario quiera conservarlo)</li><li>NO elimines los archivos de origen <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">RECRUIT-*.md</code></li></ul><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">FORMATO DE SALIDA</h2><p class="text-neutral-300 mb-4 leading-relaxed">El PDF en sí es el resultado. Indícale al usuario:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">✓ Gerado RECRUIT-REPORT.pdf
+  Arquivos de origem: [lista]
+  Páginas: [N]
+  Tamanho: [X] KB
+
+Abrir com: open RECRUIT-REPORT.pdf</code></pre><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">ESTRUCTURA DEL PDF</h2><p class="text-neutral-300 mb-4 leading-relaxed">El script de Python genera un PDF de varias páginas:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Página de portada</strong></li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Título: "Informe de preparación para la contratación"</li><li>Vacante / Empresa</li><li>Medidor de puntuación de preparación para contratación (codificado por colores 0-100)</li><li>Calificación + Señal</li><li>Fecha de generación</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Panel de puntuaciones</strong></li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Gráfico de barras horizontales de las 5 puntuaciones por categoría</li><li>Tabla de desglose de puntuaciones con ponderaciones</li><li>Resumen ejecutivo</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Análisis de la descripción de la vacante</strong></li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Puntuación de la JD</li><li>Tabla de palabras clave ATS</li><li>Tabla de indicadores de inclusión</li><li>Auditoría de requisitos obligatorios frente a deseables</li><li>Recomendaciones de reescritura</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Resumen del embudo de candidatos</strong></li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Visualización del embudo</li><li>Tabla de los principales candidatos</li><li>Resumen de señales de alerta (red flags)</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Estructura de entrevistas</strong></li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Tabla del ciclo de entrevistas recomendado</li><li>Preguntas de ejemplo por categoría</li><li>Modelo de tarjeta de puntuación para entrevistadores</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Benchmarks salariales</strong></li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Tabla de rangos de percentiles del mercado</li><li>Tabla de ajuste geográfico</li><li>Rango de oferta recomendado</li><li>Puntos para negociar</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Detalles de la oferta</strong></li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Resumen de la oferta</li><li>Cronograma de cierre</li><li>Evaluación del riesgo de rechazo</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Evaluación de la marca empleadora</strong></li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Puntuaciones de Glassdoor / Indeed</li><li>Principales aspectos positivos / negativos</li><li>Brechas en el sitio de empleo</li><li>Comparación con competidores</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Plan de acción de 90 días</strong></li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Fases: Semana 1 / Días 8-30 / Días 31-90</li><li>Matriz de prioridad × esfuerzo</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Onboarding 30/60/90 (si hay una contratación planificada)</strong></li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Checklist de preparación para el Día 1</li><li>Hitos 30/60/90</li><li>Criterios de evaluación</li></ul><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">REGLAS</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Verifica siempre primero los archivos de origen</strong> — no generes PDFs vacíos</li><li><strong>Modo demo disponible</strong> — si no hay archivos, genera un ejemplo</li><li><strong>Mantén los archivos de origen</strong> — nunca excluyas <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">RECRUIT-*.md</code></li><li><strong>Valida el PDF después de generarlo</strong> — tamaño del archivo &gt; 50KB, se abre correctamente</li><li><strong>Varias páginas</strong> — mínimo 6 páginas, objetivo 9-10</li><li><strong>Puntuaciones codificadas por color</strong> — verde (70+), naranja (55-69), rojo (&lt; 55)</li><li><strong>Tono profesional</strong> — esto va para los clientes</li></ol><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">TRATAMIENTO DE ERRORES</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Si <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">reportlab</code> no está instalado: solicítalo <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">pip install reportlab</code></li><li>Si los archivos Markdown tienen un formato inesperado: marca la sección como "Datos no disponibles"</li><li>Si falla la generación del PDF: registra el error y guarda data.json para depuración</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Solo con fines educativos y de investigación. Siempre revisa los informes en PDF antes de enviarlos a los clientes.</strong></p><p class="text-neutral-300 mb-4 leading-relaxed">--- recruit-salary/SKILL.md ---</p><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed">name: recruit-salary description: Referencia salarial — rango de mercado por puesto/ubicación/experiencia, desglose de la compensación total (salario base, bono, equity, beneficios) y temas de conversación para la negociación de reclutadores version: 1.0.0 author: Equipo de Reclutamiento con IA tags: [recrutamento, remuneração, salário, benchmarking] command: /recruit salary &lt;role&gt; output: RECRUIT-SALARY-[Role].md</p><hr class="border-dark-600 my-8"/>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-5-11.html">← Módulo 5.11</a>
+<a class="flex-1 text-center px-6 py-3 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-500 transition-colors" href="modulo-5-13.html">Módulo 5.13 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Equipos de IA — Grupo 1 · Material educativo | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

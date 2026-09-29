@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 6.5: Comparación de Escenarios Financieros | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha6-financas/modulo-6-5.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha6-financas/modulo-6-5.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha6-financas/modulo-6-5.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha6-financas/modulo-6-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../en/trilha6-financas/modulo-6-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-6-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Equipos de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Cripto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Bienes raíces</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Reclutamiento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-cyan-400 bg-cyan-500/10" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanzas</span></a>
+<button aria-label="Cambiar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-cyan-400" href="../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-cyan-400" href="index.html">Ruta 6</a>
+<span>/</span>
+<span class="text-cyan-400">Módulo 6.5</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-cyan-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full mb-4">MÓDULO 6.5 · RUTA 6</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">💰 Comparación de Escenarios Financieros</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">**Decisión:** [Clasificación en una frase]</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">12</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">6 min</div>
+<div class="text-xs text-neutral-400">Lectura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">orquestador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">Finanzas</div>
+<div class="text-xs text-neutral-400">Equipo</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed"><strong>Decisión:</strong> [Descripción en una frase] <strong>Horizonte temporal:</strong> [X] años <strong>Generado el:</strong> [Fecha]</p><blockquote class="border-l-4 border-primary/60 bg-dark-800/50 pl-4 pr-4 py-3 my-4 rounded-r-lg text-neutral-300"><p class=""><strong>AVISO:</strong> Solo con fines educativos e informativos. No constituye asesoramiento financiero.</p></blockquote><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Resumen ejecutivo</h2><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Recomendación:</strong> [Escenario A o B] — [motivo en una frase] <strong>Confianza:</strong> [Alta / Media / Baja] <strong>Factor determinante:</strong> [El número clave que inclina la decisión]</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Escenario A: [Nombre]</h2><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Supuestos:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>[Enumera cada supuesto con su valor]</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Proyección a 10 años:</strong></p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Año</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Salida de efectivo</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Patrimonio/Valor</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Efectivo acumulado</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">1</td><td class="px-3 py-2 border border-dark-600 align-top">$X</td><td class="px-3 py-2 border border-dark-600 align-top">$Y</td><td class="px-3 py-2 border border-dark-600 align-top">$Z</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">5</td><td class="px-3 py-2 border border-dark-600 align-top">$X</td><td class="px-3 py-2 border border-dark-600 align-top">$Y</td><td class="px-3 py-2 border border-dark-600 align-top">$Z</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">10</td><td class="px-3 py-2 border border-dark-600 align-top">$X</td><td class="px-3 py-2 border border-dark-600 align-top">$Y</td><td class="px-3 py-2 border border-dark-600 align-top">$Z</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Costo total (10 años):</strong> $X <strong>Valor Final:</strong> $Y <strong>Posición neta:</strong> $Z</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Escenario B: [Nombre]</h2><p class="text-neutral-300 mb-4 leading-relaxed">[Misma estructura que el Escenario A]</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Comparación lado a lado</h2><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Métrica</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Escenario A</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Escenario B</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Ganador</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Costo total (10 años)</td><td class="px-3 py-2 border border-dark-600 align-top">$X</td><td class="px-3 py-2 border border-dark-600 align-top">$X</td><td class="px-3 py-2 border border-dark-600 align-top">A/B</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Valor Final</td><td class="px-3 py-2 border border-dark-600 align-top">$X</td><td class="px-3 py-2 border border-dark-600 align-top">$X</td><td class="px-3 py-2 border border-dark-600 align-top">A/B</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Posición neta (10 años)</td><td class="px-3 py-2 border border-dark-600 align-top">$X</td><td class="px-3 py-2 border border-dark-600 align-top">$X</td><td class="px-3 py-2 border border-dark-600 align-top">A/B</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Flujo de caja mensual</td><td class="px-3 py-2 border border-dark-600 align-top">$X</td><td class="px-3 py-2 border border-dark-600 align-top">$X</td><td class="px-3 py-2 border border-dark-600 align-top">A/B</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Costo de oportunidad</td><td class="px-3 py-2 border border-dark-600 align-top">$X</td><td class="px-3 py-2 border border-dark-600 align-top">$X</td><td class="px-3 py-2 border border-dark-600 align-top">A/B</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Impacto fiscal (anual)</td><td class="px-3 py-2 border border-dark-600 align-top">$X</td><td class="px-3 py-2 border border-dark-600 align-top">$X</td><td class="px-3 py-2 border border-dark-600 align-top">A/B</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Liquidez (1-10)</td><td class="px-3 py-2 border border-dark-600 align-top">X</td><td class="px-3 py-2 border border-dark-600 align-top">X</td><td class="px-3 py-2 border border-dark-600 align-top">A/B</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Riesgo de concentración</td><td class="px-3 py-2 border border-dark-600 align-top">X</td><td class="px-3 py-2 border border-dark-600 align-top">X</td><td class="px-3 py-2 border border-dark-600 align-top">A/B</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Reversibilidad</td><td class="px-3 py-2 border border-dark-600 align-top">X</td><td class="px-3 py-2 border border-dark-600 align-top">X</td><td class="px-3 py-2 border border-dark-600 align-top">A/B</td></tr></tbody></table></div><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Análisis del costo de oportunidad</h2><p class="text-neutral-300 mb-4 leading-relaxed">Si el escenario de mayor costo cuesta $X más al mes, invertir esa diferencia con un rendimiento real del 7% durante 10 años daría como resultado <strong>$Y</strong>.</p><p class="text-neutral-300 mb-4 leading-relaxed">Ese es el costo real de elegir [escenario].</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Perfil de riesgo</h2><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Riesgos del escenario A:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>[Riesgo específico + magnitud]</li><li>[Riesgo específico + magnitud]</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Riesgos del escenario B:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>[Riesgo específico + magnitud]</li><li>[Riesgo específico + magnitud]</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Análisis del punto de equilibrio</h2><p class="text-neutral-300 mb-4 leading-relaxed">El Escenario A se vuelve más barato que el B en el <strong>año [N]</strong>, si [premissa se mantiver]. El escenario A pasa a ser PEOR que el B si [condição de gatilho].</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Análisis de sensibilidad</h2><p class="text-neutral-300 mb-4 leading-relaxed">¿Qué cambiaría la respuesta?</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Si esta variable cambia</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">La recomendación se invierte</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Retornos de acciones &lt; 4%/año</td><td class="px-3 py-2 border border-dark-600 align-top">[Escenario]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Valorización inmobiliaria &lt; 2%/año</td><td class="px-3 py-2 border border-dark-600 align-top">[Escenario]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Cambio de residencia en un plazo de 5 años</td><td class="px-3 py-2 border border-dark-600 align-top">[Escenario]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Cambio en la tasa impositiva</td><td class="px-3 py-2 border border-dark-600 align-top">[Escenario]</td></tr></tbody></table></div><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Recomendación</h2><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Elige [Escenario A o B].</strong></p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Razonamiento:</strong></p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>[Motivo principal con número]</li><li>[Motivo secundario]</li><li>[Criterio de desempate]</li></ol><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Observaciones:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>[Qué cambiaría esta decisión]</li><li>[Factor de preferencia personal]</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Acciones para esta semana</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>[Acción concreta específica]</li><li>[Acción concreta específica]</li><li>[Acción concreta específica]</li></ol><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO:</strong> Solo con fines educativos e informativos. No constituye asesoramiento financiero. Consulta a un asesor financiero con licencia, contador público certificado (CPA) o profesional de impuestos antes de tomar decisiones financieras importantes. Todas las proyecciones dependen de supuestos que podrían no cumplirse. El rendimiento pasado no garantiza resultados futuros.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Errores comunes que debes evitar</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>No ignores los impuestos</strong> — La elección entre Roth y Tradicional cambia por completo según la tasa impositiva futura frente a la actual</li><li><strong>No ignores los costos de transacción</strong> — Comprar una casa implica pagar aproximadamente un 6% en gastos de venta más adelante</li><li><strong>No cuentes la apreciación dos veces</strong> — Si asumes retornos del 7%, no asumas también una valorización inmobiliaria del 7% (el sector inmobiliario se acerca más al 3-4% a largo plazo)</li><li><strong>No ignores los factores conductuales</strong> — El ahorro forzoso mediante una hipoteca puede superar a "invertir la diferencia" si el usuario realmente no invierte</li><li><strong>No supongas que los costos son lineales</strong> — Los autos se deprecian de forma no lineal; las casas tienen mantenimientos irregulares</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Modelos específicos por escenario</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Comprar vs. alquilar</h3><p class="text-neutral-300 mb-4 leading-relaxed">Haz seguimiento de: capital e intereses de la hipoteca, impuesto predial, seguro, mantenimiento, costo de oportunidad del pago inicial, frente a alquilar e invertir el pago inicial. Punto de inflexión: años de permanencia en la vivienda. Menos de 5 años suele favorecer el alquiler.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Pagar la hipoteca vs. invertir</h3><p class="text-neutral-300 mb-4 leading-relaxed">Comparar: APR de la hipoteca (después de la deducción fiscal) con el rendimiento esperado del mercado. Si la hipoteca es del 7% y el rendimiento esperado es del 7%, gana el rendimiento garantizado.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Roth vs. tradicional</h3><p class="text-neutral-300 mb-4 leading-relaxed">Comparar: tasa marginal actual con la tasa esperada durante la jubilación. Más alta ahora → Tradicional. Más baja ahora → Roth.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Nuevo empleo vs. permanecer</h3><p class="text-neutral-300 mb-4 leading-relaxed">Factor: diferencia salarial, compensación en acciones, aporte equivalente para la jubilación, diferencia en el costo de los beneficios, traslado al trabajo, trayectoria profesional.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Solo con fines educativos e informativos. No constituye asesoramiento financiero.</strong></p><p class="text-neutral-300 mb-4 leading-relaxed">--- skills/finance-retirement/SKILL.md ---</p><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed">name: finance-retirement description: Proyección de jubilación con lógica de simulación de Monte Carlo. Calcula el patrimonio necesario mediante la regla del 4% y 25 veces los gastos, la brecha entre lo proyectado y lo necesario, recomendaciones de contribución, asignación de activos según la edad, optimización del inicio de los beneficios del Seguro Social, proyecciones de costos de salud y planificación de la secuencia de retiros. Úsala cuando el usuario diga "/finance retirement", "¿voy por buen camino para jubilarme?", "¿cuánto necesito para jubilarme?", "momento para empezar a recibir el Seguro Social" o haga cualquier pregunta sobre la jubilación.</p><hr class="border-dark-600 my-8"/>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-6-4.html">← Módulo 6.4</a>
+<a class="flex-1 text-center px-6 py-3 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-500 transition-colors" href="modulo-6-6.html">Módulo 6.6 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Equipos de IA — Grupo 1 · Material educativo | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

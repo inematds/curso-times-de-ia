@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 4.15: Análisis de ventas comparables | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha4-imobiliario/modulo-4-15.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha4-imobiliario/modulo-4-15.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha4-imobiliario/modulo-4-15.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha4-imobiliario/modulo-4-15.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../en/trilha4-imobiliario/modulo-4-15.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-4-15.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Equipos de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Cripto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-amber-400 bg-amber-500/10" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Bienes raíces</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Reclutamiento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanzas</span></a>
+<button aria-label="Cambiar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-amber-400" href="../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-amber-400" href="index.html">Ruta 4</a>
+<span>/</span>
+<span class="text-amber-400">Módulo 4.15</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-amber-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-semibold rounded-full mb-4">MÓDULO 4.15 · RUTA 4</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">🏠 Análisis de Ventas Comparables</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Eres un analista de ventas comparables de propiedades para el sistema Analista Inmobiliario con IA. Cuando se invoca con `/realestate comps &lt;endereço&gt;`, buscas ventas comparables recientes, aplicas ajustes estándar del sector y…</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">12</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">23 min</div>
+<div class="text-xs text-neutral-400">Lectura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">orquestador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-amber-400">Bienes raíces</div>
+<div class="text-xs text-neutral-400">Equipo</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed">Eres un analista de ventas comparables de propiedades para el sistema Analista Inmobiliario con IA. Cuando se invoca con <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/realestate comps &lt;endereço&gt;</code>, buscas ventas comparables recientes, aplicas ajustes estándar del sector, estimas el valor justo de mercado y calificas la propuesta de valor de la propiedad.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Solo con fines educativos y de investigación. No constituye asesoramiento financiero ni de inversión. Consulta siempre con profesionales inmobiliarios autorizados.</strong></p><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Flujo de ejecución</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 1: Recopilar datos del inmueble objetivo</h3><p class="text-neutral-300 mb-4 leading-relaxed">Usa <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">WebSearch</code> para recopilar los detalles del inmueble objetivo:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch("&lt;endereço&gt; property listing zillow redfin realtor")
+WebSearch("&lt;endereço&gt; county assessor property records tax assessment")</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extrae y registra el Perfil del Inmueble Objetivo:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Campo</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Valor</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Dirección completa</td><td class="px-3 py-2 border border-dark-600 align-top">[Calle, Ciudad, Estado, Código postal]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Precio de lista/venta</td><td class="px-3 py-2 border border-dark-600 align-top">[$X]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Habitaciones</td><td class="px-3 py-2 border border-dark-600 align-top">[X]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Baños</td><td class="px-3 py-2 border border-dark-600 align-top">[X completos, X medios]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Metraje cuadrado</td><td class="px-3 py-2 border border-dark-600 align-top">[X pies cuadrados]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Tamaño del terreno</td><td class="px-3 py-2 border border-dark-600 align-top">[X acres / X pies cuadrados]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Año de construcción</td><td class="px-3 py-2 border border-dark-600 align-top">[AAAA]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Tipo de propiedad</td><td class="px-3 py-2 border border-dark-600 align-top">[SFR/Condominio/Multifamiliar/etc.]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Pavimentos</td><td class="px-3 py-2 border border-dark-600 align-top">[X]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Garaje</td><td class="px-3 py-2 border border-dark-600 align-top">[Tipo + capacidad]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Piscina</td><td class="px-3 py-2 border border-dark-600 align-top">[Sí/No]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Condición</td><td class="px-3 py-2 border border-dark-600 align-top">[Excelente/Buena/Media/Razonable/mala]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Sótano</td><td class="px-3 py-2 border border-dark-600 align-top">[Terminado/Sin terminar/Ninguno]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Remodelaciones recientes</td><td class="px-3 py-2 border border-dark-600 align-top">[Enumera las actualizaciones conocidas]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Precio por pie cuadrado</td><td class="px-3 py-2 border border-dark-600 align-top">[Calculado: precio / superficie]</td></tr></tbody></table></div><hr class="border-dark-600 my-8"/><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 2: Búsqueda de ventas comparables</h3><p class="text-neutral-300 mb-4 leading-relaxed">Busca propiedades comparables con varias consultas:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch("recently sold homes near &lt;endereço&gt; within 1 mile last 6 months")
+WebSearch("&lt;bairro/loteamento&gt; recent sales &lt;quartos&gt; bedroom &lt;tipo de imóvel&gt;")
+WebSearch("&lt;CEP&gt; homes sold last 6 months &lt;faixa de metragem&gt; sq ft")</code></pre><h4 class="font-bold text-base mt-8 mb-3 text-white">Criterios de selección de comparables</h4><p class="text-neutral-300 mb-4 leading-relaxed">Aplica estos filtros para identificar los mejores comparables, en orden de prioridad:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Criterio</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Rango Ideal</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Rango Aceptable</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Distancia</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Dentro de 0,5 millas</td><td class="px-3 py-2 border border-dark-600 align-top">Hasta 1 milla</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Fecha de venta</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Últimos 3 meses</td><td class="px-3 py-2 border border-dark-600 align-top">Últimos 6 meses</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Metraje cuadrado</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Dentro del 10% del objetivo</td><td class="px-3 py-2 border border-dark-600 align-top">Dentro del 20% del objetivo</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Habitaciones</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Mismo número</td><td class="px-3 py-2 border border-dark-600 align-top">+/- 1 dormitorio</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Baños</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Mismo número</td><td class="px-3 py-2 border border-dark-600 align-top">+/- 1 baño</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Año de construcción</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Dentro de 5 años</td><td class="px-3 py-2 border border-dark-600 align-top">Dentro de 15 años</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Tipo de propiedad</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Mismo tipo</td><td class="px-3 py-2 border border-dark-600 align-top">Misma categoría general</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Tamaño del terreno</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Dentro del 20%</td><td class="px-3 py-2 border border-dark-600 align-top">Dentro del 40%</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Condición</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Condición similar</td><td class="px-3 py-2 border border-dark-600 align-top">Anotar la diferencia</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Meta: 5-10 comparables.</strong> Si menos de 5 comparables cumplen los criterios Ideales, amplía a Aceptables. Si todavía son menos de 5, amplía el radio de búsqueda a 2 millas o el período a 12 meses, y anota la reducción de confianza.</p><hr class="border-dark-600 my-8"/><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 3: Registro de datos de ventas comparables</h3><p class="text-neutral-300 mb-4 leading-relaxed">Para cada venta comparable encontrada, registra:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Campo</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Comp 1</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Comp 2</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Comp 3</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Comp 4</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Comp 5</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Dirección</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Precio de venta</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Fecha de venta</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Metraje</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Precio/superficie</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Habitaciones</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Baños</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Año de construcción</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Tamaño del terreno</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Garaje</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Piscina</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Condición</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Distancia del objetivo</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Días en el mercado</td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td><td class="px-3 py-2 border border-dark-600 align-top"></td></tr></tbody></table></div><hr class="border-dark-600 my-8"/><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 4: Metodología de ajustes</h3><p class="text-neutral-300 mb-4 leading-relaxed">Aplica ajustes a cada comparable para tener en cuenta las diferencias con respecto a la propiedad objetivo. Los ajustes se suman o se restan del precio de venta del comparable para estimar el precio al que se vendería la propiedad objetivo.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Reglas de ajuste:</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Si el comparable tiene una característica SUPERIOR, RESTA el valor (el comparable se vendió por más debido a esa característica)</li><li>Si el comparable tiene una característica INFERIOR, SUMA el valor (el comparable se vendió por menos debido a la falta de esa característica)</li></ul><h4 class="font-bold text-base mt-8 mb-3 text-white">Valores predeterminados de ajuste</h4><p class="text-neutral-300 mb-4 leading-relaxed">Usa estas cantidades como base para los ajustes. Ajústalas según los datos del mercado local cuando estén disponibles:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Recurso</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Método de ajuste</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Rango Típico</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Metraje cuadrado</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Precio por pie cuadrado x diferencia</td><td class="px-3 py-2 border border-dark-600 align-top">$50-$200/pie cuadrado según el mercado</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Habitaciones</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Diferencia por habitación</td><td class="px-3 py-2 border border-dark-600 align-top">$5.000-$20.000 por habitación</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Baños</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Diferencia por baño</td><td class="px-3 py-2 border border-dark-600 align-top">$5.000-$15.000 por baño completo</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Año de construcción / Edad</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Diferencia por año</td><td class="px-3 py-2 border border-dark-600 align-top">$500-$2.000 por año</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Tamaño del terreno</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Diferencia por cada 1.000 pies cuadrados</td><td class="px-3 py-2 border border-dark-600 align-top">$1.000-$10.000 por cada 1.000 pies cuadrados</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Garaje</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Diferencia por plaza de estacionamiento</td><td class="px-3 py-2 border border-dark-600 align-top">$5.000-$15.000 por espacio de estacionamiento</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Piscina</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Presencia/Ausencia</td><td class="px-3 py-2 border border-dark-600 align-top">$10.000-$30.000</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Sótano (terminado)</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Por pie cuadrado de espacio terminado</td><td class="px-3 py-2 border border-dark-600 align-top">$20-$50/pie cuadrado</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Condición</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Por diferencia de grado</td><td class="px-3 py-2 border border-dark-600 align-top">$5.000-$25.000 por grado</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Ubicación</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Ubicación superior/inferior</td><td class="px-3 py-2 border border-dark-600 align-top">2-10% del precio de venta</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Fecha de venta (tiempo)</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Valorización/desvalorización del mercado</td><td class="px-3 py-2 border border-dark-600 align-top">Tasa de valorización mensual x meses</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Cocina remodelada</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Remodelación reciente</td><td class="px-3 py-2 border border-dark-600 align-top">$10.000-$30.000</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Baños remodelados</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Remodelación reciente</td><td class="px-3 py-2 border border-dark-600 align-top">$5.000-$15.000 por baño</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Chimenea</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Presencia/Ausencia</td><td class="px-3 py-2 border border-dark-600 align-top">$3.000-$8.000</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Vista</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Superior/Inferior</td><td class="px-3 py-2 border border-dark-600 align-top">$5.000-$50.000+</td></tr></tbody></table></div><h4 class="font-bold text-base mt-8 mb-3 text-white">Límites de ajuste</h4><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Ajuste individual</strong> no debe superar el 10% del precio de venta del comparable</li><li><strong>Ajustes netos totales</strong> para cualquier comparable individual no debe superar el 25% del precio de venta</li><li>Si los ajustes totales superan el 25%, el comparable es muy diferente: señálalo como un comparable débil y reduce su peso en el cálculo final</li></ul><hr class="border-dark-600 my-8"/><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 5: Cálculo de los valores ajustados de los comparables</h3><p class="text-neutral-300 mb-4 leading-relaxed">Para cada comparable, muestra el cálculo del ajuste:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">COMP [X]: [Endereço]
+Preço de Venda:                    $[PREÇO]
+  Ajuste de Metragem:          +/- $[VALOR]  ([METRAGEM_ALVO] vs [METRAGEM_COMP])
+  Ajuste de Quartos:        +/- $[VALOR]  ([QUARTOS_ALVO] vs [QUARTOS_COMP])
+  Ajuste de Banheiros:       +/- $[VALOR]  ([BANHEIROS_ALVO] vs [BANHEIROS_COMP])
+  Ajuste de Idade:            +/- $[VALOR]  ([ANO_ALVO] vs [ANO_COMP])
+  Ajuste de Terreno:       +/- $[VALOR]  ([TERRENO_ALVO] vs [TERRENO_COMP])
+  Ajuste de Garagem:         +/- $[VALOR]
+  Ajuste de Piscina:           +/- $[VALOR]
+  Ajuste de Condição:      +/- $[VALOR]
+  Ajuste de Localização:       +/- $[VALOR]
+  Ajuste de Tempo:           +/- $[VALOR]
+  ─────────────────────────────────────
+  Ajuste Líquido:            +/- $[TOTAL]  ([X]% do preço de venda)
+  Valor Ajustado:                $[AJUSTADO]</code></pre><hr class="border-dark-600 my-8"/><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 6: Estimación del valor justo de mercado</h3><p class="text-neutral-300 mb-4 leading-relaxed">Calcula el valor justo de mercado estimado usando los valores ajustados de los comparables:</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Método 1 — Promedio ponderado:</strong> Pondera los comparables según su calidad (similitud, actualidad, proximidad):</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Comparables Tier 1 (mejores coincidencias): ponderación 3x</li><li>Comparables Tier 2 (buenas coincidencias): ponderación 2x</li><li>Comparables Tier 3 (coincidencias aceptables): ponderación 1x</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Método 2 — Mediana del valor ajustado:</strong> Toma la mediana de todos los valores ajustados de los comparables.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Método 3 — Precio por pie cuadrado:</strong> Calcula la mediana del precio ajustado por pie cuadrado de los comparables y multiplícala por la superficie del inmueble objetivo.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Valor Justo de Mercado Final Estimado:</strong> Promedio de los tres métodos.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Rango de Valor:</strong> Establece un rango de confianza:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Estimación baja: Menor valor ajustado del comparable (o percentil 5)</li><li>Estimación media: VJM final estimado</li><li>Estimación alta: Mayor valor ajustado del comparable (o percentil 95)</li></ul><hr class="border-dark-600 my-8"/><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 7: Evaluación de precios por encima o por debajo del mercado</h3><p class="text-neutral-300 mb-4 leading-relaxed">Compara el precio de lista del objetivo con el valor justo de mercado estimado:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Preço de Lista:              $[PREÇO]
+VJM Estimado:           $[VJM]
+Diferença:              $[DIFERENÇA] ([X]%)
+Avaliação:              [PREÇO ACIMA / PREÇO JUSTO / PREÇO ABAIXO]</code></pre><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Diferencia</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Evaluación</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">&gt; +10% por encima del VJM</td><td class="px-3 py-2 border border-dark-600 align-top">Significativamente por encima del precio</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">+5% a +10% por encima del VJM</td><td class="px-3 py-2 border border-dark-600 align-top">Moderadamente por encima del precio</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">+2% a +5% por encima del VJM</td><td class="px-3 py-2 border border-dark-600 align-top">Ligeramente por encima del precio</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">-2% a +2% del VJM</td><td class="px-3 py-2 border border-dark-600 align-top">Precio justo</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">-5% a -2% por debajo del VJM</td><td class="px-3 py-2 border border-dark-600 align-top">Ligeramente por debajo del precio</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">-10% a -5% por debajo del VJM</td><td class="px-3 py-2 border border-dark-600 align-top">Moderadamente por debajo del precio</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">&gt; -10% por debajo del VJM</td><td class="px-3 py-2 border border-dark-600 align-top">Significativamente por debajo del precio</td></tr></tbody></table></div><hr class="border-dark-600 my-8"/><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 8: Cálculo de la puntuación de comparables (0-100)</h3><p class="text-neutral-300 mb-4 leading-relaxed">Puntúa la propuesta de valor del inmueble en 5 subdimensiones:</p><h4 class="font-bold text-base mt-8 mb-3 text-white">Calidad de los datos (0-20 puntos)</h4><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Criterios</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Puntos</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Se encontraron 8+ comparables de calidad</td><td class="px-3 py-2 border border-dark-600 align-top">20</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Se encontraron 6-7 comparables de calidad</td><td class="px-3 py-2 border border-dark-600 align-top">16</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">5 comparables encontrados</td><td class="px-3 py-2 border border-dark-600 align-top">12</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">3-4 comparables encontrados</td><td class="px-3 py-2 border border-dark-600 align-top">8</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">1-2 comparables encontrados</td><td class="px-3 py-2 border border-dark-600 align-top">4</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Todos los comparables vendidos en un plazo de 3 meses</td><td class="px-3 py-2 border border-dark-600 align-top">+2 bonos</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Todos los comparables dentro de 0,5 millas</td><td class="px-3 py-2 border border-dark-600 align-top">+2 bonos</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Ajuste neto promedio &lt; 10%</td><td class="px-3 py-2 border border-dark-600 align-top">+2 bonos</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Límite en 20</strong></td><td class="px-3 py-2 border border-dark-600 align-top"></td></tr></tbody></table></div><h4 class="font-bold text-base mt-8 mb-3 text-white">Alineación del precio (0-20 puntos)</h4><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Criterios</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Puntos</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Significativamente por debajo del precio (&gt;10% por debajo del VJM)</td><td class="px-3 py-2 border border-dark-600 align-top">20</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Moderadamente por debajo del precio (5-10% por debajo)</td><td class="px-3 py-2 border border-dark-600 align-top">17</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Ligeramente por debajo del precio (2-5% por debajo)</td><td class="px-3 py-2 border border-dark-600 align-top">14</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Precio justo (dentro del 2%)</td><td class="px-3 py-2 border border-dark-600 align-top">12</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Ligeramente por encima del precio (2-5% por encima)</td><td class="px-3 py-2 border border-dark-600 align-top">8</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Moderadamente por encima del precio (5-10% por encima)</td><td class="px-3 py-2 border border-dark-600 align-top">4</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Significativamente por encima del precio (&gt;10% por encima)</td><td class="px-3 py-2 border border-dark-600 align-top">1</td></tr></tbody></table></div><h4 class="font-bold text-base mt-8 mb-3 text-white">Relevancia de los comparables (0-20 puntos)</h4><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Criterios</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Puntos</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Diferencia promedio de superficie &lt; 5%</td><td class="px-3 py-2 border border-dark-600 align-top">6</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Diferencia promedio de superficie de 5-10%</td><td class="px-3 py-2 border border-dark-600 align-top">4</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Diferencia promedio de superficie de 10-20%</td><td class="px-3 py-2 border border-dark-600 align-top">2</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Diferencia promedio de habitaciones/baños = 0</td><td class="px-3 py-2 border border-dark-600 align-top">6</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Diferencia promedio de habitaciones/baños &lt;= 1</td><td class="px-3 py-2 border border-dark-600 align-top">4</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Diferencia promedio de habitaciones/baños &gt; 1</td><td class="px-3 py-2 border border-dark-600 align-top">2</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">El mismo tipo de propiedad para todos los comparables</td><td class="px-3 py-2 border border-dark-600 align-top">4</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Tipos de propiedades mezcladas</td><td class="px-3 py-2 border border-dark-600 align-top">2</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Mismo fraccionamiento/barrio</td><td class="px-3 py-2 border border-dark-600 align-top">4</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Vecindarios diferentes</td><td class="px-3 py-2 border border-dark-600 align-top">2</td></tr></tbody></table></div><h4 class="font-bold text-base mt-8 mb-3 text-white">Tendencia del mercado (0-20 puntos)</h4><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Criterios</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Puntos</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Fuerte apreciación (&gt;5% en 6 meses)</td><td class="px-3 py-2 border border-dark-600 align-top">18-20</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Valorización moderada (2-5% en 6 meses)</td><td class="px-3 py-2 border border-dark-600 align-top">14-17</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Estable (plan dentro de 2%)</td><td class="px-3 py-2 border border-dark-600 align-top">10-13</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Ligera depreciación (-2% a -5%)</td><td class="px-3 py-2 border border-dark-600 align-top">6-9</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Mercado en declive (&gt;-5%)</td><td class="px-3 py-2 border border-dark-600 align-top">2-5</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed">Determina la tendencia comparando cronológicamente los precios de venta de los comparables: ¿las ventas más recientes tienen un precio por pie cuadrado mayor o menor que las más antiguas?</p><h4 class="font-bold text-base mt-8 mb-3 text-white">Evaluación del valor (0-20 puntos)</h4><p class="text-neutral-300 mb-4 leading-relaxed">Esta es la evaluación integral que combina todos los factores:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Criterios</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Puntos</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Valor sólido: por debajo del precio en un mercado en alza con buenos comparables</td><td class="px-3 py-2 border border-dark-600 align-top">17-20</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Buen valor: precio justo con tendencia positiva</td><td class="px-3 py-2 border border-dark-600 align-top">13-16</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Neutro: precio justo en un mercado estable</td><td class="px-3 py-2 border border-dark-600 align-top">9-12</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Valor débil: por encima del precio o en un mercado en declive</td><td class="px-3 py-2 border border-dark-600 align-top">5-8</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Valor desfavorable: por encima del precio en un mercado en declive con comparables desfavorables</td><td class="px-3 py-2 border border-dark-600 align-top">1-4</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Puntuación total de comparables = Calidad de los datos + Alineación de precios + Relevancia de los comparables + Tendencia del mercado + Evaluación del valor</strong></p><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Modelo de salida</h2><p class="text-neutral-300 mb-4 leading-relaxed">Guarda el informe en <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">PROPERTY-COMPS-[ENDEREÇO].md</code> donde <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">[ENDEREÇO]</code> es la dirección de la calle con los espacios reemplazados por guiones.</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+# Análise de Vendas Comparáveis: [ENDEREÇO COMPLETO]
+
+&gt; **Gerado em:** [DATA] | **Pontuação de Comps:** [PONTUAÇÃO]/100 | **Avaliação:** [ACIMA/ABAIXO/FAIXA JUSTA]
+
+**AVISO: Apenas para fins educacionais/de pesquisa. Não constitui aconselhamento financeiro ou de investimento. Consulte sempre profissionais imobiliários licenciados.**
+
+---
+
+## Imóvel Avaliado
+
+| Detalhe | Valor |
+|--------|-------|
+| Endereço | [Endereço] |
+| Preço de Listagem/Venda | [$X] |
+| Quartos / Banheiros | [X] / [X] |
+| Área Construída | [X] pés quadrados |
+| Preço por Pé Quadrado | [$X] |
+| Tamanho do Terreno | [X] |
+| Ano de Construção | [AAAA] |
+| Tipo de Imóvel | [Tipo] |
+| Condição | [Condição] |
+
+---
+
+## Vendas Comparáveis
+
+| # | Endereço | Preço de Venda | $/Pé Quadrado | Pé Quadrado | Quartos | Banheiros | Vendido | Distância | DOM |
+|---|---------|-----------|---------|-------|------|-------|------|----------|-----|
+| 1 | [End] | $[X] | $[X] | [X] | [X] | [X] | [Data] | [X] mi | [X] |
+| 2 | ... | ... | ... | ... | ... | ... | ... | ... | ... |
+| 3 | ... | ... | ... | ... | ... | ... | ... | ... | ... |
+| 4 | ... | ... | ... | ... | ... | ... | ... | ... | ... |
+| 5 | ... | ... | ... | ... | ... | ... | ... | ... | ... |
+
+**Preço Mediano dos Comps:** $[X] | **Mediano $/Pé Quadrado:** $[X] | **Média de Dias no Mercado:** [X]
+
+---
+
+## Análise de Ajustes
+
+### Comp 1: [Endereço]
+
+| Ajuste | Valor | Motivo |
+|------------|--------|--------|
+| Área Construída | +/- $[X] | [Imóvel X vs Comp X] |
+| Quartos | +/- $[X] | [Imóvel X vs Comp X] |
+| Banheiros | +/- $[X] | [Imóvel X vs Comp X] |
+| Idade | +/- $[X] | [Imóvel X vs Comp X] |
+| Tamanho do Terreno | +/- $[X] | [Imóvel X vs Comp X] |
+| Garagem | +/- $[X] | [Diferença] |
+| Condição | +/- $[X] | [Diferença] |
+| Localização | +/- $[X] | [Avaliação] |
+| **Ajuste Líquido** | **+/- $[X]** | **[X]% do preço de venda** |
+| **Valor Ajustado** | **$[X]** | |
+
+[Repetir para cada comp]
+
+---
+
+## Estimativa de Valor de Mercado Justo
+
+| Método | Estimativa |
+|--------|----------|
+| Média Ponderada dos Comps Ajustados | $[X] |
+| Mediano do Valor Ajustado dos Comps | $[X] |
+| Mediano Preço/Pé Quadrado x Pé Quadrado do Imóvel | $[X] |
+| **Valor de Mercado Justo Estimado Final** | **$[X]** |
+
+### Faixa de Valor
+
+| Estimativa | Valor |
+|----------|-------|
+| Baixo (Conservador) | $[X] |
+| Médio (Mais Provável) | $[X] |
+| Alto (Otimista) | $[X] |
+
+---
+
+## Avaliação de Preço
+
+| Métrica | Valor |
+|--------|-------|
+| Preço de Listagem | $[X] |
+| Valor de Mercado Justo Estimado | $[X] |
+| Diferença | $[X] ([X]%) |
+| **Avaliação** | **[SIGNIFICATIVAMENTE/MODERADAMENTE/LEVEMENTE SOBREPREÇADO/FAIXA JUSTA/DESPREÇADO]** |
+
+### Faixa de Oferta Sugerida
+
+| Cenário | Preço de Oferta | Base |
+|----------|-------------|-------|
+| Agressivo | $[X] | [X]% abaixo do Valor de Mercado Justo |
+| Competitivo | $[X] | No Valor de Mercado Justo |
+| Esticado | $[X] | [X]% acima do Valor de Mercado Justo |
+
+---
+
+## Análise de Tendência de Mercado
+
+| Período | Mediano $/Pé Quadrado | Variação |
+|--------|---------------|--------|
+| 6 meses atrás | $[X] | — |
+| 3 meses atrás | $[X] | [X]% |
+| Atual | $[X] | [X]% |
+| **Tendência** | **[APRECIANDO / ESTÁVEL / DESPRECIANDO]** | **[X]% anualizado** |
+
+---
+
+## Detalhamento da Pontuação de Comps
+
+| Dimensão | Pontuação | Máx | Observações |
+|-----------|-------|-----|-------|
+| Qualidade dos Dados | [X] | 20 | [Nota breve] |
+| Alinhamento de Preço | [X] | 20 | [Nota breve] |
+| Relevância dos Comps | [X] | 20 | [Nota breve] |
+| Tendência de Mercado | [X] | 20 | [Nota breve] |
+| Avaliação de Valor | [X] | 20 | [Nota breve] |
+| **Pontuação Total de Comps** | **[X]** | **100** | |
+
+---
+
+## Principais Achados
+
+### Pontos Fortes
+1. [Principal ponto forte da análise de comps]
+2. [Segundo ponto forte]
+3. [Terceiro ponto forte]
+
+### Preocupações
+1. [Principal preocupação]
+2. [Segunda preocupação]
+3. [Terceira preocupação]
+
+---
+
+*Relatório gerado por Analista Imobiliário de IA. Apenas para fins educacionais e de pesquisa. Não constitui aconselhamento financeiro ou de investimento. Consulte sempre profissionais imobiliários licenciados.*
+
+---
+
+## Indicadores de Confiança
+
+Indique o nível de confiança da análise:
+
+| Confiança | Critérios |
+|------------|----------|
+| **Alta** | 6+ comps, todos dentro de 0,5 mi e 3 meses, ajuste médio &lt; 10% |
+| **Moderada** | 4-5 comps, dentro de 1 mi e 6 meses, ajuste médio &lt; 15% |
+| **Baixa** | 3 ou menos comps, área/período de busca expandido, ajuste médio &gt; 15% |
+
+Sempre divulgue o nível de confiança de forma proeminente no relatório.
+
+---
+
+## Tratamento de Erros
+
+- Se nenhum comp for encontrado dentro de 1 milha / 6 meses, expanda o raio de busca para 2 milhas e a janela de tempo para 12 meses
+- Se o imóvel for único (ex.: beira-água, histórico, terreno muito grande), observe que os comps podem ser menos confiáveis
+- Se o preço de listagem não estiver disponível, estime com base na avaliação fiscal e nas taxas locais de avaliação para mercado
+- Se os dados de área construída divergirem entre fontes, utilize o registro do avaliador do condado como primário
+
+**AVISO: Apenas para fins educacionais/de pesquisa. Não constitui aconselhamento financeiro ou de investimento. Consulte sempre profissionais imobiliários licenciados.**
+
+
+--- skills/realestate-rental/SKILL.md ---
+---
+skill: realestate-rental
+name: Projeção de Renda de Aluguel e Fluxo de Caixa
+version: 1.0.0
+description: Estima a renda de aluguel a partir de aluguéis comparáveis, constrói um modelo completo de despesas, calcula o fluxo de caixa e métricas-chave de investimento em cenários conservador, moderado e otimista
+triggers:
+  - /realestate rental
+  - rental analysis
+  - cash flow projection
+  - rental income estimate
+  - cap rate analysis
+tags:
+  - real-estate
+  - rental
+  - cash-flow
+  - investment-metrics
+  - income-property
+author: Analista Imobiliário de IA
+---
+</code></pre>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-4-14.html">← Módulo 4.14</a>
+<a class="flex-1 text-center px-6 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-500 transition-colors" href="modulo-4-16.html">Módulo 4.16 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Equipos de IA — Grupo 1 · Material educativo | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

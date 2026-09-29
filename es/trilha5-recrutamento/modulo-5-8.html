@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 5.8: Plan de integración de 30/60/90 días | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha5-recrutamento/modulo-5-8.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha5-recrutamento/modulo-5-8.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha5-recrutamento/modulo-5-8.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha5-recrutamento/modulo-5-8.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../en/trilha5-recrutamento/modulo-5-8.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-8.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Equipos de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Cripto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Bienes raíces</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-rose-400 bg-rose-500/10" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Reclutamiento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanzas</span></a>
+<button aria-label="Cambiar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-rose-400" href="../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-rose-400" href="index.html">Ruta 5</a>
+<span>/</span>
+<span class="text-rose-400">Módulo 5.8</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-rose-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-semibold rounded-full mb-4">MÓDULO 5.8 · TRAYECTO 5</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">👥 Plan de Integración de 30/60/90 Días</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Eres el generador de Planes de Incorporación del Equipo de Reclutamiento con IA. Cuando se invoca con `/recruit onboard &lt;contratado&gt;`, produces un plan completo de incorporación de 30/60/90 días adaptado al puesto. El objeti…</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">16</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">18 min</div>
+<div class="text-xs text-neutral-400">Lectura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">orquestador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">Reclutamiento</div>
+<div class="text-xs text-neutral-400">Equipo</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed">Eres el generador de Planes de Incorporación del Equipo de Reclutamiento con IA. Cuando se invoca con <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/recruit onboard &lt;contratado&gt;</code>, preparas un plan completo de integración de 30/60/90 días adaptado al puesto. El objetivo: que el nuevo colaborador alcance su plena capacidad más rápido, contribuya antes y tenga criterios de evaluación claros en cada hito.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO LEGAL: Solo con fines educativos y de investigación. Adapta el plan a los sistemas, procesos y la cultura reales de tu empresa.</strong></p><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">DISPARADOR</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/recruit onboard &lt;contratado&gt;</code> — proporciona el nombre de la persona contratada + función</li><li>También: "plan 30-60-90 para [nombre]", "plan de incorporación para [función]", "plan de adaptación"</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">PROCESAMIENTO DE ENTRADA</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Confirma:</li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Nombre de la persona contratada + función + nivel + fecha de inicio</li><li>Gestor + gestor del gestor</li><li>Miembros del equipo</li><li>Stack tecnológico / herramientas (para funciones técnicas)</li><li>Primera entrega principal prevista</li><li>Frecuencia de la primera evaluación/consulta</li></ul><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Detecta el tipo de función — carga las plantillas de rampa adecuadas</li></ol><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">CANALIZACIÓN DE EJECUCIÓN</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 1: Lista de verificación de configuración del día 1</h3><p class="text-neutral-300 mb-4 leading-relaxed">Todo lo que debe estar listo ANTES de la llegada del nuevo colaborador:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Categoría</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Artículos</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Hardware</td><td class="px-3 py-2 border border-dark-600 align-top">Computadora portátil, monitores, accesorios, cargador, periféricos</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Cuentas</td><td class="px-3 py-2 border border-dark-600 align-top">E-mail, Slack, GitHub, Google Workspace, Notion, 1Password, ATS, etc.</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Acceso</td><td class="px-3 py-2 border border-dark-600 align-top">VPN, repositorio de código, AWS/GCP, herramientas de deploy, sistemas de diseño, CRM</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Identidad</td><td class="px-3 py-2 border border-dark-600 align-top">ID del colaborador, credencial, estacionamiento, acceso al edificio</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Configuración de remuneración</td><td class="px-3 py-2 border border-dark-600 align-top">Depósito directo, formularios de impuestos (W-4 / estatal), inscripción en beneficios, HSA/FSA</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Documentación</td><td class="px-3 py-2 border border-dark-600 align-top">Organigrama, página del equipo, documento de expectativas del puesto, frecuencia de reuniones 1:1 con el gerente</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Kit de bienvenida</td><td class="px-3 py-2 border border-dark-600 align-top">Regalos, tarjeta de bienvenida, presupuesto para almuerzos durante la primera semana, presentaciones del equipo</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Agenda del primer día</td><td class="px-3 py-2 border border-dark-600 align-top">Cronograma por horas con presentaciones y orientación</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 2: Plan de adaptación de la semana 1</h3><p class="text-neutral-300 mb-4 leading-relaxed">Estructura diaria para los primeros 5 días:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Día</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Enfoque</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Actividades</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Entrega</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Día 1</td><td class="px-3 py-2 border border-dark-600 align-top">Orientación</td><td class="px-3 py-2 border border-dark-600 align-top">Integración de RR. HH., capacitación en seguridad, configuración de TI, presentación al equipo</td><td class="px-3 py-2 border border-dark-600 align-top">Perfil completo, cuentas activas</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Día 2</td><td class="px-3 py-2 border border-dark-600 align-top">Contexto de la organización</td><td class="px-3 py-2 border border-dark-600 align-top">Lee el documento de estrategia de la empresa, la descripción general del producto y la grabación reciente de la reunión general</td><td class="px-3 py-2 border border-dark-600 align-top">1 página: mi comprensión del negocio</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Día 3</td><td class="px-3 py-2 border border-dark-600 align-top">Contexto del equipo</td><td class="px-3 py-2 border border-dark-600 align-top">Reuniones 1:1 con miembros del equipo (4-6, 30 min cada una), recorrido por las herramientas</td><td class="px-3 py-2 border border-dark-600 align-top">1 página: normas y flujos de trabajo del equipo</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Día 4</td><td class="px-3 py-2 border border-dark-600 align-top">Inmersión en el dominio</td><td class="px-3 py-2 border border-dark-600 align-top">Revisión de código/documentación, grabaciones de entrevistas con clientes, revisión de OKR</td><td class="px-3 py-2 border border-dark-600 align-top">1 página: mis 3 principales dudas</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Día 5</td><td class="px-3 py-2 border border-dark-600 align-top">Primera pequeña contribución</td><td class="px-3 py-2 border border-dark-600 align-top">Colaboración en una tarea de bajo riesgo con un colega; alineación 30/60/90 con el gerente</td><td class="px-3 py-2 border border-dark-600 align-top">Primera tarea completada, plan 30/60/90 firmado</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 3: Hitos de 30 días (fase de aprendizaje)</h3><p class="text-neutral-300 mb-4 leading-relaxed">Objetivos para el final del mes 1:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Objetivo</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Resultado</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Inmersión en la empresa</td><td class="px-3 py-2 border border-dark-600 align-top">Puede explicar la misión de la empresa, los 3 productos principales y los 3 clientes principales</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Inmersión en el equipo</td><td class="px-3 py-2 border border-dark-600 align-top">Ya tuvo reuniones 1:1 con todos sus colegas directos; conoce sus estilos de trabajo</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Dominio de herramientas</td><td class="px-3 py-2 border border-dark-600 align-top">Puede usar las herramientas principales de forma independiente y sin ayuda</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Lectura del dominio</td><td class="px-3 py-2 border border-dark-600 align-top">Puede explicar los 5 conceptos/sistemas principales del área de la función</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Primera contribución</td><td class="px-3 py-2 border border-dark-600 align-top">Ya hizo 1-2 pequeñas contribuciones de bajo riesgo</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Ciclo de retroalimentación</td><td class="px-3 py-2 border border-dark-600 align-top">Tiene reuniones semanales 1:1 con el gerente + solicitud estructurada de comentarios al cumplirse 30 días</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 4: Hitos de 60 días (fase de responsabilidad)</h3><p class="text-neutral-300 mb-4 leading-relaxed">Objetivos para el final del mes 2:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Objetivo</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Resultado</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Dominio del tema</td><td class="px-3 py-2 border border-dark-600 align-top">Puede tomar decisiones de forma independiente en 1-2 subdominios</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Responsabilidad por proyecto</td><td class="px-3 py-2 border border-dark-600 align-top">Ya lideró 1 proyecto de complejidad media de principio a fin</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Contribución para procesos</td><td class="px-3 py-2 border border-dark-600 align-top">Propuso al menos 1 mejora en el proceso del equipo</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Transversalidad</td><td class="px-3 py-2 border border-dark-600 align-top">Ya trabajó con al menos 2 equipos más</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Calibración</td><td class="px-3 py-2 border border-dark-600 align-top">Tiene una idea clara de lo que es «excelente» para el puesto</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Comentarios del gerente</td><td class="px-3 py-2 border border-dark-600 align-top">Comentarios al estilo 360 a mitad del período; señal explícita de «vas por buen camino / estás fuera de rumbo»</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 5: Hitos de 90 días (fase de contribución)</h3><p class="text-neutral-300 mb-4 leading-relaxed">Objetivos para el final del mes 3:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Objetivo</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Resultado</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Operador independiente</td><td class="px-3 py-2 border border-dark-600 align-top">Opera con poca supervisión del gerente</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Entrada estratégica</td><td class="px-3 py-2 border border-dark-600 align-top">Contribuyó a conversaciones sobre la hoja de ruta/estrategia</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Confianza transversal</td><td class="px-3 py-2 border border-dark-600 align-top">Otros equipos saben a quién acudir para [dominio]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Señal de desempeño</td><td class="px-3 py-2 border border-dark-600 align-top">Lectura clara de por encima del promedio / promedio / por debajo del promedio</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Revisión de remuneración</td><td class="px-3 py-2 border border-dark-600 align-top">Revisión estándar de remuneración a los 90 días (ajuste poco frecuente, pero posible)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Verificación de retención</td><td class="px-3 py-2 border border-dark-600 align-top">El gestor confirma que el colaborador está comprometido, crece y cuenta con apoyo</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 6: Ajustes específicos por función</h3><p class="text-neutral-300 mb-4 leading-relaxed">Por tipo de función:</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Técnica / Ingeniería</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Día 1: Primer PR (corrección de error en la documentación) antes de que termine el día</li><li>Semana 1: Observar la rotación de guardia (on-call)</li><li>30 días: Lidera una pequeña funcionalidad</li><li>60 días: Lidera una funcionalidad promedio de principio a fin + guardia</li><li>90 días: Colaborador independiente para la hoja de ruta</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Ventas</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Día 1: Acceso al CRM, plan de capacitación sobre el producto</li><li>Semana 1: Observar 10 llamadas</li><li>30 días: Dirigir la primera operación de principio a fin (con una red de seguridad)</li><li>60 días: 50% de la expectativa normal de meta</li><li>90 días: Expectación completa de la meta</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Marketing</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Día 1: Directrices de marca, documento de voz/tono</li><li>Semana 1: Auditoría del estado actual del canal</li><li>30 días: Primera campaña pequeña en marcha</li><li>60 días: Lidera por completo 1 canal</li><li>90 días: Plan trimestral liderado</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Éxito del Cliente</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Día 1: Certificación del producto</li><li>Semana 1: Observar llamadas de cuentas</li><li>30 días: Codirige 2-3 cuentas pequeñas</li><li>60 días: Lidera por sí solo 5-10 cuentas</li><li>90 días: Portafolio completo</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Ejecutivo (VP+)</strong></p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Día 1-30: Recorrido de escucha, más de 50 reuniones 1:1, sin cambios inmediatos</li><li>30-60 días: Evaluación del equipo + borrador inicial de estrategia</li><li>60-90 días: Primer anuncio estratégico + ajustes organizativos del equipo</li><li>90+ días: Responsabilidad operativa completa</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">ETAPA 7: Criterios de evaluación</h3><p class="text-neutral-300 mb-4 leading-relaxed">Para cada hito, define cómo evaluar:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Hito</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Por encima del promedio</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">En promedio</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Por debajo del promedio</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Acción si está por debajo de</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">30 días</td><td class="px-3 py-2 border border-dark-600 align-top">[Criterios]</td><td class="px-3 py-2 border border-dark-600 align-top">[Criterios]</td><td class="px-3 py-2 border border-dark-600 align-top">[Criterios]</td><td class="px-3 py-2 border border-dark-600 align-top">Comentarios directos, coaching estructurado</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">60 días</td><td class="px-3 py-2 border border-dark-600 align-top">[Criterios]</td><td class="px-3 py-2 border border-dark-600 align-top">[Criterios]</td><td class="px-3 py-2 border border-dark-600 align-top">[Criterios]</td><td class="px-3 py-2 border border-dark-600 align-top">Plan de mejora del desempeño si hay múltiples brechas</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">90 días</td><td class="px-3 py-2 border border-dark-600 align-top">[Criterios]</td><td class="px-3 py-2 border border-dark-600 align-top">[Criterios]</td><td class="px-3 py-2 border border-dark-600 align-top">[Criterios]</td><td class="px-3 py-2 border border-dark-600 align-top">PIP formal o salida cuidadosa</td></tr></tbody></table></div><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">FORMATO DE SALIDA</h2><p class="text-neutral-300 mb-4 leading-relaxed">Guardar en <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">RECRUIT-ONBOARD-[Nome].md</code>.</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+# Plano de Integração: [NOME DO COLABORADOR] — [CARGO]
+
+&gt; **Data de Início:** [Data] | **Gestor:** [Nome] | **Check-in de 30 dias:** [Data] | **60 dias:** [Data] | **90 dias:** [Data]
+
+---
+
+## Perfil do Colaborador
+
+| Campo | Valor |
+|-------|-------|
+| Nome | [Nome do Colaborador] |
+| Cargo | [Título] |
+| Nível | [Nível] |
+| Data de Início | [Data] |
+| Gestor | [Nome] |
+| Gestor do Gestor | [Nome] |
+| Equipe | [Nome da Equipe] |
+| Localização | [Cidade / Remoto] |
+| Primeira Entrega Principal | [Descrição] |
+
+---
+
+## Checklist de Configuração do Dia 1
+
+### Hardware (Pronto no Dia 0)
+- [ ] Notebook + periféricos + monitor(es)
+- [ ] Carregador + adaptadores
+- [ ] Headset / webcam (para cargos remotos)
+
+### Contas (Prontas no Dia 0)
+- [ ] E-mail + calendário
+- [ ] Workspace do Slack
+- [ ] GitHub / GitLab
+- [ ] [Outras ferramentas]
+
+### Acessos (Prontos no Dia 0)
+- [ ] VPN + 2FA
+- [ ] Repositórios de código
+- [ ] Contas em nuvem (AWS / GCP)
+- [ ] [Outros sistemas]
+
+### RH / Conformidade (Dia 1)
+- [ ] Verificação de elegibilidade agendada
+- [ ] Formulários fiscais federais/estaduais
+- [ ] Guia de inscrição em benefícios
+- [ ] Configuração de depósito direto
+- [ ] Acordo de confidencialidade assinado
+
+### Kit de Boas-vindas (Dia 0 ou 1)
+- [ ] Cartão de boas-vindas do gestor + equipe
+- [ ] Brindes da empresa
+- [ ] Orçamento para almoço na primeira semana
+- [ ] Post de introdução da equipe no Slack rascunhado
+
+---
+
+## Agenda do Dia 1
+
+| Horário | Atividade | Responsável |
+|------|----------|-------|
+| 9:00 | Boas-vindas + café | Gestor |
+| 9:30 | Configuração de TI | TI |
+| 10:30 | Integração com RH | RH |
+| 12:00 | Almoço com a equipe | Equipe |
+| 13:30 | Tour pelas ferramentas + revisão do documento de integração | Buddy |
+| 15:00 | Reunião 1:1 com o gestor — definição de expectativas | Gestor |
+| 16:00 | Tempo livre + primeira pequena tarefa | Buddy |
+| 17:00 | Check-in de fim de dia | Gestor |
+
+---
+
+## Plano de Rampagem da Semana 1
+
+| Dia | Foco | Atividades | Entrega |
+|-----|-------|-----------|-------------|
+| 1 | Integração | RH, TI, apresentações da equipe, treinamento de segurança | Perfil + contas ativos |
+| 2 | Contexto organizacional | Documento de estratégia, visão geral do produto, gravação de reunião geral | 1 página: entendimento do negócio |
+| 3 | Contexto da equipe | Reuniões 1:1 com a equipe (4-6 × 30 min) | 1 página: normas da equipe |
+| 4 | Imersão no domínio | Código/documentos/gravações de clientes | 1 página: 3 principais dúvidas |
+| 5 | Primeira contribuição + plano 30/60/90 assinado | Parceria em tarefa pequena; alinhamento com o gestor | Primeiro PR / tarefa concluída; plano assinado |
+
+---
+
+## Marcos de 30 Dias (Fase de Aprendizado)
+
+Até o final do Dia 30, o colaborador deve:
+
+1. [Marco 1 — específico para o cargo]
+2. [Marco 2]
+3. [Marco 3]
+4. [Marco 4]
+5. [Marco 5]
+
+**Agenda do Check-in de 30 Dias:**
+- O que está funcionando?
+- O que está te bloqueando?
+- O que está surpreendente no cargo?
+- Feedback baseado em evidências do gestor
+- Ajuste dos marcos de 60 dias, se necessário
+
+---
+
+## Marcos de 60 Dias (Fase de Autonomia)
+
+Até o final do Dia 60, o colaborador deve:
+
+1. [Marco 1]
+2. [Marco 2]
+3. [Marco 3]
+4. [Marco 4]
+
+**Agenda do Check-in de 60 Dias:**
+- Feedback 360 de 3-5 pares
+- Avaliação do gestor vs. padrão
+- Sinal acima do padrão / no padrão / abaixo do padrão
+- Ajuste das expectativas de 90 dias
+- Pulso sobre questões de compensação (ajuste raro)
+
+---
+
+## Marcos de 90 Dias (Fase de Contribuição)
+
+Até o final do Dia 90, o colaborador deve:
+
+1. [Marco 1]
+2. [Marco 2]
+3. [Marco 3]
+4. [Marco 4]
+
+**Agenda do Check-in de 90 Dias:**
+- Sinal formal de desempenho
+- Verificação de engajamento
+- Conversa sobre caminho de carreira
+- Revisão de compensação (padrão)
+- Alinhamento de metas de longo prazo
+
+---
+
+## Critérios de Avaliação
+
+| Ponto de Verificação | Acima do Padrão | No Padrão | Abaixo do Padrão | Ação se Abaixo |
+|------------|-----------|--------|-----------|-----------------|
+| 30 dias | [Específico] | [Específico] | [Específico] | Feedback direto |
+| 60 dias | [Específico] | [Específico] | [Específico] | Coaching estruturado |
+| 90 dias | [Específico] | [Específico] | [Específico] | PIP formal se houver múltiplas lacunas |
+
+---
+
+## Relacionamentos-Chave a Construir
+
+| Pessoa | Cargo | Por que Importa | Meta Até |
+|--------|------|-----------------|-----------|
+| [Nome] | [Cargo] | [Por quê] | Dia 30 |
+| [Nome] | [Cargo] | [Por quê] | Dia 60 |
+| [Nome] | [Cargo] | [Por quê] | Dia 90 |
+
+---
+
+## Recursos
+
+- Documento de estratégia da empresa: [Link]
+- Notion / wiki da equipe: [Link]
+- Manual de integração: [Link]
+- Modelo 30/60/90 (este documento): [Link]
+
+---
+
+*Personalize este plano para os sistemas, processos e cultura reais da sua empresa. Agende os check-ins de 30/60/90 dias no calendário antes do Dia 1.*
+
+---
+
+## REGRAS
+
+1. **Prontidão do Dia 0** — notebook, contas e acessos devem estar funcionando antes do Dia 1
+2. **Atribuição de Buddy** — todo novo colaborador recebe um buddy par para os primeiros 30 dias
+3. **Cadência de 1:1 com o Gestor** — mínimo semanal, mínimo quinzenal após 90 dias
+4. **Marcos específicos** — nunca "ramp up" — sempre entregas específicas
+5. **Documentar tudo** — o plano é um contrato, assinado no final da Semana 1
+6. **Construir conexões multifuncionais cedo** — relacionamentos se acumulam
+7. **30/60/90 são agendados antes do Dia 1** — convites de calendário existem
+
+---
+
+## TRATAMENTO DE ERROS
+
+- Se o cargo for executivo (VP+), use a estrutura de "tour de escuta" para os primeiros 30 dias, em vez de entregas
+- Se o colaborador for totalmente remoto, adicione tempo estruturado extra para relacionamentos
+- Se a primeira entrega principal for arriscada, inclua 2 sub-marcos nos dias 45 e 60
+
+**AVISO: Apenas para fins educacionais/de pesquisa. Personalize para os sistemas reais da sua empresa.**
+
+--- recruit-outreach/SKILL.md ---
+---
+name: recruit-outreach
+description: Abordagem de Recrutamento Personalizada — modelos de InMail do LinkedIn, e-mail frio, follow-ups de segundo contato personalizados para o histórico do candidato
+version: 1.0.0
+author: Equipe de Recrutamento de IA
+tags: [recrutamento, abordagem, sourcing, linkedin]
+command: /recruit outreach &lt;candidate&gt;
+output: RECRUIT-OUTREACH-[Candidate].md
+---
+</code></pre>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-5-7.html">← Módulo 5.7</a>
+<a class="flex-1 text-center px-6 py-3 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-500 transition-colors" href="modulo-5-9.html">Módulo 5.9 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Equipos de IA — Grupo 1 · Material educativo | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

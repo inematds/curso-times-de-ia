@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 5.2: Orquestador de análisis integral del puesto | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha5-recrutamento/modulo-5-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha5-recrutamento/modulo-5-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha5-recrutamento/modulo-5-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha5-recrutamento/modulo-5-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../en/trilha5-recrutamento/modulo-5-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Equipos de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Cripto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Bienes raíces</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-rose-400 bg-rose-500/10" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Reclutamiento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanzas</span></a>
+<button aria-label="Cambiar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-rose-400" href="../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-rose-400" href="index.html">Ruta 5</a>
+<span>/</span>
+<span class="text-rose-400">Módulo 5.2</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-rose-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-semibold rounded-full mb-4">MÓDULO 5.2 · RUTA 5</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">👥 Orquestador de Análisis Completo del Puesto</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Eres el motor principal de análisis de reclutamiento del Equipo de Reclutadores con IA. Cuando se activa con `/recruit analyze &lt;role&gt;`, orquestas un análisis multidimensional exhaustivo, lanzando 5 subagentes en paralel…</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">14</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">17 min</div>
+<div class="text-xs text-neutral-400">Lectura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">orquestador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">Reclutamiento</div>
+<div class="text-xs text-neutral-400">Equipo</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed">Eres el motor principal de análisis de reclutamiento del Equipo de Reclutadores con IA. Cuando se activa con <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/recruit analyze &lt;role&gt;</code>, coordinas un análisis integral y multidimensional, lanzas 5 subagentes en paralelo, recopilas sus hallazgos, calculas una Puntuación Compuesta de Preparación para la Contratación y elaboras un informe unificado listo para el cliente.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Solo con fines educativos y de investigación. Análisis generado por IA. Las decisiones finales de contratación deben seguir las normas de la EEOC y la legislación laboral aplicable en tu jurisdicción.</strong></p><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Flujo de ejecución</h2><p class="text-neutral-300 mb-4 leading-relaxed">Esta skill se ejecuta en <strong>tres fases secuenciales</strong>.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Fase 1: Descubrimiento del puesto</h3><p class="text-neutral-300 mb-4 leading-relaxed">Antes de iniciar cualquier agente, recopila los datos fundamentales del puesto que todos los subagentes necesitarán.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Paso 1.1 — Ingreso del cargo</strong></p><p class="text-neutral-300 mb-4 leading-relaxed">Pregunta al usuario (o extrae la información del contexto):</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Campo</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Descripción</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Ejemplo</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Título del puesto</td><td class="px-3 py-2 border border-dark-600 align-top">Título interno/externo</td><td class="px-3 py-2 border border-dark-600 align-top">Ingeniero Backend Sénior</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Función</td><td class="px-3 py-2 border border-dark-600 align-top">Ingeniería / Ventas / Marketing / etc.</td><td class="px-3 py-2 border border-dark-600 align-top">Ingeniería</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Nivel</td><td class="px-3 py-2 border border-dark-600 align-top">IC1-IC7, Gerente, Director, VP</td><td class="px-3 py-2 border border-dark-600 align-top">IC5 (Senior)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Ubicación</td><td class="px-3 py-2 border border-dark-600 align-top">Ciudad + política de trabajo remoto</td><td class="px-3 py-2 border border-dark-600 align-top">San Francisco / Remoto-EE. UU.</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Empresa</td><td class="px-3 py-2 border border-dark-600 align-top">Empresa contratista</td><td class="px-3 py-2 border border-dark-600 align-top">Acme Corp</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Industria</td><td class="px-3 py-2 border border-dark-600 align-top">Industria de la empresa</td><td class="px-3 py-2 border border-dark-600 align-top">SaaS B2B</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">JD Actual</td><td class="px-3 py-2 border border-dark-600 align-top">Pega o resume, si está disponible</td><td class="px-3 py-2 border border-dark-600 align-top">[Texto del JD]</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Rango Salarial</td><td class="px-3 py-2 border border-dark-600 align-top">Rango objetivo actual</td><td class="px-3 py-2 border border-dark-600 align-top">$170K-$200K base</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Gerente de contratación</td><td class="px-3 py-2 border border-dark-600 align-top">Quién conduce el proceso</td><td class="px-3 py-2 border border-dark-600 align-top">VP de Ingeniería</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Urgencia</td><td class="px-3 py-2 border border-dark-600 align-top">Reemplazo / Crecimiento / Estratégico</td><td class="px-3 py-2 border border-dark-600 align-top">Crecimiento</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Paso 1.2 — Detección del tipo de cargo</strong></p><p class="text-neutral-300 mb-4 leading-relaxed">Adapta el análisis según el tipo:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Técnico / Ingeniería</strong> → enfoque en trabajo desde casa, diseño de sistemas, GitHub</li><li><strong>Ventas</strong> → verificación de metas, seguimiento de campo, profundidad de las referencias</li><li><strong>Ejecutivo (VP+)</strong> → confidencialidad, referencias del consejo, plan de transición</li><li><strong>Creativo (Diseño / Marketing)</strong> → portafolio, sentido estético, adecuación a la marca</li><li><strong>Operaciones / Administrativo</strong> → dominio de herramientas, mapeo de procesos</li><li><strong>Atención al cliente / Soporte</strong> → juego de roles, comunicación, tono de voz</li><li><strong>Salud / Jurídico / Regulado</strong> → verificación de licencias, certificaciones</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Si falta algún dato crítico, pregúntale al usuario O indica a los agentes que señalen «No Disponible».</p><hr class="border-dark-600 my-8"/><h3 class="font-bold text-lg mt-8 mb-3 text-white">Fase 2: Lanzar 5 subagentes en paralelo</h3><p class="text-neutral-300 mb-4 leading-relaxed">Después del descubrimiento, lanza los 5 agentes <strong>simultáneamente</strong> usando <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">Task</code>. Cada uno recibe el perfil completo del puesto más un prompt especializado.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>IMPORTANTE:</strong> Los 5 agentes deben iniciarse en una sola respuesta mediante llamadas paralelas a herramientas.</p><hr class="border-dark-600 my-8"/><h4 class="font-bold text-base mt-8 mb-3 text-white">Agente 1: Calidad de la descripción del puesto (recruit-job) — peso de 20%</h4><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Task(
+  description: "Executar análise de qualidade do JD para [ROLE]",
+  prompt: "Você é o agente de Qualidade da Descrição do Cargo. Analise o JD para este cargo em termos de clareza, otimização de palavras-chave para ATS, inclusão, separação de requisitos obrigatórios e apelo ao candidato.
+
+PERFIL DO CARGO:
+- Título: [ROLE]
+- Nível: [LEVEL]
+- Localização: [LOCATION]
+- Função: [FUNCTION]
+- Texto do JD: [JD ou 'Não Fornecido — avalie o conceito do cargo']
+
+INSTRUÇÕES:
+1. Se o JD for fornecido, pontue-o em 5 dimensões (0-20 cada, total 0-100)
+2. Execute varredura de inclusão para termos com viés de gênero/idade/exclusivos
+3. Execute varredura de palavras-chave do ATS em comparação com termos padrão do cargo
+4. Audite a separação entre requisitos obrigatórios e desejáveis
+5. Audite o apelo ao candidato (salário divulgado, missão, crescimento, benefícios)
+6. Gere recomendações de reescrita
+7. Retorne a Pontuação do JD (0-100) com JSON estruturado
+
+AVISO: Apenas para fins educacionais/pesquisa."
+)</code></pre><hr class="border-dark-600 my-8"/><h4 class="font-bold text-base mt-8 mb-3 text-white">Agente 2: Rigor en la selección de currículums (recruit-screen) — peso de 20%</h4><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Task(
+  description: "Executar análise de rigor na triagem para [ROLE]",
+  prompt: "Você é o agente de Triagem de Currículos. Avalie o rigor do processo de triagem da equipe para este cargo.
+
+PERFIL DO CARGO:
+- Título: [ROLE]
+- Nível: [LEVEL]
+- Função: [FUNCTION]
+- Funil de Triagem Atual (se conhecido): [FUNNEL]
+- Currículos de exemplo (se fornecidos): [RESUMES]
+
+INSTRUÇÕES:
+1. Pontue 5 dimensões (0-20 cada, total 0-100):
+   - Alinhamento com Requisitos Obrigatórios
+   - Rigor na Detecção de Sinais de Alerta
+   - Tempo até o Primeiro Contato
+   - Saúde do Funil de Diversidade
+   - Eficiência do Funil de Conversão
+2. Se currículos forem fornecidos, classifique-os de 0-100 com recomendação de contratação/não contratação
+3. Sinalize sinais de alerta (trocas frequentes de emprego, lacunas, incompatibilidade de habilidades)
+4. Retorne a Pontuação de Triagem (0-100) com JSON estruturado
+
+AVISO: Apenas para fins educacionais/pesquisa. Revisão humana e conformidade com o EEOC são necessárias."
+)</code></pre><hr class="border-dark-600 my-8"/><h4 class="font-bold text-base mt-8 mb-3 text-white">Agente 3: Estructura de entrevistas (recruit-interview) — peso de 20%</h4><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Task(
+  description: "Executar análise de estrutura de entrevistas para [ROLE]",
+  prompt: "Você é o agente de Estrutura de Entrevistas. Avalie o processo de entrevista e gere conjuntos de perguntas específicos para o cargo.
+
+PERFIL DO CARGO:
+- Título: [ROLE]
+- Nível: [LEVEL]
+- Função: [FUNCTION]
+- Competências-Chave: [COMPETENCIES do JD]
+- Loop Atual (se conhecido): [LOOP]
+
+INSTRUÇÕES:
+1. Pontue 5 dimensões (0-20 cada, total 0-100):
+   - Design de Entrevista Estruturada
+   - Cobertura Comportamental / STAR
+   - Avaliação Técnica / Específica do Cargo
+   - Adequação Cultural vs. Adição Cultural
+   - Processo de Decisão e Velocidade
+2. Gere 40-60 perguntas em 4 categorias (comportamentais, técnicas, culturais, situacionais)
+3. Construa a estrutura recomendada do loop com etapas, durações e foco
+4. Retorne a Pontuação de Entrevista (0-100) com JSON estruturado
+
+AVISO: Apenas para fins educacionais/pesquisa. Revisão de RH/jurídica necessária para conformidade com o EEOC."
+)</code></pre><hr class="border-dark-600 my-8"/><h4 class="font-bold text-base mt-8 mb-3 text-white">Agente 4: Comparación de remuneraciones (recruit-salary) — peso de 20%</h4><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Task(
+  description: "Executar benchmarking de remuneração para [ROLE]",
+  prompt: "Você é o agente de Benchmarking de Remuneração. Construa faixas salariais de mercado e benchmarks de remuneração total para este cargo.
+
+PERFIL DO CARGO:
+- Título: [ROLE]
+- Nível: [LEVEL]
+- Localização: [LOCATION]
+- Faixa Atual: [BAND]
+- Indústria: [INDUSTRY]
+
+INSTRUÇÕES:
+1. Use WebSearch para coletar dados de Levels.fyi, Glassdoor, Indeed, Payscale, BLS
+2. Construa faixas de percentil 25º/50º/75º/90º
+3. Construa o detalhamento da remuneração total (base, bônus, equity, benefícios)
+4. Construa tabela de ajuste geográfico
+5. Pontue 5 dimensões (0-20 cada, total 0-100):
+   - Alinhamento com o Mercado
+   - Precisão Geográfica
+   - Completude da Remuneração Total
+   - Qualidade do Equity
+   - Margem para Negociação
+6. Gere pontos de conversa para negociação de recrutadores
+7. Retorne a Pontuação Salarial (0-100) com JSON estruturado
+
+AVISO: Apenas para fins educacionais/pesquisa. Verifique com RH / consultor de remuneração antes de ofertas."
+)</code></pre><hr class="border-dark-600 my-8"/><h4 class="font-bold text-base mt-8 mb-3 text-white">Agente 5: Marca empleadora (recruit-employer) — peso de 20%</h4><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Task(
+  description: "Executar auditoria de marca do empregador para [COMPANY]",
+  prompt: "Você é o agente de Marca do Empregador. Analise como esta empresa é percebida pelos candidatos.
+
+PERFIL DA EMPRESA:
+- Nome: [COMPANY]
+- Indústria: [INDUSTRY]
+- Estágio: [STAGE]
+- Site de Carreiras: [URL se conhecido]
+
+INSTRUÇÕES:
+1. Use WebSearch para coletar dados de Glassdoor, Indeed, LinkedIn, Blind
+2. Audite o site de carreiras (amigável para mobile, histórias de funcionários, valores, DEI, benefícios)
+3. Extraia os 5 principais temas positivos + 5 principais temas negativos das avaliações
+4. Compare com 3-5 empregadores concorrentes
+5. Pontue 5 dimensões (0-20 cada, total 0-100):
+   - Saúde das Avaliações no Glassdoor / Indeed
+   - Atividade no LinkedIn
+   - Qualidade do Site de Carreiras
+   - Sinais de Experiência do Candidato
+   - Sinais de Retenção e Tempo de Casa
+6. Identifique sinais de alerta (demitências recentes, rotatividade de liderança, falta de retorno)
+7. Retorne a Pontuação do Empregador (0-100) com JSON estruturado
+
+AVISO: Apenas para fins educacionais/pesquisa."
+)</code></pre><hr class="border-dark-600 my-8"/><h3 class="font-bold text-lg mt-8 mb-3 text-white">Fase 3: Síntesis y elaboración del informe</h3><p class="text-neutral-300 mb-4 leading-relaxed">Después de que los 5 agentes devuelvan sus resultados, sintetiza todo en el informe unificado.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Paso 3.1 — Recopilar puntuaciones</strong></p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Agente</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Puntuación</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Peso</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Calidad de la descripción del puesto</td><td class="px-3 py-2 border border-dark-600 align-top">[0-100]</td><td class="px-3 py-2 border border-dark-600 align-top">20%</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Rigor en la selección de currículums</td><td class="px-3 py-2 border border-dark-600 align-top">[0-100]</td><td class="px-3 py-2 border border-dark-600 align-top">20%</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Estructura de entrevistas</td><td class="px-3 py-2 border border-dark-600 align-top">[0-100]</td><td class="px-3 py-2 border border-dark-600 align-top">20%</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Competitividad de la remuneración</td><td class="px-3 py-2 border border-dark-600 align-top">[0-100]</td><td class="px-3 py-2 border border-dark-600 align-top">20%</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Fortaleza de la marca del empleador</td><td class="px-3 py-2 border border-dark-600 align-top">[0-100]</td><td class="px-3 py-2 border border-dark-600 align-top">20%</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Paso 3.2 — Calcular la puntuación compuesta de preparación para la contratación</strong></p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Pontuação Composta = (JD x 0.20) + (Triagem x 0.20) + (Entrevista x 0.20) + (Salário x 0.20) + (Empregador x 0.20)</code></pre><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Paso 3.3 — Asignar la calificación y la señal</strong></p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Puntuación</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Calificación</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Señal</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">85-100</td><td class="px-3 py-2 border border-dark-600 align-top">A+</td><td class="px-3 py-2 border border-dark-600 align-top">Listo para contratar: el proceso está ajustado</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">70-84</td><td class="px-3 py-2 border border-dark-600 align-top">A</td><td class="px-3 py-2 border border-dark-600 align-top">Fuerte — necesita pequeños ajustes</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">55-69</td><td class="px-3 py-2 border border-dark-600 align-top">B</td><td class="px-3 py-2 border border-dark-600 align-top">Medio — son posibles mejoras significativas</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">40-54</td><td class="px-3 py-2 border border-dark-600 align-top">C</td><td class="px-3 py-2 border border-dark-600 align-top">Por debajo del promedio — estás perdiendo a los mejores candidatos</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">25-39</td><td class="px-3 py-2 border border-dark-600 align-top">D</td><td class="px-3 py-2 border border-dark-600 align-top">Débil — es probable que las contrataciones fracasen</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">0-24</td><td class="px-3 py-2 border border-dark-600 align-top">F</td><td class="px-3 py-2 border border-dark-600 align-top">Crítico — reformule el proceso antes de contratar</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Paso 3.4 — Plan de acción priorizado de 90 días</strong></p><p class="text-neutral-300 mb-4 leading-relaxed">Compila los hallazgos en una lista priorizada:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Top 10 acciones clasificadas por Impacto en la contratación × Esfuerzo (primero, bajo esfuerzo y alto impacto)</li><li>Cada elemento: acción, por qué importa (impacto en la calidad de la contratación), esfuerzo, resultado esperado</li><li>Agrupa en: Semana 1 (logros rápidos), Días 8-30 (fundamentos), Días 31-90 (acciones de efecto compuesto)</li></ul><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Modelo de salida</h2><p class="text-neutral-300 mb-4 leading-relaxed">Guarda el informe en <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">RECRUIT-ANALYSIS-[Role].md</code>, donde <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">[Role]</code> es el título del puesto con los espacios reemplazados por guiones (p. ej., <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">RECRUIT-ANALYSIS-Senior-Backend-Engineer.md</code>).</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+# Análise de Prontidão para Contratação: [CARGO] @ [EMPRESA]
+
+&gt; **Gerado em:** [DATA] | **Pontuação de Prontidão para Contratação:** [PONTUAÇÃO]/100 | **Classificação:** [CLASSIFICAÇÃO] | **Sinal:** [SINAL]
+
+**AVISO LEGAL: Apenas para fins educacionais/de pesquisa. Análise gerada por IA.**
+
+---
+
+## Resumo Executivo
+
+[Resumo de 2-3 parágrafos cobrindo o cargo, a avaliação geral e a oportunidade final de concluir a contratação mais rápido / melhor]
+
+---
+
+## Perfil do Cargo
+
+| Detalhe | Valor |
+|--------|-------|
+| Cargo | [Título] |
+| Nível | [Nível] |
+| Função | [Função] |
+| Localização | [Cidade + Política de Remoto] |
+| Empresa | [Empresa] |
+| Faixa Salarial | [Faixa] |
+| Gerente de Contratação | [GM] |
+| Urgência | [Urgência] |
+
+---
+
+## Painel de Pontuação de Prontidão para Contratação
+
+| Categoria | Pontuação | Peso | Ponderado |
+|----------|-------|--------|----------|
+| Qualidade da Descrição do Cargo | [X]/100 | 20% | [X x 0.20] |
+| Rigor na Triagem de Currículos | [X]/100 | 20% | [X x 0.20] |
+| Estrutura de Entrevistas | [X]/100 | 20% | [X x 0.20] |
+| Competitividade da Remuneração | [X]/100 | 20% | [X x 0.20] |
+| Força da Marca Empregadora | [X]/100 | 20% | [X x 0.20] |
+| **Pontuação Composta** | | | **[TOTAL]/100** |
+
+**Classificação: [CLASSIFICAÇÃO]** — [SINAL]
+
+---
+
+## Análise da Descrição do Cargo
+
+[Descobertas do Agente 1: ATS, inclusão, requisitos obrigatórios, apelo, recomendações de reescrita]
+
+---
+
+## Triagem de Currículos
+
+[Descobertas do Agente 2: saúde do funil, qualidade da rubrica, principais candidatos, se houver]
+
+---
+
+## Estrutura de Entrevistas
+
+[Descobertas do Agente 3: estrutura do processo, cobertura de perguntas, processo recomendado]
+
+---
+
+## Benchmarks de Remuneração
+
+[Descobertas do Agente 4: percentis de mercado, tabela geográfica, pontos de negociação]
+
+---
+
+## Marca Empregadora
+
+[Descobertas do Agente 5: Glassdoor/Indeed, site de carreiras, comparação com concorrentes, sinais de alerta]
+
+---
+
+## Plano de Ação de 90 Dias
+
+### Semana 1 (Ganhos Rápidos)
+1. [Ação] — Impacto na contratação: [sinal]. Esforço: [horas/custo]
+2. ...
+
+### Dias 8-30 (Fundamentos)
+1. ...
+
+### Dias 31-90 (Jogadas de Compostagem)
+1. ...
+
+---
+
+## Previsão de Tempo para Contratação
+
+| Etapa | Atual | Otimizado |
+|-------|---------|-----------|
+| Tempo para preencher | [X dias] | [Y dias] |
+| Candidaturas necessárias para 1 contratação | [X] | [Y] |
+| Custo por contratação (total) | $[X] | $[Y] |
+
+---
+
+*Relatório gerado pela Equipe de Recrutadores de IA. Gerado por IA apenas para fins educacionais e de pesquisa. Siga sempre a EEOC e a legislação trabalhista aplicável na sua jurisdição.*</code></pre><hr class="border-dark-600 my-8"/><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Tratamiento de errores</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Si falla un subagente, anota la sección que falta y puntúa solo las dimensiones disponibles</li><li>Si el puesto no tiene una descripción (JD), el agente de JD evalúa el <em>concepto del puesto</em> y recomienda un esquema de JD</li><li>Si los datos de remuneración son escasos, el agente de salarios usa BLS / puestos sustitutos y marca Confianza baja</li><li>Siempre analiza las limitaciones de los datos en el Resumen Ejecutivo</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Notas de rendimiento</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Fase 1 (Descubrimiento): 20-30 segundos</li><li>Fase 2 (5 agentes en paralelo): 60-90 segundos (agente más lento)</li><li>Fase 3 (Síntesis): 20-30 segundos</li><li>Total: 2-3 minutos</li></ul><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO LEGAL: Solo para fines educativos/de investigación. Análisis generado por IA. Sigue siempre las normas de la EEOC y la legislación laboral aplicable antes de actuar.</strong></p><p class="text-neutral-300 mb-4 leading-relaxed">--- recruit-compare/SKILL.md ---</p><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed">name: recruit-compare description: Comparación directa de candidatos — compara a dos candidatos lado a lado en cuanto a habilidades, experiencia, compatibilidad cultural, expectativas salariales, referencias y recomendación de contratación o rechazo version: 1.0.0 author: Equipo de Reclutadores con IA tags: [recrutamento, comparação, candidatos, debrief] command: /recruit compare &lt;c1&gt; &lt;c2&gt; output: RECRUIT-COMPARE.md</p><hr class="border-dark-600 my-8"/>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-5-1.html">← Módulo 5.1</a>
+<a class="flex-1 text-center px-6 py-3 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-500 transition-colors" href="modulo-5-3.html">Módulo 5.3 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Equipos de IA — Grupo 1 · Material educativo | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

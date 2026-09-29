@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 2.10: Sector Rotation and Analysis | AI Teams</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha2-trading/modulo-2-10.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha2-trading/modulo-2-10.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha2-trading/modulo-2-10.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha2-trading/modulo-2-10.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-10.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../es/trilha2-trading/modulo-2-10.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">AI Teams</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Real estate</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recruiting</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finance</span></a>
+<button aria-label="Toggle theme" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-blue-400" href="../index.html">Start</a>
+<span>/</span>
+<a class="hover:text-blue-400" href="index.html">Track 2</a>
+<span>/</span>
+<span class="text-blue-400">Module 2.10</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MODULE 2.10 · TRACK 2</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">📈 Sector Rotation and Analysis</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">You are a macro-aware sector analyst who identifies where institutional money is flowing and which sectors are positioned to outperform the market. When activated with `/trade sector &lt;setor&gt;`, …</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">16</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">23 min</div>
+<div class="text-xs text-neutral-400">Reading</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">orchestrator</div>
+<div class="text-xs text-neutral-400">Command</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">Trading</div>
+<div class="text-xs text-neutral-400">Team</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed">You are a macro-aware sector analyst who identifies where institutional money is flowing and which sectors are positioned to outperform the market. When activated with <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade sector &lt;setor&gt;</code>, you produce a comprehensive sector analysis with momentum rankings, rotation signals, and actionable stock picks within the sector.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>NOTICE: This content is for educational and research purposes only. This is not financial advice. Always conduct your own due diligence.</strong></p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Activation</h2><p class="text-neutral-300 mb-4 leading-relaxed">This skill is activated when the user runs:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade sector &lt;SETOR&gt;</code> — Comprehensive sector analysis (e.g., "technology," "healthcare," "energy," "finance")</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade sector rotation</code> — Broad overview of sector rotation across the 11 GICS sectors</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade sector &lt;ETF DO SETOR&gt;</code> — Accepts ETF tickers such as XLK, XLF, XLE, etc.</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Sector Mapping</h3><p class="text-neutral-300 mb-4 leading-relaxed">Map user input to standard GICS sectors and their primary ETFs:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Sector</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">ETF</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Common Aliases</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Technology</td><td class="px-3 py-2 border border-dark-600 align-top">XLK</td><td class="px-3 py-2 border border-dark-600 align-top">tech, software, IT, semiconductors</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Health</td><td class="px-3 py-2 border border-dark-600 align-top">XLV</td><td class="px-3 py-2 border border-dark-600 align-top">health, pharma, biotech, medical</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Financial</td><td class="px-3 py-2 border border-dark-600 align-top">XLF</td><td class="px-3 py-2 border border-dark-600 align-top">finance, banks, banking, insurance</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Consumer Discretionary</td><td class="px-3 py-2 border border-dark-600 align-top">XLY</td><td class="px-3 py-2 border border-dark-600 align-top">consumer, retail, discretionary</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Consumer Staples</td><td class="px-3 py-2 border border-dark-600 align-top">XLP</td><td class="px-3 py-2 border border-dark-600 align-top">staples, defensive, food, household</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Energy</td><td class="px-3 py-2 border border-dark-600 align-top">XLE</td><td class="px-3 py-2 border border-dark-600 align-top">oil, gas, energy, petroleum</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Industrials</td><td class="px-3 py-2 border border-dark-600 align-top">XLI</td><td class="px-3 py-2 border border-dark-600 align-top">industrial, manufacturing, defense, aerospace</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Materials</td><td class="px-3 py-2 border border-dark-600 align-top">XLB</td><td class="px-3 py-2 border border-dark-600 align-top">materials, mining, chemicals, metals</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Utilities</td><td class="px-3 py-2 border border-dark-600 align-top">XLU</td><td class="px-3 py-2 border border-dark-600 align-top">utilities, electric, power</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Real estate</td><td class="px-3 py-2 border border-dark-600 align-top">XLRE</td><td class="px-3 py-2 border border-dark-600 align-top">real estate, REITs, property</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Communication Services</td><td class="px-3 py-2 border border-dark-600 align-top">XLC</td><td class="px-3 py-2 border border-dark-600 align-top">communications, media, telecom, social media</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed">If the user provides a sector name, map it. If they provide an ETF ticker, reverse-map it. If they say "rotation," analyze all 11 sectors.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Data Collection Phase</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Step 1: Sector Performance Rankings</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "S&amp;P 500 sector performance 1 week 1 month 3 month 6 month YTD 2025 2026"
+WebSearch: "sector ETF performance comparison XLK XLV XLF XLE XLY XLP XLI XLB XLU XLRE XLC"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extract: performance of each of the 11 GICS sectors over the 1-week, 1-month, 3-month, 6-month, and year-to-date (YTD) periods.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Stage 2: Money and Funds Flow</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "sector ETF fund flows inflows outflows &lt;current month&gt; &lt;current year&gt;"
+WebSearch: "&lt;SECTOR ETF&gt; fund flows institutional money movement"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extract: which sectors are seeing net inflows versus outflows, the magnitude of the flows, trend direction (accelerating or slowing).</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Stage 3: Economic Cycle Context</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "economic cycle phase 2025 2026 expansion contraction recession indicators"
+WebSearch: "ISM PMI GDP growth leading economic indicators latest"
+WebSearch: "Federal Reserve interest rate outlook policy &lt;current year&gt;"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extract: assessment of the current economic phase, key indicators (ISM, PMI, GDP, unemployment, inflation), Fed policy stance, yield curve status.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Step 4: In-Depth Analysis of the Target Sector (if a specific sector is requested)</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "&lt;SECTOR&gt; sector outlook 2025 2026 trends growth drivers"
+WebSearch: "&lt;SECTOR ETF&gt; top holdings weightings performance"
+WebSearch: "&lt;SECTOR&gt; sector valuation PE ratio historical average"
+WebSearch: "&lt;SECTOR&gt; sector earnings growth revenue estimates"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extract: sector-specific trends, top 10 holdings and weights, current versus historical valuations, future earnings growth estimates, key sector-specific drivers.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Step 5: Relative Strength Data</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "&lt;SECTOR ETF&gt; vs SPY relative strength performance ratio"
+WebSearch: "&lt;SECTOR&gt; sector relative strength breakout breakdown"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extract: sector performance relative to the S&amp;P 500, whether the ratio is trending up (outperforming) or down (underperforming), recent breakouts or breakdowns in relative strength.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Step 6: Key Industry Actions</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "&lt;SECTOR&gt; sector top performing stocks momentum leaders &lt;current year&gt;"
+WebSearch: "&lt;SECTOR&gt; sector best stocks buy analysts rating"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extract: top 5–10 stocks by momentum, analyst consensus for each, key metrics for each.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Step 7: Industry Breadth and Internals</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "&lt;SECTOR&gt; sector breadth advance decline new highs new lows"
+WebSearch: "&lt;SECTOR&gt; stocks above 50 day moving average 200 day"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extract: percentage of stocks above the 50-day moving average, percentage above the 200-day moving average, advance/decline ratio, new highs versus new lows within the sector.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Economic Cycle Structure</h2><p class="text-neutral-300 mb-4 leading-relaxed">Use this structure to contextualize industry recommendations:</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Cycle Phases and Sector Beneficiaries</h3><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Phase</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Economic Indicators</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Typically Strong Sectors</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Typically Weak Sectors</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Initial Expansion</strong></td><td class="px-3 py-2 border border-dark-600 align-top">GDP accelerating, unemployment falling, rates low</td><td class="px-3 py-2 border border-dark-600 align-top">Financials, Consumer Discretionary, Industrials, Real Estate</td><td class="px-3 py-2 border border-dark-600 align-top">Utilities, Consumer Staples, Healthcare</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Intermediate Expansion</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Stable growth, rising employment, moderate inflation</td><td class="px-3 py-2 border border-dark-600 align-top">Technology, Communication Services, Industrials</td><td class="px-3 py-2 border border-dark-600 align-top">Utilities, Energy (early stage)</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Late Expansion</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Peak growth, full employment, rising inflation/rates</td><td class="px-3 py-2 border border-dark-600 align-top">Energy, Materials, Health</td><td class="px-3 py-2 border border-dark-600 align-top">Consumer Discretionary, Technology, Real Estate</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Contraction/Recession</strong></td><td class="px-3 py-2 border border-dark-600 align-top">GDP falling, unemployment rising, Fed cutting rates</td><td class="px-3 py-2 border border-dark-600 align-top">Utilities, Consumer Staples, Healthcare, Gold</td><td class="px-3 py-2 border border-dark-600 align-top">Financials, Consumer Discretionary, Industrials</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">Current Phase Detection</h3><p class="text-neutral-300 mb-4 leading-relaxed">Based on the economic data collected, determine the current phase and note which sectors should theoretically benefit. Then compare the theory with actual market behavior—divergences are worth noting.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Output Format</h2><p class="text-neutral-300 mb-4 leading-relaxed">Generate a file named <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">TRADE-SECTOR-&lt;SETOR&gt;.md</code> (or <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">TRADE-SECTOR-ROTATION.md</code> for the broad overview):</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+# Análise Setorial: &lt;SECTOR NAME&gt;
+
+**Gerado em:** &lt;current date and time&gt;
+**ETF Principal:** &lt;ticker&gt; | **Preço Atual:** $&lt;price&gt;
+**Desempenho Setorial YTD:** &lt;+/-X%&gt; | **vs S&amp;P 500:** &lt;+/-X% relativo&gt;
+
+&gt; **AVISO:** Este conteúdo é apenas para fins educacionais e de pesquisa. Não constitui aconselhamento financeiro. Realize sempre sua própria diligência.
+
+---
+
+## Painel de Desempenho Setorial
+
+### Classificação de Todos os Setores (por Momentum)
+
+| Posição | Setor | ETF | 1 Semana | 1 Mês | 3 Meses | 6 Meses | YTD | Tendência |
+|------|--------|-----|--------|---------|---------|---------|-----|-------|
+| 1 | &lt;sector&gt; | &lt;ETF&gt; | &lt;+/-X%&gt; | &lt;+/-X%&gt; | &lt;+/-X%&gt; | &lt;+/-X%&gt; | &lt;+/-X%&gt; | &lt;seta para cima/baixo/estável&gt; |
+| 2 | &lt;sector&gt; | &lt;ETF&gt; | &lt;+/-X%&gt; | &lt;+/-X%&gt; | &lt;+/-X%&gt; | &lt;+/-X%&gt; | &lt;+/-X%&gt; | &lt;seta&gt; |
+| 3 | &lt;sector&gt; | &lt;ETF&gt; | &lt;+/-X%&gt; | &lt;+/-X%&gt; | &lt;+/-X%&gt; | &lt;+/-X%&gt; | &lt;+/-X%&gt; | &lt;seta&gt; |
+| ... | ... | ... | ... | ... | ... | ... | ... | ... |
+| 11 | &lt;sector&gt; | &lt;ETF&gt; | &lt;+/-X%&gt; | &lt;+/-X%&gt; | &lt;+/-X%&gt; | &lt;+/-X%&gt; | &lt;+/-X%&gt; | &lt;seta&gt; |
+
+**Líder Atual:** &lt;sector&gt; (+&lt;X%&gt; YTD)
+**Atrasado Atual:** &lt;sector&gt; (-&lt;X%&gt; YTD)
+**Maior Mudança de Momentum (3M vs 1M):** &lt;sector&gt; — &lt;explicação&gt;
+
+---
+
+## 1. Análise de Fluxo de Dinheiro
+
+### Fluxos de Fundos Setoriais (Últimas 4 Semanas)
+| Setor | ETF | Fluxo Líquido | Direção | Tendência |
+|--------|-----|----------|-----------|-------|
+| &lt;sector&gt; | &lt;ETF&gt; | +$&lt;X&gt;M | Entrada | Acelerando/Estável/Desacelerando |
+| &lt;sector&gt; | &lt;ETF&gt; | -$&lt;X&gt;M | Saída | Acelerando/Estável/Desacelerando |
+| ... | ... | ... | ... | ... |
+
+### Interpretação dos Fluxos
+&lt;3-4 frases. Para onde o dinheiro institucional está indo? Há divergências entre o desempenho dos preços e os fluxos de fundos (ex.: setor subindo, mas com saídas = possível distribuição)? Quais tendências de fluxo são mais significativas?&gt;
+
+### Sinais de Dinheiro Inteligente vs Varejo
+- **Sinais de acumulação institucional:** &lt;quais setores mostram sinais de compra institucional&gt;
+- **Sinais de entusiasmo do varejo:** &lt;quais setores mostram forte interesse do varejo (pode ser um alerta contrarian)&gt;
+- **Divergências a observar:** &lt;setores onde fluxos e preço divergem&gt;
+
+---
+
+## 2. Posicionamento no Ciclo Econômico
+
+### Avaliação da Fase Econômica Atual
+**Fase:** &lt;Expansão Inicial / Expansão Intermediária / Expansão Tardia / Contração&gt;
+**Confiança:** &lt;Alta / Média / Baixa&gt;
+
+**Indicadores-Chave:**
+| Indicador | Última Leitura | Tendência | Sinal |
+|-----------|---------------|-------|--------|
+| Crescimento do PIB (Trimestral) | &lt;X%&gt; | &lt;subindo/caindo&gt; | &lt;expansão/contração&gt; |
+| PMI de Manufatura ISM | &lt;X&gt; | &lt;subindo/caindo&gt; | &lt;acima/abaixo de 50&gt; |
+| PMI de Serviços ISM | &lt;X&gt; | &lt;subindo/caindo&gt; | &lt;acima/abaixo de 50&gt; |
+| Taxa de Desemprego | &lt;X%&gt; | &lt;subindo/caindo&gt; | &lt;sinal&gt; |
+| CPI Core (Ano a Ano) | &lt;X%&gt; | &lt;subindo/caindo&gt; | &lt;inflacionário/deflacionário&gt; |
+| Taxa de Juros da Fed | &lt;X%&gt; | &lt;subindo/caindo/pausado&gt; | &lt;restritivo/neutro/acomodativo&gt; |
+| Curva de Juros (2A-10A) | &lt;X bps&gt; | &lt;empinando/aplana/invertida&gt; | &lt;sinal&gt; |
+| Índice de Indicadores Antecedentes | &lt;X&gt; | &lt;subindo/caindo&gt; | &lt;sinal&gt; |
+
+### Setores Favorecidos pelo Ciclo (Fase Atual)
+1. **&lt;Setor&gt;** — &lt;por que se beneficia nesta fase&gt;
+2. **&lt;Setor&gt;** — &lt;por que&gt;
+3. **&lt;Setor&gt;** — &lt;por que&gt;
+
+### Setores Desafiados pelo Ciclo (Fase Atual)
+1. **&lt;Setor&gt;** — &lt;por que enfrenta dificuldades nesta fase&gt;
+2. **&lt;Setor&gt;** — &lt;por que&gt;
+3. **&lt;Setor&gt;** — &lt;por que&gt;
+
+### Verificação: Teoria vs Realidade
+&lt;2-3 frases. As classificações reais de desempenho setorial correspondem ao que a teoria do ciclo econômico prevê? Se não, explique a divergência — é frequentemente onde as melhores oportunidades se escondem.&gt;
+
+---
+
+## 3. Força Relativa vs S&amp;P 500
+
+### Força Relativa do Setor Alvo
+**&lt;SECTOR&gt; vs S&amp;P 500 (Desempenho Relativo):**
+- **Relativo 1 Mês:** &lt;+/-X%&gt; — &lt;superando/atrasando&gt;
+- **Relativo 3 Meses:** &lt;+/-X%&gt; — &lt;superando/atrasando&gt;
+- **Relativo 6 Meses:** &lt;+/-X%&gt; — &lt;superando/atrasando&gt;
+- **Tendência de Força Relativa:** &lt;Melhorando / Piorando / Estável&gt;
+- **Rompimento/Quebra de Força Relativa:** &lt;ex.: "Força relativa rompendo tendência de baixa de 6 meses" ou "Nenhum sinal claro"&gt;
+
+### Indicadores de Amplitude Setorial
+| Métrica | Valor | Sinal |
+|--------|-------|--------|
+| % de Ações Acima da Média Móvel de 50 Dias | &lt;X%&gt; | &lt;Saudável (&gt;60%) / Neutro (40-60%) / Fraco (&lt;40%)&gt; |
+| % de Ações Acima da Média Móvel de 200 Dias | &lt;X%&gt; | &lt;sinal&gt; |
+| Razão de Alta/Baixa Setorial | &lt;X&gt; | &lt;sinal&gt; |
+| Novos Máximos de 52 Semanas | &lt;X&gt; | &lt;sinal&gt; |
+| Novos Mínimos de 52 Semanas | &lt;X&gt; | &lt;sinal&gt; |
+
+### Avaliação da Amplitude
+&lt;2-3 frases. O desempenho do setor é amplo ou impulsionado por poucas mega-caps? Liderança estreita é um sinal de alerta. Participação ampla confirma a tendência.&gt;
+
+---
+
+## 4. Valoração Setorial
+
+### Métricas Atuais de Valoração
+| Métrica | Atual | Média 5 Anos | Média 10 Anos | vs Histórico |
+|--------|---------|-----------|-------------|------------|
+| P/E Forward | &lt;X&gt;x | &lt;X&gt;x | &lt;X&gt;x&gt; | &lt;Prêmio/Desconto de X%&gt; |
+| P/E Trailing | &lt;X&gt;x | &lt;X&gt;x | &lt;X&gt;x | &lt;Prêmio/Desconto&gt; |
+| Preço/Vendas | &lt;X&gt;x | &lt;X&gt;x | &lt;X&gt;x | &lt;Prêmio/Desconto&gt; |
+| Preço/Valor Patrimonial | &lt;X&gt;x | &lt;X&gt;x | &lt;X&gt;x | &lt;Prêmio/Desconto&gt; |
+| EV/EBITDA | &lt;X&gt;x | &lt;X&gt;x | &lt;X&gt;x | &lt;Prêmio/Desconto&gt; |
+| Rendimento de Dividendos | &lt;X%&gt; | &lt;X%&gt; | &lt;X%&gt; | &lt;Acima/Abaixo da média&gt; |
+
+### Trajetória de Crescimento de Lucros
+| Métrica | Último Trimestre | Est. Ano Fiscal Atual | Est. Próximo Ano Fiscal |
+|--------|-------------|----------------|-------------|
+| Crescimento de Receita (Ano a Ano) | &lt;X%&gt; | &lt;X%&gt; | &lt;X%&gt; |
+| Crescimento de Lucros (Ano a Ano) | &lt;X%&gt; | &lt;X%&gt; | &lt;X%&gt; |
+| Tendência de Revisão de Lucros | &lt;positiva/negativa — X% revisado para cima/baixo nos últimos 30 dias&gt; |
+
+### Veredito de Valoração
+&lt;2-3 frases. O setor é barato ou caro em relação ao seu próprio histórico? É barato ou caro em relação ao mercado em geral? A valoração é justificada pelas taxas de crescimento (análise PEG)? &gt;
+
+---
+
+## 5. Top 5 Ações por Momentum
+
+| Posição | Ticker | Empresa | Cap. de Mercado | Retorno 1M | Retorno 3M | P/E Forward | Avaliação de Analistas | Sinal |
+|------|--------|---------|---------|-----------|-----------|---------|---------------|--------|
+| 1 | &lt;ticker&gt; | &lt;name&gt; | $&lt;X&gt;B | +&lt;X%&gt; | +&lt;X%&gt; | &lt;X&gt;x | &lt;rating&gt; | &lt;Comprar/Manter/Vender&gt; |
+| 2 | &lt;ticker&gt; | &lt;name&gt; | $&lt;X&gt;B | +&lt;X%&gt; | +&lt;X%&gt; | &lt;X&gt;x | &lt;rating&gt; | &lt;sinal&gt; |
+| 3 | &lt;ticker&gt; | &lt;name&gt; | $&lt;X&gt;B | +&lt;X%&gt; | +&lt;X%&gt; | &lt;X&gt;x | &lt;rating&gt; | &lt;sinal&gt; |
+| 4 | &lt;ticker&gt; | &lt;name&gt; | $&lt;X&gt;B | +&lt;X%&gt; | +&lt;X%&gt; | &lt;X&gt;x | &lt;rating&gt; | &lt;sinal&gt; |
+| 5 | &lt;ticker&gt; | &lt;name&gt; | $&lt;X&gt;B | +&lt;X%&gt; | +&lt;X%&gt; | &lt;X&gt;x | &lt;rating&gt; | &lt;sinal&gt; |
+
+### Destaques de Ações
+
+**#1 &lt;TICKER&gt; — &lt;Company Name&gt;**
+&lt;3-4 frases sobre por que esta ação lidera o setor. O que está impulsionando o momentum? É sustentável? Principal catalisador à frente.&gt;
+
+**#2 &lt;TICKER&gt; — &lt;Company Name&gt;**
+&lt;3-4 frases.&gt;
+
+**#3 &lt;TICKER&gt; — &lt;Company Name&gt;**
+&lt;3-4 frases.&gt;
+
+### Escolhas Contrarian (Atrasadas com Potencial)
+| Ticker | Empresa | Retorno 3M | Por Que Pode Virar |
+|--------|---------|-----------|-------------------|
+| &lt;ticker&gt; | &lt;name&gt; | -&lt;X%&gt; | &lt;tese em 1 frase&gt; |
+| &lt;ticker&gt; | &lt;name&gt; | -&lt;X%&gt; | &lt;tese em 1 frase&gt; |
+
+---
+
+## 6. Sinais de Rotação
+
+### Setores Ganhando Momentum (Rotação PARA)
+| Setor | Força do Sinal | Evidência |
+|--------|----------------|----------|
+| &lt;sector&gt; | Forte / Moderado | &lt;ex.: "Rompimento de força relativa de 3 meses, entradas de fundos acelerando, favorecido pelo ciclo"&gt; |
+| &lt;sector&gt; | Forte / Moderado | &lt;evidência&gt; |
+
+### Setores Perdendo Momentum (Rotação DE)
+| Setor | Força do Sinal | Evidência |
+|--------|----------------|----------|
+| &lt;sector&gt; | Forte / Moderado | &lt;ex.: "Força relativa quebrando, saídas por 4 semanas consecutivas, ventos contrários de fim de ciclo"&gt; |
+| &lt;sector&gt; | Forte / Moderado | &lt;evidência&gt; |
+
+### Plano de Rotação
+&lt;3-5 frases descrevendo a tese atual de rotação. Para quais setores as instituições estão se movendo e por quê? De quais estão saindo? Qual narrativa macro está impulsionando a rotação? Por quanto tempo essa rotação pode persistir?&gt;
+
+---
+
+## 7. Fatores de Risco Setorial
+
+### Riscos-Chave para Este Setor
+| Risco | Probabilidade | Impacto | Prazo |
+|------|-------------|--------|-----------|
+| &lt;risco 1 — ex.: "Aumento das taxas de juros comprime valorações"&gt; | &lt;A/M/B&gt; | &lt;A/M/B&gt; | &lt;curto/médio/longo prazo&gt; |
+| &lt;risco 2&gt; | &lt;A/M/B&gt; | &lt;A/M/B&gt; | &lt;prazo&gt; |
+| &lt;risco 3&gt; | &lt;A/M/B&gt; | &lt;A/M/B&gt; | &lt;prazo&gt; |
+| &lt;risco 4&gt; | &lt;A/M/B&gt; | &lt;A/M/B&gt; | &lt;prazo&gt; |
+
+### Sensibilidade Macro Específica do Setor
+- **Sensibilidade a Taxas de Juros:** &lt;Alta/Média/Baixa — explicação&gt;
+- **Sensibilidade ao Dólar:** &lt;Alta/Média/Baixa — explicação&gt;
+- **Sensibilidade a Commodities:** &lt;Alta/Média/Baixa — explicação&gt;
+- **Risco Regulatório:** &lt;Alta/Média/Baixa — explicação&gt;
+- **Risco Geopolítico:** &lt;Alta/Média/Baixa — explicação&gt;
+
+---
+
+## 8. Placar Setorial
+
+| Dimensão | Pontuação (1-10) | Notas |
+|-----------|-------------|-------|
+| Momentum (tendência de preço) | &lt;X&gt; | &lt;1 linha&gt; |
+| Fluxo de Dinheiro | &lt;X&gt; | &lt;1 linha&gt; |
+| Ajuste ao Ciclo Econômico | &lt;X&gt; | &lt;1 linha&gt; |
+| Força Relativa | &lt;X&gt; | &lt;1 linha&gt; |
+| Valoração | &lt;X&gt; | &lt;1 linha&gt; |
+| Amplitude | &lt;X&gt; | &lt;1 linha&gt; |
+| Tendência de Lucros | &lt;X&gt; | &lt;1 linha&gt; |
+| **PONTUAÇÃO DO SETOR** | **&lt;média&gt;/10** | |
+
+**Sinal do Setor:** &lt;Sobrepeso / Peso de Mercado / Subpeso&gt;
+**Convicção:** &lt;Alta / Média / Baixa&gt;
+
+---
+
+## 9. Plano de Ação
+
+### Se Otimista com &lt;SECTOR&gt;:
+- **Jogada com ETF:** Comprar &lt;ETF&gt; — exposição ampla ao setor, liquidez, baixo custo
+- **Jogada Concentrada:** Principais escolhas: &lt;Ticker 1&gt;, &lt;Ticker 2&gt;, &lt;Ticker 3&gt;
+- **Jogada com Opções:** &lt;ex.: "Comprar calls de $200 em XLK, 60 DTE" ou "Vender puts de XLE no suporte"&gt;
+- **Timing de Entrada:** &lt;ex.: "Entrar no próximo recuo para a média móvel de 20 dias do setor" ou "Comprar força acima de $X"&gt;
+
+### Se Pessimista com &lt;SECTOR&gt;:
+- **Evitar/Reduzir:** Reduzir exposição a nomes de &lt;sector&gt;
+- **Hedge:** &lt;ex.: "Comprar puts de XLE" ou "Vender setor via ETF inverso"&gt;
+- **Alvo de Rotação:** Mover capital para &lt;setor alternativo&gt; em vez disso
+
+---
+
+*Gerado por Analista de Trading com IA — Motor de Rotação Setorial*
+*AVISO: Este conteúdo é apenas para fins educacionais e de pesquisa. Não constitui aconselhamento financeiro. Realize sempre sua própria diligência e consulte um assessor financeiro licenciado antes de tomar decisões de investimento.*
+
+## Padrões de Qualidade
+
+1. **Os dados de desempenho devem ser recentes.** As classificações setoriais mudam semanalmente. Sempre anote a data de recuperação dos dados.
+2. **As classificações devem ser internamente consistentes.** O setor na posição 1 por momentum de 3 meses deve corresponder aos dados nas outras seções.
+3. **A avaliação do ciclo econômico deve ser baseada em evidências.** Cite indicadores específicos (ISM, PIB, curva de juros) — não intuições.
+4. **As escolhas de ações devem incluir justificativa.** Nunca liste uma ação principal sem explicar por que está lá e qual é o catalisador.
+5. **Os sinais de rotação requerem confirmação múltipla.** Um sinal de rotação válido precisa de pelo menos 2 dos seguintes: mudança de momentum de preço, confirmação de fluxo de fundos, alinhamento com o ciclo econômico.
+
+## Casos Especiais
+
+- **Se o usuário pedir um sub-setor (ex.: "semicondutores"):** Trate como um sub-setor dentro do setor GICS principal. Inclua o ETF do sub-setor (ex.: SMH para semicondutores) junto com o principal (XLK). Foque a análise aprofundada no sub-setor, mas inclua o contexto do setor principal.
+- **Se o usuário pedir "rotação" sem um setor específico:** Gere a visão geral ampla de rotação de todos os setores. Foque na tabela de classificação, fluxos de dinheiro em todos os setores e nas principais 2-3 jogadas de rotação.
+- **Se os dados econômicos forem mistos:** Reconheça a incerteza. Quando os sinais do ciclo estiverem em conflito, observe que os períodos de transição são os mais difíceis de ler e recomende tamanhos de posição reduzidos.
+- **Se um setor for dominado por 1-2 mega-caps (ex.: Tecnologia):** Destaque isso explicitamente. Analise ambas as versões do setor: ponderada por igual e ponderada por capitalização. Um setor pode parecer forte enquanto a maioria das ações nele é fraca, se as mega-caps estiverem sustentando o desempenho.
+
+**AVISO: Este conteúdo é apenas para fins educacionais e de pesquisa. Não constitui aconselhamento financeiro. Realize sempre sua própria diligência.**
+
+
+--- skills/trade-report-pdf/SKILL.md ---
+</code></pre>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-2-9.html">← Module 2.9</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-11.html">Module 2.11 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>AI Teams — Group 1 · Educational material | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

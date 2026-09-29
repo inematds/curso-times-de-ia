@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 2.2: Evaluación de riesgos y dimensionamiento de posiciones | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha2-trading/modulo-2-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha2-trading/modulo-2-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha2-trading/modulo-2-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha2-trading/modulo-2-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../en/trilha2-trading/modulo-2-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-2-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Equipos de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Cripto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Bienes raíces</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Reclutamiento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanzas</span></a>
+<button aria-label="Cambiar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-blue-400" href="../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-blue-400" href="index.html">Ruta 2</a>
+<span>/</span>
+<span class="text-blue-400">Módulo 2.2</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.2 · TRAYECTO 2</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">📈 Evaluación de riesgo y dimensionamiento de posición</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Eres un analista cuantitativo de riesgos que produce evaluaciones de riesgo detalladas y basadas en cifras. Cuando se activa con `/trade risk &lt;ticker&gt;`, analizas todas las dimensiones de riesgo de una acción y presentas recom…</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">15</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">23 min</div>
+<div class="text-xs text-neutral-400">Lectura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">orquestador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">Trading</div>
+<div class="text-xs text-neutral-400">Equipo</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed">Eres un analista cuantitativo de riesgos que produce evaluaciones de riesgo detalladas y basadas en cifras. Cuando se activa con <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade risk &lt;ticker&gt;</code>, analizas todas las dimensiones de riesgo de una acción y brindas recomendaciones prácticas sobre el tamaño de la posición mediante distintas metodologías.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO LEGAL: Este contenido es solo con fines educativos y de investigación. No constituye asesoramiento financiero. Siempre realiza tu propia diligencia.</strong></p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Activación</h2><p class="text-neutral-300 mb-4 leading-relaxed">Esta skill se activa cuando el usuario ejecuta:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade risk &lt;TICKER&gt;</code> — Genera una evaluación completa del riesgo y un análisis del tamaño de la posición</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Extrae el símbolo del ticker de la orden. Si no se proporciona ningún ticker, pídele al usuario que lo indique.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Fase de recopilación de datos</h2><p class="text-neutral-300 mb-4 leading-relaxed">Reúne todos los datos relacionados con los riesgos antes de escribir el informe. Ejecuta estas búsquedas:</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Paso 1: Datos de volatilidad</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "&lt;TICKER&gt; stock beta volatility average true range ATR"
+WebSearch: "&lt;TICKER&gt; historical volatility 30 day 60 day implied volatility"
+WebSearch: "&lt;TICKER&gt; stock standard deviation daily returns"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extrae: beta (vs S&amp;P 500), ATR de 14 días, volatilidad histórica de 30 días, volatilidad histórica de 60 días, volatilidad implícita (si hay opciones), movimiento diario promedio (%).</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Paso 2: Historial de drawdown</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "&lt;TICKER&gt; stock maximum drawdown worst decline history"
+WebSearch: "&lt;TICKER&gt; stock crash 2020 2022 bear market performance"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extrae: caída máxima (histórico total), caída durante el desplome del COVID (feb-mar 2020), caída durante el mercado bajista de 2022, caída durante cualquier crisis específica del sector, tiempo promedio de recuperación de caídas del 20% o más.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Paso 3: Datos de correlación</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "&lt;TICKER&gt; stock correlation S&amp;P 500 sector ETF"
+WebSearch: "&lt;TICKER&gt; sector peers correlation beta comparison"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extrae: correlación con SPY, correlación con el ETF del sector (XLK, XLF, XLE, etc.), correlación con pares clave, correlación con las tasas de interés (TLT), correlación con VIX.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Paso 4: Métricas de liquidez</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "&lt;TICKER&gt; average daily volume market cap shares outstanding float"
+WebSearch: "&lt;TICKER&gt; bid ask spread options open interest liquidity"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extrae: volumen diario promedio (30 días), volumen promedio en dólares, acciones en circulación, float, interés en ventas en corto (acciones y % del float), días para cubrir, spread bid-ask típico, disponibilidad y liquidez de opciones.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Paso 5: Precio actual y contexto técnico</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "&lt;TICKER&gt; stock price today 52 week high low moving averages"
+WebSearch: "&lt;TICKER&gt; RSI support resistance levels"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extrae: precio actual, máximo/mínimo de 52 semanas, distancia de las medias móviles clave (50, 100, 200), RSI, niveles clave de soporte, niveles clave de resistencia.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Paso 6: Factores de riesgo fundamental</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "&lt;TICKER&gt; debt ratio cash position earnings stability"
+WebSearch: "&lt;TICKER&gt; short interest insider selling institutional ownership changes"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extrae: deuda sobre patrimonio neto, índice de cobertura de intereses, efectivo y equivalentes, variabilidad de las ganancias, concentración de ingresos, concentración de clientes, tendencias en las transacciones de insiders, cambios en la propiedad institucional.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Paso 7: Riesgo de eventos</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "&lt;TICKER&gt; next earnings date ex dividend date FDA catalyst"
+WebSearch: "&lt;TICKER&gt; litigation regulatory investigation risk"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extrae: próxima fecha de publicación de resultados, historial reciente de sorpresas en los resultados, fecha exdividendo, decisiones regulatorias pendientes, litigios activos, próximos eventos binarios.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Metodología de puntuación de riesgo</h2><p class="text-neutral-300 mb-4 leading-relaxed">Calcula una Puntuación de Riesgo Compuesta de 0 a 100, donde <strong>mayor = MÁS SEGURO</strong> (menos riesgoso).</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Puntuaciones de los componentes (cada una de 0 a 100; cuanto más alta, más seguro)</h3><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Componente</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Peso</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Qué mide</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Lógica de puntuación</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Puntuación de volatilidad</td><td class="px-3 py-2 border border-dark-600 align-top">20%</td><td class="px-3 py-2 border border-dark-600 align-top">Estabilidad y previsibilidad del precio</td><td class="px-3 py-2 border border-dark-600 align-top">Beta bajo + ATR bajo + VH baja = puntuación alta. Beta &lt;0.8 = 80+. Beta 0.8-1.2 = 50-79. Beta &gt;1.5 = 20-.</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Puntuación de drawdown</td><td class="px-3 py-2 border border-dark-600 align-top">15%</td><td class="px-3 py-2 border border-dark-600 align-top">Comportamiento histórico en el peor caso</td><td class="px-3 py-2 border border-dark-600 align-top">Drawdown máximo &lt;20% = 80+. 20-40% = 50-79. 40-60% = 25-49. &gt;60% = 0-24.</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Puntuación de liquidez</td><td class="px-3 py-2 border border-dark-600 align-top">20%</td><td class="px-3 py-2 border border-dark-600 align-top">Capacidad de entrar y salir sin slippage</td><td class="px-3 py-2 border border-dark-600 align-top">Volumen promedio &gt;5M = 90+. 1-5M = 60-89. 100K-1M = 30-59. &lt;100K = 0-29.</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Puntuación de salud financiera</td><td class="px-3 py-2 border border-dark-600 align-top">20%</td><td class="px-3 py-2 border border-dark-600 align-top">Solidez y estabilidad del balance general</td><td class="px-3 py-2 border border-dark-600 align-top">D/E &lt;0.5 + mucho efectivo + ganancias estables = 80+. Deuda alta + quema de efectivo = 20-.</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Puntuación de correlación</td><td class="px-3 py-2 border border-dark-600 align-top">10%</td><td class="px-3 py-2 border border-dark-600 align-top">Valor de diversificación</td><td class="px-3 py-2 border border-dark-600 align-top">Baja correlación con SPY = puntuación más alta (ofrece diversificación).</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Puntuación de riesgo de eventos</td><td class="px-3 py-2 border border-dark-600 align-top">15%</td><td class="px-3 py-2 border border-dark-600 align-top">Exposición a eventos binarios de corto plazo</td><td class="px-3 py-2 border border-dark-600 align-top">Sin eventos a corto plazo = 80+. Resultados dentro de 14 días = 50. FDA/evento binario pendiente = 20-30.</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Puntuación de riesgo compuesta</strong> = Promedio ponderado de todos los componentes, redondeado al entero más cercano.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Interpretación de la puntuación de riesgo</h3><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Puntuación</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Clasificación</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Descripción</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">80-100</td><td class="px-3 py-2 border border-dark-600 align-top">Muy seguro</td><td class="px-3 py-2 border border-dark-600 align-top">Estabilidad de blue chip, alta liquidez, riesgo mínimo de eventos</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">60-79</td><td class="px-3 py-2 border border-dark-600 align-top">Seguro</td><td class="px-3 py-2 border border-dark-600 align-top">Riesgo manejable, adecuado para la mayoría de los portafolios</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">40-59</td><td class="px-3 py-2 border border-dark-600 align-top">Moderado</td><td class="px-3 py-2 border border-dark-600 align-top">Factores de riesgo notables, dimensiona la posición en consecuencia</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">20-39</td><td class="px-3 py-2 border border-dark-600 align-top">Arriesgado</td><td class="px-3 py-2 border border-dark-600 align-top">Riesgo significativo, se recomienda un tamaño de posición pequeño</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">0-19</td><td class="px-3 py-2 border border-dark-600 align-top">Muy arriesgado</td><td class="px-3 py-2 border border-dark-600 align-top">Riesgo extremo, solo especulativo, requiere una gestión estricta del riesgo</td></tr></tbody></table></div><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Formato de salida</h2><p class="text-neutral-300 mb-4 leading-relaxed">Genera un archivo llamado <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">TRADE-RISK-&lt;TICKER&gt;.md</code> con la siguiente estructura:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+# Avaliação de Risco: &lt;TICKER&gt; — &lt;COMPANY NAME&gt;
+
+**Gerado em:** &lt;current date and time&gt;
+**Preço Atual:** $&lt;price&gt; | **Capitalização de Mercado:** $&lt;cap&gt;
+
+&gt; **AVISO LEGAL:** Este material é destinado exclusivamente a fins educacionais e de pesquisa. Não constitui aconselhamento financeiro. Realize sempre sua própria diligência.
+
+---
+
+## Pontuação de Risco: &lt;SCORE&gt;/100 — &lt;RATING&gt;
+</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">[=========================                         ] 50/100 — Riesgo Moderado</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+&lt;Resumo de 1-2 frases do perfil de risco geral. Ex.: "AAPL apresenta um perfil de risco moderado, impulsionado por forte liquidez e saúde financeira, parcialmente compensado por valuation elevado e sensibilidade macroeconômica."&gt;
+
+### Detalhamento dos Componentes
+| Componente | Pontuação | Peso | Ponderado | Fator Principal |
+|-----------|-------|--------|----------|------------|
+| Volatilidade | &lt;X&gt;/100 | 20% | &lt;calc&gt; | &lt;1 linha de justificativa&gt; |
+| Resiliência a Drawdown | &lt;X&gt;/100 | 15% | &lt;calc&gt; | &lt;1 linha de justificativa&gt; |
+| Liquidez | &lt;X&gt;/100 | 20% | &lt;calc&gt; | &lt;1 linha de justificativa&gt; |
+| Saúde Financeira | &lt;X&gt;/100 | 20% | &lt;calc&gt; | &lt;1 linha de justificativa&gt; |
+| Correlação/Diversificação | &lt;X&gt;/100 | 10% | &lt;calc&gt; | &lt;1 linha de justificativa&gt; |
+| Risco de Evento | &lt;X&gt;/100 | 15% | &lt;calc&gt; | &lt;1 linha de justificativa&gt; |
+| **COMPOSTO** | | **100%** | **&lt;SCORE&gt;/100** | |
+
+---
+
+## 1. Análise de Volatilidade
+
+### Métricas Principais
+| Métrica | Valor | Interpretação |
+|--------|-------|----------------|
+| Beta (vs S&amp;P 500) | &lt;X&gt; | &lt;ex.: "Move 1,3x o mercado — moderadamente agressivo"&gt; |
+| ATR de 14 Dias | $&lt;X&gt; (&lt;X%&gt;) | &lt;ex.: "Faixa diária média de $2,50 (1,4%)"&gt; |
+| Volatilidade Histórica de 30 Dias | &lt;X%&gt; (anualizada) | &lt;vs média do setor&gt; |
+| Volatilidade Histórica de 60 Dias | &lt;X%&gt; (anualizada) | &lt;tendência: crescente/decrescente/estável&gt; |
+| Volatilidade Implícita (30 dias) | &lt;X%&gt; | &lt;vs VH: prêmio/desconto de X%&gt; |
+| Rank de IV (52 semanas) | &lt;X%&gt; | &lt;ex.: "IV atual é maior que 65% das leituras deste ano"&gt; |
+| Variação Diária Média | &lt;X%&gt; | &lt;ex.: "Dia típico move +/- 1,8%"&gt; |
+
+### Avaliação de Volatilidade
+&lt;2-3 frases interpretando o cenário de volatilidade. A volatilidade está elevada ou comprimida? A IV está precificando um evento próximo? Como a volatilidade atual se compara ao seu intervalo histórico?&gt;
+
+### Níveis de Stop Loss Baseados em Volatilidade
+| Método | Distância do Stop | Preço do Stop | Observações |
+|--------|--------------|------------|-------|
+| 1x ATR | $&lt;X&gt; | $&lt;price&gt; | Apertado — resultará em stops frequentes |
+| 2x ATR | $&lt;X&gt; | $&lt;price&gt; | Padrão — equilibra ruído e proteção |
+| 3x ATR | $&lt;X&gt; | $&lt;price&gt; | Largo — apenas para posições de alta convicção |
+
+---
+
+## 2. Cenários de Drawdown Máximo
+
+### Drawdowns Históricos
+| Período | Gatilho | Drawdown Máximo | Tempo de Recuperação |
+|--------|---------|-------------|---------------|
+| &lt;date range&gt; | &lt;event&gt; | -&lt;X%&gt; | &lt;X months&gt; |
+| &lt;date range&gt; | &lt;event&gt; | -&lt;X%&gt; | &lt;X months&gt; |
+| &lt;date range&gt; | &lt;event&gt; | -&lt;X%&gt; | &lt;X months&gt; |
+| Máximo de Todos os Tempos | &lt;event&gt; | -&lt;X%&gt; | &lt;X months&gt; |
+
+### Cenários de Teste de Estresse
+| Cenário | Drawdown Estimado | Nível de Preço | Probabilidade |
+|----------|-------------------|-------------|-------------|
+| Correção leve (mercado -10%) | -&lt;X%&gt; | $&lt;price&gt; | Média |
+| Mercado baixista (mercado -20%) | -&lt;X%&gt; | $&lt;price&gt; | Baixa-Média |
+| Queda severa (mercado -35%) | -&lt;X%&gt; | $&lt;price&gt; | Baixa |
+| Crise específica da empresa | -&lt;X%&gt; | $&lt;price&gt; | Baixa |
+| Cisne negro (pior caso) | -&lt;X%&gt; | $&lt;price&gt; | Muito Baixa |
+
+### Avaliação de Drawdown
+&lt;2-3 frases. Como esta ação se comportou historicamente em mercados de baixa? Ela cai mais ou menos que o mercado? Com que rapidez ela se recupera?&gt;
+
+---
+
+## 3. Análise de Correlação
+
+### Matriz de Correlação
+| Ativo | Correlação | Interpretação |
+|-------|------------|----------------|
+| S&amp;P 500 (SPY) | &lt;X&gt; | &lt;ex.: "Altamente correlacionado — move-se com o mercado amplo"&gt; |
+| ETF do Setor (&lt;XLX&gt;) | &lt;X&gt; | &lt;ex.: "Fortemente ligado às tendências do setor"&gt; |
+| Nasdaq 100 (QQQ) | &lt;X&gt; | &lt;interpretação&gt; |
+| Treasury 10 Anos (TLT) | &lt;X&gt; | &lt;ex.: "Correlação negativa — se beneficia da queda das taxas"&gt; |
+| VIX | &lt;X&gt; | &lt;ex.: "Negativa — sofre quedas quando o medo aumenta"&gt; |
+| Ouro (GLD) | &lt;X&gt; | &lt;interpretação&gt; |
+| Dólar Americano (UUP) | &lt;X&gt; | &lt;interpretação&gt; |
+
+### Valor de Diversificação
+&lt;2-3 frases. Esta ação adiciona diversificação a uma carteira típica? Ou apenas adiciona mais da mesma exposição ao mercado? Quais fatores macroeconômicos a impulsionam mais?&gt;
+
+---
+
+## 4. Risco de Liquidez
+
+### Métricas de Liquidez
+| Métrica | Valor | Classificação |
+|--------|-------|--------|
+| Volume Diário Médio (30 dias) | &lt;X shares&gt; | &lt;Excelente/Bom/Razoável/Pobre&gt; |
+| Volume Diário Médio em Dólares | $&lt;X&gt;M/dia | &lt;classificação&gt; |
+| Capitalização de Mercado | $&lt;X&gt;B | &lt;Grande/Média/Pequena/Micro&gt; |
+| Float | &lt;X&gt;M shares (&lt;X%&gt; do total emitido) | &lt;classificação&gt; |
+| Posições em Curto | &lt;X&gt;M shares (&lt;X%&gt; do float) | &lt;ex.: "Elevado — potencial squeeze ou pressão de baixa"&gt; |
+| Dias para Cobrir | &lt;X days&gt; | &lt;classificação&gt; |
+| Spread Bid-Ask Típico | $&lt;X&gt; (&lt;X%&gt;) | &lt;classificação&gt; |
+| Liquidez de Opções | &lt;Disponível / Limitada / Nenhuma&gt; | &lt;classificação&gt; |
+
+### Estimativas de Slippage
+| Tamanho da Ordem | Slippage Estimado | Custo Efetivo |
+|------------|--------------|----------------|
+| $1,000 | &lt;X%&gt; | &lt;$X&gt; |
+| $10,000 | &lt;X%&gt; | &lt;$X&gt; |
+| $50,000 | &lt;X%&gt; | &lt;$X&gt; |
+| $100,000 | &lt;X%&gt; | &lt;$X&gt; |
+
+### Avaliação de Liquidez
+&lt;2-3 frases. É possível entrar e sair desta ação facilmente? Há alguma preocupação com liquidez? Quais tipos de ordem devem ser usados?&gt;
+
+---
+
+## 5. Calculadora de Dimensionamento de Posição
+
+### Método 1: Risco Percentual Fixo (Padrão)
+Arriscar um percentual fixo do patrimônio da conta por operação.
+
+**Fórmula:** Tamanho da Posição = (Conta x Risco%) / (Entrada - Stop Loss)
+
+| Tamanho da Conta | Risco 1% | Risco 2% | Risco 3% |
+|-------------|---------|---------|---------|
+| $10,000 | &lt;X shares ($X)&gt; | &lt;X shares ($X)&gt; | &lt;X shares ($X)&gt; |
+| $25,000 | &lt;X shares ($X)&gt; | &lt;X shares ($X)&gt; | &lt;X shares ($X)&gt; |
+| $50,000 | &lt;X shares ($X)&gt; | &lt;X shares ($X)&gt; | &lt;X shares ($X)&gt; |
+| $100,000 | &lt;X shares ($X)&gt; | &lt;X shares ($X)&gt; | &lt;X shares ($X)&gt; |
+| $250,000 | &lt;X shares ($X)&gt; | &lt;X shares ($X)&gt; | &lt;X shares ($X)&gt; |
+
+*Baseado em entrada a $&lt;current price&gt; e stop loss a $&lt;2x ATR stop&gt;.*
+
+### Método 2: Ajustado por Volatilidade (Baseado em ATR)
+Normaliza o tamanho da posição pela volatilidade para que cada operação carregue um risco em dólares semelhante.
+
+**Fórmula:** Ações = (Conta x Risco%) / (ATR x Multiplicador)
+
+| Tamanho da Conta | 1x ATR | 2x ATR | 3x ATR |
+|-------------|--------|--------|--------|
+| $50,000 | &lt;X shares ($X)&gt; | &lt;X shares ($X)&gt; | &lt;X shares ($X)&gt; |
+| $100,000 | &lt;X shares ($X)&gt; | &lt;X shares ($X)&gt; | &lt;X shares ($X)&gt; |
+
+*Usando ATR de 14 dias de $&lt;X&gt; e risco de 2% da conta.*
+
+### Método 3: Critério de Kelly (Otimizado Teórico)
+Calcula o tamanho ótimo teórico da aposta com base na vantagem e nas probabilidades.
+
+**Fórmula:** Kelly % = W - [(1-W) / R]
+- W (taxa de acerto) = &lt;X%&gt; (baseado na taxa de sucesso histórica do setup ou precisão do consenso de analistas)
+- R (razão recompensa/risco) = &lt;X&gt;:1 (baseado na razão alvo/stop)
+- **Kelly Cheio:** &lt;X%&gt; da conta
+- **Meio Kelly (recomendado):** &lt;X%&gt; da conta
+- **Quarto Kelly (conservador):** &lt;X%&gt; da conta
+
+&gt; **Nota:** Kelly Cheio é extremamente agressivo. A maioria dos praticantes usa Meio Kelly ou menos. Kelly assume estimativas de probabilidade precisas, que são sempre incertas.
+
+### Tamanho de Posição Recomendado
+| Perfil de Risco | Ações | Valor em Dólares | % da Conta de $50K | Método |
+|-------------|--------|-------------|-------------------|--------|
+| Conservador | &lt;X&gt; | $&lt;X&gt; | &lt;X%&gt; | Risco fixo de 1% |
+| Moderado | &lt;X&gt; | $&lt;X&gt; | &lt;X%&gt; | Risco fixo de 2% |
+| Agressivo | &lt;X&gt; | $&lt;X&gt; | &lt;X%&gt; | Meio Kelly |
+
+---
+
+## 6. Risco/Retorno nos Níveis Atuais
+
+### Suportes e Resistências Mais Próximos
+| Nível | Preço | Distância | Tipo |
+|-------|-------|----------|------|
+| Resistência 2 | $&lt;price&gt; | +&lt;X%&gt; | &lt;ex.: "Máxima de 52 semanas"&gt; |
+| Resistência 1 | $&lt;price&gt; | +&lt;X%&gt; | &lt;ex.: "Máxima de swing anterior"&gt; |
+| **Preço Atual** | **$&lt;price&gt;** | **—** | |
+| Suporte 1 | $&lt;price&gt; | -&lt;X%&gt; | &lt;ex.: "MMA de 50 dias"&gt; |
+| Suporte 2 | $&lt;price&gt; | -&lt;X%&gt; | &lt;ex.: "MMA de 200 dias"&gt; |
+| Suporte 3 | $&lt;price&gt; | -&lt;X%&gt; | &lt;ex.: "Suporte horizontal major"&gt; |
+
+### Cenários de Risco/Retorno
+| Entrada | Stop (Suporte) | Alvo (Resistência) | Razão R:R | Veredito |
+|-------|---------------|---------------------|-----------|---------|
+| $&lt;current&gt; | $&lt;support 1&gt; | $&lt;resistance 1&gt; | &lt;X&gt;:1 | &lt;Favorável/Desfavorável&gt; |
+| $&lt;current&gt; | $&lt;support 2&gt; | $&lt;resistance 2&gt; | &lt;X&gt;:1 | &lt;Favorável/Desfavorável&gt; |
+| $&lt;support 1&gt; | $&lt;support 2&gt; | $&lt;resistance 1&gt; | &lt;X&gt;:1 | &lt;Favorável/Desfavorável&gt; |
+
+**Melhor Entrada para Risco/Retorno:** &lt;preço específico e justificativa&gt;
+
+---
+
+## 7. Estimativa de Valor em Risco (VaR)
+
+### VaR Diário (confiança de 95%)
+- **VaR Paramétrico:** $&lt;X&gt; (&lt;X%&gt; da posição)
+- **Interpretação:** Em 95% dos dias de negociação, a perda máxima esperada é de $&lt;X&gt; por $10,000 investidos.
+
+### VaR Semanal (confiança de 95%)
+- **VaR Paramétrico:** $&lt;X&gt; (&lt;X%&gt; da posição)
+- **Cálculo:** VaR Diário x sqrt(5)
+
+### VaR Mensal (confiança de 95%)
+- **VaR Paramétrico:** $&lt;X&gt; (&lt;X%&gt; da posição)
+- **Cálculo:** VaR Diário x sqrt(21)
+
+### VaR Condicional (Perda Esperada)
+- **CVaR (95%):** $&lt;X&gt; (&lt;X%&gt; da posição)
+- **Interpretação:** Quando as perdas excedem o limiar de VaR (piores 5% dos dias), a perda média é de $&lt;X&gt; por $10,000 investidos.
+
+&gt; **Limitação do VaR:** O VaR mede o risco em condições normais. Ele NÃO captura o risco de cauda (cisnes negros). Perdas reais podem e excedem as estimativas de VaR. Use como uma das muitas entradas, não como garantia.
+
+---
+
+## 8. Sinais de Alerta de Risco
+
+&lt;Liste quaisquer sinais de alerta específicos identificados durante a análise. Use caixas de seleção.&gt;
+
+- [ ] **Posições em Curto Elevadas (&gt;10% do float):** &lt;detalhes se aplicável&gt;
+- [ ] **Lançamento de Resultados em 14 Dias:** &lt;data se aplicável&gt;
+- [ ] **Venda por Insiders:** &lt;detalhes se aplicável&gt;
+- [ ] **Queda na Propriedade Institucional:** &lt;detalhes se aplicável&gt;
+- [ ] **Alta Carga de Dívida (D/E &gt; 2):** &lt;detalhes se aplicável&gt;
+- [ ] **Baixa Liquidez (&lt;500K volume médio):** &lt;detalhes se aplicável&gt;
+- [ ] **IV Elevada (IV Rank &gt; 70%):** &lt;detalhes se aplicável&gt;
+- [ ] **Litígio/Ação Regulatória Pendente:** &lt;detalhes se aplicável&gt;
+- [ ] **Concentração de Receita/Clientes:** &lt;detalhes se aplicável&gt;
+- [ ] **Queima de Caixa / FCF Negativo:** &lt;detalhes se aplicável&gt;
+
+**Sinais Ativados:** &lt;X&gt;/10
+**Avaliação dos Sinais:** &lt;ex.: "2 sinais ativados — risco gerenciável com dimensionamento adequado" ou "5 sinais — aborde com extrema cautela"&gt;
+
+---
+
+## 9. Recomendações de Gestão de Risco
+
+### Para Esta Ação
+1. **Dimensionamento de Posição:** &lt;recomendação específica baseada na pontuação de risco&gt;
+2. **Stop Loss:** &lt;nível e tipo específicos&gt;
+3. **Cobertura (Hedging):** &lt;ex.: "Considere put protetora na strike de $X se mantendo posição &gt;$50K" ou "Nenhuma cobertura necessária para posições pequenas"&gt;
+4. **Consciência de Correlação:** &lt;ex.: "Se você já detém XYZ e QQQ, isto adiciona exposição concentrada a tecnologia"&gt;
+5. **Calendário de Eventos:** &lt;ex.: "Reduza a posição em 50% antes dos resultados em &lt;date&gt; se mantendo trade de swing"&gt;
+6. **Agenda de Revisão:** &lt;ex.: "Reavalie o risco semanalmente durante a temporada de resultados, mensalmente em outros períodos"&gt;
+
+### Regras Gerais de Risco (Sempre Aplicáveis)
+- Nunca arrisque mais de 2% da conta total em uma única operação
+- Nunca alocar mais de 10% da carteira em uma única posição
+- Nunca manter mais de 25% em um único setor
+- Sempre tenha um stop loss definido antes de entrar
+- Reduza o tamanho da posição em ativos de baixa liquidez
+- Reduza o tamanho da posição antes de eventos binários (resultados, FDA, etc.)
+
+---
+
+*Gerado por Analista de Trading com IA — Motor de Avaliação de Risco*
+*AVISO LEGAL: Este material é destinado exclusivamente a fins educacionais e de pesquisa. Não constitui aconselhamento financeiro. Realize sempre sua própria diligência e consulte um assessor financeiro licenciado antes de tomar decisões de investimento.*</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Orientación para cálculos</h2><p class="text-neutral-300 mb-4 leading-relaxed">Al realizar cálculos, usa <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">Bash</code> para ejecutar Python con precisión:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre"></code></pre>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-2-1.html">← Módulo 2.1</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-3.html">Módulo 2.3 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Equipos de IA — Grupo 1 · Material educativo | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+
+<html class="dark" lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 1.11: Estratégia de Palavras-chave do Google Ads | Times de IA</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 1.11: Estratégia de Palavras-chave do Google Ads | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
     tailwind.config = {
       darkMode: 'class',
       theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
     }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
     body { font-family: 'Inter', sans-serif; }
     .dark body { background-color: #111827; }
     html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
@@ -29,73 +30,70 @@
     html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
     html:not(.dark) .text-white { color: #111827; }
   </style>
-</head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen">
-
-  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-14">
-        <div class="flex items-center space-x-4">
-          <a href="../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
-            <span class="text-2xl">🧠</span>
-            <span class="font-bold text-lg hidden sm:inline">Times de IA</span>
-          </a>
-          <span class="text-neutral-600 hidden sm:inline">|</span>
-          <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline">INEMA.CLUB</a>
-        </div>
-        <div class="flex items-center space-x-1 sm:space-x-2">
-          <a href="../trilha1-ads/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
-          <a href="../trilha2-trading/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
-          <a href="../trilha3-crypto/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
-          <a href="../trilha4-imobiliario/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
-          <a href="../trilha5-recrutamento/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
-          <a href="../trilha6-financas/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
-          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" aria-label="Alternar tema">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <div class="flex items-center space-x-2 text-sm text-neutral-400">
-      <a href="../index.html" class="hover:text-emerald-400">Início</a>
-      <span>/</span>
-      <a href="index.html" class="hover:text-emerald-400">Trilha 1</a>
-      <span>/</span>
-      <span class="text-emerald-400">Módulo 1.11</span>
-    </div>
-  </nav>
-
-  <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.11 · TRILHA 1</span>
-      <h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">📣 Estratégia de Palavras-chave do Google Ads</h1>
-      <p class="text-lg text-neutral-400 max-w-3xl">Construir uma estratégia de palavras-chave completa e pronta para implementação do Google Ads do zero. Esta skill mapeia a intenção de busca em toda a jornada do comprador, organiza palavras-chave em grupos de anúncios c…</p>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-emerald-400">22</div>
-            <div class="text-xs text-neutral-400">Tópicos</div>
-          </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-emerald-400">27 min</div>
-            <div class="text-xs text-neutral-400">Leitura</div>
-          </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-emerald-400">orquestrador</div>
-            <div class="text-xs text-neutral-400">Comando</div>
-          </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-emerald-400">Ads</div>
-            <div class="text-xs text-neutral-400">Time</div>
-          </div>
-      </div>
-    </div>
-  </header>
-
-  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <article class="leading-relaxed">
+<link href="https://inematds.github.io/curso-times-de-ia/trilha1-ads/modulo-1-11.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha1-ads/modulo-1-11.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha1-ads/modulo-1-11.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-1-11.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../en/trilha1-ads/modulo-1-11.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../es/trilha1-ads/modulo-1-11.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Times de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
+<button aria-label="Alternar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../index.html">Início</a>
+<span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Trilha 1</a>
+<span>/</span>
+<span class="text-emerald-400">Módulo 1.11</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.11 · TRILHA 1</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">📣 Estratégia de Palavras-chave do Google Ads</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Construir uma estratégia de palavras-chave completa e pronta para implementação do Google Ads do zero. Esta skill mapeia a intenção de busca em toda a jornada do comprador, organiza palavras-chave em grupos de anúncios c…</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">22</div>
+<div class="text-xs text-neutral-400">Tópicos</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">27 min</div>
+<div class="text-xs text-neutral-400">Leitura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">orquestrador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">Ads</div>
+<div class="text-xs text-neutral-400">Time</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
 <h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Propósito da Skill</h2><p class="text-neutral-300 mb-4 leading-relaxed">Construir uma estratégia de palavras-chave completa e pronta para implementação do Google Ads do zero. Esta skill mapeia a intenção de busca em toda a jornada do comprador, organiza palavras-chave em grupos de anúncios com temas estreitos, recomenda tipos de correspondência, cria listas abrangentes de palavras-chave negativas, estima faixas de CPC por cluster, fornece dicas de otimização do Quality Score e gera uma estrutura de campanha com sugestões de títulos e descrições para cada grupo de anúncios. A saída é detalhada o suficiente para que um comprador de mídia possa construir as campanhas no Gerenciador do Google Ads sem necessidade de pesquisa adicional.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Quando Usar</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>O usuário executa <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads keywords &lt;url&gt;</code></li><li>O usuário solicita pesquisa de palavras-chave, estratégia de palavras-chave ou planejamento de campanhas de busca no Google Ads</li><li>Chamada como subagente a partir de <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/ads strategy</code> (o orquestrador principal)</li><li>O usuário deseja lançar ou melhorar campanhas de busca do Google</li><li>O usuário precisa de agrupamento de palavras-chave, palavras-chave negativas ou arquitetura de grupos de anúncios</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Requisitos de Entrada</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Obrigatório:</strong> Uma URL de negócio para análise</li><li><strong>Opcional:</strong> Local/geografia de destino, orçamento mensal, dados existentes do Google Ads, produtos/serviços específicos para foco, URLs de concorrentes</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Como Executar</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 1: Inteligência de Negócio e Mercado</h3><p class="text-neutral-300 mb-4 leading-relaxed">Obtenha a URL do negócio usando <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">WebFetch</code> e extraia:</p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Ponto de Dados</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Onde Encontrar</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Nome do negócio</td><td class="px-3 py-2 border border-dark-600 align-top">Título da página, logotipo, página "sobre nós"</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Indústria/categoria</td><td class="px-3 py-2 border border-dark-600 align-top">Serviços, produtos, posicionamento</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Produtos/serviços oferecidos</td><td class="px-3 py-2 border border-dark-600 align-top">Páginas de produtos, páginas de serviços, página de preços</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Foco geográfico</td><td class="px-3 py-2 border border-dark-600 align-top">Áreas de atendimento, localizações, escopo de envio</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Posicionamento de preço</td><td class="px-3 py-2 border border-dark-600 align-top">Página de preços, preços de produtos, texto "a partir de"</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Palavras-chave SEO atuais</td><td class="px-3 py-2 border border-dark-600 align-top">Títulos meta, H1s, URLs das páginas, tópicos do blog</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Proposta de valor</td><td class="px-3 py-2 border border-dark-600 align-top">Seção hero, slogan, página "sobre nós"</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Nomes de concorrentes</td><td class="px-3 py-2 border border-dark-600 align-top">Seções "por que nos escolher", páginas de comparação</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Linguagem do cliente</td><td class="px-3 py-2 border border-dark-600 align-top">Depoimentos, avaliações, conteúdo de FAQ</td></tr></tbody></table></div><p class="text-neutral-300 mb-4 leading-relaxed">Execute pesquisas de palavras-chave:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "[Tipo de negócio]" Google Ads keywords
 WebSearch: "[Indústria]" high intent keywords
 WebSearch: "[Produto/serviço]" search terms people use
@@ -437,20 +435,19 @@ Execute estas pesquisas mensalmente para encontrar novas negativas:
 3. Execute `/ads copy google` para variações adicionais de texto de anúncio
 4. Execute `/ads landing &lt;url&gt;` para auditar as páginas de destino antes de direcionar tráfego
 5. Revise o relatório de termos de busca após 7 dias e adicione negativas
-6. Expanda para a Campanha 2 após a Campanha 1 atingir ROAS positivo</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Lista de Verificação de Qualidade</h2><p class="text-neutral-300 mb-4 leading-relaxed">Antes de entregar a saída, verifique:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>[ ] Todas as 4 categorias de intenção de busca estão cobertas com palavras-chave</li><li>[ ] Pelo menos 40 palavras-chave no total foram pesquisadas e categorizadas</li><li>[ ] As palavras-chave estão agrupadas em 8-15 grupos de anúncios com temas estreitos</li><li>[ ] Cada grupo de anúncios tem no máximo 3-5 palavras-chave</li><li>[ ] Tipos de correspondência são atribuídos com justificativa para cada palavra-chave</li><li>[ ] Cada grupo de anúncios tem sugestões de título e descrição (A/B)</li><li>[ ] Todas as contagens de caracteres estão dentro dos limites do Google Ads (T: 30, D: 90)</li><li>[ ] A lista de palavras-chave negativas cobre pelo menos 4 categorias</li><li>[ ] Estimativas de CPC são fornecidas por cluster</li><li>[ ] Os cenários de orçamento cobrem níveis inicial, crescimento e agressivo</li><li>[ ] O guia de otimização da Pontuação de Qualidade é acionável</li><li>[ ] Recomendações de página de destino estão incluídas por grupo de anúncios</li><li>[ ] O checklist de lançamento da campanha está completo</li><li>[ ] As recomendações de extensões de anúncio são específicas</li><li>[ ] A saída é salva em ADS-KEYWORDS.md</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">--- skills/ads-audience/SKILL.md ---</p><hr class="border-dark-600 my-8"><p class="text-neutral-300 mb-4 leading-relaxed">name: Construtor de Personas de Público description: Constrói 5-7 personas de público detalhadas a partir de uma URL, incluindo demografia, psicografia, pontos de dor, gatilhos de compra, parâmetros de segmentação específicos por plataforma, pontuação de persona e públicos negativos</p><hr class="border-dark-600 my-8">
-    </article>
-
-    <div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
-      <a href="modulo-1-10.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo 1.10</a>
-      <a href="modulo-1-12.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">Módulo 1.12 →</a>
-    </div>
-  </main>
-  <footer class="border-t border-dark-600 py-8 mt-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-      <p>Times de IA — Grupo 1 · Material educacional | <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
-    </div>
-  </footer>
-  <script>
+6. Expanda para a Campanha 2 após a Campanha 1 atingir ROAS positivo</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Lista de Verificação de Qualidade</h2><p class="text-neutral-300 mb-4 leading-relaxed">Antes de entregar a saída, verifique:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>[ ] Todas as 4 categorias de intenção de busca estão cobertas com palavras-chave</li><li>[ ] Pelo menos 40 palavras-chave no total foram pesquisadas e categorizadas</li><li>[ ] As palavras-chave estão agrupadas em 8-15 grupos de anúncios com temas estreitos</li><li>[ ] Cada grupo de anúncios tem no máximo 3-5 palavras-chave</li><li>[ ] Tipos de correspondência são atribuídos com justificativa para cada palavra-chave</li><li>[ ] Cada grupo de anúncios tem sugestões de título e descrição (A/B)</li><li>[ ] Todas as contagens de caracteres estão dentro dos limites do Google Ads (T: 30, D: 90)</li><li>[ ] A lista de palavras-chave negativas cobre pelo menos 4 categorias</li><li>[ ] Estimativas de CPC são fornecidas por cluster</li><li>[ ] Os cenários de orçamento cobrem níveis inicial, crescimento e agressivo</li><li>[ ] O guia de otimização da Pontuação de Qualidade é acionável</li><li>[ ] Recomendações de página de destino estão incluídas por grupo de anúncios</li><li>[ ] O checklist de lançamento da campanha está completo</li><li>[ ] As recomendações de extensões de anúncio são específicas</li><li>[ ] A saída é salva em ADS-KEYWORDS.md</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">--- skills/ads-audience/SKILL.md ---</p><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed">name: Construtor de Personas de Público description: Constrói 5-7 personas de público detalhadas a partir de uma URL, incluindo demografia, psicografia, pontos de dor, gatilhos de compra, parâmetros de segmentação específicos por plataforma, pontuação de persona e públicos negativos</p><hr class="border-dark-600 my-8"/>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-1-10.html">← Módulo 1.10</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-12.html">Módulo 1.12 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Times de IA — Grupo 1 · Material educacional | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
     const themeToggle = document.getElementById('theme-toggle');
     const darkIcon = document.getElementById('theme-toggle-dark-icon');
     const lightIcon = document.getElementById('theme-toggle-light-icon');

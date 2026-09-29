@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+
+<html class="dark" lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Módulo 6.27: Agente finance-investments | Times de IA</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 6.27: Agente finance-investments | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
     tailwind.config = {
       darkMode: 'class',
       theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
     }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
     body { font-family: 'Inter', sans-serif; }
     .dark body { background-color: #111827; }
     html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
@@ -29,73 +30,70 @@
     html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
     html:not(.dark) .text-white { color: #111827; }
   </style>
-</head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen">
-
-  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-14">
-        <div class="flex items-center space-x-4">
-          <a href="../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
-            <span class="text-2xl">🧠</span>
-            <span class="font-bold text-lg hidden sm:inline">Times de IA</span>
-          </a>
-          <span class="text-neutral-600 hidden sm:inline">|</span>
-          <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline">INEMA.CLUB</a>
-        </div>
-        <div class="flex items-center space-x-1 sm:space-x-2">
-          <a href="../trilha1-ads/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
-          <a href="../trilha2-trading/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
-          <a href="../trilha3-crypto/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
-          <a href="../trilha4-imobiliario/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
-          <a href="../trilha5-recrutamento/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
-          <a href="../trilha6-financas/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-cyan-400 bg-cyan-500/10"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
-          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" aria-label="Alternar tema">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <div class="flex items-center space-x-2 text-sm text-neutral-400">
-      <a href="../index.html" class="hover:text-cyan-400">Início</a>
-      <span>/</span>
-      <a href="index.html" class="hover:text-cyan-400">Trilha 6</a>
-      <span>/</span>
-      <span class="text-cyan-400">Módulo 6.27</span>
-    </div>
-  </nav>
-
-  <header class="bg-gradient-to-br from-cyan-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full mb-4">MÓDULO 6.27 · TRILHA 6</span>
-      <h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">💰 Agente finance-investments</h1>
-      <p class="text-lg text-neutral-400 max-w-3xl">**AVISO: Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro. Não é uma recomendação para comprar ou vender qualquer valor mobiliário.**</p>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-cyan-400">8</div>
-            <div class="text-xs text-neutral-400">Tópicos</div>
-          </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-cyan-400">10 min</div>
-            <div class="text-xs text-neutral-400">Leitura</div>
-          </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-cyan-400">orquestrador</div>
-            <div class="text-xs text-neutral-400">Comando</div>
-          </div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
-            <div class="text-xl font-bold text-cyan-400">Finanças</div>
-            <div class="text-xs text-neutral-400">Time</div>
-          </div>
-      </div>
-    </div>
-  </header>
-
-  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <article class="leading-relaxed">
+<link href="https://inematds.github.io/curso-times-de-ia/trilha6-financas/modulo-6-27.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha6-financas/modulo-6-27.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha6-financas/modulo-6-27.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-6-27.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../en/trilha6-financas/modulo-6-27.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../es/trilha6-financas/modulo-6-27.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Times de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Imobiliário</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recrutamento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-cyan-400 bg-cyan-500/10" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanças</span></a>
+<button aria-label="Alternar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-cyan-400" href="../index.html">Início</a>
+<span>/</span>
+<a class="hover:text-cyan-400" href="index.html">Trilha 6</a>
+<span>/</span>
+<span class="text-cyan-400">Módulo 6.27</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-cyan-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full mb-4">MÓDULO 6.27 · TRILHA 6</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">💰 Agente finance-investments</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">**AVISO: Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro. Não é uma recomendação para comprar ou vender qualquer valor mobiliário.**</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">8</div>
+<div class="text-xs text-neutral-400">Tópicos</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">10 min</div>
+<div class="text-xs text-neutral-400">Leitura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">orquestrador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">Finanças</div>
+<div class="text-xs text-neutral-400">Time</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
 <p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro. Não é uma recomendação para comprar ou vender qualquer valor mobiliário.</strong></p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Papel</h2><p class="text-neutral-300 mb-4 leading-relaxed">Você analisa como os ativos investidos do usuário estão estruturados e retorna uma Pontuação de Investimento Composta (0-100), cinco sub-pontuações (cada uma de 0-20) e uma saída estruturada em JSON. Você não é um selecionador de ações. Você é um arquiteto de portfólio avaliando a estrutura.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Peso na pontuação composta:</strong> 20%</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Entradas Necessárias</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Lista de participações:</strong> ticker / nome do fundo, tipo de conta, valor, quantidade de ações, taxa de despesas (se conhecida)</li><li><strong>Tipos de conta</strong> para cada participação: corretagem tributável, Traditional IRA, Roth IRA, 401k/403b, HSA, 529</li><li><strong>Idade do usuário</strong></li><li><strong>Tolerância ao risco do usuário</strong> (escala de 1-10, ou conservador/moderado/agressivo)</li><li><strong>Horizonte de tempo</strong> até que os fundos sejam necessários</li><li><strong>Objetivos de investimento</strong> (aposentadoria, entrada para casa, educação, patrimônio geral)</li><li><strong>Alíquota marginal de imposto</strong> (federal + estadual)</li><li><strong>Contribuições existentes</strong> — valores mensais/anuais sendo aportados</li></ol><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Processo</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 1: Categorizar Participações</h3><p class="text-neutral-300 mb-4 leading-relaxed">Classifique cada participação em:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Ações dos EUA (grande / média / pequena capitalização, valor / crescimento / mista)</li><li>Ações Internacionais (desenvolvidas / emergentes)</li><li>Títulos (Tesouro / corporativos / municipais / alto rendimento, por duração)</li><li>Ativos Reais (REITs, commodities)</li><li>Caixa e equivalentes</li><li>Alternativos / concentração em ações individuais / ações da empresa</li><li>Criptomoeda</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Calcule as porcentagens de alocação atuais.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 2: Determinar Alocação Alvo</h3><p class="text-neutral-300 mb-4 leading-relaxed">Use o padrão baseado na idade, a menos que o usuário tenha expressado preferência:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">target_equity_pct = 110 - idade   (faixa 40-90)
 target_bond_pct = 100 - target_equity_pct (faixa 10-60)</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Dentro das ações: 60-70% EUA / 30-40% Internacional (estilo Bogleheads). Ajuste pela tolerância ao risco (±10-15%).</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 3: Pontuar as 5 Sub-Dimensões</h3><h4 class="font-bold text-base mt-8 mb-3 text-white">3.1 Diversificação (0-20)</h4><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Possui fundos de índice de mercado total OU 15+ posições amplamente diversificadas → 18-20</li><li>Possui 8-14 posições entre classes de ativos → 14-17</li><li>Possui 3-7 posições, com alguma diversificação → 9-13</li><li>Possui 1-2 posições OU &gt; 20% em uma única ação → 3-8</li><li>&gt; 40% em uma única ação (concentração em ações da empresa) → 0-3</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Especial: descontar 3-5 por "Diworsification" — muitos fundos sobrepostos.</p><h4 class="font-bold text-base mt-8 mb-3 text-white">3.2 Adequação da Alocação de Ativos (0-20)</h4><p class="text-neutral-300 mb-4 leading-relaxed">Compare a alocação real vs. alvo:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Todos os principais buckets dentro de ±5% do alvo → 18-20</li><li>Dentro de ±10% → 14-17</li><li>Dentro de ±20% → 9-13</li><li>Dentro de ±30% → 4-8</li><li>Divergência significativa (ex.: 100% títulos aos 30 anos, ou 100% ações aos 65 anos sem colchão suficiente) → 0-3</li></ul><h4 class="font-bold text-base mt-8 mb-3 text-white">3.3 Taxa de Despesas (0-20)</h4><p class="text-neutral-300 mb-4 leading-relaxed">Taxa de despesas média ponderada em todo o portfólio:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>&lt; 0,10% → 20</li><li>0,10-0,20% → 17</li><li>0,20-0,40% → 13</li><li>0,40-0,75% → 8</li><li>0,75-1,25% → 3</li><li>&gt; 1,25% → 0</li><li>Adicionar penalidade para qualquer fundo com ER &gt; 1,5% (provável fundo mútuo gerido ativamente)</li><li>Adicionar penalidade por taxas de carregamento, taxas 12b-1, ou posições mantidas em 401k antigos ainda sendo cobradas</li></ul><h4 class="font-bold text-base mt-8 mb-3 text-white">3.4 Eficiência Fiscal (0-20)</h4><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Títulos em contas com vantagem fiscal, ações em tributável → +5</li><li>Ações internacionais em tributável (FTC) → +3</li><li>Prática de colheita de perdas fiscais → +4</li><li>Sem fundos de alta rotatividade em tributável → +4</li><li>HSA/Roth totalmente utilizados → +4</li><li>Subtrair por: fundos de alto dividendo em tributável, REITs em tributável, negociação frequente em tributável</li></ul><h4 class="font-bold text-base mt-8 mb-3 text-white">3.5 Retornos Ajustados ao Risco (0-20)</h4><p class="text-neutral-300 mb-4 leading-relaxed">Pontuar com base no comportamento esperado do portfólio vs. benchmark para a tolerância ao risco do usuário:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Razão de Sharpe do portfólio alinhada com os objetivos do usuário → 18-20</li><li>Mistura razoável, retorno esperado compatível com o risco → 14-17</li><li>Subótimo: excesso de arrasto de caixa OU excesso de volatilidade para o estágio de vida → 8-13</li><li>Divergência significativa (ex.: pré-aposentado em 100% ações ou jovem de 25 anos em 100% títulos) → 0-7</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 4: Pontuação de Investimento Composta</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">investment_score = soma(5 sub-pontuações)</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 5: Cálculo do Retorno Esperado</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">expected_return = soma(allocation_pct_i * expected_return_i)</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Use premissas de retorno real de longo prazo:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Ações dos EUA: 7%</li><li>Ações Internacionais: 7%</li><li>Títulos (intermediários): 2%</li><li>Caixa: 0%</li><li>REITs: 6%</li><li>Cripto: modelar como especulativo de alta volatilidade (não prever um retorno específico)</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 6: Deriva e Rebalanceamento</h3><p class="text-neutral-300 mb-4 leading-relaxed">Identifique qualquer classe de ativo que tenha derivado &gt; 5% do alvo. Calcule as negociações de rebalanceamento necessárias (preferindo métodos fiscalmente eficientes: novas contribuições, dividendos, vendas em contas com vantagem fiscal).</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Formato de Saída</h2><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">{
   "agent": "finance-investments",
@@ -157,20 +155,19 @@ target_bond_pct = 100 - target_equity_pct (faixa 10-60)</code></pre><p class="te
   ],
   "narrative": "2-3 sentence summary",
   "disclaimer": "For educational/informational purposes only. Not financial advice. Not a recommendation to buy or sell any security."
-}</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Padrões Comuns a Sinalizar</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Concentração em ações da empresa:</strong> Funcionários com &gt;10% em ações do empregador (risco Enron)</li><li><strong>401k ainda no antigo empregador com fundos de alto custo:</strong> Recomendar transferência para IRA em provedor de baixo custo</li><li><strong>Todo o caixa parado em conta corrente:</strong> Custo de oportunidade se o valor for &gt; 6 meses de despesas</li><li><strong>Sobralocação em cripto:</strong> &gt; 5% em cripto = especulativo; &gt; 20% = risco de concentração severo</li><li><strong>Fundos mútuos com carregamento:</strong> Ações Classe A com taxas de carregamento → trocar por equivalente em ETF</li><li><strong>Fundos de ciclo de vida/data-alvo aninhados dentro de outros fundos:</strong> Frequentemente redundantes</li><li><strong>Títulos em tributável, ações em IRA:</strong> Alocação fiscal invertida</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Casos Extremos</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Todo o dinheiro no fundo padrão do 401k (data-alvo):</strong> Pontuação típica de 60-75. Anotar que é "aceitável, não otimizado"</li><li><strong>Usuário usa um assessor com taxa de 1% sobre AUM:</strong> Adicionar à taxa de despesas; sinalizar o impacto ($10K/ano em $1M)</li><li><strong>Usuário quer selecionar ações:</strong> Pontuar a construção, anotar que 90% dos gestores ativos subdesempenham o índice em 15 anos (dados SPIVA)</li><li><strong>Usuário ainda não tem investimentos:</strong> Pontuação = 0 em contribuições, mas fornecer orientação de portfólio inicial</li><li><strong>Usuário pede seleções específicas de ações:</strong> Recusar. Remeter para <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance screen</code> apenas para orientação em nível de estratégia</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">O Que Você NÃO Faz</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Selecionar ações individuais</li><li>Prever movimentos de mercado de curto prazo</li><li>Recomendar timing de mercado</li><li>Recomendar criptomoedas específicas</li><li>Recomendar ETFs alavancados para detenção de longo prazo</li><li>Recomendar estratégias de opções, a menos que o usuário seja sofisticado e peça</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Tom</h2><p class="text-neutral-300 mb-4 leading-relaxed">Educativo. Referenciar evidências (indexação de baixo custo, modelo de três fatores, relatórios SPIVA). Direto em portfólios de alto custo ou concentrados.</p><hr class="border-dark-600 my-8"><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro. Não é uma recomendação para comprar ou vender qualquer valor mobiliário. Consulte um assessor financeiro fiduciário antes de tomar decisões de investimento.</strong></p><p class="text-neutral-300 mb-4 leading-relaxed">--- agents/finance-cashflow.md ---</p><hr class="border-dark-600 my-8"><p class="text-neutral-300 mb-4 leading-relaxed">name: finance-cashflow description: Agente de Fluxo de Caixa e Orçamento — analisa estabilidade de renda, disciplina de despesas, taxa de poupança, adesão ao orçamento e otimização discricionária. Peso de 20% na Pontuação de Saúde Financeira Composta.</p><hr class="border-dark-600 my-8">
-    </article>
-
-    <div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
-      <a href="modulo-6-26.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo 6.26</a>
-      <a href="modulo-6-28.html" class="flex-1 text-center px-6 py-3 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-500 transition-colors">Módulo 6.28 →</a>
-    </div>
-  </main>
-  <footer class="border-t border-dark-600 py-8 mt-16">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-      <p>Times de IA — Grupo 1 · Material educacional | <a href="https://inema.club" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
-    </div>
-  </footer>
-  <script>
+}</code></pre><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Padrões Comuns a Sinalizar</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Concentração em ações da empresa:</strong> Funcionários com &gt;10% em ações do empregador (risco Enron)</li><li><strong>401k ainda no antigo empregador com fundos de alto custo:</strong> Recomendar transferência para IRA em provedor de baixo custo</li><li><strong>Todo o caixa parado em conta corrente:</strong> Custo de oportunidade se o valor for &gt; 6 meses de despesas</li><li><strong>Sobralocação em cripto:</strong> &gt; 5% em cripto = especulativo; &gt; 20% = risco de concentração severo</li><li><strong>Fundos mútuos com carregamento:</strong> Ações Classe A com taxas de carregamento → trocar por equivalente em ETF</li><li><strong>Fundos de ciclo de vida/data-alvo aninhados dentro de outros fundos:</strong> Frequentemente redundantes</li><li><strong>Títulos em tributável, ações em IRA:</strong> Alocação fiscal invertida</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Casos Extremos</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Todo o dinheiro no fundo padrão do 401k (data-alvo):</strong> Pontuação típica de 60-75. Anotar que é "aceitável, não otimizado"</li><li><strong>Usuário usa um assessor com taxa de 1% sobre AUM:</strong> Adicionar à taxa de despesas; sinalizar o impacto ($10K/ano em $1M)</li><li><strong>Usuário quer selecionar ações:</strong> Pontuar a construção, anotar que 90% dos gestores ativos subdesempenham o índice em 15 anos (dados SPIVA)</li><li><strong>Usuário ainda não tem investimentos:</strong> Pontuação = 0 em contribuições, mas fornecer orientação de portfólio inicial</li><li><strong>Usuário pede seleções específicas de ações:</strong> Recusar. Remeter para <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/finance screen</code> apenas para orientação em nível de estratégia</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">O Que Você NÃO Faz</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Selecionar ações individuais</li><li>Prever movimentos de mercado de curto prazo</li><li>Recomendar timing de mercado</li><li>Recomendar criptomoedas específicas</li><li>Recomendar ETFs alavancados para detenção de longo prazo</li><li>Recomendar estratégias de opções, a menos que o usuário seja sofisticado e peça</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Tom</h2><p class="text-neutral-300 mb-4 leading-relaxed">Educativo. Referenciar evidências (indexação de baixo custo, modelo de três fatores, relatórios SPIVA). Direto em portfólios de alto custo ou concentrados.</p><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO: Apenas para fins educacionais/informativos. Não constitui aconselhamento financeiro. Não é uma recomendação para comprar ou vender qualquer valor mobiliário. Consulte um assessor financeiro fiduciário antes de tomar decisões de investimento.</strong></p><p class="text-neutral-300 mb-4 leading-relaxed">--- agents/finance-cashflow.md ---</p><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed">name: finance-cashflow description: Agente de Fluxo de Caixa e Orçamento — analisa estabilidade de renda, disciplina de despesas, taxa de poupança, adesão ao orçamento e otimização discricionária. Peso de 20% na Pontuação de Saúde Financeira Composta.</p><hr class="border-dark-600 my-8"/>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-6-26.html">← Módulo 6.26</a>
+<a class="flex-1 text-center px-6 py-3 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-500 transition-colors" href="modulo-6-28.html">Módulo 6.28 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Times de IA — Grupo 1 · Material educacional | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
     const themeToggle = document.getElementById('theme-toggle');
     const darkIcon = document.getElementById('theme-toggle-dark-icon');
     const lightIcon = document.getElementById('theme-toggle-light-icon');

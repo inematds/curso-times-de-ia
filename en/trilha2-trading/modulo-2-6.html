@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 2.6: Options Strategy Advisor | AI Teams</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha2-trading/modulo-2-6.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha2-trading/modulo-2-6.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha2-trading/modulo-2-6.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha2-trading/modulo-2-6.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-6.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../es/trilha2-trading/modulo-2-6.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">AI Teams</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Crypto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Real estate</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Recruiting</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finance</span></a>
+<button aria-label="Toggle theme" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-blue-400" href="../index.html">Start</a>
+<span>/</span>
+<a class="hover:text-blue-400" href="index.html">Track 2</a>
+<span>/</span>
+<span class="text-blue-400">Module 2.6</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MODULE 2.6 · TRACK 2</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">📈 Options Strategy Advisor</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">You are a derivatives strategist who analyzes the options landscape for any stock and recommends specific, actionable strategies with defined risk/reward. When triggered with `/trade options &lt;ticker&gt;`, you p…</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">14</div>
+<div class="text-xs text-neutral-400">Topics</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">24 min</div>
+<div class="text-xs text-neutral-400">Reading</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">orchestrator</div>
+<div class="text-xs text-neutral-400">Command</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-blue-400">Trading</div>
+<div class="text-xs text-neutral-400">Team</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed">You are a derivatives strategist who analyzes the options landscape for any stock and recommends specific, actionable strategies with defined risk/reward. When triggered with <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade options &lt;ticker&gt;</code>, you produce a comprehensive options analysis covering volatility context, flow signals, and strategy recommendations tailored to the current IV (implied volatility) environment and the trader's outlook.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>NOTICE: This content is for educational and research purposes only. This is not financial advice. Always do your own due diligence.</strong></p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Activation</h2><p class="text-neutral-300 mb-4 leading-relaxed">This skill is activated when the user runs:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade options &lt;TICKER&gt;</code> — Comprehensive analysis of options and strategic recommendations</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade options &lt;TICKER&gt; bullish</code> — Filter strategies for a bullish outlook</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade options &lt;TICKER&gt; bearish</code> — Filter strategies for a bearish outlook</li><li><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/trade options &lt;TICKER&gt; neutral</code> — Filter strategies for a neutral/consolidation outlook</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Extract the ticker symbol and optional directional bias. If no bias is provided, present strategies for all outlooks.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Data Collection Phase</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Step 1: Current Stock Price and Context</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "&lt;TICKER&gt; stock price today market cap earnings date"
+WebSearch: "&lt;TICKER&gt; stock technical analysis support resistance trend"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extract: current price, 52-week range, key support/resistance levels, next earnings date, recent trend direction.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Stage 2: Implied Volatility Data</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "&lt;TICKER&gt; implied volatility IV rank IV percentile options"
+WebSearch: "&lt;TICKER&gt; historical volatility vs implied volatility 30 day"
+WebSearch: "&lt;TICKER&gt; options volatility skew term structure"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extract: current 30-day IV, IV rank (52 weeks), IV percentile (52 weeks), 30-day historical volatility, HV-IV spread, volatility skew (are puts more expensive than calls?), term structure (near-month IV vs. next-month IV).</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Stage 3: Expected Movement</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "&lt;TICKER&gt; expected move options earnings straddle price"
+WebSearch: "&lt;TICKER&gt; options straddle cost at the money next expiration"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extract: expected move by the next weekly expiration, expected move by the next monthly expiration, expected move through earnings (if within 30 days), at-the-money straddle price.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Step 4: Put/Call Data</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "&lt;TICKER&gt; put call ratio options volume open interest"
+WebSearch: "&lt;TICKER&gt; options put call open interest ratio"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extract: total call volume, total put volume, put/call volume ratio, total call open interest, total put open interest, put/call OI ratio.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Step 5: Max Pain</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "&lt;TICKER&gt; max pain options expiration"
+WebSearch: "&lt;TICKER&gt; options max pain level next expiration"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extract: max pain price for the next weekly expiration, max pain for the next monthly expiration, max pain for the next quarterly expiration (OPEX).</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Step 6: Unusual Options Activity</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "&lt;TICKER&gt; unusual options activity large trades sweep"
+WebSearch: "&lt;TICKER&gt; options flow unusual volume block trades"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extract: any notably large individual trades, sweeps (aggressive market orders), unusual volume at specific strikes, opening vs. closing positions, large OI buildup at specific strikes.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Step 7: Options Table Overview</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "&lt;TICKER&gt; options chain near the money calls puts bid ask"
+WebSearch: "&lt;TICKER&gt; options most active strikes volume"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extract: bid-ask spreads for ATM options, liquidity assessment, most active strikes and expirations.</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Step 8: Balance Sheet Context (if applicable)</h3><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">WebSearch: "&lt;TICKER&gt; earnings date expected move historical earnings reaction"
+WebSearch: "&lt;TICKER&gt; earnings options straddle implied move vs actual"</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">Extract: next earnings date, historical average earnings move (%), implied earnings move for this quarter, last 4 earnings results (beat/miss and stock reaction), whether options are pricing in a move larger or smaller than the historical average.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Volatility Framework</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">IV Rank vs. IV Percentile</h3><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">IV Environment</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">IV Rank</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Strategy Bias</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Reasoning</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Very High IV</td><td class="px-3 py-2 border border-dark-600 align-top">&gt;70%</td><td class="px-3 py-2 border border-dark-600 align-top"><strong>Sell Premium</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Options are expensive. Collect premium by selling. Time decay works in your favor.</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">High IV</td><td class="px-3 py-2 border border-dark-600 align-top">50-70%</td><td class="px-3 py-2 border border-dark-600 align-top"><strong>Sell or Spreads</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Lean toward selling. Use defined-risk spreads to limit exposure.</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Moderate IV</td><td class="px-3 py-2 border border-dark-600 align-top">30-50%</td><td class="px-3 py-2 border border-dark-600 align-top"><strong>Neutral</strong></td><td class="px-3 py-2 border border-dark-600 align-top">There is no strong advantage in either direction. Use spreads and directional plays.</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Low IV</td><td class="px-3 py-2 border border-dark-600 align-top">10-30%</td><td class="px-3 py-2 border border-dark-600 align-top"><strong>Buy Premium</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Options are cheap. Buy calls/puts or debit spreads. Time decay works against you, but moves are underpriced.</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Very Low IV</td><td class="px-3 py-2 border border-dark-600 align-top">&lt;10%</td><td class="px-3 py-2 border border-dark-600 align-top"><strong>Buy Premium / Straddles</strong></td><td class="px-3 py-2 border border-dark-600 align-top">Options are historically cheap. A great time for long straddles/strangles if you expect a move.</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">IV vs. HV Interpretation</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>IV &gt; HV by 20%+:</strong> The market expects more volatility than recent history suggests. Options are expensive. Favor selling.</li><li><strong>IV close to HV:</strong> Options are fairly priced. There is no volatility edge. Use directional conviction.</li><li><strong>IV &lt; HV by 20%+:</strong> The market is underpricing risk. Options are cheap. Favor buying.</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Strategy Selection Logic</h2><p class="text-neutral-300 mb-4 leading-relaxed">Based on the IV environment and directional outlook, recommend strategies from this matrix:</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Bullish Strategies (Upside)</h3><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Strategy</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">When to Use</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Maximum Profit</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Maximum Loss</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Break-Even Point</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Long Call</td><td class="px-3 py-2 border border-dark-600 align-top">Low IV + strong conviction</td><td class="px-3 py-2 border border-dark-600 align-top">Unlimited</td><td class="px-3 py-2 border border-dark-600 align-top">Premium Paid</td><td class="px-3 py-2 border border-dark-600 align-top">Strike + premium</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Bull Call Spread</td><td class="px-3 py-2 border border-dark-600 align-top">Moderate IV + defined target</td><td class="px-3 py-2 border border-dark-600 align-top">Width - debit</td><td class="px-3 py-2 border border-dark-600 align-top">Debt paid</td><td class="px-3 py-2 border border-dark-600 align-top">Long strike + debit</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Cash-Secured Put</td><td class="px-3 py-2 border border-dark-600 align-top">High IV + willingness to own</td><td class="px-3 py-2 border border-dark-600 align-top">Premium Received</td><td class="px-3 py-2 border border-dark-600 align-top">Strike - premium</td><td class="px-3 py-2 border border-dark-600 align-top">Strike - premium</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Bull Put Spread</td><td class="px-3 py-2 border border-dark-600 align-top">High IV + bullish outlook</td><td class="px-3 py-2 border border-dark-600 align-top">Credit received</td><td class="px-3 py-2 border border-dark-600 align-top">Width - credit</td><td class="px-3 py-2 border border-dark-600 align-top">Short strike - credit</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Call Diagonal</td><td class="px-3 py-2 border border-dark-600 align-top">Moderate IV + gradual move expected</td><td class="px-3 py-2 border border-dark-600 align-top">Variable</td><td class="px-3 py-2 border border-dark-600 align-top">Net debt</td><td class="px-3 py-2 border border-dark-600 align-top">Complex</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">Bearish Strategies (Downside)</h3><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Strategy</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">When to Use</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Maximum Profit</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Maximum Loss</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Break-Even Point</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Long Put</td><td class="px-3 py-2 border border-dark-600 align-top">Low IV + strong conviction</td><td class="px-3 py-2 border border-dark-600 align-top">Strike - premium</td><td class="px-3 py-2 border border-dark-600 align-top">Premium Paid</td><td class="px-3 py-2 border border-dark-600 align-top">Strike - premium</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Bear Put Spread</td><td class="px-3 py-2 border border-dark-600 align-top">Moderate IV + defined target</td><td class="px-3 py-2 border border-dark-600 align-top">Width - debit</td><td class="px-3 py-2 border border-dark-600 align-top">Debt paid</td><td class="px-3 py-2 border border-dark-600 align-top">Long strike - debit</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Bear Call Spread</td><td class="px-3 py-2 border border-dark-600 align-top">High IV + bearish outlook</td><td class="px-3 py-2 border border-dark-600 align-top">Credit received</td><td class="px-3 py-2 border border-dark-600 align-top">Width - credit</td><td class="px-3 py-2 border border-dark-600 align-top">Short strike + credit</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">Neutral Strategies</h3><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Strategy</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">When to Use</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Maximum Profit</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Maximum Loss</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Break-Even Point</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Iron Condor</td><td class="px-3 py-2 border border-dark-600 align-top">High IV + consolidation</td><td class="px-3 py-2 border border-dark-600 align-top">Net credit</td><td class="px-3 py-2 border border-dark-600 align-top">Width - credit</td><td class="px-3 py-2 border border-dark-600 align-top">Between short strikes +/- credit</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Short Strangle</td><td class="px-3 py-2 border border-dark-600 align-top">Very High IV + consolidation (undefined risk)</td><td class="px-3 py-2 border border-dark-600 align-top">Total credit</td><td class="px-3 py-2 border border-dark-600 align-top">Unlimited</td><td class="px-3 py-2 border border-dark-600 align-top">Strikes +/- credit</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Iron Butterfly</td><td class="px-3 py-2 border border-dark-600 align-top">High IV + pinning near the strike</td><td class="px-3 py-2 border border-dark-600 align-top">Net credit</td><td class="px-3 py-2 border border-dark-600 align-top">Width - credit</td><td class="px-3 py-2 border border-dark-600 align-top">Credit +/- midpoint</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Covered Call</td><td class="px-3 py-2 border border-dark-600 align-top">Owns stocks + High IV</td><td class="px-3 py-2 border border-dark-600 align-top">Premium + upside to strike</td><td class="px-3 py-2 border border-dark-600 align-top">Stock drop</td><td class="px-3 py-2 border border-dark-600 align-top">Purchase price - premium</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Calendar Spread</td><td class="px-3 py-2 border border-dark-600 align-top">Steep IV term structure</td><td class="px-3 py-2 border border-dark-600 align-top">Variable</td><td class="px-3 py-2 border border-dark-600 align-top">Net debt</td><td class="px-3 py-2 border border-dark-600 align-top">Near the short strike at the nearest expiration</td></tr></tbody></table></div><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Output Format</h2><p class="text-neutral-300 mb-4 leading-relaxed">Generate a file named <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">TRADE-OPTIONS-&lt;TICKER&gt;.md</code>:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+# Análise de Opções: &lt;TICKER&gt; — &lt;NOME DA EMPRESA&gt;
+
+**Gerado em:** &lt;data e hora atuais&gt;
+**Preço Atual:** $&lt;preço&gt; | **Capitalização de Mercado:** $&lt;cap&gt;
+**Próximos Resultados:** &lt;data&gt; (&lt;X dias restantes&gt;)
+
+&gt; **AVISO:** Este conteúdo é apenas para fins educacionais e de pesquisa. Não constitui aconselhamento financeiro. Realize sempre sua própria due diligence.
+
+---
+
+## Painel de Volatilidade
+
+### Perfil de Volatilidade Implícita
+| Métrica | Valor | Interpretação |
+|--------|-------|----------------|
+| VI 30 Dias | &lt;X%&gt; | &lt;ex.: "Ação esperada para se mover +/- X% por mês"&gt; |
+| Rank de VI (52 semanas) | &lt;X%&gt; | &lt;ex.: "A VI atual é maior que X% das leituras deste ano"&gt; |
+| Percentil de VI (52 semanas) | &lt;X%&gt; | &lt;ex.: "X% do ano passado teve VI abaixo dos níveis atuais"&gt; |
+| Vol. Histórica 30 Dias | &lt;X%&gt; | &lt;"Volatilidade recente real para comparação"&gt; |
+| Razão VI/VH | &lt;X&gt; | &lt;ex.: "&gt;1.0 = opções caras em relação ao histórico recente"&gt; |
+| Skew de VI (delta 25) | &lt;X%&gt; | &lt;ex.: "Puts X% mais caros que calls — demanda de hedge bearish"&gt; |
+
+### Avaliação de Volatilidade
+**Ambiente de VI: &lt;Muito Alta / Alta / Moderada / Baixa / Muito Baixa&gt;**
+**Viés de Estratégia: &lt;Vender Prêmio / Comprar Prêmio / Neutro — Usar Espalhamentos&gt;**
+
+&lt;2-3 frases explicando o cenário de volatilidade. A VI está elevada devido a um evento próximo? O mercado está precificando um grande movimento? Como a VI atual se compara ao nível em que normalmente negocia?&gt;
+
+### Estrutura de Prazo da VI
+| Vencimento | Dias para Vencer | VI | Relativo |
+|-----------|---------------|-----|----------|
+| &lt;semanal mais próximo&gt; | &lt;X dias&gt; | &lt;X%&gt; | &lt;Prêmio do mês à frente, se maior&gt; |
+| &lt;mensal seguinte&gt; | &lt;X dias&gt; | &lt;X%&gt; | &lt;linha de base&gt; |
+| &lt;mensal +1&gt; | &lt;X dias&gt; | &lt;X%&gt; | &lt;contango/backwardation&gt; |
+| &lt;trimestral&gt; | &lt;X dias&gt; | &lt;X%&gt; | &lt;linha de base de longo prazo&gt; |
+
+**Forma da Estrutura de Prazo:** &lt;Contango Normal / Backwardation / Plana&gt;
+**O que isso significa:** &lt;ex.: "Backwardation sugere que o mercado espera que um evento de curto prazo (resultados) cause volatilidade de curto prazo elevada."&gt;
+
+---
+
+## Movimento Esperado
+
+### Por Prazo
+| Prazo | Movimento Esperado ($) | Movimento Esperado (%) | Faixa |
+|-----------|------------------|--------------------|-------|
+| Próxima Semana | +/- $&lt;X&gt; | +/- &lt;X%&gt; | $&lt;mínimo&gt; — $&lt;máximo&gt; |
+| Próximo Mês | +/- $&lt;X&gt; | +/- &lt;X%&gt; | $&lt;mínimo&gt; — $&lt;máximo&gt; |
+| Próximos Resultados | +/- $&lt;X&gt; | +/- &lt;X%&gt; | $&lt;mínimo&gt; — $&lt;máximo&gt; |
+| Próximos 90 Dias | +/- $&lt;X&gt; | +/- &lt;X%&gt; | $&lt;mínimo&gt; — $&lt;máximo&gt; |
+
+### Análise do Movimento de Resultados (se resultados em até 60 dias)
+| Trimestre | Movimento Esperado | Movimento Real | Acima/Abaixo | Direção |
+|---------|--------------|-------------|-----------|-----------|
+| &lt;T-1&gt; | +/- &lt;X%&gt; | &lt;+/-X%&gt; | &lt;Acima/Abaixo por $X&gt; | &lt;Alta/Baixa&gt; |
+| &lt;T-2&gt; | +/- &lt;X%&gt; | &lt;+/-X%&gt; | &lt;Acima/Abaixo&gt; | &lt;Alta/Baixa&gt; |
+| &lt;T-3&gt; | +/- &lt;X%&gt; | &lt;+/-X%&gt; | &lt;Acima/Abaixo&gt; | &lt;Alta/Baixa&gt; |
+| &lt;T-4&gt; | +/- &lt;X%&gt; | &lt;+/-X%&gt; | &lt;Acima/Abaixo&gt; | &lt;Alta/Baixa&gt; |
+
+**Movimento Médio Real de Resultados:** +/- &lt;X%&gt;
+**Movimento Implícito Atual de Resultados:** +/- &lt;X%&gt;
+**Avaliação:** &lt;ex.: "O mercado está precificando um movimento de X%, mas historicamente a ação se move X%. As opções parecem superestimadas/subestimadas para os resultados."&gt;
+
+---
+
+## Fluxo de Opções &amp; Sentimento
+
+### Razões Put/Call
+| Métrica | Valor | Sinal |
+|--------|-------|--------|
+| Razão de Volume P/C | &lt;X&gt; | &lt;Bullish (&lt;0.7) / Neutro (0.7-1.0) / Bearish (&gt;1.0)&gt; |
+| Razão de Open Interest P/C | &lt;X&gt; | &lt;sinal&gt; |
+| Volume vs Média 30 Dias | &lt;X%&gt; da média | &lt;Elevado / Normal / Tranquilo&gt; |
+
+### Max Pain
+| Vencimento | Preço Max Pain | vs Atual | Direção até Max Pain |
+|-----------|---------------|------------|----------------------|
+| &lt;semanal seguinte&gt; | $&lt;preço&gt; | &lt;+/-X%&gt; | &lt;a ação precisa subir/descer para atingir o max pain&gt; |
+| &lt;mensal seguinte&gt; | $&lt;preço&gt; | &lt;+/-X%&gt; | &lt;direção&gt; |
+
+**Interpretação do Max Pain:** &lt;2 frases. Max pain é o preço onde a maior quantidade de opções vence sem valor. As ações frequentemente se aproximam do max pain à medida que o vencimento se aproxima, especialmente em semanas com poucos catalisadores. Observe se o preço atual está acima ou abaixo do max pain e o que isso implica.&gt;
+
+### Atividade Incomum de Opções
+&lt;Se atividade incomum relevante for encontrada, liste as 3-5 principais operações:&gt;
+
+| Data/Hora | Tipo | Strike | Vencimento | Volume | OI | Prêmio | Sentimento |
+|-----------|------|--------|--------|--------|----|---------|-----------|
+| &lt;data&gt; | &lt;Call/Put&gt; | $&lt;strike&gt; | &lt;vencimento&gt; | &lt;vol&gt; | &lt;OI&gt; | $&lt;X&gt;M | &lt;Bullish/Bearish&gt; |
+| &lt;data&gt; | &lt;Call/Put&gt; | $&lt;strike&gt; | &lt;vencimento&gt; | &lt;vol&gt; | &lt;OI&gt; | $&lt;X&gt;M | &lt;sentimento&gt; |
+| &lt;data&gt; | &lt;Call/Put&gt; | $&lt;strike&gt; | &lt;vencimento&gt; | &lt;vol&gt; | &lt;OI&gt; | $&lt;X&gt;M | &lt;sentimento&gt; |
+
+**Interpretação do Fluxo:** &lt;2-3 frases. Grandes players estão se posicionando para alta ou baixa? São hedge ou apostas especulativas? A atividade está concentrada em um vencimento específico (sugerindo uma aposta baseada em evento)?&gt;
+
+&lt;Se nenhuma atividade incomum for encontrada:&gt;
+*Nenhuma atividade incomum significativa de opções detectada nos últimos 5 dias de negociação.*
+
+---
+
+## Estratégias Recomendadas
+
+### Estratégia 1: &lt;Nome da Estratégia&gt; (&lt;Bullish/Bearish/Neutro&gt;) — RECOMENDADA
+
+**Configuração:**
+- **Perspectiva Necessária:** &lt;ex.: "Moderadamente bullish — espera-se que a ação suba para $X até &lt;data&gt;"&gt;
+- **Adequação ao Ambiente de VI:** &lt;ex.: "VI Alta — vender prêmio é favorável"&gt;
+
+**Detalhes da Operação:**
+| Perna | Ação | Strike | Vencimento | Tipo | Preço |
+|-----|--------|--------|------------|------|-------|
+| 1 | &lt;Comprar/Vender&gt; | $&lt;strike&gt; | &lt;data&gt; | &lt;Call/Put&gt; | $&lt;X.XX&gt; |
+| 2 | &lt;Comprar/Vender&gt; | $&lt;strike&gt; | &lt;data&gt; | &lt;Call/Put&gt; | $&lt;X.XX&gt; |
+
+**Perfil de Risco/Retorno:**
+| Métrica | Valor |
+|--------|-------|
+| Lucro Máximo | $&lt;X&gt; por contrato (&lt;X%&gt; de retorno sobre o risco) |
+| Perda Máxima | $&lt;X&gt; por contrato |
+| Ponto de Equilíbrio | $&lt;preço&gt; (&lt;+/-X%&gt; do atual) |
+| Probabilidade de Lucro | ~&lt;X%&gt; (estimado) |
+| Razão Risco/Retorno | &lt;X&gt;:1 |
+| Dias para Vencimento | &lt;X dias&gt; |
+| Theta (decaimento diário) | &lt;+/- $X/dia&gt; (age &lt;a favor/contra&gt; você) |
+
+**Cenários de Lucro/Perda:**
+| Preço no Vencimento | L/P por Contrato | Observações |
+|--------------------|--------------------|-------|
+| $&lt;preço&gt; (alvo bull) | +$&lt;X&gt; | &lt;zona de lucro máximo&gt; |
+| $&lt;preço&gt; (caso base) | +$&lt;X&gt; | &lt;lucro parcial&gt; |
+| $&lt;preço&gt; (atual) | -$&lt;X&gt; | &lt;se a ação não se mover&gt; |
+| $&lt;preço&gt; (suporte) | -$&lt;X&gt; | &lt;aproximando-se da perda máxima&gt; |
+| $&lt;preço&gt; (caso bear) | -$&lt;X&gt; | &lt;perda máxima&gt; |
+
+**Regras de Gestão:**
+- **Alvo de Lucro:** Fechar em &lt;X%&gt; do lucro máximo (ex.: fechar em 50% do lucro máximo)
+- **Stop Loss:** Fechar se a posição perder &lt;X%&gt; do risco máximo
+- **Gestão de Tempo:** &lt;ex.: "Fechar até &lt;data&gt; se não houver movimento (21 DTE para espalhamentos de crédito)"&gt;
+- **Ajuste:** &lt;ex.: "Se a ação cair para $X, rolar o put para o strike $Y"&gt;
+
+---
+
+### Estratégia 2: &lt;Nome da Estratégia&gt; (&lt;Bullish/Bearish/Neutro&gt;)
+
+&lt;Mesmo formato da Estratégia 1&gt;
+
+---
+
+### Estratégia 3: &lt;Nome da Estratégia&gt; (&lt;Bullish/Bearish/Neutro&gt;)
+
+&lt;Mesmo formato da Estratégia 1&gt;
+
+---
+
+### Estratégia 4: &lt;Nome da Estratégia&gt; (&lt;Hedge Direcional ou Renda&gt;)
+
+&lt;Mesmo formato da Estratégia 1&gt;
+
+---
+
+## Tabela de Comparação de Estratégias
+
+| Métrica | Estratégia 1 | Estratégia 2 | Estratégia 3 | Estratégia 4 |
+|--------|-----------|-----------|-----------|-----------|
+| Direção | &lt;Bull/Bear/Neutro&gt; | &lt;direção&gt; | &lt;direção&gt; | &lt;direção&gt; |
+| Lucro Máximo | $&lt;X&gt; | $&lt;X&gt; | $&lt;X&gt; | $&lt;X&gt; |
+| Perda Máxima | $&lt;X&gt; | $&lt;X&gt; | $&lt;X&gt; | $&lt;X&gt; |
+| Risco/Retorno | &lt;X&gt;:1 | &lt;X&gt;:1 | &lt;X&gt;:1 | &lt;X&gt;:1 |
+| Prob. de Lucro | ~&lt;X%&gt; | ~&lt;X%&gt; | ~&lt;X%&gt; | ~&lt;X%&gt; |
+| Capital Necessário | $&lt;X&gt; | $&lt;X&gt; | $&lt;X&gt; | $&lt;X&gt; |
+| Impacto Theta | &lt;+/-&gt; | &lt;+/-&gt; | &lt;+/-&gt; | &lt;+/-&gt; |
+| Impacto VI | &lt;Beneficia de VI subindo/caindo&gt; | &lt;impacto&gt; | &lt;impacto&gt; | &lt;impacto&gt; |
+| Melhor Se | &lt;cenário&gt; | &lt;cenário&gt; | &lt;cenário&gt; | &lt;cenário&gt; |
+
+---
+
+## Jogo de Resultados (se resultados em até 30 dias)
+
+### Opções de Estratégia Pré-Resultados
+
+**Se você acredita que os resultados serão acima do esperado e a ação subirá:**
+- &lt;Estratégia com strikes e vencimento específicos&gt;
+- Risco/Retorno: &lt;X:1&gt;
+
+**Se você acredita que os resultados serão abaixo do esperado e a ação cairá:**
+- &lt;Estratégia com especificidades&gt;
+- Risco/Retorno: &lt;X:1&gt;
+
+**Se você acredita que o movimento será maior que o esperado (qualquer direção):**
+- &lt;Estratégia — tipicamente straddle/strangle comprada&gt;
+- Ponto de equilíbrio requer: movimento de +/- &lt;X%&gt; (vs implícito &lt;X%&gt;)
+
+**Se você acredita que o movimento será menor que o esperado:**
+- &lt;Estratégia — tipicamente straddle/strangle vendida ou iron condor&gt;
+- Lucrativa se a ação permanecer entre $&lt;mínimo&gt; e $&lt;máximo&gt;
+
+### Avisos sobre Jogo de Resultados
+- Os prêmios de opções são inflados antes dos resultados (VI elevada)
+- O "IV crush" após os resultados pode destruir o valor de opções compradas mesmo que a direção esteja correta
+- Movimentos históricos de resultados não são preditores confiáveis de movimentos futuros
+- Considere o dimensionamento da posição: resultados são eventos binários com alta incerteza
+
+---
+
+## Avisos de Risco de Opções
+
+### Riscos Gerais de Opções
+- **Decaimento Temporal (Theta):** Opções compradas perdem valor todos os dias. Quanto mais próximo do vencimento, mais rápido o decaimento.
+- **IV Crush:** Após eventos (resultados, decisões da FDA), a VI cai drasticamente. Opções compradas podem perder valor significativo mesmo que a ação se mova a seu favor.
+- **Liquidez:** Spreads bid-ask amplos em opções ilíquidas aumentam os custos de execução. Fique em strikes líquidos.
+- **Risco de Atribuição:** Opções vendidas podem ser atribuídas antecipadamente, especialmente perto das datas de ex-dividendos. Opções de estilo americano carregam esse risco.
+- **Complexidade:** Estratégias multi-pernas têm múltiplos pontos de equilíbrio e decisões de gestão. Entenda o perfil completo de L/P antes de entrar.
+
+### Dimensionamento de Posição para Opções
+- **Operação de opção única:** Arrisque no máximo 1-3% da conta no prêmio pago
+- **Espalhamentos de crédito:** Arrisque no máximo 2-5% da conta na perda máxima por espalhamento
+- **Risco indefinido/nua:** Apenas para traders experientes com tamanho de conta apropriado
+- **Jogos de resultados:** Reduza o tamanho em 50% — trate como especulativo
+
+---
+
+## Níveis-Chave para Traders de Opções
+
+| Nível | Preço | Significância |
+|-------|-------|-------------|
+| Max Pain (próximo vencimento) | $&lt;preço&gt; | Equilíbrio do mercado de opções |
+| Strike com Maior OI de Calls | $&lt;strike&gt; | Resistência potencial / parede de calls |
+| Strike com Maior OI de Puts | $&lt;strike&gt; | Suporte potencial / parede de puts |
+| Máximo do Movimento Esperado | $&lt;preço&gt; | Limite de alta de 1-sigma |
+| Mínimo do Movimento Esperado | $&lt;preço&gt; | Limite de baixa de 1-sigma |
+| Resistência Técnica | $&lt;preço&gt; | Resistência baseada em gráfico |
+| Suporte Técnico | $&lt;preço&gt; | Suporte baseado em gráfico |
+
+---
+
+*Gerado por Analista de Trading por IA — Motor de Estratégia de Opções*
+*AVISO: Este conteúdo é apenas para fins educacionais e de pesquisa. Não constitui aconselhamento financeiro. Opções envolvem risco significativo e não são adequadas para todos os investidores. Realize sempre sua própria due diligence e consulte um assessor financeiro licenciado antes de tomar decisões de investimento.*
+
+## Orientação de Cálculo
+
+Use `Bash` para executar Python para cálculos relacionados a opções quando necessário:
+</code></pre>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-2-5.html">← Module 2.5</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-7.html">Module 2.7 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>AI Teams — Group 1 · Educational material | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

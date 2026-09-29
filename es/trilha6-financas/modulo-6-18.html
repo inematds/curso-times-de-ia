@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 6.18: Análisis del fondo de emergencia | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha6-financas/modulo-6-18.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha6-financas/modulo-6-18.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha6-financas/modulo-6-18.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha6-financas/modulo-6-18.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../en/trilha6-financas/modulo-6-18.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-6-18.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Equipos de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Cripto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Bienes raíces</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Reclutamiento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-cyan-400 bg-cyan-500/10" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanzas</span></a>
+<button aria-label="Cambiar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-cyan-400" href="../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-cyan-400" href="index.html">Ruta 6</a>
+<span>/</span>
+<span class="text-cyan-400">Módulo 6.18</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-cyan-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-semibold rounded-full mb-4">MÓDULO 6.18 · TRAYECTO 6</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">💰 Análisis del Fondo de Emergencia</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">**Preparado el:** [Data]</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">9</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">4 min</div>
+<div class="text-xs text-neutral-400">Lectura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">orquestador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-cyan-400">Finanzas</div>
+<div class="text-xs text-neutral-400">Equipo</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed"><strong>Preparado el:</strong> [Fecha] <strong>Tipo de hogar:</strong> [Soltero/Pareja/Familia + tipo de empleo]</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Los números</h2><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Métrica</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Valor</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">Gastos mensuales normales</td><td class="px-3 py-2 border border-dark-600 align-top">$X</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Gastos mensuales de emergencia</td><td class="px-3 py-2 border border-dark-600 align-top">$Y</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Cobertura recomendada</td><td class="px-3 py-2 border border-dark-600 align-top">N meses</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Meta del fondo de emergencia</strong></td><td class="px-3 py-2 border border-dark-600 align-top"><strong>$Z</strong></td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Mínimo viable</td><td class="px-3 py-2 border border-dark-600 align-top">$A</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Límite conservador</td><td class="px-3 py-2 border border-dark-600 align-top">$B</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><strong>Fondo de emergencia actual</strong></td><td class="px-3 py-2 border border-dark-600 align-top">$C</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Diferencia hasta la meta</td><td class="px-3 py-2 border border-dark-600 align-top">$D</td></tr></tbody></table></div><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Estado</h2><p class="text-neutral-300 mb-4 leading-relaxed">[En camino / Con fondos insuficientes por $X / Totalmente financiado / Excedente — invertir el excedente]</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Dónde guardar</h2><p class="text-neutral-300 mb-4 leading-relaxed">[Recomendación específica por categoría de valores]</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>$X en [vehículo financiero]</li><li>$Y en [vehículo financiero]</li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Intereses anuales estimados con las tasas actuales: $[X]</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Plan de velocidad para alcanzar la meta</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Contribución mensual: $X</li><li>Tiempo para alcanzar la meta total: Y meses</li><li>Fuentes de financiamiento para acelerar: [lista]</li><li>Compromisos a considerar: [¿pausar aportes adicionales a la jubilación por encima de la contribución equivalente? etc.]</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Reglas de uso</h2><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Emergencias (usa el fondo):</strong> [lista] <strong>No son emergencias (usa en su lugar un fondo de reserva específico):</strong> [lista]</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Después del uso — Reglas de reposición</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Reposición en X meses</li><li>Pausar [actividad] hasta reponerlo</li><li>Actualizar [seguro/presupuesto] para prevenir recurrencias</li></ol><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Verificación de brechas de seguro</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>[ ] El máximo de gastos de bolsillo (OOP) del seguro de salud es manejable</li><li>[ ] Seguro de incapacidad a largo plazo vigente</li><li>[ ] Seguro de vida temporal si tienes dependientes</li><li>[ ] Cobertura adecuada de propiedad/responsabilidad civil</li><li>[ ] Póliza de responsabilidad civil adicional (umbrella) si el patrimonio neto &gt; $500k</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Qué NO aborda este plan</h2><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Inversión de efectivo excedente más allá del fondo de emergencia (ver /finance portfolio)</li><li>Estrategia de pago de deudas (ver /finance debt)</li><li>Metas de ahorro más grandes (ver /finance goals)</li></ul><hr class="border-dark-600 my-8"/><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO LEGAL:</strong> Solo con fines educativos e informativos. No constituye asesoramiento financiero. Consulta a un asesor financiero con licencia antes de tomar decisiones. Las necesidades del fondo de emergencia dependen de las circunstancias individuales. Los rendimientos de los instrumentos de efectivo cambian con frecuencia: verifica las tasas actuales.</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">
+## Padrões de Qualidade
+
+- Sempre exibir uma **meta em dólares**, não apenas meses
+- Sempre recomendar um **veículo financeiro específico**, não uma "conta poupança" genérica
+- Sempre verificar a cobertura de seguro como camada anterior
+- Distinguir o fundo de emergência de fundos de reserva específicos / poupança para metas
+- Nunca recomendar manter o fundo de emergência em ações ou criptomoedas
+- Sempre encerrar com o bloco de aviso legal
+
+
+--- skills/finance-networth/SKILL.md ---
+---
+name: finance-networth
+description: Rastreador de patrimônio líquido e planejador de marcos. Calcula o patrimônio líquido atual, projeta o patrimônio líquido futuro na aposentadoria, rastreia marcos ($100k, $250k, $500k, $1M, $5M, $10M), compara com metas de riqueza baseadas na idade e rankings percentuais, e aplica a fórmula do "Milionário da Porta ao Lado". Identifica a fase atual de acumulação de riqueza do usuário e a próxima ação que faz a diferença. Gera FINANCE-NETWORTH.md.
+---
+</code></pre>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-6-17.html">← Módulo 6.17</a>
+<a class="flex-1 text-center px-6 py-3 bg-cyan-600 text-white rounded-lg font-semibold hover:bg-cyan-500 transition-colors" href="modulo-6-19.html">Módulo 6.19 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Equipos de IA — Grupo 1 · Material educativo | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

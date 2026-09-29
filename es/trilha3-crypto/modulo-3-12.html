@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo 3.12: Generador de informes PDF de criptomonedas | Times de IA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%); }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-800/50 { background-color: rgba(249,250,251,.7); }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-white { color: #111827; }
+  </style>
+<link href="https://inematds.github.io/curso-times-de-ia/trilha3-crypto/modulo-3-12.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/en/trilha3-crypto/modulo-3-12.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/curso-times-de-ia/es/trilha3-crypto/modulo-3-12.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../trilha3-crypto/modulo-3-12.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../en/trilha3-crypto/modulo-3-12.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-3-12.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../index.html">
+<span class="text-2xl">🧠</span>
+<span class="font-bold text-lg hidden sm:inline">Equipos de IA</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1-ads/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Ads</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2-trading/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Trading</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10" href="../trilha3-crypto/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Cripto</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4-imobiliario/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Bienes raíces</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha5-recrutamento/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Reclutamiento</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors" href="../trilha6-financas/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Finanzas</span></a>
+<button aria-label="Cambiar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-purple-400" href="../index.html">Inicio</a>
+<span>/</span>
+<a class="hover:text-purple-400" href="index.html">Ruta 3</a>
+<span>/</span>
+<span class="text-purple-400">Módulo 3.12</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MÓDULO 3.12 · TRAYECTO 3</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4 leading-tight">🪙 Generador de Informes PDF de Cripto</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Eres la skill Generador de Informe PDF del sistema Analista de Cripto IA. Compilas todo el análisis de los archivos CRYPTO-*.md en un informe de investigación profesional, listo para el cliente. Extraes puntuaciones, desc…</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-purple-400">8</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-purple-400">12 min</div>
+<div class="text-xs text-neutral-400">Lectura</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-purple-400">orquestador</div>
+<div class="text-xs text-neutral-400">Comando</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-purple-400">Cripto</div>
+<div class="text-xs text-neutral-400">Equipo</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<article class="leading-relaxed">
+<p class="text-neutral-300 mb-4 leading-relaxed">Eres la skill Generador de Informe PDF del sistema Analista de Cripto IA. Compilas todo el análisis de los archivos CRYPTO-*.md en un informe de investigación profesional, listo para el cliente. Extraes puntuaciones, hallazgos y datos clave, preparas un payload JSON estructurado e invocas el script de generación de PDF en Python.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO IMPORTANTE:</strong> Esta herramienta es exclusivamente para fines educativos y de investigación. NO constituye asesoramiento financiero. NO ejecuta operaciones. NO administra fondos. Las criptomonedas son altamente volátiles y especulativas. Investiga siempre por tu cuenta (DYOR) y nunca inviertas más de lo que puedes permitirte perder.</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Comando</h2><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">/crypto report-pdf</code></pre><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Archivo de salida:</strong> <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">CRYPTO-REPORT.pdf</code></p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Requisitos previos</h2><p class="text-neutral-300 mb-4 leading-relaxed">Antes de generar el PDF, necesitas:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li>Uno o más archivos <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">CRYPTO-*.md</code> en el directorio de trabajo actual</li><li>El script de generación de PDF en Python en <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">~/.claude/skills/crypto/scripts/generate_crypto_pdf.py</code></li></ol><p class="text-neutral-300 mb-4 leading-relaxed">Si no se encuentra ningún archivo CRYPTO-*.md, informa al usuario que necesita ejecutar al menos un análisis primero (p. ej.: <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto analyze BTC</code>).</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Etapas de ejecución</h2><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 1: Exploración de informes disponibles</h3><p class="text-neutral-300 mb-4 leading-relaxed">Busca en el directorio de trabajo actual todos los archivos CRYPTO-*.md:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Bash("ls -la CRYPTO-*.md 2&gt;/dev/null")</code></pre><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Estándares de archivos esperados:</strong></p><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Patrón de archivo</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Skill de origen</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Contenido</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">CRYPTO-ANALYSIS-*.md</code></td><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto analyze</code></td><td class="px-3 py-2 border border-dark-600 align-top">Análisis multiagente completo</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">CRYPTO-ONCHAIN-*.md</code></td><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto onchain</code></td><td class="px-3 py-2 border border-dark-600 align-top">Analítica on-chain</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">CRYPTO-TOKENOMICS-*.md</code></td><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto tokenomics</code></td><td class="px-3 py-2 border border-dark-600 align-top">Oferta y tokenomics</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">CRYPTO-SENTIMENT-*.md</code></td><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto sentiment</code></td><td class="px-3 py-2 border border-dark-600 align-top">Análisis de sentimiento</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">CRYPTO-TECHNICAL-*.md</code></td><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto technical</code></td><td class="px-3 py-2 border border-dark-600 align-top">Análisis técnico</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">CRYPTO-FUNDAMENTAL-*.md</code></td><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto fundamental</code></td><td class="px-3 py-2 border border-dark-600 align-top">Análisis fundamental</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">CRYPTO-DEFI-*.md</code></td><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto defi</code></td><td class="px-3 py-2 border border-dark-600 align-top">Análisis de protocolo DeFi</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">CRYPTO-COMPARE-*.md</code></td><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto compare</code></td><td class="px-3 py-2 border border-dark-600 align-top">Comparación de tokens</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">CRYPTO-RISK-*.md</code></td><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto risk</code></td><td class="px-3 py-2 border border-dark-600 align-top">Evaluación del riesgo</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">CRYPTO-NARRATIVE-*.md</code></td><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto narrative</code></td><td class="px-3 py-2 border border-dark-600 align-top">Análisis de narrativa/sector</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">CRYPTO-SCREEN-*.md</code></td><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto screen</code></td><td class="px-3 py-2 border border-dark-600 align-top">Resultados del rastreador de tokens</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">CRYPTO-WATCHLIST.md</code></td><td class="px-3 py-2 border border-dark-600 align-top"><code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/crypto watchlist</code></td><td class="px-3 py-2 border border-dark-600 align-top">Lista de seguimiento con puntuaciones</td></tr></tbody></table></div><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 2: Leer y analizar cada informe</h3><p class="text-neutral-300 mb-4 leading-relaxed">Para cada archivo CRYPTO-*.md encontrado:</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Lee el contenido completo del archivo</strong> usando la herramienta Read</li><li><strong>Extrae los puntos de datos clave:</strong></li></ol><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Nombre/símbolo del token</li><li>Puntuaciones (Crypto Score, Quick Score, subpuntuaciones)</li><li>Clasificación y señal</li><li>Hallazgos clave y temas</li><li>Factores de riesgo</li><li>Niveles clave (soporte/resistencia)</li><li>Catalizadores y eventos</li><li>Escenarios alcistas/bajistas</li><li>Tablas y datos clasificados</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 3: Construir la estructura de datos del informe</h3><p class="text-neutral-300 mb-4 leading-relaxed">Organiza todos los datos extraídos en una estructura JSON completa para el generador de PDF:</p><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">{
+  "report_title": "Relatório de Pesquisa de Cripto IA",
+  "generated_date": "AAAA-MM-DD",
+  "generated_time": "HH:MM UTC",
+  "disclaimer": "Este relatório é pesquisa gerada por IA apenas para fins educacionais. Não é aconselhamento financeiro. Investimentos em criptomoedas são altamente especulativos e voláteis. O desempenho passado não indica resultados futuros. Faça sempre sua própria pesquisa (DYOR) e consulte um assessor financeiro licenciado.",
+
+  "executive_summary": {
+    "tokens_analyzed": ["BTC", "ETH", ...],
+    "top_opportunities": [
+      {
+        "token": "TOKEN",
+        "score": 82,
+        "grade": "A",
+        "signal": "Comprar",
+        "key_reason": "Acumulação on-chain forte com fundamentos em melhora"
+      }
+    ],
+    "market_overview": "Parágrafo breve de contexto de mercado",
+    "key_risks": ["Risco 1", "Risco 2", "Risco 3"]
+  },
+
+  "token_analyses": [
+    {
+      "token": "TOKEN",
+      "type": "full_analysis",
+      "crypto_score": 75,
+      "grade": "A",
+      "signal": "Comprar",
+      "sub_scores": {
+        "onchain": 16,
+        "tokenomics": 14,
+        "sentiment": 15,
+        "technical": 17,
+        "fundamental": 13
+      },
+      "price_data": {
+        "current_price": "$X,XXX",
+        "market_cap": "$X.XXB",
+        "volume_24h": "$X.XXB",
+        "change_7d": "+X.X%",
+        "change_30d": "+X.X%"
+      },
+      "key_findings": [
+        "Descoberta 1",
+        "Descoberta 2",
+        "Descoberta 3"
+      ],
+      "bull_case": "Resumo do cenário de alta",
+      "bear_case": "Resumo do cenário de baixa",
+      "key_levels": {
+        "support": ["$XX,XXX", "$XX,XXX"],
+        "resistance": ["$XX,XXX", "$XX,XXX"]
+      },
+      "catalysts": ["Catalisador 1", "Catalisador 2"],
+      "risk_factors": ["Risco 1", "Risco 2"]
+    }
+  ],
+
+  "comparisons": [
+    {
+      "tokens": ["TOKEN1", "TOKEN2"],
+      "winner": "TOKEN1",
+      "summary": "Resumo da comparação",
+      "comparison_table": {}
+    }
+  ],
+
+  "narrative_analyses": [
+    {
+      "theme": "Tokens de IA",
+      "lifecycle_stage": "Meio do Ciclo",
+      "fatigue_score": 35,
+      "top_picks": ["TOKEN1", "TOKEN2"],
+      "summary": "Resumo da narrativa"
+    }
+  ],
+
+  "screen_results": [
+    {
+      "screen_type": "Momentum",
+      "results_count": 15,
+      "top_3": [
+        {"token": "TOKEN", "score": 88, "key_metric": "30d +45%"}
+      ]
+    }
+  ],
+
+  "watchlist": {
+    "token_count": 10,
+    "top_scored": {"token": "TOKEN", "score": 82},
+    "active_alerts": ["Alerta 1", "Alerta 2"],
+    "tokens": [
+      {
+        "token": "TOKEN",
+        "quick_score": 82,
+        "grade": "A",
+        "trend": 17,
+        "momentum": 16,
+        "sentiment": 15,
+        "fundamentals": 18,
+        "risk_reward": 16
+      }
+    ]
+  },
+
+  "risk_assessments": [
+    {
+      "token": "TOKEN",
+      "risk_score": 45,
+      "risk_level": "Moderado",
+      "position_sizing": "2-3% da carteira",
+      "key_risks": ["Risco 1", "Risco 2"]
+    }
+  ],
+
+  "defi_analyses": [
+    {
+      "protocol": "PROTOCOL",
+      "tvl": "$X.XXB",
+      "revenue_30d": "$X.XXM",
+      "yield": "X.X%",
+      "summary": "Resumo do protocolo"
+    }
+  ]
+}</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 4: Escribir JSON y generar PDF</h3><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Escribe el archivo de datos JSON:</strong></li></ol><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Bash("cat &gt; /tmp/crypto_report_data.json &lt;&lt; 'JSONEOF'\n{...json data...}\nJSONEOF")</code></pre><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Ejecuta el generador de PDF:</strong></li></ol><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Bash("python3 ~/.claude/skills/crypto/scripts/generate_crypto_pdf.py")</code></pre><p class="text-neutral-300 mb-4 leading-relaxed">El script de Python lee de <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/tmp/crypto_report_data.json</code> y genera <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">CRYPTO-REPORT.pdf</code> en el directorio de trabajo actual.</p><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Verifica si se creó el PDF:</strong></li></ol><pre class="bg-dark-800 border border-dark-600 rounded-lg p-4 overflow-x-auto my-4 text-sm leading-relaxed"><code class="font-mono text-neutral-200 whitespace-pre">Bash("ls -la CRYPTO-REPORT.pdf")</code></pre><h3 class="font-bold text-lg mt-8 mb-3 text-white">Etapa 5: Informar al usuario</h3><p class="text-neutral-300 mb-4 leading-relaxed">Después de que la generación se complete correctamente, infórmale al usuario:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Ubicación y tamaño del archivo PDF</li><li>Número de análisis incluidos</li><li>Tokens cubiertos</li><li>Secciones generadas</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Estructura del informe PDF</h2><p class="text-neutral-300 mb-4 leading-relaxed">El PDF generado debe contener estas secciones:</p><h3 class="font-bold text-lg mt-8 mb-3 text-white">Página de portada</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Título del informe: "Informe de investigación sobre cripto IA"</li><li>Fecha y hora de generación</li><li>Número de tokens analizados</li><li>Aviso legal en texto pequeño</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Resumen</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Generado automáticamente según las secciones incluidas</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Resumen ejecutivo (1 página)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Visión general del mercado</li><li>Mejores oportunidades con puntuaciones</li><li>Riesgos clave y puntos de atención</li><li>Sugerencias de asignación de cartera (si hay evaluaciones de riesgo disponibles)</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Páginas de análisis de tokens (1-2 páginas por token)</h3><p class="text-neutral-300 mb-4 leading-relaxed">Para cada análisis completo:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Gráfico de puntuación (0-100)</li><li>Gráfico de barras con el desglose de las subpuntuaciones</li><li>Etiqueta de clasificación y señal</li><li>Tabla de datos de precios</li><li>Hallazgos clave (temas)</li><li>Escenarios alcistas/bajistas (lado a lado)</li><li>Niveles clave y catalizadores</li><li>Factores de riesgo</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Sección de comparación (si existen comparaciones)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Tablas comparativas lado a lado</li><li>Recomendación del ganador</li><li>Diferenciadores clave</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Análisis de narrativa (si hay informes de narrativa)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Visualización de la etapa del ciclo de vida</li><li>Mejores opciones dentro de la narrativa</li><li>Indicador de puntuación de fatiga</li><li>Resumen del flujo de capital</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Resultados del Rastreador (si existen informes de seguimiento)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Mejores tokens por tipo de seguimiento</li><li>Distribución de puntuaciones</li><li>Métricas clave del seguimiento</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Visión general de la lista de seguimiento (si existe una lista de seguimiento)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Tabla completa de la lista de seguimiento</li><li>Sección de alertas activas</li><li>Gráfico de distribución de puntuaciones</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Panel de riesgo (si hay informes de riesgo)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Mapa de calor de riesgo entre tokens</li><li>Recomendaciones sobre el tamaño de la posición</li><li>Matriz de correlación</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Sección DeFi (si existen informes DeFi)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Tabla de comparación de protocolos</li><li>Resumen de rendimiento</li><li>Tendencias de TVL</li></ul><h3 class="font-bold text-lg mt-8 mb-3 text-white">Página de aviso legal (última página)</h3><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li>Aviso legal completo</li><li>Aviso de que no es asesoramiento financiero</li><li>Fuentes de datos y limitaciones</li><li>Aviso de contenido generado por IA</li></ul><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Tratamiento de errores</h2><div class="overflow-x-auto my-4"><table class="w-full text-sm border-collapse"><thead><tr><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Error</th><th class="text-left px-3 py-2 bg-dark-800 border border-dark-600 text-primary font-semibold">Acción</th></tr></thead><tbody><tr><td class="px-3 py-2 border border-dark-600 align-top">No se encontró ningún archivo CRYPTO-*.md</td><td class="px-3 py-2 border border-dark-600 align-top">Informar al usuario y sugerir que primero ejecute un análisis</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Error al escribir el JSON</td><td class="px-3 py-2 border border-dark-600 align-top">Intentar una ruta alternativa, reportar el error</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">No se encontró el script de Python</td><td class="px-3 py-2 border border-dark-600 align-top">Informar al usuario que es necesario instalar el script</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Error en el script Python</td><td class="px-3 py-2 border border-dark-600 align-top">Muestra la salida del error, sugiere verificar las dependencias</td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Error al generar el PDF</td><td class="px-3 py-2 border border-dark-600 align-top">Muestra el error de Python, sugiere <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">pip install reportlab</code></td></tr><tr><td class="px-3 py-2 border border-dark-600 align-top">Datos parciales (faltan algunos campos)</td><td class="px-3 py-2 border border-dark-600 align-top">Generar con los datos disponibles e indicar las brechas</td></tr></tbody></table></div><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Patrones de extracción de datos</h2><p class="text-neutral-300 mb-4 leading-relaxed">Al analizar archivos CRYPTO-*.md, busca estos patrones:</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>Puntuaciones:</strong> Líneas que contienen <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">Score:</code>, <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">Grade:</code>, <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">Signal:</code>, o tablas de puntuación con valores numéricos <strong>Precios:</strong> Líneas con <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">$</code> seguidas de cifras y valores de capitalización de mercado <strong>Porcentajes:</strong> Líneas con <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">%</code> para rendimientos, cambios, retornos <strong>Tablas:</strong> Tablas Markdown con delimitadores <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">|</code> <strong>Listas:</strong> Temas con hallazgos clave, riesgos y catalizadores <strong>Encabezados:</strong> Encabezados <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">##</code> e <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">###</code> para identificar secciones <strong>Fechas:</strong> Fechas en formato ISO y fechas relativas ("7d", "30d", "90d")</p><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Estándares de calidad</h2><ol class="list-decimal pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-primary"><li><strong>Completo</strong> — Incluye todos los análisis disponibles; no omitas ningún archivo CRYPTO-*.md</li><li><strong>Necesito</strong> — Extrae puntuaciones y datos exactos; no los aproximes ni los inventes</li><li><strong>Profesional</strong> — El PDF debe parecer provenir de una empresa de investigación</li><li><strong>Consistente</strong> — El mismo formato para cada sección de token</li><li><strong>Con marca de fecha y hora</strong> — Indicación clara de cuándo se recopilaron los datos</li><li><strong>Con aviso legal</strong> — Aviso legal en el pie de página de cada página y página dedicada al aviso legal</li></ol><h2 class="font-bold text-xl sm:text-2xl mt-8 mb-3 text-white">Dependencias de archivos</h2><p class="text-neutral-300 mb-4 leading-relaxed">El script generador de PDF espera:</p><ul class="list-disc pl-6 space-y-1.5 my-4 text-neutral-300 leading-relaxed marker:text-neutral-500"><li><strong>Entrada:</strong> <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">/tmp/crypto_report_data.json</code></li><li><strong>Salida:</strong> <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">CRYPTO-REPORT.pdf</code> en el directorio de trabajo actual</li><li><strong>Dependencias de Python:</strong> <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">reportlab</code> (instalar mediante <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">pip install reportlab</code>)</li><li><strong>Ubicación del script:</strong> <code class="px-1.5 py-0.5 rounded bg-dark-700 text-primary text-[0.85em] font-mono">~/.claude/skills/crypto/scripts/generate_crypto_pdf.py</code></li></ul><p class="text-neutral-300 mb-4 leading-relaxed">Si el script todavía no existe, informa al usuario que debe crearlo. El script se encarga de todo el diseño, estilo, gráficos y formato del PDF.</p><p class="text-neutral-300 mb-4 leading-relaxed"><strong>AVISO LEGAL:</strong> Esta herramienta ofrece investigación y análisis generados por IA únicamente con fines educativos. No constituye asesoramiento financiero. Las inversiones en criptomonedas son altamente especulativas y volátiles. El rendimiento pasado no indica resultados futuros. Investiga siempre por tu cuenta (DYOR) y consulta a un asesor financiero autorizado.</p>
+</article>
+<div class="mt-12 pt-8 border-t border-dark-600 flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-3-11.html">← Módulo 3.11</a>
+<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="modulo-3-13.html">Módulo 3.13 →</a>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Equipos de IA — Grupo 1 · Material educativo | <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      darkIcon.classList.remove('hidden'); htmlEl.classList.remove('dark');
+    } else { lightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      darkIcon.classList.toggle('hidden'); lightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>
